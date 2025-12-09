@@ -11,6 +11,7 @@ export type Props = {
 	equipped: boolean?,
 	unlocked: boolean?,
 	order: number?,
+	onActivated: (() -> ())?,
 
 	children: any?,
 }
@@ -30,6 +31,7 @@ local function SlotButton(props: Props)
 		Text = slotText,
 		LayoutOrder = props.order,
 		[React.Tag] = tags,
+		[React.Event.Activated] = props.onActivated,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
 			Text = props.slotNumber or 0,
