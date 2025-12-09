@@ -10,6 +10,7 @@ export type Props = {
 
 	equipped: boolean?,
 	unlocked: boolean?,
+
 	children: any?,
 }
 
