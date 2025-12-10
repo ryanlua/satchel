@@ -6,11 +6,18 @@ local ReactRoblox = require("../../react-roblox")
 local Hotbar = require("../Components/Hotbar")
 local Slot = require("../Components/Slot")
 
+local controls = {
+	Visible = true,
+}
+
 return {
 	react = React,
 	reactRoblox = ReactRoblox,
-	story = function()
-		local component = React.createElement(Hotbar, {}, {
+	controls = controls,
+	story = function(props)
+		local component = React.createElement(Hotbar, {
+			forceHintVisible = props.controls.Visible,
+		}, {
 			Tool = React.createElement(Slot, {
 				toolName = "Classic Sword",
 				tooltipText = "A classic sword",
