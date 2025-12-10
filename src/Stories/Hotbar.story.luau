@@ -4,7 +4,6 @@ local React = require("../../react")
 local ReactRoblox = require("../../react-roblox")
 
 local Hotbar = require("../Components/Hotbar")
-local HotbarHint = require("../Components/HotbarHint")
 local Slot = require("../Components/Slot")
 
 return {
@@ -12,20 +11,12 @@ return {
 	reactRoblox = ReactRoblox,
 	story = function()
 		local component = React.createElement(Hotbar, {}, {
-			HintSlotL1 = React.createElement(HotbarHint, {
-				hintImage = "rbxasset://textures/ui/Controls/DesignSystem/ButtonL1.png",
-				order = -1,
-			}),
 			Tool = React.createElement(Slot, {
 				toolName = "Classic Sword",
 				tooltipText = "A classic sword",
 				slotNumber = 1,
 				toolImage = "rbxasset://Textures/Sword128.png",
 				order = 1,
-			}),
-			HintSlotR1 = React.createElement(HotbarHint, {
-				hintImage = "rbxasset://textures/ui/Controls/DesignSystem/ButtonR1.png",
-				order = 100,
 			}),
 			StyleLink = React.createElement("StyleLink", {
 				StyleSheet = game.ReplicatedStorage.Design.SatchelStyleSheet,
