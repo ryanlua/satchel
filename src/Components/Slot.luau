@@ -2,6 +2,8 @@
 
 local React = require("../../react")
 
+local ToolTip = require("./ToolTip")
+
 export type Props = {
 	toolName: string?,
 	slotNumber: number?,
@@ -26,7 +28,7 @@ local function SlotButton(props: Props)
 		tags = tags .. " Equipped"
 	end
 
-	-- Hide the name if there is an image
+	-- Hide name if there is an image
 	local slotText = props.toolName
 	if props.toolImage and props.toolImage ~= "" then
 		slotText = ""
@@ -45,9 +47,8 @@ local function SlotButton(props: Props)
 		TextureIcon = React.createElement("ImageLabel", {
 			Image = props.toolImage or "",
 		}),
-		ToolTip = React.createElement("TextLabel", {
-			Text = props.tooltipText or "",
-			[React.Tag] = "ToolTip",
+		ToolTip = React.createElement(ToolTip, {
+			text = props.tooltipText,
 		}),
 	}, props.children)
 end
