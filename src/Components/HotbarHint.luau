@@ -1,18 +1,47 @@
 --!strict
 
+local UserInputService = game:GetService("UserInputService")
+
 local React = require("../../react")
 
 export type Props = {
 	hintImage: string,
 	order: number?,
+	forceVisible: boolean?,
 
 	children: any?,
 }
 
 local function HotbarHint(props: Props)
+	local isGamepadPreferred, setIsGamepadPreferred =
+		React.useState(UserInputService.PreferredInput == Enum.PreferredInput.Gamepad)
+
+	React.useEffect(function()
+		local function preferredInputChanged()
+			local preferredInput = UserInputService.PreferredInput
+
+			if preferredInput == Enum.PreferredInput.Gamepad then
+				setIsGamepadPreferred(true)
+			else
+				setIsGamepadPreferred(false)
+			end
+		end
+
+		preferredInputChanged()
+		local signal: RBXScriptConnection = UserInputService:GetPropertyChangedSignal("PreferredInput")
+			:Connect(preferredInputChanged)
+
+		return function()
+			signal:Disconnect()
+		end
+	end, {})
+
+	local visible = props.forceVisible == true or isGamepadPreferred
+
 	return React.createElement("ImageLabel", {
 		Image = props.hintImage,
 		LayoutOrder = props.order,
+		Visible = visible,
 		[React.Tag] = "HintSlot",
 	}, props.children)
 end
