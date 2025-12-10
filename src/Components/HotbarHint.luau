@@ -5,7 +5,7 @@ local UserInputService = game:GetService("UserInputService")
 local React = require("../../react")
 
 export type Props = {
-	hintImage: string,
+	hintKey: Enum.KeyCode,
 	order: number?,
 	forceVisible: boolean?,
 
@@ -39,7 +39,7 @@ local function HotbarHint(props: Props)
 	local visible = props.forceVisible == true or isGamepadPreferred
 
 	return React.createElement("ImageLabel", {
-		Image = props.hintImage,
+		Image = UserInputService:GetImageForKeyCode(props.hintKey),
 		LayoutOrder = props.order,
 		Visible = visible,
 		[React.Tag] = "HintSlot",

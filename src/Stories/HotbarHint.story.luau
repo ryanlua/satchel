@@ -6,7 +6,6 @@ local ReactRoblox = require("../../react-roblox")
 local HotbarHint = require("../Components/HotbarHint")
 
 local controls = {
-	HintImage = "rbxasset://textures/ui/Controls/DesignSystem/ButtonX.png",
 	Visible = true,
 }
 
@@ -16,7 +15,7 @@ return {
 	controls = controls,
 	story = function(props)
 		local component = React.createElement(HotbarHint, {
-			hintImage = props.controls.HintImage,
+			hintKey = Enum.KeyCode.ButtonX,
 			forceVisible = props.controls.Visible,
 		}, {
 			StyleLink = React.createElement("StyleLink", {

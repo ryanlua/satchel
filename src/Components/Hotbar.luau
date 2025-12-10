@@ -16,12 +16,12 @@ local function Hotbar(props: Props)
 		[React.Tag] = "Hotbar",
 	}, {
 		SlotLeftHint = React.createElement(HotbarHint, {
-			hintImage = UserInputService:GetImageForKeyCode(Enum.KeyCode.ButtonL1),
+			hintKey = Enum.KeyCode.ButtonL1,
 			forceVisible = props.forceHintVisible,
 			order = -1,
 		}),
 		SlotRightHint = React.createElement(HotbarHint, {
-			hintImage = UserInputService:GetImageForKeyCode(Enum.KeyCode.ButtonR1),
+			hintKey = Enum.KeyCode.ButtonR1,
 			forceVisible = props.forceHintVisible,
 			order = 100,
 		}),
