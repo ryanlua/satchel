@@ -20,13 +20,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Setup Rokit
         uses: CompeyDev/setup-rokit@v0.1.2
 
       - name: Setup Wally
-        run: wally install
+        run: |
+          wally install
+          rojo sourcemap develop.project.json --output sourcemap.json
+          wally-package-types --sourcemap sourcemap.json Packages/
 
       - name: Build using Rojo
         run: |
