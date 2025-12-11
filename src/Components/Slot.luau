@@ -7,10 +7,8 @@ local React = require("../../react")
 local ToolTip = require("./ToolTip")
 
 export type Props = {
+	tool: Tool?,
 	slotNumber: number?,
-	toolImage: string?,
-	toolName: string?,
-	tooltipText: string?,
 	equipped: boolean?,
 	forceVisible: boolean?,
 	unlocked: boolean?,
@@ -20,6 +18,10 @@ export type Props = {
 }
 
 local function Slot(props: Props)
+	local toolName = props.tool and props.tool.Name
+	local toolImage = props.tool and props.tool.TextureId
+	local tooltipText = props.tool and props.tool.ToolTip
+
 	-- Only show hint if keyboard and mouse is preferred or forced visible
 	local isKeyboardAndMousePreferred, setIsKeyboardAndMousePreferred =
 		React.useState(UserInputService.PreferredInput == Enum.PreferredInput.KeyboardAndMouse)
@@ -56,8 +58,8 @@ local function Slot(props: Props)
 	end
 
 	-- Hide name if there is an image
-	local slotText = props.toolName
-	if props.toolImage and props.toolImage ~= "" then
+	local slotText = toolName
+	if toolImage ~= "" then
 		slotText = ""
 	end
 
@@ -73,10 +75,10 @@ local function Slot(props: Props)
 			[React.Tag] = "SlotNumber",
 		}),
 		TextureIcon = React.createElement("ImageLabel", {
-			Image = props.toolImage or "",
+			Image = toolImage or "",
 		}),
 		ToolTip = React.createElement(ToolTip, {
-			text = props.tooltipText,
+			text = tooltipText,
 		}),
 	}, props.children)
 end

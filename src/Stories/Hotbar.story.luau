@@ -15,14 +15,17 @@ return {
 	reactRoblox = ReactRoblox,
 	controls = controls,
 	story = function(props)
+		local Tool = Instance.new("Tool")
+		Tool.Name = props.controls.ToolName
+		Tool.TextureId = props.controls.ToolImage
+		Tool.ToolTip = props.controls.TooltipText
+
 		local component = React.createElement(Hotbar, {
 			forceHintVisible = props.controls.ForceHintVisible,
 		}, {
 			Tool = React.createElement(Slot, {
-				toolName = "Classic Sword",
-				tooltipText = "A classic sword",
+				tool = Tool,
 				slotNumber = 1,
-				toolImage = "rbxasset://Textures/Sword128.png",
 				order = 1,
 			}),
 			StyleLink = React.createElement("StyleLink", {

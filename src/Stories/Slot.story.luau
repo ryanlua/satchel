@@ -20,11 +20,14 @@ return {
 	reactRoblox = ReactRoblox,
 	controls = controls,
 	story = function(props)
+		local Tool = Instance.new("Tool")
+		Tool.Name = props.controls.ToolName
+		Tool.TextureId = props.controls.ToolImage
+		Tool.ToolTip = props.controls.TooltipText
+
 		local component = React.createElement(Slot, {
-			toolName = props.controls.ToolName,
+			tool = Tool,
 			slotNumber = props.controls.SlotNumber,
-			toolImage = props.controls.ToolImage,
-			tooltipText = props.controls.TooltipText,
 			equipped = props.controls.Equipped,
 			unlocked = props.controls.Unlocked,
 			forceVisible = props.controls.ForceNumberVisible,
