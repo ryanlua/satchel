@@ -1,5 +1,3 @@
---!strict
-
 local React = require("../../react")
 local ReactRoblox = require("../../react-roblox")
 

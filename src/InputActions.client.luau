@@ -1,5 +1,3 @@
---!strict
-
 --[[
 	Script to handle inputs for the hotbar and backpack using Input Action System.
 ]]

@@ -1,5 +1,3 @@
---!strict
-
 local React = require("../../react")
 
 local HotbarHint = require("./HotbarHint")
