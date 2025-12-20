@@ -1,5 +1,7 @@
 --!strict
 
+local UserInputService = game:GetService("UserInputService")
+
 local templateObjects = script.Parent.Parent.Objects
 
 local slotButtonTemplate: TextButton = templateObjects.Slot
@@ -15,6 +17,7 @@ export type ClassType = typeof(setmetatable(
 			icon: ImageLabel,
 			tooltip: TextLabel,
 		},
+		_connections: { RBXScriptConnection },
 	},
 	SlotButton
 ))
@@ -33,9 +36,23 @@ function SlotButton.new(): ClassType
 			icon = iconImage,
 			tooltip = tooltipText,
 		},
+		_connections = {},
 	}, SlotButton)
 
+	local preferredInputChangedConnection = UserInputService:GetPropertyChangedSignal("PreferredInput")
+		:Connect(function()
+			self:onPreferredInputChanged()
+		end)
+	table.insert(self._connections, preferredInputChangedConnection)
+
 	return self
+end
+
+function SlotButton.onPreferredInputChanged(self: ClassType)
+	local preferredInput = UserInputService.PreferredInput
+	local isKeyboardAndMouse = preferredInput == Enum.PreferredInput.KeyboardAndMouse
+
+	self._instance.hint.Visible = isKeyboardAndMouse
 end
 
 function SlotButton.setParent(self: ClassType, parent: GuiBase2d?)
@@ -43,24 +60,23 @@ function SlotButton.setParent(self: ClassType, parent: GuiBase2d?)
 end
 
 function SlotButton.setText(self: ClassType, text: string)
-	local slotTextLabel = self._instance.button
-
-	slotTextLabel.Text = text
+	self._instance.button.Text = text
 end
 
 function SlotButton.setTooltipText(self: ClassType, text: string)
-	local tooltipTextLabel = self._instance.tooltip
-	tooltipTextLabel.Text = text
+	self._instance.tooltip.Text = text
 end
 
 function SlotButton.setNumber(self: ClassType, number: number)
-	local numberTextLabel = self._instance.hint
-
-	numberTextLabel.Text = tostring(number)
+	self._instance.hint.Text = tostring(number)
 end
 
 function SlotButton.destroy(self: ClassType)
 	self._instance.button:Destroy()
+
+	for _, connection in self._connections do
+		connection:Disconnect()
+	end
 end
 
 return SlotButton
