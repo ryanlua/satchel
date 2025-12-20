@@ -11,6 +11,3 @@ DevPackages/
 
 # MkDocs documentation
 site/
-
-# Workflow builds
-builds/
