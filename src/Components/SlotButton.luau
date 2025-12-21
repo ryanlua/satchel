@@ -95,17 +95,27 @@ end
 function SlotButton.setTool(self: ClassType, tool: Tool | HopperBin?)
 	self.tool = tool
 
-	if tool then
-		self:setText(tool.Name)
-		self:setIcon(tool.TextureId)
-		if tool:IsA("Tool") then
-			self:setTooltip(tool.ToolTip)
+	local function onToolChange()
+		if self.tool then
+			self:setText(self.tool.Name)
+			self:setIcon(self.tool.TextureId)
+			if self.tool:IsA("Tool") then
+				self:setTooltip(self.tool.ToolTip)
+			end
+		else
+			self:setText("")
+			self:setIcon("")
+			self:setTooltip("")
 		end
-	else
-		self:setText("")
-		self:setIcon("")
-		self:setTooltip("")
 	end
+	onToolChange()
+
+	local toolChangedConnection = tool.Changed:Connect(function(property)
+		if property == "Name" or property == "TextureId" or property == "ToolTip" then
+			onToolChange()
+		end
+	end)
+	table.insert(self._connections, toolChangedConnection)
 end
 
 function SlotButton.setText(self: ClassType, text: string)
