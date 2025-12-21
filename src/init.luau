@@ -17,8 +17,7 @@ styleLink.StyleSheet = script.StyleSheets.SatchelStyleSheet
 styleLink.Parent = satchelGui
 
 local button = SlotButton.new()
-button:setText("Hello world!")
-button:setHint("9")
+button:setTool(player:WaitForChild("Backpack"):FindFirstChildOfClass("Tool"))
 button:setParent(satchelGui)
 
 return {}
