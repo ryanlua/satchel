@@ -11,6 +11,8 @@ SlotButton.__index = SlotButton
 
 export type ClassType = typeof(setmetatable(
 	{} :: {
+		activated: RBXScriptSignal,
+		tool: Tool | HopperBin?,
 		_instance: {
 			button: TextButton,
 			hint: TextLabel,
@@ -30,6 +32,7 @@ function SlotButton.new(): ClassType
 
 	local self = setmetatable({
 		activated = buttonInstance.Activated,
+		tool = nil :: Tool | HopperBin?,
 		_instance = {
 			button = buttonInstance,
 			hint = hintText,
@@ -49,6 +52,7 @@ function SlotButton.new(): ClassType
 end
 
 function SlotButton.destroy(self: ClassType)
+	self.tool = nil
 	self._instance.button:Destroy()
 
 	for _, connection in self._connections do
@@ -79,12 +83,19 @@ function SlotButton.setEquipped(self: ClassType, equipped: boolean)
 	end
 end
 
-function SlotButton.setTool(self: ClassType, tool: Tool | HopperBin)
-	self:setText(tool.Name)
-	self:setIcon(tool.TextureId)
+function SlotButton.setTool(self: ClassType, tool: Tool | HopperBin?)
+	self.tool = tool
 
-	if tool:IsA("Tool") then
-		self:setTooltipText(tool.ToolTip)
+	if tool then
+		self:setText(tool.Name)
+		self:setIcon(tool.TextureId)
+		if tool:IsA("Tool") then
+			self:setTooltip(tool.ToolTip)
+		end
+	else
+		self:setText("")
+		self:setIcon("")
+		self:setTooltip("")
 	end
 end
 
@@ -96,12 +107,12 @@ function SlotButton.setIcon(self: ClassType, iconAssetId: string)
 	self._instance.icon.Image = iconAssetId
 end
 
-function SlotButton.setTooltipText(self: ClassType, text: string)
+function SlotButton.setTooltip(self: ClassType, text: string)
 	self._instance.tooltip.Text = text
 end
 
-function SlotButton.setNumber(self: ClassType, number: number)
-	self._instance.hint.Text = tostring(number)
+function SlotButton.setHint(self: ClassType, hint: string)
+	self._instance.hint.Text = tostring(hint)
 end
 
 function SlotButton.setParent(self: ClassType, parent: GuiBase2d?)
