@@ -11,6 +11,7 @@ SlotButton.__index = SlotButton
 
 export type ClassType = typeof(setmetatable(
 	{} :: {
+		activated: RBXScriptSignal,
 		tool: Tool | HopperBin?,
 		_instance: {
 			button: TextButton,
@@ -21,10 +22,10 @@ export type ClassType = typeof(setmetatable(
 		_connections: { RBXScriptConnection },
 	},
 	SlotButton
-))
+	))
 
 function SlotButton.new(): ClassType
-	local buttonInstance = slotButtonTemplate:Clone()
+	local buttonInstance = slotButtonTemplate:Clone() :: any -- TODO: Find why casting TextButton causes a type error
 	local hintText = buttonInstance:WaitForChild("NumberHint") :: TextLabel
 	local iconImage = buttonInstance:WaitForChild("TextureIcon") :: ImageLabel
 	local tooltipText = buttonInstance:WaitForChild("ToolTip") :: TextLabel
