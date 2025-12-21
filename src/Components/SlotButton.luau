@@ -11,7 +11,6 @@ SlotButton.__index = SlotButton
 
 export type ClassType = typeof(setmetatable(
 	{} :: {
-		activated: RBXScriptSignal,
 		tool: Tool | HopperBin?,
 		_instance: {
 			button: TextButton,
