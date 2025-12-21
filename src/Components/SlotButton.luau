@@ -2,10 +2,6 @@
 
 local UserInputService = game:GetService("UserInputService")
 
-local templateObjects = script.Parent.Parent.Objects
-
-local slotButtonTemplate: TextButton = templateObjects.Slot
-
 local SlotButton = {}
 SlotButton.__index = SlotButton
 
@@ -22,13 +18,26 @@ export type ClassType = typeof(setmetatable(
 		_connections: { RBXScriptConnection },
 	},
 	SlotButton
-	))
+))
 
 function SlotButton.new(): ClassType
-	local buttonInstance = slotButtonTemplate:Clone() :: any -- TODO: Find why casting TextButton causes a type error
-	local hintText = buttonInstance:WaitForChild("NumberHint") :: TextLabel
-	local iconImage = buttonInstance:WaitForChild("TextureIcon") :: ImageLabel
-	local tooltipText = buttonInstance:WaitForChild("ToolTip") :: TextLabel
+	local buttonInstance = Instance.new("TextButton")
+	buttonInstance.Name = "SlotButton"
+	buttonInstance:AddTag("Slot")
+
+	local hintText = Instance.new("TextLabel")
+	hintText.Name = "NumberHint"
+	hintText:AddTag("SlotNumber")
+	hintText.Parent = buttonInstance
+
+	local iconImage = Instance.new("ImageLabel")
+	iconImage.Name = "TextureIcon"
+	iconImage.Parent = buttonInstance
+
+	local tooltipText = Instance.new("TextLabel")
+	tooltipText.Name = "ToolTip"
+	tooltipText:AddTag("ToolTip")
+	tooltipText.Parent = buttonInstance
 
 	local self = setmetatable({
 		activated = buttonInstance.Activated,
