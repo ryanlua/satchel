@@ -48,6 +48,14 @@ function SlotButton.new(): ClassType
 	return self
 end
 
+function SlotButton.destroy(self: ClassType)
+	self._instance.button:Destroy()
+
+	for _, connection in self._connections do
+		connection:Disconnect()
+	end
+end
+
 function SlotButton.onPreferredInputChanged(self: ClassType)
 	local preferredInput = UserInputService.PreferredInput
 	local isKeyboardAndMouse = preferredInput == Enum.PreferredInput.KeyboardAndMouse
@@ -71,12 +79,21 @@ function SlotButton.setEquipped(self: ClassType, equipped: boolean)
 	end
 end
 
-function SlotButton.setParent(self: ClassType, parent: GuiBase2d?)
-	self._instance.button.Parent = parent
+function SlotButton.setTool(self: ClassType, tool: Tool | HopperBin)
+	self:setText(tool.Name)
+	self:setIcon(tool.TextureId)
+
+	if tool:IsA("Tool") then
+		self:setTooltipText(tool.ToolTip)
+	end
 end
 
 function SlotButton.setText(self: ClassType, text: string)
 	self._instance.button.Text = text
+end
+
+function SlotButton.setIcon(self: ClassType, iconAssetId: string)
+	self._instance.icon.Image = iconAssetId
 end
 
 function SlotButton.setTooltipText(self: ClassType, text: string)
@@ -87,12 +104,8 @@ function SlotButton.setNumber(self: ClassType, number: number)
 	self._instance.hint.Text = tostring(number)
 end
 
-function SlotButton.destroy(self: ClassType)
-	self._instance.button:Destroy()
-
-	for _, connection in self._connections do
-		connection:Disconnect()
-	end
+function SlotButton.setParent(self: ClassType, parent: GuiBase2d?)
+	self._instance.button.Parent = parent
 end
 
 return SlotButton
