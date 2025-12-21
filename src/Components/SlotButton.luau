@@ -33,6 +33,7 @@ function SlotButton.new(): ClassType
 
 	local hintText = Instance.new("TextLabel")
 	hintText.Name = "NumberHint"
+	hintText:AddTag("SlotNumber")
 	hintText.Parent = buttonInstance
 
 	local iconImage = Instance.new("ImageLabel")
