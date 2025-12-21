@@ -21,6 +21,7 @@ export type ClassType = typeof(setmetatable(
 			tooltip: TextLabel,
 		},
 		_connections: { RBXScriptConnection },
+		_toolChangedConnection: RBXScriptConnection?,
 	},
 	SlotButton
 ))
@@ -53,6 +54,7 @@ function SlotButton.new(): ClassType
 			tooltip = tooltipText,
 		},
 		_connections = {},
+		_toolChangedConnection = nil,
 	}, SlotButton)
 
 	self:setText("")
@@ -67,14 +69,6 @@ function SlotButton.new(): ClassType
 	self:onPreferredInputChanged()
 	table.insert(self._connections, preferredInputChangedConnection)
 
-	-- local defaultTransparency = buttonInstance.BackgroundTransparency
-	-- local preferredTransparencyChangedConnection = GuiService:GetPropertyChangedSignal("PreferredTransparency")
-	-- 	:Connect(function()
-	-- 		self:onPreferredTransparencyChanged(defaultTransparency)
-	-- 	end)
-	-- self:onPreferredTransparencyChanged(defaultTransparency)
-	-- table.insert(self._connections, preferredTransparencyChangedConnection)
-
 	return self
 end
 
@@ -83,24 +77,15 @@ function SlotButton.destroy(self: ClassType)
 	self.tool = nil
 	self._instance.button:Destroy()
 
+	if self._toolChangedConnection then
+		self._toolChangedConnection:Disconnect()
+		self._toolChangedConnection = nil
+	end
+
 	for _, connection in self._connections do
 		connection:Disconnect()
 	end
 end
-
--- Updates the hint visibility based on preferred input method
-function SlotButton.onPreferredInputChanged(self: ClassType)
-	local preferredInput = UserInputService.PreferredInput
-	local isKeyboardAndMouse = preferredInput == Enum.PreferredInput.KeyboardAndMouse
-
-	self._instance.hint.Visible = isKeyboardAndMouse
-end
-
--- function SlotButton.onPreferredTransparencyChanged(self: ClassType, defaultTransparency: number)
--- 	local preferredTransparency = GuiService.PreferredTransparency
-
--- 	self._instance.button.BackgroundTransparency = defaultTransparency * preferredTransparency
--- end
 
 -- Sets whether this slot is unlocked and draggable
 function SlotButton.setUnlocked(self: ClassType, unlocked: boolean)
@@ -122,6 +107,11 @@ end
 
 -- Sets the tool associated with this slot button
 function SlotButton.setTool(self: ClassType, tool: Tool | HopperBin)
+	if self._toolChangedConnection then
+		self._toolChangedConnection:Disconnect()
+		self._toolChangedConnection = nil
+	end
+
 	self.tool = tool
 
 	-- Update the button based on the tool
@@ -131,18 +121,19 @@ function SlotButton.setTool(self: ClassType, tool: Tool | HopperBin)
 			self:setIcon(self.tool.TextureId)
 			if self.tool:IsA("Tool") then
 				self:setTooltip(self.tool.ToolTip)
+			else
+				self:setTooltip("")
 			end
 		end
 	end
 	onToolChange()
 
 	-- Connect to tool property changes
-	local toolChangedConnection = tool.Changed:Connect(function(property)
+	self._toolChangedConnection = tool.Changed:Connect(function(property)
 		if property == "Name" or property == "TextureId" or property == "ToolTip" then
 			onToolChange()
 		end
 	end)
-	table.insert(self._connections, toolChangedConnection)
 end
 
 -- Sets the text displayed on the slot button
@@ -174,6 +165,14 @@ end
 -- Sets the parent of the slot button
 function SlotButton.setParent(self: ClassType, parent: GuiBase2d?)
 	self._instance.button.Parent = parent
+end
+
+-- Updates the hint visibility based on preferred input method
+function SlotButton.onPreferredInputChanged(self: ClassType)
+	local preferredInput = UserInputService.PreferredInput
+	local isKeyboardAndMouse = preferredInput == Enum.PreferredInput.KeyboardAndMouse
+
+	self._instance.hint.Visible = isKeyboardAndMouse
 end
 
 return SlotButton
