@@ -27,7 +27,7 @@ return {
 				order = 1,
 			}),
 			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = game.ReplicatedStorage.Design.SatchelStyleSheet,
+				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
 			}),
 		})
 

@@ -11,7 +11,7 @@ return {
 			size = UDim2.fromOffset(190, 30),
 		}, {
 			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = game.ReplicatedStorage.Design.SatchelStyleSheet,
+				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
 			}),
 		})
 

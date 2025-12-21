@@ -31,7 +31,7 @@ return {
 			forceVisible = props.controls.ForceNumberVisible,
 		}, {
 			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = game.ReplicatedStorage.Design.SatchelStyleSheet,
+				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
 			}),
 		})
 

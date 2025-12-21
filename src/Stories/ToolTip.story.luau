@@ -16,7 +16,7 @@ return {
 			text = props.controls.Text,
 		}, {
 			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = game.ReplicatedStorage.Design.SatchelStyleSheet,
+				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
 			}),
 		})
 

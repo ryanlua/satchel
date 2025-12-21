@@ -17,7 +17,7 @@ return {
 			forceVisible = props.controls.ForceHintVisible,
 		}, {
 			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = game.ReplicatedStorage.Design.SatchelStyleSheet,
+				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
 			}),
 		})
 
