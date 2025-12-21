@@ -1,0 +1,18 @@
+{
+  "ClassName": "Frame",
+  "Properties": {
+    "Tags": [
+      "Hint"
+    ]
+  },
+  "Children": [
+    {
+      "Name": "HintImage",
+      "ClassName": "ImageLabel"
+    },
+    {
+      "Name": "HintText",
+      "ClassName": "TextLabel"
+    }
+  ]
+}
