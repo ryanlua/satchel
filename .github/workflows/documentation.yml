@@ -9,6 +9,9 @@ on:
       - "docs/**"
       - "mkdocs.yml"
 
+env:
+  VERSION: 1.x
+
 permissions:
   contents: write
 
@@ -21,7 +24,6 @@ jobs:
           fetch-depth: 0
           sparse-checkout: |
             docs
-            src
 
       - name: Configure Git Credentials
         run: |
@@ -41,6 +43,10 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      - run: pip install mkdocs-material
+      - run: pip install mkdocs-material mike
 
-      - run: mkdocs gh-deploy --force
+      - name: Fetch gh-pages branch
+        run: git fetch origin gh-pages --depth=1
+
+      - name: Deploy latest documentation
+        run: mike deploy $VERSION --branch gh-pages --push
