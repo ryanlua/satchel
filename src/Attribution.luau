@@ -7,7 +7,7 @@
 --[[
 	By using Satchel, you agree to provide attribution in one of the following ways:
 		1. Keep the Attribution script unmodified and enabled
-		2. Credit Satchel in your experience description by name (Satchel) and creator (@WinnersTakesAll)
+		2. Provide credit in your experience description by name (Satchel) and creator (@WinnersTakesAll)
 		3. Have a DevForum topic linked in your experience description, crediting Satchel with the above
 
 	For questions or exceptions to the attribution terms, reach out through the social links:
