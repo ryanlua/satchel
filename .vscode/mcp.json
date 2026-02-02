@@ -1,12 +1,12 @@
 {
-	"servers": {
-		"roblox-studio": {
-			"type": "stdio",
-			"command": "rbx-studio-mcp.exe",
-			"args": [
-				"--stdio"
-			],
-		}
-	},
-	"inputs": []
+  "servers": {
+    "roblox-studio": {
+      "type": "stdio",
+      "command": "rbx-studio-mcp.exe",
+      "args": [
+        "--stdio"
+      ],
+    }
+  },
+  "inputs": []
 }
