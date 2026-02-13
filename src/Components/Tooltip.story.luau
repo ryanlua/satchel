@@ -1,6 +1,6 @@
 local React = require(script.Parent.Parent.Parent.react)
 
-local ToolTip = require(script.Parent.ToolTip)
+local Tooltip = require(script.Parent.Tooltip)
 
 local controls = {
 	text = "I'm a tooltip!",
@@ -11,9 +11,10 @@ type Props = {
 }
 
 return {
+	summary = "Message displayed when hovering over a slot",
 	controls = controls,
 	story = function(props: Props)
-		return React.createElement(ToolTip, {
+		return React.createElement(Tooltip, {
 			text = props.controls.text,
 		}, {
 			StyleLink = React.createElement("StyleLink", {

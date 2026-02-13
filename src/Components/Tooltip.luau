@@ -1,6 +1,6 @@
 local React = require(script.Parent.Parent.Parent.react)
 
-local function ToolTip(props: {
+local function Tooltip(props: {
 	text: string?,
 	children: any?,
 })
@@ -11,8 +11,8 @@ local function ToolTip(props: {
 
 	return React.createElement("TextLabel", {
 		Text = props.text,
-		[React.Tag] = "ToolTip",
+		[React.Tag] = "Tooltip",
 	}, props.children)
 end
 
-return ToolTip
+return Tooltip
