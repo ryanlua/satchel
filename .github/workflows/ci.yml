@@ -13,26 +13,40 @@ on:
 permissions:
   contents: read
 
+env:
+  OUTPUT_NAME: Satchel
+  BUILD_PROJECT: package.project.json
+
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
-      - name: Setup Selene
+      - name: Setup Rokit
         uses: CompeyDev/setup-rokit@v0.1.2
 
-      - name: Run Selene
-        run: selene src
-
-  style:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
+      - name: Setup Wally
+        run: |
+          wally install
+          rojo sourcemap develop.project.json --output sourcemap.json
+          wally-package-types --sourcemap sourcemap.json Packages/
 
       - name: Run StyLua
-        uses: JohnnyMorganz/stylua-action@v4
+        run: stylua --check src/ models/
+
+      - name: Run selene
+        run: selene src/ models/
+
+      - name: Build using Rojo
+        run: |
+          mkdir builds
+          rojo build --output builds/$OUTPUT_NAME.rbxm $BUILD_PROJECT
+          rojo build --output builds/$OUTPUT_NAME.rbxmx $BUILD_PROJECT
+
+      - name: Archive build files
+        uses: actions/upload-artifact@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          version: latest
-          args: --check src
+          name: ${{ env.OUTPUT_NAME }}
+          path: builds/
+          if-no-files-found: error

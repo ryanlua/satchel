@@ -9,7 +9,7 @@ Satchel uses [RunContext] to run anywhere, so you do not need to move it from [W
   [RunContext]: https://devforum.roblox.com/t/1938784
   [Workspace]: https://create.roblox.com/docs/reference/engine/classes/Workspace
   [ReplicatedStorage]: https://create.roblox.com/docs/reference/engine/classes/ReplicatedStorage
-  [v1.4.0]: https://github.com/RyanLua/Satchel/releases/tag/v1.4.0
+  [v1.4.0]: https://github.com/ryanlua/satchel/releases/tag/v1.4.0
 
 ## Creator Store <small>recommended</small> { #creator-store data-toc-label="Creator Store" }
 
@@ -29,9 +29,9 @@ The Creator Store is the easiest way to install Satchel. It is a one-click insta
 
 1. Open Roblox Studio and create a new place or open an existing place.
 
-1. From the [View] tab, open the [Toolbox] and select the **Inventory** tab.
+1. From Studio's Window menu or Home tab toolbar, open the [Toolbox] and select the **Inventory** tab.
 
-    ![View Tab Toolbox](https://prod.docsiteassets.roblox.com/assets/studio/general/View-Tab-Toolbox.png)
+    ![Toolbox](https://prod.docsiteassets.roblox.com/assets/studio/general/Toolbar-Toolbox.png)
 
     ![Inventory Tab](https://prod.docsiteassets.roblox.com/assets/studio/toolbox/Inventory-Tab.png)
 
@@ -42,7 +42,6 @@ The Creator Store is the easiest way to install Satchel. It is a one-click insta
 1. In the [Explorer] window, move the **Satchel** model into [`ReplicatedStorage`][ReplicatedStorage].
 
   [Creator Store]: https://create.roblox.com/store/asset/13947506401
-  [View]: https://create.roblox.com/docs/studio/view-tab
   [Toolbox]: https://create.roblox.com/docs/projects/assets/toolbox
   [Explorer]: https://create.roblox.com/docs/studio/explorer
 
@@ -64,7 +63,7 @@ The Creator Store is the easiest way to install Satchel. It is a one-click insta
 
 1. Select the **Satchel** model file you downloaded from GitHub.
 
-  [GitHub Releases]: https://github.com/RyanLua/Satchel/releases
+  [GitHub Releases]: https://github.com/ryanlua/satchel/releases
 
 ## Wally
 
