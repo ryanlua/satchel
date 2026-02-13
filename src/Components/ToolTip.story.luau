@@ -15,6 +15,10 @@ return {
 	story = function(props: Props)
 		return React.createElement(ToolTip, {
 			text = props.controls.text,
+		}, {
+			StyleLink = React.createElement("StyleLink", {
+				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
+			}),
 		})
 	end,
 }
