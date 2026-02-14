@@ -12,7 +12,6 @@ export type Props = {
 	unlocked: boolean?,
 	order: number?,
 	onActivated: (() -> ())?,
-	children: any?,
 }
 
 local function Slot(props: Props)
@@ -78,7 +77,7 @@ local function Slot(props: Props)
 		ToolTip = React.createElement(Tooltip, {
 			text = tooltipText,
 		}),
-	}, props.children)
+	})
 end
 
 return Slot

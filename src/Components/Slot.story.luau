@@ -31,10 +31,6 @@ return {
 			equipped = props.controls.equipped,
 			unlocked = props.controls.unlocked,
 			forceVisible = props.controls.forceNumberVisible,
-		}, {
-			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
-			}),
 		})
 	end,
 }

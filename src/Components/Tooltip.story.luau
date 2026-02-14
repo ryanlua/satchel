@@ -16,10 +16,6 @@ return {
 	story = function(props: Props)
 		return React.createElement(Tooltip, {
 			text = props.controls.text,
-		}, {
-			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
-			}),
 		})
 	end,
 }
