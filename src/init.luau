@@ -7,13 +7,13 @@
 ]]
 
 local ContextActionService = game:GetService("ContextActionService")
+local GuiService = game:GetService("GuiService")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local StarterGui = game:GetService("StarterGui")
 local TextChatService = game:GetService("TextChatService")
 local UserInputService = game:GetService("UserInputService")
-local StarterGui = game:GetService("StarterGui")
-local GuiService = game:GetService("GuiService")
-local RunService = game:GetService("RunService")
 local VRService = game:GetService("VRService")
-local Players = game:GetService("Players")
 local PlayerGui: Instance = Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local BackpackScript = {}
