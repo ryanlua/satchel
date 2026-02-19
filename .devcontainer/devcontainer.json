@@ -6,10 +6,7 @@
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
 	"features": {
-		"ghcr.io/ryanlua/features/rojo:0.2.1": {
-			"version": "latest",
-			"toolchainManager": "rokit"
-		},
+		"ghcr.io/ryanlua/features/rojo:0.2.1": {},
 		"ghcr.io/devcontainers/features/python:1": {}
 	},
 
