@@ -1,3 +1,5 @@
+--!strict
+
 local React = require(script.Parent.Parent.Parent.react)
 local ReactRoblox = require(script.Parent.Parent.Parent["react-roblox"])
 

@@ -1,3 +1,5 @@
+--!strict
+
 local React = require(script.Parent.Parent.Parent.react)
 
 local Tooltip = require(script.Parent.Tooltip)

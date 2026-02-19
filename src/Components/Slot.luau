@@ -1,3 +1,5 @@
+--!strict
+
 local UserInputService = game:GetService("UserInputService")
 
 local React = require(script.Parent.Parent.Parent.react)
