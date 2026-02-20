@@ -1,0 +1,511 @@
+{
+  "ClassName": "StyleSheet",
+  "Properties": {},
+  "Children": [
+    {
+      "Name": ".Hotbar",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 5,
+        "Selector": ".Hotbar"
+      },
+      "Children": [
+        {
+          "Name": "::UIListLayout",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": "::UIListLayout"
+          }
+        }
+      ]
+    },
+    {
+      "Name": ".Hints",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 6,
+        "Selector": ".Hints"
+      },
+      "Children": [
+        {
+          "Name": "::UIListLayout",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": "::UIListLayout"
+          }
+        }
+      ]
+    },
+    {
+      "Name": ".Backpack",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 8,
+        "Selector": ".Backpack"
+      },
+      "Children": [
+        {
+          "Name": "::UIPadding",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 2,
+            "Selector": "::UIPadding"
+          }
+        },
+        {
+          "Name": "::UIListLayout",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": "::UIListLayout"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ImageLabel",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 5,
+        "Selector": "ImageLabel"
+      },
+      "Children": [
+        {
+          "Name": ".HintSlot",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": ".HintSlot"
+          },
+          "Children": [
+            {
+              "Name": "::UIAspectRatioConstraint",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 1,
+                "Selector": "::UIAspectRatioConstraint"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Derive from DefaultTheme",
+      "ClassName": "StyleDerive",
+      "Properties": {}
+    },
+    {
+      "Name": "TextBox",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 7,
+        "Selector": "TextBox"
+      },
+      "Children": [
+        {
+          "Name": ".SearchBar",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 2,
+            "Selector": ".SearchBar"
+          },
+          "Children": [
+            {
+              "Name": "::UIPadding",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 1,
+                "Selector": "::UIPadding"
+              }
+            },
+            {
+              "Name": ">ImageButton",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 3,
+                "Selector": ">ImageButton"
+              },
+              "Children": [
+                {
+                  "Name": "::UIAspectRatioConstraint",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 1,
+                    "Selector": "::UIAspectRatioConstraint"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "ScrollingFrame",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 11,
+        "Selector": "ScrollingFrame"
+      }
+    },
+    {
+      "Name": ".Surface,.Hints,.Inventory",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 3,
+        "Selector": ".Surface,.Hints,.Inventory"
+      },
+      "Children": [
+        {
+          "Name": "::UIPadding",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 2,
+            "Selector": "::UIPadding"
+          }
+        },
+        {
+          "Name": "::UICorner",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": "::UICorner"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ImageButton",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 6,
+        "Selector": "ImageButton"
+      }
+    },
+    {
+      "Name": ".Inventory",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 7,
+        "Selector": ".Inventory"
+      },
+      "Children": [
+        {
+          "Name": ">ScrollingFrame",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": ">ScrollingFrame"
+          },
+          "Children": [
+            {
+              "Name": "::UIListLayout",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 2,
+                "Selector": "::UIListLayout"
+              }
+            }
+          ]
+        },
+        {
+          "Name": "::UIListLayout",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": "::UIListLayout"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Frame",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 12,
+        "Selector": "Frame"
+      },
+      "Children": [
+        {
+          "Name": ".Hint",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 2,
+            "Selector": ".Hint"
+          },
+          "Children": [
+            {
+              "Name": ">TextLabel",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 3,
+                "Selector": ">TextLabel"
+              }
+            },
+            {
+              "Name": ">ImageLabel",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 4,
+                "Selector": ">ImageLabel"
+              },
+              "Children": [
+                {
+                  "Name": "::UIAspectRatioConstraint",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 1,
+                    "Selector": "::UIAspectRatioConstraint"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "TextLabel",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 10,
+        "Selector": "TextLabel"
+      },
+      "Children": [
+        {
+          "Name": ".Tooltip",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 9,
+            "Selector": ".Tooltip"
+          },
+          "Children": [
+            {
+              "Name": "::UIPadding",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 2,
+                "Selector": "::UIPadding"
+              }
+            },
+            {
+              "Name": "::UICorner",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 1,
+                "Selector": "::UICorner"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": ".Container,.SearchBar",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 3,
+        "Selector": ".Container,.SearchBar"
+      },
+      "Children": [
+        {
+          "Name": "::UIStroke",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 2,
+            "Selector": "::UIStroke"
+          }
+        },
+        {
+          "Name": "::UIPadding",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 2,
+            "Selector": "::UIPadding"
+          }
+        },
+        {
+          "Name": "::UICorner",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 1,
+            "Selector": "::UICorner"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "TextButton",
+      "ClassName": "StyleRule",
+      "Properties": {
+        "Priority": 8,
+        "Selector": "TextButton"
+      },
+      "Children": [
+        {
+          "Name": ".Slot",
+          "ClassName": "StyleRule",
+          "Properties": {
+            "Priority": 2,
+            "Selector": ".Slot"
+          },
+          "Children": [
+            {
+              "Name": ">ImageLabel",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 7,
+                "Selector": ">ImageLabel"
+              },
+              "Children": [
+                {
+                  "Name": "::UICorner",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 1,
+                    "Selector": "::UICorner"
+                  }
+                }
+              ]
+            },
+            {
+              "Name": ":Press",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 9,
+                "Selector": ":Press"
+              },
+              "Children": [
+                {
+                  "Name": ">.Tooltip",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 2,
+                    "Selector": ">.Tooltip"
+                  }
+                }
+              ]
+            },
+            {
+              "Name": "::UIPadding",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 5,
+                "Selector": "::UIPadding"
+              }
+            },
+            {
+              "Name": ".Unlocked",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 11,
+                "Selector": ".Unlocked"
+              },
+              "Children": [
+                {
+                  "Name": ":Press",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 9,
+                    "Selector": ":Press"
+                  },
+                  "Children": [
+                    {
+                      "Name": "::UIStroke",
+                      "ClassName": "StyleRule",
+                      "Properties": {
+                        "Priority": 1,
+                        "Selector": "::UIStroke"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Name": ":Hover",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 8,
+                "Selector": ":Hover"
+              },
+              "Children": [
+                {
+                  "Name": ">.Tooltip",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 1,
+                    "Selector": ">.Tooltip"
+                  }
+                }
+              ]
+            },
+            {
+              "Name": ">TextLabel",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 4,
+                "Selector": ">TextLabel"
+              },
+              "Children": [
+                {
+                  "Name": ".Tooltip",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 9,
+                    "Selector": ".Tooltip"
+                  }
+                },
+                {
+                  "Name": ".SlotNumber",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 1,
+                    "Selector": ".SlotNumber"
+                  }
+                }
+              ]
+            },
+            {
+              "Name": "::UICorner",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 1,
+                "Selector": "::UICorner"
+              }
+            },
+            {
+              "Name": ".Equipped",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 10,
+                "Selector": ".Equipped"
+              },
+              "Children": [
+                {
+                  "Name": "::UIStroke",
+                  "ClassName": "StyleRule",
+                  "Properties": {
+                    "Priority": 1,
+                    "Selector": "::UIStroke"
+                  }
+                }
+              ]
+            },
+            {
+              "Name": "::UITextSizeConstraint",
+              "ClassName": "StyleRule",
+              "Properties": {
+                "Priority": 6,
+                "Selector": "::UITextSizeConstraint"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

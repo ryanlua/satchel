@@ -1,0 +1,106 @@
+{
+  "ClassName": "StyleSheet",
+  "Attributes": {
+    "ContainerBackgroundColor": "$BackgroundColor",
+    "ContainerBackgroundTransparency": 0.2,
+    "ContainerCornerRadius": "$SmallCornerRadius",
+    "ContainerStrokeColor": [
+      1,
+      1,
+      1
+    ],
+    "ContainerStrokeTransparency": 0.8,
+    "HintFontFace": "$FontFace",
+    "HintTextColor": "$TextColor",
+    "HintTextSize": "$TextSize",
+    "SearchFontFace": "$FontFace",
+    "SearchPadding": {
+      "UDim": [
+        0,
+        8
+      ]
+    },
+    "SearchPlaceholderColor": [
+      0.698039,
+      0.698039,
+      0.698039
+    ],
+    "SearchTextColor": "$TextColor",
+    "SearchTextSize": "$TextSize",
+    "SearchTextStrokeTransparency": "$TextStrokeTransparency",
+    "SlotBackgroundColor": [
+      0.098039,
+      0.105882,
+      0.113725
+    ],
+    "SlotBackgroundTransparency": 0.3,
+    "SlotCornerRadius": "$SmallCornerRadius",
+    "SlotEquipStrokeColor": [
+      1,
+      1,
+      1
+    ],
+    "SlotEquipStrokeThickness": 4,
+    "SlotFontFace": "$FontFace",
+    "SlotIconCornerRadius": {
+      "UDim": [
+        0,
+        0
+      ]
+    },
+    "SlotNumberFontFace": "$FontFace",
+    "SlotNumberStrokeColor": "$TextStrokeColor",
+    "SlotNumberStrokeTransparency": "$TextStrokeTransparency",
+    "SlotNumberTextColor": "$TextColor",
+    "SlotNumberTextSize": "$SmallTextSize",
+    "SlotPadding": {
+      "UDim": [
+        0,
+        5
+      ]
+    },
+    "SlotPressStrokeColor": [
+      1,
+      1,
+      1
+    ],
+    "SlotTextColor": "$TextColor",
+    "SlotTextSize": "$TextSize",
+    "SlotTextStrokeColor": "$TextStrokeColor",
+    "SlotTextStrokeTransparency": "$TextStrokeTransparency",
+    "SlotUnlockBackgroundColor": "$SlotBackgroundColor",
+    "StyleCategory": "Tokens",
+    "SurfaceBackgroundColor": "$BackgroundColor",
+    "SurfaceBackgroundTransparency": 0.3,
+    "SurfaceCornerRadius": "$CornerRadius",
+    "SurfacePadding": {
+      "UDim": [
+        0,
+        5
+      ]
+    },
+    "ToolTipBackgroundColor": [
+      0.149019,
+      0.156862,
+      0.188235
+    ],
+    "ToolTipBackgroundTranparency": 0,
+    "ToolTipCornerRadius": "$SmallCornerRadius",
+    "ToolTipFontFace": "$FontFace",
+    "ToolTipPadding": {
+      "UDim": [
+        0,
+        4
+      ]
+    },
+    "ToolTipTextColor": "$TextColor",
+    "ToolTipTextSize": "$SmallTextSize"
+  },
+  "Children": [
+    {
+      "Name": "Derive from DesignTokens",
+      "ClassName": "StyleDerive",
+      "Properties": {}
+    }
+  ]
+}

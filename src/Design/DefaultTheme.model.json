@@ -1,0 +1,13 @@
+{
+  "ClassName": "StyleSheet",
+  "Attributes": {
+    "StyleCategory": "Themes"
+  },
+  "Children": [
+    {
+      "Name": "Derive from BaseTokens",
+      "ClassName": "StyleDerive",
+      "Properties": {}
+    }
+  ]
+}
