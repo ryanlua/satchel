@@ -98,7 +98,7 @@
   },
   "Children": [
     {
-      "Name": "Derive from DesignTokens",
+      "Name": "Derive from ThemeTokens",
       "ClassName": "StyleDerive",
       "Properties": {}
     }
