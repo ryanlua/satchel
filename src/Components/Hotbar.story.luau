@@ -32,9 +32,6 @@ return {
 				slotNumber = 1,
 				order = 1,
 			}),
-			StyleLink = React.createElement("StyleLink", {
-				StyleSheet = script.Parent.Parent.StyleSheets.SatchelStyleSheet,
-			}),
 		})
 
 		return component
