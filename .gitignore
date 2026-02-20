@@ -4,6 +4,7 @@ sourcemap.json
 *.rbxlx
 *.rbxm
 *.rbxmx
+!src/
 
 # Wally
 Packages/
