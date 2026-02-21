@@ -17,9 +17,10 @@ export type Props = {
 }
 
 local function Slot(props: Props)
-	local toolName = props.tool and props.tool.Name
-	local toolImage = props.tool and props.tool.TextureId
-	local tooltipText = props.tool and props.tool.ToolTip
+	local tool = props.tool
+	local toolName = tool and tool.Name
+	local toolImage = tool and tool.TextureId
+	local tooltipText = tool and tool.ToolTip
 
 	-- Only show slot number if keyboard and mouse is preferred or forced visible
 	local isKeyboardAndMousePreferred, setIsKeyboardAndMousePreferred =
