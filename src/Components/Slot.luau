@@ -31,7 +31,7 @@ local function Slot(props: Props)
 	end
 
 	-- Only show slot number if keyboard and mouse is preferred or forced visible
-	local isKeyboardAndMousePreferred, setIsKeyboardAndMousePreferred =
+	local isKeyboardPreferred, setIsKeyboardPreferred =
 		React.useState(UserInputService.PreferredInput == Enum.PreferredInput.KeyboardAndMouse)
 
 	React.useEffect(function()
@@ -39,9 +39,9 @@ local function Slot(props: Props)
 			local preferredInput = UserInputService.PreferredInput
 
 			if preferredInput == Enum.PreferredInput.KeyboardAndMouse then
-				setIsKeyboardAndMousePreferred(true)
+				setIsKeyboardPreferred(true)
 			else
-				setIsKeyboardAndMousePreferred(false)
+				setIsKeyboardPreferred(false)
 			end
 		end
 
@@ -54,7 +54,7 @@ local function Slot(props: Props)
 		end
 	end, {})
 
-	local hintVisible = props.forceHintVisible or isKeyboardAndMousePreferred
+	local hintVisible = props.forceHintVisible or isKeyboardPreferred
 
 	-- Generate tags based on state
 	local tags = "Slot"
