@@ -15,7 +15,7 @@ return {
 	controls = controls,
 	story = function(props: Props)
 		return React.createElement(HotbarHint, {
-			key = Enum.KeyCode.ButtonX,
+			keyCode = Enum.KeyCode.ButtonX,
 			forceVisible = props.controls.forceVisible,
 		})
 	end,

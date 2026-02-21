@@ -15,12 +15,12 @@ local function Hotbar(props: Props)
 	local children = {
 		-- Create default hints for equipping between hotbar slots
 		SlotLeftHint = React.createElement(HotbarHint, {
-			key = Enum.KeyCode.ButtonL1,
+			keyCode = Enum.KeyCode.ButtonL1,
 			forceVisible = props.forceHintVisible,
 			order = -1,
 		}),
 		SlotRightHint = React.createElement(HotbarHint, {
-			key = Enum.KeyCode.ButtonR1,
+			keyCode = Enum.KeyCode.ButtonR1,
 			forceVisible = props.forceHintVisible,
 			order = 100,
 		}),
