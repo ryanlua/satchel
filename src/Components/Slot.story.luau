@@ -9,7 +9,7 @@ local controls = {
 	tooltipText = "A classic sword",
 	equipped = false,
 	unlocked = false,
-	forceNumberVisible = true,
+	forceHintVisible = true,
 }
 
 type Props = {
@@ -30,7 +30,7 @@ return {
 			slotNumber = props.controls.slotNumber,
 			equipped = props.controls.equipped,
 			unlocked = props.controls.unlocked,
-			forceVisible = props.controls.forceNumberVisible,
+			forceHintVisible = props.controls.forceHintVisible,
 		})
 	end,
 }

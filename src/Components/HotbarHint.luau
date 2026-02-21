@@ -35,7 +35,7 @@ local function HotbarHint(props: Props)
 		end
 	end, {})
 
-	local visible = props.forceVisible == true or isGamepadPreferred
+	local visible = props.forceVisible or isGamepadPreferred
 
 	return React.createElement("ImageLabel", {
 		Image = UserInputService:GetImageForKeyCode(props.hintKey),

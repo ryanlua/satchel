@@ -10,7 +10,7 @@ export type Props = {
 	tool: Tool?,
 	slotNumber: number?,
 	equipped: boolean?,
-	forceVisible: boolean?,
+	forceHintVisible: boolean?,
 	unlocked: boolean?,
 	order: number?,
 	onActivated: (() -> ())?,
@@ -21,7 +21,7 @@ local function Slot(props: Props)
 	local toolImage = props.tool and props.tool.TextureId
 	local tooltipText = props.tool and props.tool.ToolTip
 
-	-- Only show hint if keyboard and mouse is preferred or forced visible
+	-- Only show slot number if keyboard and mouse is preferred or forced visible
 	local isKeyboardAndMousePreferred, setIsKeyboardAndMousePreferred =
 		React.useState(UserInputService.PreferredInput == Enum.PreferredInput.KeyboardAndMouse)
 
@@ -45,7 +45,7 @@ local function Slot(props: Props)
 		end
 	end, {})
 
-	local visible = props.forceVisible == true or isKeyboardAndMousePreferred
+	local hintVisible = props.forceHintVisible or isKeyboardAndMousePreferred
 
 	-- Generate tags based on state
 	local tags = "Slot"
@@ -65,12 +65,12 @@ local function Slot(props: Props)
 	return React.createElement("TextButton", {
 		Text = slotText,
 		LayoutOrder = props.order,
-		Visible = visible,
 		[React.Tag] = tags,
 		[React.Event.Activated] = props.onActivated,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
 			Text = props.slotNumber or 0,
+			Visible = hintVisible,
 			[React.Tag] = "SlotNumber",
 		}),
 		TextureIcon = React.createElement("ImageLabel", {
