@@ -8,10 +8,9 @@ local Tooltip = require(script.Parent.Tooltip)
 
 export type Props = {
 	tool: Tool?,
-	slotNumber: number?,
 	equipped: boolean?,
-	forceHintVisible: boolean?,
 	unlocked: boolean?,
+	forceHintVisible: boolean?,
 	order: number?,
 	onActivated: (() -> ())?,
 }
@@ -21,6 +20,15 @@ local function Slot(props: Props)
 	local toolName = tool and tool.Name
 	local toolImage = tool and tool.TextureId
 	local tooltipText = tool and tool.ToolTip
+
+	-- Only show numbers 1-10 for hints and show 0 for the 10th slot
+	local order = props.order or 1
+	local slotNumber = ""
+	if order >= 1 and order < 10 then
+		slotNumber = tostring(order)
+	elseif order == 10 then
+		slotNumber = "0"
+	end
 
 	-- Only show slot number if keyboard and mouse is preferred or forced visible
 	local isKeyboardAndMousePreferred, setIsKeyboardAndMousePreferred =
@@ -70,7 +78,7 @@ local function Slot(props: Props)
 		[React.Event.Activated] = props.onActivated,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
-			Text = props.slotNumber or 0,
+			Text = slotNumber,
 			Visible = hintVisible,
 			[React.Tag] = "SlotNumber",
 		}),

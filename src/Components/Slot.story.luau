@@ -4,11 +4,11 @@ local Slot = require(script.Parent.Slot)
 
 local controls = {
 	toolName = "Sword",
-	slotNumber = 9,
 	toolImage = "rbxasset://Textures/Sword128.png",
 	tooltipText = "A classic sword",
 	equipped = false,
 	unlocked = false,
+	order = 1,
 	forceHintVisible = true,
 }
 
@@ -27,9 +27,9 @@ return {
 
 		return React.createElement(Slot, {
 			tool = Tool,
-			slotNumber = props.controls.slotNumber,
 			equipped = props.controls.equipped,
 			unlocked = props.controls.unlocked,
+			order = props.controls.order,
 			forceHintVisible = props.controls.forceHintVisible,
 		})
 	end,
