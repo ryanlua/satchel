@@ -3,7 +3,8 @@ local React = require(script.Parent.Parent.Parent.react)
 local Hotbar = require(script.Parent.Hotbar)
 
 local controls = {
-	forceHintVisible = true,
+	forceGamepadHintVisible = true,
+	forceKeyboardHintVisible = true,
 	slots = 10,
 	unlocked = false,
 }
@@ -17,7 +18,8 @@ return {
 	controls = controls,
 	story = function(props: Props)
 		return React.createElement(Hotbar, {
-			forceHintVisible = props.controls.forceHintVisible,
+			forceGamepadHintVisible = props.controls.forceGamepadHintVisible,
+			forceKeyboardHintVisible = props.controls.forceKeyboardHintVisible,
 			slots = props.controls.slots,
 			unlocked = props.controls.unlocked,
 		})

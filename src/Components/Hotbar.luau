@@ -4,7 +4,8 @@ local HotbarHint = require(script.Parent.HotbarHint)
 local Slot = require(script.Parent.Slot)
 
 export type Props = {
-	forceHintVisible: boolean?,
+	forceGamepadHintVisible: boolean?,
+	forceKeyboardHintVisible: boolean?,
 	slots: number?,
 	unlocked: boolean?,
 }
@@ -16,12 +17,12 @@ local function Hotbar(props: Props)
 		-- Create default hints for equipping between hotbar slots
 		SlotLeftHint = React.createElement(HotbarHint, {
 			keyCode = Enum.KeyCode.ButtonL1,
-			forceVisible = props.forceHintVisible,
+			forceVisible = props.forceGamepadHintVisible,
 			order = -1,
 		}),
 		SlotRightHint = React.createElement(HotbarHint, {
 			keyCode = Enum.KeyCode.ButtonR1,
-			forceVisible = props.forceHintVisible,
+			forceVisible = props.forceGamepadHintVisible,
 			order = 100,
 		}),
 	}
@@ -29,7 +30,7 @@ local function Hotbar(props: Props)
 	for slotNumber = 1, slotCount do
 		children[slotNumber] = React.createElement(Slot, {
 			order = slotNumber,
-			forceNumberVisible = props.forceHintVisible,
+			forceNumberVisible = props.forceKeyboardHintVisible,
 			unlocked = props.unlocked,
 		})
 	end
