@@ -14,11 +14,14 @@ local handle = Instance.new("ScreenGui")
 handle.Name = "SatchelGui"
 handle.Parent = playerGui
 
-local styleLink = Instance.new("StyleLink")
-styleLink.StyleSheet = script.Design.SatchelStyleSheet
-styleLink.Parent = handle
-
 local root = ReactRoblox.createRoot(handle)
-root:render(React.createElement(Hotbar), { opened = true })
+root:render(React.createElement(React.Fragment, nil, {
+	StyleLink = React.createElement("StyleLink", {
+		StyleSheet = script.Design.SatchelStyleSheet,
+	}),
+	Hotbar = React.createElement(Hotbar, {
+		opened = true,
+	}),
+}))
 
 return {}
