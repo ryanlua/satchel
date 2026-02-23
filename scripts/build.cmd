@@ -14,10 +14,10 @@ mkdir "%BUILD_DIR%"
 cd "%BUILD_DIR%"
 
 REM Build .rbxm file
-rojo build --output "%BUILD_DIR%\%OUTPUT_NAME%.rbxm" ..\%BUILD_PROJECT%
+rojo build --output "%OUTPUT_NAME%.rbxm" ..\%BUILD_PROJECT%
 
 REM Build .rbxmx file
-rojo build --output "%BUILD_DIR%\%OUTPUT_NAME%.rbxmx" ..\%BUILD_PROJECT%
+rojo build --output "%OUTPUT_NAME%.rbxmx" ..\%BUILD_PROJECT%
 
 echo Build completed successfully!
 cd ..
