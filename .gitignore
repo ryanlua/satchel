@@ -1,10 +1,5 @@
 # Rojo
 sourcemap.json
-*.rbxl
-*.rbxlx
-*.rbxm
-*.rbxmx
-!src/
 
 # Wally
 Packages/
@@ -12,3 +7,6 @@ DevPackages/
 
 # MkDocs documentation
 site/
+
+# Builds
+builds/
