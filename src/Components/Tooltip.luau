@@ -9,7 +9,7 @@ export type Props = {
 local function Tooltip(props: Props)
 	-- Hide tooltip if there is no text
 	if not props.text or props.text == "" then
-		return
+		return nil
 	end
 
 	return React.createElement("TextLabel", {
