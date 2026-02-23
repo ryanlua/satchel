@@ -5,7 +5,7 @@ local Players = game:GetService("Players")
 local React = require(script.Parent.react)
 local ReactRoblox = require(script.Parent["react-roblox"])
 
-local Hotbar = require(script.Components.Hotbar)
+local Backpack = require(script.Components.Backpack)
 
 local player = Players.LocalPlayer :: Player
 local playerGui = player.PlayerGui
@@ -19,7 +19,7 @@ root:render(React.createElement(React.Fragment, nil, {
 	StyleLink = React.createElement("StyleLink", {
 		StyleSheet = script.Design.SatchelStyleSheet,
 	}),
-	Hotbar = React.createElement(Hotbar, {
+	Backpack = React.createElement(Backpack, {
 		opened = true,
 	}),
 }))
