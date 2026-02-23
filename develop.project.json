@@ -5,7 +5,7 @@
     "$className": "DataModel",
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
-      "SatchelLoader": {
+      "Satchel": {
         "$path": "models/Satchel"
       }
     }

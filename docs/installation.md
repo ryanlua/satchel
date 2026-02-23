@@ -69,13 +69,6 @@ The Creator Store is the easiest way to install Satchel. It is a one-click insta
 
 You are expected to already have Wally setup in your Rojo project and basic knowledge on how to use Wally packages.
 
-!!! warning
-
-    Wally does not include the loader script so you need to [`#!lua require()`][require] Satchel to run:
-    ``` lua title="Satchel Loader"
-    require(script.Satchel)
-    ```
-
 1. Open your Rojo project in the code editor of your choice.
 
 1. In the `wally.toml` file, add the [latest Wally version for Satchel][Wally]. Your dependencies should look similar to this:
