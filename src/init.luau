@@ -2,10 +2,10 @@
 
 local Players = game:GetService("Players")
 
-local React = require("./react")
-local ReactRoblox = require("./react-roblox")
+local React = require(script.Parent.react)
+local ReactRoblox = require(script.Parent["react-roblox"])
 
-local Hotbar = require("@self/Components/Hotbar")
+local Hotbar = require(script.Components.Hotbar)
 
 local player = Players.LocalPlayer :: Player
 local playerGui = player.PlayerGui
