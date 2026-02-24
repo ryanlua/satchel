@@ -5,6 +5,9 @@ on:
     tags:
       - "v*.*.*"
 
+env:
+  VERSION: 1.x
+
 permissions:
   contents: write
 
@@ -16,18 +19,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-      - name: Setup Rokit
+      - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.1.2
 
-      - name: Setup Wally
+      - name: Install Wally packages
         run: |
           wally install
-          rojo sourcemap develop.project.json --output sourcemap.json
+          rojo sourcemap $BUILD_PROJECT --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
 
-      - name: Build using Rojo
+      - name: Build Rojo project
         run: |
           mkdir builds
           rojo build --output builds/$OUTPUT_NAME.rbxm $BUILD_PROJECT
@@ -44,9 +48,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-      - name: Setup Rokit
+      - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.1.2
 
       - name: Setup Wally
