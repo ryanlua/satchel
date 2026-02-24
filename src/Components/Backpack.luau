@@ -13,7 +13,9 @@ export type Props = {
 }
 
 local function Backpack(props: Props)
-	return React.createElement("Frame", { [React.Tag] = "Backpack" }, {
+	return React.createElement("Frame", {
+		[React.Tag] = "Backpack",
+	}, {
 		Hotbar = React.createElement(Hotbar, {
 			forceGamepadHintVisible = props.forceGamepadHintVisible,
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
