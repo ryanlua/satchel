@@ -13,6 +13,9 @@ on:
 permissions:
   contents: write
 
+env:
+  VERSION: 1.x
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
