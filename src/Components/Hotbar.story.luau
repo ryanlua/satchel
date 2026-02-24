@@ -21,7 +21,7 @@ type Props = {
 }
 
 return {
-	summary = "Hotbar component that holds hotbar slots and hints",
+	summary = "Hotbar on the bottom of the screen that shows equipped tools and hints for equipping",
 	controls = controls,
 	story = function(props: Props)
 		local tool = Instance.new("Tool")

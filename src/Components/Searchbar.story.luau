@@ -5,7 +5,7 @@ local React = require(script.Parent.Parent.Parent.react)
 local Searchbar = require(script.Parent.Searchbar)
 
 return {
-	summary = "Searchbar for searching items in the inventory",
+	summary = "Search for items in the inventory",
 	story = function()
 		return React.createElement(Searchbar, {
 			size = UDim2.fromOffset(190, 30),

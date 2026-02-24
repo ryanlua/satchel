@@ -13,7 +13,8 @@ type Props = {
 }
 
 return {
-	summary = "Hint for switching to a hotbar slot, displayed when gamepad is preferred or forced visible",
+	name = "Hotbar Hint",
+	summary = "Hint shown in the hotbar to show how to equip slots",
 	controls = controls,
 	story = function(props: Props)
 		return React.createElement(HotbarHint, {

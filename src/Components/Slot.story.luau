@@ -19,7 +19,7 @@ type Props = {
 }
 
 return {
-	summary = "Text button that can hold a tool",
+	summary = "Slot representing a single item in the hotbar or inventory, showing the tool and hints for equipping",
 	controls = controls,
 	story = function(props: Props)
 		local Tool = Instance.new("Tool")
