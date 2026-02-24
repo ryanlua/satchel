@@ -530,11 +530,11 @@ AAAABAAAAFNpemUKAAAAACUAAAAAAAAAJQAAAA==]]></BinaryString>
 FgAAAEJhY2tncm91bmRUcmFuc3BhcmVuY3kCIAAAACRDb250YWluZXJCYWNrZ3JvdW5kVHJh
 bnNwYXJlbmN5]]></BinaryString>
 					<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
-					<string name="Selector">.Container,.SearchBar</string>
+					<string name="Selector">.Container,.Searchbar</string>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
-					<string name="Name">.Container,.SearchBar</string>
+					<string name="Name">.Container,.Searchbar</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -686,11 +686,11 @@ b2xvcjMCEAAAACRTZWFyY2hUZXh0Q29sb3IIAAAAVGV4dFNpemUCDwAAACRTZWFyY2hUZXh0
 U2l6ZRYAAABUZXh0U3Ryb2tlVHJhbnNwYXJlbmN5Ah0AAAAkU2VhcmNoVGV4dFN0cm9rZVRy
 YW5zcGFyZW5jeQ4AAABUZXh0WEFsaWdubWVudBUOAAAAVGV4dFhBbGlnbm1lbnQAAAAA]]></BinaryString>
 						<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
-						<string name="Selector">.SearchBar</string>
+						<string name="Selector">.Searchbar</string>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 						<bool name="DefinesCapabilities">false</bool>
-						<string name="Name">.SearchBar</string>
+						<string name="Name">.Searchbar</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
