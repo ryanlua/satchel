@@ -10,7 +10,6 @@ export type Props = {
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
 	tools: { Tool? }?,
-	unlocked: boolean?,
 	opened: boolean?,
 }
 
@@ -21,7 +20,7 @@ local function Hotbar(props: Props)
 
 	for slotNumber = 1, slotCount do
 		local tool = props.tools and props.tools[slotNumber]
-		local slotUnlocked = props.unlocked and tool ~= nil
+		local slotUnlocked = props.opened and tool ~= nil
 
 		-- Only show slots if the hotbar is opened or if there is a tool in the slot
 		if props.opened or tool then
