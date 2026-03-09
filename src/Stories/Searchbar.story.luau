@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local Searchbar = require(script.Parent.Searchbar)
+local Searchbar = require(script.Parent.Parent.Components.Searchbar)
 
 return {
 	summary = "Search for items in the inventory",

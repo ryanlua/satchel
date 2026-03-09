@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local HotbarHint = require(script.Parent.HotbarHint)
+local HotbarHint = require(script.Parent.Parent.Components.HotbarHint)
 
 local controls = {
 	forceVisible = true,

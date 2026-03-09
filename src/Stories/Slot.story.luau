@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local Slot = require(script.Parent.Slot)
+local Slot = require(script.Parent.Parent.Components.Slot)
 
 local controls = {
 	toolName = "Sword",
