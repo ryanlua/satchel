@@ -12,7 +12,6 @@ local controls = {
 	toolImage = "rbxasset://Textures/Sword128.png",
 	tooltipText = "A classic sword",
 	toolSlot = 1,
-	unlocked = false,
 	opened = true,
 }
 
@@ -37,7 +36,6 @@ return {
 			forceKeyboardHintVisible = props.controls.forceKeyboardHintVisible,
 			slots = props.controls.slots,
 			tools = tools,
-			unlocked = props.controls.unlocked,
 			opened = props.controls.opened,
 		})
 	end,
