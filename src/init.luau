@@ -1,27 +1,21 @@
 --!strict
 
-local Players = game:GetService("Players")
+local bindableEvents = script.BindableEvents
 
-local React = require(script.Parent.react)
-local ReactRoblox = require(script.Parent["react-roblox"])
+return {
+	-- Functions
+	setEnabled = require(script.Api.setEnabled),
+	getTopbarIcon = require(script.Api.getTopbarIcon),
+	openInventory = require(script.Api.openInventory),
+	closeInventory = require(script.Api.closeInventory),
+	setInventoryVisible = require(script.Api.setInventoryVisible),
 
-local Backpack = require(script.Components.Backpack)
-
-local player = Players.LocalPlayer :: Player
-local playerGui = player.PlayerGui
-
-local handle = Instance.new("ScreenGui")
-handle.Name = "SatchelGui"
-handle.Parent = playerGui
-
-local root = ReactRoblox.createRoot(handle)
-root:render(React.createElement(React.Fragment, nil, {
-	StyleLink = React.createElement("StyleLink", {
-		StyleSheet = script.Design.SatchelStyleSheet,
-	}),
-	Backpack = React.createElement(Backpack, {
-		opened = true,
-	}),
-}))
-
-return {}
+	-- Events
+	backpackItemAdded = bindableEvents.BackpackItemAdded.Event,
+	backpackItemRemoved = bindableEvents.BackpackItemRemoved.Event,
+	backpackItemEquipped = bindableEvents.BackpackItemEquipped.Event,
+	backpackItemUnequipped = bindableEvents.BackpackItemUnequipped.Event,
+	inventoryOpened = bindableEvents.InventoryOpened.Event,
+	inventoryClosed = bindableEvents.InventoryClosed.Event,
+	inventoryToggled = bindableEvents.InventoryToggled.Event,
+}
