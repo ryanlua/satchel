@@ -8,7 +8,7 @@ return {
 	getTopbarIcon = require(script.Api.getTopbarIcon),
 	openInventory = require(script.Api.openInventory),
 	closeInventory = require(script.Api.closeInventory),
-	setInventoryVisible = require(script.Api.setInventoryVisible),
+	isInventoryOpen = require(script.Api.isInventoryOpen),
 
 	-- Events
 	backpackItemAdded = bindableEvents.BackpackItemAdded.Event,
@@ -17,5 +17,4 @@ return {
 	backpackItemUnequipped = bindableEvents.BackpackItemUnequipped.Event,
 	inventoryOpened = bindableEvents.InventoryOpened.Event,
 	inventoryClosed = bindableEvents.InventoryClosed.Event,
-	inventoryToggled = bindableEvents.InventoryToggled.Event,
 }
