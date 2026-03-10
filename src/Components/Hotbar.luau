@@ -27,7 +27,7 @@ local function Hotbar(props: Props)
 			children[slotNumber] = React.createElement(Slot, {
 				order = slotNumber,
 				tool = tool,
-				forceNumberVisible = props.forceKeyboardHintVisible,
+				forceHintVisible = props.forceKeyboardHintVisible,
 				unlocked = slotUnlocked,
 			})
 		end
