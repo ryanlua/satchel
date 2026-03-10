@@ -12,7 +12,6 @@ export type Props = {
 	unlocked: boolean?,
 	forceHintVisible: boolean?,
 	order: number?,
-	onActivated: (() -> ())?,
 }
 
 local function Slot(props: Props)
@@ -75,7 +74,9 @@ local function Slot(props: Props)
 		Text = slotText,
 		LayoutOrder = props.order,
 		[React.Tag] = tags,
-		[React.Event.Activated] = props.onActivated,
+		[React.Event.Activated] = function()
+			print("Slot activated"))
+		end,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
 			Text = slotNumber,
