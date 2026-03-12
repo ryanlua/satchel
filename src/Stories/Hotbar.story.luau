@@ -5,8 +5,7 @@ local React = require(script.Parent.Parent.Parent.react)
 local Hotbar = require(script.Parent.Parent.Components.Hotbar)
 
 local controls = {
-	forceGamepadHintVisible = true,
-	forceKeyboardHintVisible = true,
+	hintVisible = true,
 	slots = 10,
 	toolName = "Sword",
 	toolImage = "rbxasset://Textures/Sword128.png",
@@ -32,8 +31,7 @@ return {
 		tools[props.controls.toolSlot] = tool
 
 		return React.createElement(Hotbar, {
-			forceGamepadHintVisible = props.controls.forceGamepadHintVisible,
-			forceKeyboardHintVisible = props.controls.forceKeyboardHintVisible,
+			forceGamepadHintVisible = props.controls.hintVisible,
 			slots = props.controls.slots,
 			tools = tools,
 			opened = props.controls.opened,

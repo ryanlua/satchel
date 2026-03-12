@@ -5,12 +5,11 @@ local React = require(script.Parent.Parent.Parent.react)
 local Backpack = require(script.Parent.Parent.Components.Backpack)
 
 local controls = {
-	forceGamepadHintVisible = true,
-	forceKeyboardHintVisible = true,
+	hintVisible = true,
 	slots = 10,
 	toolName = "Sword",
 	toolImage = "rbxasset://Textures/Sword128.png",
-	tooltipText = "A classic sword",
+	toolTooltip = "A classic sword",
 	toolSlot = 1,
 	opened = false,
 }
@@ -26,11 +25,10 @@ return {
 		local Tool = Instance.new("Tool")
 		Tool.Name = props.controls.toolName
 		Tool.TextureId = props.controls.toolImage
-		Tool.ToolTip = props.controls.tooltipText
+		Tool.ToolTip = props.controls.toolTooltip
 
 		return React.createElement(Backpack, {
-			forceGamepadHintVisible = props.controls.forceGamepadHintVisible,
-			forceKeyboardHintVisible = props.controls.forceKeyboardHintVisible,
+			forceGamepadHintVisible = props.controls.hintVisible,
 			slots = props.controls.slots,
 			tools = { [props.controls.toolSlot] = Tool },
 			opened = props.controls.opened,
