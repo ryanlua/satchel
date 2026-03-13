@@ -619,16 +619,12 @@
 </figure>
 <h3 id="scripting">Scripting<a class="headerlink" href="#scripting" title="Permanent link">&para;</a></h3>
 <p>Satchel offers methods and events for scripting purposes. In the below code example we will use the <code>SetBackpackEnabled</code> method to disable the Satchel. The script expects the Satchel module to be in <a href="https://create.roblox.com/docs/reference/engine/classes/ReplicatedStorage"><code>ReplicatedStorage</code></a>.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Disable Backpack</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">ReplicatedStorage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">game</span><span class="p">:</span><span class="nf">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
+<div class="highlight"><span class="filename">Disable Backpack</span><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">ReplicatedStorage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">game</span><span class="p">:</span><span class="nf">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
 
 <span class="kd">local</span><span class="w"> </span><span class="nv">Satchel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="nv">ReplicatedStorage</span><span class="p">.</span><span class="py">Satchel</span><span class="p">)</span>
 
 <span class="nv">Satchel</span><span class="p">.</span><span class="nf">SetBackpackEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <p>For the full API reference, see <a href="../api-reference/">API Reference</a> for more details on attributes, methods, and events for Satchel and how to use Satchel to it's full potential.</p>
 
 
