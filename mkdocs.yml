@@ -3,7 +3,7 @@ site_url: https://satchel.luau.page/
 repo_name: ryanlua/satchel
 repo_url: https://github.com/ryanlua/satchel
 
-copyright: Copyright &copy; Ryan Luu
+copyright: Copyright 2026 &copy; Ryan Luu
 
 theme:
   name: material
@@ -32,6 +32,7 @@ theme:
     repo: fontawesome/brands/github
   favicon: assets/favicon.svg
   logo: assets/logo.svg
+  custom_dir: docs/overrides
 
 extra:
   version:

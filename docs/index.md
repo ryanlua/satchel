@@ -87,8 +87,14 @@ Special thanks for our sponsors for supporting Satchel and it's future developme
 
 <div class="mdx-premium" markdown>
 
-[![Do Big Studios](assets/sponsors/do-big-light.png#only-light){ style="height: 60px" }](https://dobig.com/){ target=_blank title="Do Big Studios" }
-[![Do Big Studios](assets/sponsors/do-big-dark.png#only-dark){ style="height: 60px" }](https://dobig.com/){ target=_blank title="Do Big Studios" }
+[![Do Big Studios](assets/sponsors/do-big-light.png#only-light){ style="height: 60px" }](https://dobig.com/){ target=_blank }
+[![Do Big Studios](assets/sponsors/do-big-dark.png#only-dark){ style="height: 60px" }](https://dobig.com/){ target=_blank }
+<br>
+Do Big Studios
+
+[![5KFubi](https://github.com/5KFubi.png){ style="height: 60px" }](https://github.com/5KFubi){ target=_blank }
+<br>
+5KFubi
 
 </div>
 
