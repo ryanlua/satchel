@@ -14,4 +14,4 @@ include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json", 
 [dependencies]
 react = "jsdotlua/react@17.2.1"
 react-roblox = "jsdotlua/react-roblox@17.2.1"
-topbarplus = "1foreverhd/topbarplus@3.4.0"
+topbarplus = "ryanlua/topbarplus@1.0.1"
