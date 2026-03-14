@@ -728,8 +728,9 @@ bG9yCAAAAFRleHRTaXplAg0AAAAkSGludFRleHRTaXpl]]></BinaryString>
 				<Item class="StyleRule" referent="RBX3140BD951C654D4394F19237CB7F6C77">
 					<Properties>
 						<int name="Priority">0</int>
-						<BinaryString name="PropertiesSerialize"><![CDATA[AwAAAAsAAABBbmNob3JQb2ludBAAAAAAAAAAPwgAAABQb3NpdGlvbgoAAAAAAAAAAAAAAD8A
-AAAABAAAAFNpemUKAAAAACUAAAAAAAAAJQAAAA==]]></BinaryString>
+						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAAsAAABBbmNob3JQb2ludBAAAAAAAAAAPxYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5
+BgAAAAAAAPA/CAAAAFBvc2l0aW9uCgAAAAAAAAAAAAAAPwAAAAAEAAAAU2l6ZQoAAAAAJQAA
+AAAAAAAlAAAA]]></BinaryString>
 						<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
 						<string name="Selector">&gt;ImageLabel</string>
 						<BinaryString name="AttributesSerialize"></BinaryString>
