@@ -2,6 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
+local Inventory = require(script.Parent.Inventory)
 local Hotbar = require(script.Parent.Hotbar)
 
 export type Props = {
@@ -17,6 +18,13 @@ local function Backpack(props: Props)
 		[React.Tag] = "Backpack",
 	}, {
 		Hotbar = React.createElement(Hotbar, {
+			forceGamepadHintVisible = props.forceGamepadHintVisible,
+			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
+			slots = props.slots,
+			tools = props.tools,
+			opened = props.opened,
+		}),
+		Inventory = React.createElement(Inventory, {
 			forceGamepadHintVisible = props.forceGamepadHintVisible,
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
 			slots = props.slots,
