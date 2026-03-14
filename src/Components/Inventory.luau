@@ -4,6 +4,7 @@ local React = require(script.Parent.Parent.Parent.react)
 
 local InventoryHint = require(script.Parent.InventoryHint)
 local Searchbar = require(script.Parent.Searchbar)
+local Slot = require(script.Parent.Slot)
 
 local InventoryBindings = script.Parent.Parent.Bindings.InventoryContext
 local RemoveFromHotbarGamepadKeyCode = InventoryBindings.RemoveFromHotbarAction.GamepadBinding.KeyCode
@@ -17,6 +18,20 @@ export type Props = {
 }
 
 local function Inventory(props: Props)
+	local slotChildren = {}
+
+	if props.tools then
+		for order, tool in props.tools do
+			if tool then
+				slotChildren[order] = React.createElement(Slot, {
+					unlocked = true,
+					order = order,
+					tool = tool,
+				})
+			end
+		end
+	end
+
 	return React.createElement("Frame", {
 		Size = props.size,
 		[React.Tag] = "Inventory",
@@ -44,7 +59,7 @@ local function Inventory(props: Props)
 			[React.Tag] = "Slots",
 		}, {
 			SearchBox = React.createElement(Searchbar),
-			SlotFrame = React.createElement("ScrollingFrame"),
+			SlotFrame = React.createElement("ScrollingFrame", nil, slotChildren),
 		}),
 	})
 end
