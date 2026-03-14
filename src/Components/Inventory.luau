@@ -15,6 +15,7 @@ export type Props = {
 	forceHintVisible: boolean?,
 	size: UDim2?, -- TODO: change size to use slots amount
 	tools: { Tool? }?,
+	visible: boolean?,
 }
 
 local function Inventory(props: Props)
@@ -34,6 +35,7 @@ local function Inventory(props: Props)
 
 	return React.createElement("Frame", {
 		Size = props.size,
+		Visible = props.visible,
 		[React.Tag] = "Inventory",
 	}, {
 		Hints = React.createElement("Frame", {

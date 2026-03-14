@@ -2,10 +2,11 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local Inventory = require(script.Parent.Inventory)
 local Hotbar = require(script.Parent.Hotbar)
+local Inventory = require(script.Parent.Inventory)
 
 export type Props = {
+	size: UDim2?,
 	forceGamepadHintVisible: boolean?,
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
@@ -15,6 +16,7 @@ export type Props = {
 
 local function Backpack(props: Props)
 	return React.createElement("Frame", {
+		Size = props.size,
 		[React.Tag] = "Backpack",
 	}, {
 		Hotbar = React.createElement(Hotbar, {
@@ -29,7 +31,7 @@ local function Backpack(props: Props)
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
 			slots = props.slots,
 			tools = props.tools,
-			opened = props.opened,
+			visible = props.opened,
 		}),
 	})
 end

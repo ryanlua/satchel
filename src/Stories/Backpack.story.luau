@@ -28,6 +28,7 @@ return {
 		Tool.ToolTip = props.controls.toolTooltip
 
 		return React.createElement(Backpack, {
+			size = UDim2.fromOffset(655, 0),
 			forceGamepadHintVisible = props.controls.hintVisible,
 			slots = props.controls.slots,
 			tools = { [props.controls.toolSlot] = Tool },

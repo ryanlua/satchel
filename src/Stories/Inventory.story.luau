@@ -30,7 +30,7 @@ return {
 
 		return React.createElement(Inventory, {
 			forceHintVisible = props.controls.hintVisible,
-			size = UDim2.fromOffset(655, 320),
+			size = UDim2.fromOffset(655, 300),
 			tools = tools,
 		})
 	end,
