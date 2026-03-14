@@ -11,6 +11,7 @@ export type Props = {
 	equipped: boolean?,
 	unlocked: boolean?,
 	forceHintVisible: boolean?,
+	hint: boolean?,
 	order: number?,
 }
 
@@ -53,7 +54,7 @@ local function Slot(props: Props)
 		end
 	end, {})
 
-	local hintVisible = props.forceHintVisible or isKeyboardPreferred
+	local hintVisible = props.hint == true and (props.forceHintVisible or isKeyboardPreferred)
 
 	-- Generate tags based on state
 	local tags = "Slot"
@@ -74,9 +75,6 @@ local function Slot(props: Props)
 		Text = slotText,
 		LayoutOrder = props.order,
 		[React.Tag] = tags,
-		[React.Event.Activated] = function()
-			print("Slot activated")
-		end,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
 			Text = slotNumber,

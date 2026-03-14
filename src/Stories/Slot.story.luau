@@ -10,6 +10,7 @@ local controls = {
 	toolTooltip = "A classic sword",
 	equipped = false,
 	unlocked = false,
+	hint = true,
 	order = 1,
 }
 
@@ -30,6 +31,7 @@ return {
 			tool = Tool,
 			equipped = props.controls.equipped,
 			unlocked = props.controls.unlocked,
+			hint = props.controls.hint,
 			order = props.controls.order,
 		})
 	end,
