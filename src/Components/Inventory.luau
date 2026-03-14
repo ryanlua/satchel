@@ -2,7 +2,13 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
+local InventoryHint = require(script.Parent.InventoryHint)
 local Searchbar = require(script.Parent.Searchbar)
+
+local InventoryBindings = script.Parent.Parent.Bindings.InventoryContext
+local RemoveFromHotbarGamepadKeyCode = InventoryBindings.RemoveFromHotbarAction.GamepadBinding.KeyCode
+local SelectSwapGamepadKeyCode = InventoryBindings.SelectSwapAction.GamepadBinding.KeyCode
+local CloseInventoryGamepadKeyCode = InventoryBindings.CloseInventoryAction.GamepadBinding.KeyCode
 
 export type Props = {
 	forceHintVisible: boolean?,
@@ -15,8 +21,31 @@ local function Inventory(props: Props)
 		Size = props.size,
 		[React.Tag] = "Inventory",
 	}, {
-		SearchBox = React.createElement(Searchbar),
-		SlotFrame = React.createElement("ScrollingFrame"),
+		Hints = React.createElement("Frame", {
+			[React.Tag] = "Hints",
+		}, {
+			RemoveFromHotbarHint = React.createElement(InventoryHint, {
+				keyCode = RemoveFromHotbarGamepadKeyCode,
+				forceVisible = props.forceHintVisible,
+				text = "Remove from hotbar",
+			}),
+			SelectSwapHint = React.createElement(InventoryHint, {
+				keyCode = SelectSwapGamepadKeyCode,
+				forceVisible = props.forceHintVisible,
+				text = "Select/Swap",
+			}),
+			CloseInventoryHint = React.createElement(InventoryHint, {
+				keyCode = CloseInventoryGamepadKeyCode,
+				forceVisible = props.forceHintVisible,
+				text = "Close inventory",
+			}),
+		}),
+		Slots = React.createElement("Frame", {
+			[React.Tag] = "Slots",
+		}, {
+			SearchBox = React.createElement(Searchbar),
+			SlotFrame = React.createElement("ScrollingFrame"),
+		}),
 	})
 end
 
