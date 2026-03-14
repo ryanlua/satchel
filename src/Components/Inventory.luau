@@ -5,11 +5,9 @@ local React = require(script.Parent.Parent.Parent.react)
 local Searchbar = require(script.Parent.Searchbar)
 
 export type Props = {
-	forceGamepadHintVisible: boolean?,
-	size: UDim2?,
-	slots: number?,
+	forceHintVisible: boolean?,
+	size: UDim2?, -- TODO: change size to use slots amount
 	tools: { Tool? }?,
-	opened: boolean?,
 }
 
 local function Inventory(props: Props)
