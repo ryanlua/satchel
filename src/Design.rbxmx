@@ -728,9 +728,9 @@ bG9yCAAAAFRleHRTaXplAg0AAAAkSGludFRleHRTaXpl]]></BinaryString>
 				<Item class="StyleRule" referent="RBX3140BD951C654D4394F19237CB7F6C77">
 					<Properties>
 						<int name="Priority">0</int>
-						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAAsAAABBbmNob3JQb2ludBAAAAAAAAAAPxYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5
-BgAAAAAAAPA/CAAAAFBvc2l0aW9uCgAAAAAAAAAAAAAAPwAAAAAEAAAAU2l6ZQoAAAAAJQAA
-AAAAAAAlAAAA]]></BinaryString>
+						<BinaryString name="PropertiesSerialize"><![CDATA[BQAAAAsAAABBbmNob3JQb2ludBAAAAAAAAAAPxYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5
+BgAAAAAAAPA/CAAAAFBvc2l0aW9uCgAAAAAAAAAAAAAAPwAAAAAJAAAAU2NhbGVUeXBlFQkA
+AABTY2FsZVR5cGUDAAAABAAAAFNpemUKAAAAACUAAAAAAAAAJQAAAA==]]></BinaryString>
 						<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
 						<string name="Selector">&gt;ImageLabel</string>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -740,10 +740,10 @@ AAAAAAAlAAAA]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBX3DEEBE18A2A344099A8760BD61A9FD01">
+					<Item class="StyleRule" referent="RBX5C24F752221C491892AA2C8DE2865CBB">
 						<Properties>
 							<int name="Priority">0</int>
-							<BinaryString name="PropertiesSerialize">AAAAAA==</BinaryString>
+							<BinaryString name="PropertiesSerialize">AQAAAAsAAABBc3BlY3RSYXRpbwYAAAAAAAD4Pw==</BinaryString>
 							<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
 							<string name="Selector">::UIAspectRatioConstraint</string>
 							<BinaryString name="AttributesSerialize"></BinaryString>
