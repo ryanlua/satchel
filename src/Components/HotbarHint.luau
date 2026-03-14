@@ -41,7 +41,7 @@ local function HotbarHint(props: Props)
 		Image = UserInputService:GetImageForKeyCode(props.keyCode),
 		LayoutOrder = props.order,
 		Visible = visible,
-		[React.Tag] = "HintSlot",
+		[React.Tag] = "HotbarHint",
 	})
 end
 
