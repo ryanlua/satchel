@@ -12,7 +12,6 @@ export type Props = {
 	unlocked: boolean?,
 	forceHintVisible: boolean?,
 	order: number?,
-	onActivated: (() -> ())?,
 }
 
 local function Slot(props: Props)
@@ -20,6 +19,8 @@ local function Slot(props: Props)
 	local toolName = tool and tool.Name
 	local toolImage = tool and tool.TextureId
 	local tooltipText = tool and tool.ToolTip
+
+	local equipped, setEquipped = React.useState(props.equipped or false)
 
 	-- Only show numbers 1-10 for hints and show 0 for the 10th slot
 	local order = props.order or 1
@@ -61,7 +62,7 @@ local function Slot(props: Props)
 	if props.unlocked then
 		tags = tags .. " Unlocked"
 	end
-	if props.equipped then
+	if equipped then
 		tags = tags .. " Equipped"
 	end
 
@@ -75,7 +76,9 @@ local function Slot(props: Props)
 		Text = slotText,
 		LayoutOrder = props.order,
 		[React.Tag] = tags,
-		[React.Event.Activated] = props.onActivated,
+		[React.Event.Activated] = function()
+			setEquipped(not equipped)
+		end,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
 			Text = slotNumber,
