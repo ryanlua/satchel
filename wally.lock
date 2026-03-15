@@ -3,11 +3,6 @@
 registry = "test"
 
 [[package]]
-name = "1foreverhd/topbarplus"
-version = "3.4.0"
-dependencies = []
-
-[[package]]
 name = "jsdotlua/boolean"
 version = "1.2.7"
 dependencies = [["number", "jsdotlua/number@1.2.7"]]
@@ -95,4 +90,9 @@ dependencies = [["collections", "jsdotlua/collections@1.2.7"]]
 [[package]]
 name = "ryanlua/satchel"
 version = "1.4.1"
-dependencies = [["react", "jsdotlua/react@17.2.1"], ["react-roblox", "jsdotlua/react-roblox@17.2.1"], ["topbarplus", "1foreverhd/topbarplus@3.4.0"]]
+dependencies = [["react", "jsdotlua/react@17.2.1"], ["react-roblox", "jsdotlua/react-roblox@17.2.1"], ["topbarplus", "ryanlua/topbarplus@1.0.1"]]
+
+[[package]]
+name = "ryanlua/topbarplus"
+version = "1.0.1"
+dependencies = []

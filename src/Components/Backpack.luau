@@ -3,8 +3,10 @@
 local React = require(script.Parent.Parent.Parent.react)
 
 local Hotbar = require(script.Parent.Hotbar)
+local Inventory = require(script.Parent.Inventory)
 
 export type Props = {
+	size: UDim2?,
 	forceGamepadHintVisible: boolean?,
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
@@ -13,15 +15,36 @@ export type Props = {
 }
 
 local function Backpack(props: Props)
+	-- Negative index for inventory and positive index for hotbar
+	local hotbarTools: { [number]: Tool? } = {}
+	local inventoryTools: { [number]: Tool? } = {}
+	if props.tools then
+		for index, tool in props.tools do
+			if tool and index > 0 then
+				hotbarTools[index] = tool
+			elseif tool and index < 0 then
+				inventoryTools[math.abs(index)] = tool
+			end
+		end
+	end
+
 	return React.createElement("Frame", {
+		Size = props.size,
 		[React.Tag] = "Backpack",
 	}, {
 		Hotbar = React.createElement(Hotbar, {
 			forceGamepadHintVisible = props.forceGamepadHintVisible,
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
 			slots = props.slots,
-			tools = props.tools,
+			tools = hotbarTools,
 			opened = props.opened,
+		}),
+		Inventory = React.createElement(Inventory, {
+			forceGamepadHintVisible = props.forceGamepadHintVisible,
+			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
+			slots = props.slots,
+			tools = inventoryTools,
+			visible = props.opened,
 		}),
 	})
 end

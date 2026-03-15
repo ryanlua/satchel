@@ -10,10 +10,13 @@ return {
 	mapStory = function(Story)
 		return function(storyProps)
 			return React.createElement(React.Fragment, nil, {
+				UIListLayout = React.createElement("UIListLayout", {
+					HorizontalAlignment = Enum.HorizontalAlignment.Center,
+					VerticalAlignment = Enum.VerticalAlignment.Center,
+				}),
 				StyleLink = React.createElement("StyleLink", {
 					StyleSheet = DESIGN_SHEET,
 				}),
-
 				Story = React.createElement(Story, storyProps),
 			})
 		end

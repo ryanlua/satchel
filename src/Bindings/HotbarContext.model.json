@@ -30,136 +30,136 @@
         }
       ]
     },
-    {
-      "Name": "SlotOneAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "One"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotTwoAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Two"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotThreeAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Three"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotFourAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Four"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotFiveAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Five"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotSixAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Six"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotSevenAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Seven"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotEightAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Eight"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotNineAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Nine"
-          }
-        }
-      ]
-    },
-    {
-      "Name": "SlotZeroAction",
-      "ClassName": "InputAction",
-      "Children": [
-        {
-          "Name": "KeyBinding",
-          "ClassName": "InputBinding",
-          "Properties": {
-            "KeyCode": "Zero"
-          }
-        }
-      ]
-    },
+    // {
+    //   "Name": "SlotOneAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "One"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotTwoAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Two"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotThreeAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Three"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotFourAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Four"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotFiveAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Five"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotSixAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Six"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotSevenAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Seven"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotEightAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Eight"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotNineAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Nine"
+    //       }
+    //     }
+    //   ]
+    // },
+    // {
+    //   "Name": "SlotZeroAction",
+    //   "ClassName": "InputAction",
+    //   "Children": [
+    //     {
+    //       "Name": "KeyBinding",
+    //       "ClassName": "InputBinding",
+    //       "Properties": {
+    //         "KeyCode": "Zero"
+    //       }
+    //     }
+    //   ]
+    // },
     {
       "Name": "ToggleInventoryAction",
       "ClassName": "InputAction",

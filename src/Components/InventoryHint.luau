@@ -6,11 +6,12 @@ local React = require(script.Parent.Parent.Parent.react)
 
 export type Props = {
 	keyCode: Enum.KeyCode,
+	text: string,
 	forceVisible: boolean?,
 	order: number?,
 }
 
-local function HotbarHint(props: Props)
+local function InventoryHint(props: Props)
 	-- Only show hint if gamepad is preferred or forced visible
 	local isGamepadPreferred, setIsGamepadPreferred =
 		React.useState(UserInputService.PreferredInput == Enum.PreferredInput.Gamepad)
@@ -37,12 +38,18 @@ local function HotbarHint(props: Props)
 
 	local visible = props.forceVisible or isGamepadPreferred
 
-	return React.createElement("ImageLabel", {
-		Image = UserInputService:GetImageForKeyCode(props.keyCode),
+	return React.createElement("Frame", {
 		LayoutOrder = props.order,
 		Visible = visible,
-		[React.Tag] = "HotbarHint",
+		[React.Tag] = "InventoryHint",
+	}, {
+		React.createElement("ImageLabel", {
+			Image = UserInputService:GetImageForKeyCode(props.keyCode),
+		}),
+		React.createElement("TextLabel", {
+			Text = props.text,
+		}),
 	})
 end
 
-return HotbarHint
+return InventoryHint

@@ -15,8 +15,8 @@
 
 </div>
 
-> [!TIP]
-> Want just the CoreGui backpack? Check out [Purse](https://github.com/ryanlua/purse), a sub-project of Satchel.
+> [!WARNING]
+> Satchel v1 is unmaintained to focus on v2 development. For a maintained alternative, see [Purse](https://purse.luau.page/).
 
 Satchel is a modern open-source alternative to Roblox's default backpack. Satchel aims to be more customizable and easier to use than the default backpack while still having a "vanilla" feel. Installation of Satchel is as simple as dropping the module into your game and setting up a few properties if you like to customize it. It has a familiar feel and structure as to the default backpack for ease of use for both developers and players.
 
@@ -44,6 +44,17 @@ Special thanks for our sponsors for supporting Satchel and it's future developme
       <source media="(prefers-color-scheme: light)" srcset="docs/assets/sponsors/do-big-light.png" height="60">
       <img alt="Do Big Studios" src="docs/assets/sponsors/do-big-light.png" height="60">
     </picture>
+    <br>
+    Do Big Studios
+  </a>
+</p>
+
+<p align="center">
+  <br>
+  <a href="https://github.com/5KFubi" target="_blank">
+    <img src="https://github.com/5KFubi.png" width="64">
+    <br>
+    5KFubi
   </a>
 </p>
 
