@@ -40,8 +40,7 @@ local function Backpack(props: Props)
 			opened = props.opened,
 		}),
 		Inventory = React.createElement(Inventory, {
-			forceGamepadHintVisible = props.forceGamepadHintVisible,
-			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
+			forceHintVisible = props.forceGamepadHintVisible,
 			slots = props.slots,
 			tools = inventoryTools,
 			visible = props.opened,
