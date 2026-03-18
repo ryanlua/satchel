@@ -9,7 +9,7 @@
   [![CI](https://github.com/ryanlua/satchel/actions/workflows/ci.yml/badge.svg)](https://github.com/ryanlua/satchel/actions/workflows/ci.yml)
   [![GitHub Release](https://img.shields.io/github/v/release/ryanlua/satchel)](https://github.com/ryanlua/satchel/releases)
   [![Docs](https://img.shields.io/badge/docs-website-green)](https://satchel.luau.page/)
-  [![Playground](https://img.shields.io/badge/playground-experience-blue)](https://www.roblox.com/games/13592168150)
+  [![Playground](https://img.shields.io/badge/playground-experience-blue)](https://www.roblox.com/join/iedaw)
   [![Discord](https://discord.com/api/guilds/1162303282002272359/widget.png)](https://discord.gg/N2KEnHzrsW)
   [![Mentioned in Awesome Roblox](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-roblox/awesome-roblox)
 
