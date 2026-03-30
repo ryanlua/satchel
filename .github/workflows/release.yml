@@ -10,7 +10,7 @@ permissions:
 
 env:
   OUTPUT_NAME: Purse
-  BUILD_PROJECT: package.project.json
+  ROJO_PROJECT: package.project.json
 
 jobs:
   build:
@@ -23,18 +23,18 @@ jobs:
       - name: Install Wally packages
         run: |
           wally install
-          rojo sourcemap $BUILD_PROJECT --output sourcemap.json
+          rojo sourcemap $ROJO_PROJECT --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
       - name: Build Rojo project
         run: |
-          mkdir builds
-          rojo build --output builds/$OUTPUT_NAME.rbxm $BUILD_PROJECT
-          rojo build --output builds/$OUTPUT_NAME.rbxmx $BUILD_PROJECT
+          mkdir dist
+          rojo build --output dist/$OUTPUT_NAME.rbxm $ROJO_PROJECT
+          rojo build --output dist/$OUTPUT_NAME.rbxmx $ROJO_PROJECT
       - name: Archive build files
         uses: actions/upload-artifact@v7
         with:
           name: ${{ env.OUTPUT_NAME }}
-          path: builds/
+          path: dist/
           if-no-files-found: error
   release:
     needs: build
@@ -54,11 +54,11 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: ${{ env.OUTPUT_NAME }}
-          path: builds/
+          path: dist/
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          files: builds/*
+          files: dist/*
           generate_release_notes: true
       - name: Publish to Wally
         run: wally publish
