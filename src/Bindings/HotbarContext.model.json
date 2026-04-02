@@ -163,9 +163,6 @@
     {
       "Name": "ToggleInventoryAction",
       "ClassName": "InputAction",
-      "Properties": {
-        "Enabled": false
-      },
       "Children": [
         {
           "Name": "KeyBinding",
