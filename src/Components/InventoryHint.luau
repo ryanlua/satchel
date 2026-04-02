@@ -43,10 +43,10 @@ local function InventoryHint(props: Props)
 		Visible = visible,
 		[React.Tag] = "InventoryHint",
 	}, {
-		React.createElement("ImageLabel", {
+		Image = React.createElement("ImageLabel", {
 			Image = UserInputService:GetImageForKeyCode(props.keyCode),
 		}),
-		React.createElement("TextLabel", {
+		Name = React.createElement("TextLabel", {
 			Text = props.text,
 		}),
 	})
