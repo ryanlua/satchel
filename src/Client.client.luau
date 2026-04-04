@@ -7,6 +7,8 @@ local ReactRoblox = require(script.Parent.Parent["react-roblox"])
 
 local Backpack = require(script.Parent.Components.Backpack)
 
+local DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
+
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
@@ -24,4 +26,9 @@ local function Satchel()
 	})
 end
 
-root:render(React.createElement(Satchel))
+root:render(React.createElement(React.Fragment, nil, {
+	StyleLink = React.createElement("StyleLink", {
+		StyleSheet = DESIGN_SHEET,
+	}),
+	App = React.createElement(Satchel),
+}))
