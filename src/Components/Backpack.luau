@@ -15,6 +15,8 @@ export type Props = {
 }
 
 local function Backpack(props: Props)
+	local opened = props.opened or false
+
 	-- Negative index for inventory and positive index for hotbar
 	local hotbarTools: { [number]: Tool? } = {}
 	local inventoryTools: { [number]: Tool? } = {}
@@ -43,7 +45,7 @@ local function Backpack(props: Props)
 			forceHintVisible = props.forceGamepadHintVisible,
 			slots = props.slots,
 			tools = inventoryTools,
-			visible = props.opened,
+			visible = opened,
 		}),
 	})
 end
