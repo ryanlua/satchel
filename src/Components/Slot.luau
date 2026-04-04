@@ -47,7 +47,7 @@ local function Slot(props: Props)
 			end
 		end
 
-		preferredInputChanged()
+		-- preferredInputChanged()
 		local signal: RBXScriptConnection = UserInputService:GetPropertyChangedSignal("PreferredInput")
 			:Connect(preferredInputChanged)
 
