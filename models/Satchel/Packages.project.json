@@ -3,7 +3,7 @@
   "tree": {
     "$path": "../../Packages",
     "satchel": {
-      "$path": "../../src"
+      "$path": "../../default.project.json"
     }
   }
 }

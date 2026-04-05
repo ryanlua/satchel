@@ -2,6 +2,9 @@
   "name": "Satchel",
   "emitLegacyScripts": false,
   "tree": {
-    "$path": "models"
+    "$path": "models/Satchel",
+    "ThumbnailCamera": {
+      "$path": "models/ThumbnailCamera.model.json"
+    }
   }
 }
