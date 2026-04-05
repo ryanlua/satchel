@@ -52,12 +52,10 @@ extra:
       name: Discord
 
 markdown_extensions:
-  - abbr
   - admonition
   - attr_list
   - md_in_html
   - pymdownx.details
-  - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.superfences
   - toc:

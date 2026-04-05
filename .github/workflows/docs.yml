@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - ".github/workflows/documentation.yml"
+      - ".github/workflows/docs.yml"
       - "docs/**"
       - "src/**"
       - "mkdocs.yml"
@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 env:
-  VERSION: 1.x
+  VERSION: a.x
 
 jobs:
   deploy:
@@ -22,33 +22,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-        with:
-          sparse-checkout: |
-            docs
-            src
-
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-
-      - uses: actions/setup-python@v6
+      - name: Setup Python
+        uses: actions/setup-python@v6
         with:
           python-version: 3.x
-
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-
-      - uses: actions/cache@v5
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: ~/.cache
-          restore-keys: |
-            mkdocs-material-
-
-      - run: pip install mkdocs-material mike
-
+      - name: Install Material for MkDocs
+        run: pip install mkdocs-material mike
       - name: Fetch gh-pages branch
         run: git fetch origin gh-pages --depth=1
-
       - name: Deploy latest documentation
         run: mike deploy $VERSION --branch gh-pages --push

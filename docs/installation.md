@@ -11,7 +11,7 @@ Satchel uses [RunContext] to run anywhere, so you do not need to move it from [W
   [ReplicatedStorage]: https://create.roblox.com/docs/reference/engine/classes/ReplicatedStorage
   [v1.4.0]: https://github.com/ryanlua/satchel/releases/tag/v1.4.0
 
-## Creator Store <small>recommended</small> { #creator-store data-toc-label="Creator Store" }
+## Creator Store
 
 The Creator Store is the easiest way to install Satchel. It is a one-click installation and requires no downloads.
 
@@ -53,8 +53,6 @@ The Creator Store is the easiest way to install Satchel. It is a one-click insta
 
 1. In the [Explorer] window, insert **Satchel** into [`ReplicatedStorage`][ReplicatedStorage].
 
-    ![Contextual menu](https://prod.docsiteassets.roblox.com/assets/studio/explorer/Context-Menu-Service.png){ width="50%" }
-
 1. Select the **Satchel** model file you downloaded from GitHub.
 
   [GitHub Releases]: https://github.com/ryanlua/satchel/releases
@@ -67,7 +65,7 @@ You are expected to already have Wally setup in your Rojo project and basic know
 
 1. In the `wally.toml` file, add the [latest Wally version for Satchel][Wally]. Your dependencies should look similar to this:
 
-    ``` toml title="wally.toml"
+    ``` toml title="wally.toml" linenums="0"
     [dependencies]
     satchel = "ryanlua/satchel@1.0.0"
     ```

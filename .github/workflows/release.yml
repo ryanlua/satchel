@@ -3,14 +3,14 @@ name: Create Release
 on:
   push:
     tags:
-      - "v*.*.*"
+      - v*.*.*
 
 permissions:
   contents: write
 
 env:
-  OUTPUT_NAME: Satchel
-  BUILD_PROJECT: package.project.json
+  OUTPUT_NAME: Purse
+  ROJO_PROJECT: package.project.json
 
 jobs:
   build:
@@ -18,57 +18,47 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.1.2
-
       - name: Install Wally packages
         run: |
           wally install
-          rojo sourcemap $BUILD_PROJECT --output sourcemap.json
+          rojo sourcemap $ROJO_PROJECT --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
-
       - name: Build Rojo project
         run: |
-          mkdir builds
-          rojo build --output builds/$OUTPUT_NAME.rbxm $BUILD_PROJECT
-          rojo build --output builds/$OUTPUT_NAME.rbxmx $BUILD_PROJECT
-
+          mkdir dist
+          rojo build --output dist/$OUTPUT_NAME.rbxm $ROJO_PROJECT
+          rojo build --output dist/$OUTPUT_NAME.rbxmx $ROJO_PROJECT
       - name: Archive build files
         uses: actions/upload-artifact@v7
         with:
           name: ${{ env.OUTPUT_NAME }}
-          path: builds/
+          path: dist/
           if-no-files-found: error
-
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.1.2
-
       - name: Setup Wally
         env:
           WALLY_AUTH_TOKEN: ${{ secrets.WALLY_AUTH_TOKEN }}
         run: |
           wally login --token "$WALLY_AUTH_TOKEN"
           wally install
-
       - name: Download build files
         uses: actions/download-artifact@v8
         with:
           name: ${{ env.OUTPUT_NAME }}
-          path: builds/
-
-      - name: Create Release
+          path: dist/
+      - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          files: builds/*
+          files: dist/*
           generate_release_notes: true
-
       - name: Publish to Wally
         run: wally publish

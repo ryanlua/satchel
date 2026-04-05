@@ -9,7 +9,7 @@ permissions:
 
 env:
   OUTPUT_NAME: Satchel
-  BUILD_PROJECT: package.project.json
+  ROJO_PROJECT: package.project.json
 
 jobs:
   build:
@@ -17,31 +17,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.1.2
-
       - name: Install Wally packages
         run: |
           wally install
-          rojo sourcemap $BUILD_PROJECT --output sourcemap.json
+          rojo sourcemap $ROJO_PROJECT --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
-
       - name: Run StyLua
         run: stylua --check src/ models/
-
       - name: Run selene
         run: selene src/ models/
-
       - name: Build Rojo project
         run: |
-          mkdir builds
-          rojo build --output builds/$OUTPUT_NAME.rbxm $BUILD_PROJECT
-          rojo build --output builds/$OUTPUT_NAME.rbxmx $BUILD_PROJECT
-
+          mkdir dist
+          rojo build --output dist/$OUTPUT_NAME.rbxm $ROJO_PROJECT
+          rojo build --output dist/$OUTPUT_NAME.rbxmx $ROJO_PROJECT
       - name: Archive build files
         uses: actions/upload-artifact@v7
         with:
           name: ${{ env.OUTPUT_NAME }}
-          path: builds/
+          path: dist/
           if-no-files-found: error
