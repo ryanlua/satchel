@@ -30,5 +30,5 @@ root:render(React.createElement(React.Fragment, nil, {
 	StyleLink = React.createElement("StyleLink", {
 		StyleSheet = DESIGN_SHEET,
 	}),
-	App = React.createElement(Satchel),
+	Satchel = React.createElement(Satchel),
 }))
