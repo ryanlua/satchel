@@ -18,8 +18,29 @@
 	Thank you for supporting Satchel.
 ]]
 
+local MarketplaceService = game:GetService("MarketplaceService")
 local RunService = game:GetService("RunService")
 
+local VERSION = "2.0.0"
+
+-- Print attribution. Do not modify without reading above
 if not RunService:IsStudio() then
-	print("💼 Running Satchel v1.4.1 by @WinnersTakesAll")
+	print(`💼 Running Satchel v{VERSION} by @WinnersTakesAll`)
+end
+
+-- Check for updates. You may modify the below
+local latestVersion: string?
+
+local success, result = pcall(function()
+	return MarketplaceService:GetProductInfoAsync(13947506401)
+end)
+
+if success then
+	latestVersion = string.match(result.Name, "v(%d+%.%d+%.%d+)")
+end
+
+if latestVersion and latestVersion ~= VERSION then
+	warn(
+		`A new version of Satchel (v{VERSION} -> v{latestVersion}) is available: https://create.roblox.com/store/asset/13947506401`
+	)
 end
