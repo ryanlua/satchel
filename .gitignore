@@ -9,4 +9,4 @@ DevPackages/
 site/
 
 # Builds
-builds/
+dist/
