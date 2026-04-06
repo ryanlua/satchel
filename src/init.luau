@@ -4,6 +4,7 @@ local bindableEvents = script.BindableEvents
 
 return {
 	-- Functions
+	getEnabled = require(script.Api.getEnabled),
 	setEnabled = require(script.Api.setEnabled),
 	getTopbarIcon = require(script.Api.getTopbarIcon),
 	openInventory = require(script.Api.openInventory),

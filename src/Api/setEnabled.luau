@@ -3,6 +3,8 @@
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
+local getTopbarIcon = require(script.Parent.getTopbarIcon)
+
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 local screenGui = playerGui:WaitForChild("SatchelGui")
@@ -12,7 +14,10 @@ local function setEnabled(isEnabled: boolean)
 
 	screenGui.Enabled = isEnabled
 
-	-- TODO: Disable topbar icon
+	local icon = getTopbarIcon()
+	if icon then
+		icon:setEnabled(isEnabled)
+	end
 end
 
 return setEnabled
