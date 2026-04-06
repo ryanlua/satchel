@@ -4,6 +4,7 @@ local Icon = require(script.Parent.Parent.topbarplus)
 local Satchel = require(script.Parent)
 
 local icon = Icon.new()
+icon:setName("SatchelInventory")
 icon:modifyTheme({ "IconLabelContainer", "TargetWidth", 0 }) -- Force minimum width
 icon:setLabel("backpack")
 icon:setOrder(-1)
