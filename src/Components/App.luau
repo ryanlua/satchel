@@ -26,7 +26,7 @@ export type Props = {
 
 local function App(props: Props)
 	return React.createElement("Frame", {
-		[React.Tag] = "Backpack",
+		[React.Tag] = "HotbarHints",
 	}, {
 		SlotLeftHint = React.createElement(HotbarHint, {
 			keyCode = SlotLeftGamepadKeyCode,
@@ -40,11 +40,11 @@ local function App(props: Props)
 		}),
 		InventoryHints = React.createElement("Frame", {
 			[React.Tag] = "InventoryHints",
-
 		}, {
 			Hints = React.createElement("Frame", {
+				Visible = props.opened,
+				LayoutOrder = -1,
 				[React.Tag] = "Hints",
-                LayoutOrder = -1,
 			}, {
 				RemoveFromHotbarHint = React.createElement(InventoryHint, {
 					keyCode = RemoveFromHotbarGamepadKeyCode,

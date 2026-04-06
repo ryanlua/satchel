@@ -2,7 +2,7 @@
 	<Meta name="ExplicitAutoJoints">true</Meta>
 	<External>null</External>
 	<External>nil</External>
-	<Item class="Folder" referent="RBXB6B65D6FBF634CB9833E52F36E0FEB00">
+	<Item class="Folder" referent="RBX3C80FF34384D418AA8C763F3FA23B599">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
 			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -11,7 +11,7 @@
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="StyleSheet" referent="RBX2F3F7E8ACD274A72B6BA41CBD70E035C">
+		<Item class="StyleSheet" referent="RBX7D2E45B3A6D54919B3B847ABF4EBDA0F">
 			<Properties>
 				<BinaryString name="AttributesSerialize">AQAAAA0AAABTdHlsZUNhdGVnb3J5AgYAAABUaGVtZXM=</BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -20,10 +20,10 @@
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="StyleDerive" referent="RBX295D667620E6430A9737A2E81BCEDD2D">
+			<Item class="StyleDerive" referent="RBX1E32861B8159400B98EE6421854BBD95">
 				<Properties>
 					<int name="Priority">0</int>
-					<Ref name="StyleSheet">RBXF16540ED211D41469C898F210E938E63</Ref>
+					<Ref name="StyleSheet">RBXF99B38BE5E774D7DBAB90E918A07E37F</Ref>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
@@ -33,7 +33,7 @@
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="StyleSheet" referent="RBX6924C00CA49444AE8492BD67C83031F5">
+		<Item class="StyleSheet" referent="RBXCBD54545D6B94C019416ADE399BAEA98">
 			<Properties>
 				<BinaryString name="AttributesSerialize"><![CDATA[FQAAABgAAABDb250YWluZXJCYWNrZ3JvdW5kQ29sb3IPvby8Pr28vD69vLw+GwAAAENvbnRh
 aW5lclN0cm9rZVRyYW5zcGFyZW5jeQYAAAAAAADwPwwAAABDb3JuZXJSYWRpdXMJAAAAAAAA
@@ -55,10 +55,10 @@ bmRDb2xvcg/NzMw+zczMPs3MzD4OAAAAVG9vbFRpcFBhZGRpbmcJAAAAAAIAAAA=]]></BinaryStrin
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="StyleDerive" referent="RBX670F57FA89C640F48B268BCACD136694">
+			<Item class="StyleDerive" referent="RBXBBCB623EA29B4829AD8EC696C3559E33">
 				<Properties>
 					<int name="Priority">0</int>
-					<Ref name="StyleSheet">RBXF16540ED211D41469C898F210E938E63</Ref>
+					<Ref name="StyleSheet">RBXF99B38BE5E774D7DBAB90E918A07E37F</Ref>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
@@ -68,7 +68,7 @@ bmRDb2xvcg/NzMw+zczMPs3MzD4OAAAAVG9vbFRpcFBhZGRpbmcJAAAAAAIAAAA=]]></BinaryStrin
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="StyleSheet" referent="RBXF16540ED211D41469C898F210E938E63">
+		<Item class="StyleSheet" referent="RBXF99B38BE5E774D7DBAB90E918A07E37F">
 			<Properties>
 				<BinaryString name="AttributesSerialize"><![CDATA[LQAAABgAAABDb250YWluZXJCYWNrZ3JvdW5kQ29sb3ICEAAAACRCYWNrZ3JvdW5kQ29sb3If
 AAAAQ29udGFpbmVyQmFja2dyb3VuZFRyYW5zcGFyZW5jeQaamZmZmZnJPxUAAABDb250YWlu
@@ -109,10 +109,10 @@ VGV4dFNpemU=]]></BinaryString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="StyleDerive" referent="RBXA5CBDACA8A174CE78B1ABF8557A7F429">
+			<Item class="StyleDerive" referent="RBX9C6CBC5AF4A848068E519A52F0FE00AC">
 				<Properties>
 					<int name="Priority">0</int>
-					<Ref name="StyleSheet">RBXFA4A37E41CFF4DC6B4F2A57B9AC13F02</Ref>
+					<Ref name="StyleSheet">RBXE2DEAEF7B56A4B34AB81B17F877E01FC</Ref>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
@@ -122,7 +122,7 @@ VGV4dFNpemU=]]></BinaryString>
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="StyleSheet" referent="RBXFA4A37E41CFF4DC6B4F2A57B9AC13F02">
+		<Item class="StyleSheet" referent="RBXE2DEAEF7B56A4B34AB81B17F877E01FC">
 			<Properties>
 				<BinaryString name="AttributesSerialize"><![CDATA[CgAAAA8AAABCYWNrZ3JvdW5kQ29sb3IPycjIPdnY2D3p6Og9DAAAAENvcm5lclJhZGl1cwkA
 AAAACAAAAAgAAABGb250RmFjZSH0AQAqAAAAcmJ4YXNzZXQ6Ly9mb250cy9mYW1pbGllcy9C
@@ -138,7 +138,7 @@ Pw==]]></BinaryString>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
-		<Item class="StyleSheet" referent="RBX15E1AB1F83E04C449E684F5C853FD619">
+		<Item class="StyleSheet" referent="RBX78BA938FD3E14845AA6E90CF1E4808A7">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
@@ -147,12 +147,11 @@ Pw==]]></BinaryString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="StyleRule" referent="RBX6314BA0C2F2A44D8AFBD953F3FF0D89F">
+			<Item class="StyleRule" referent="RBX985962F0C2024EB58207EBDB2D7AE1B4">
 				<Properties>
 					<int name="Priority">0</int>
-					<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAAsAAABBbmNob3JQb2ludBAAAAA/AACAPw0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRv
-bWF0aWNTaXplAwAAABYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/CAAAAFBv
-c2l0aW9uCgAAAD8AAAAAAACAPwAAAAA=]]></BinaryString>
+					<BinaryString name="PropertiesSerialize"><![CDATA[AgAAAA0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRvbWF0aWNTaXplAwAAABYAAABCYWNrZ3Jv
+dW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/]]></BinaryString>
 					<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
 					<string name="Selector">.Backpack</string>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -162,13 +161,10 @@ c2l0aW9uCgAAAD8AAAAAAACAPwAAAAA=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX563CB56B60F34CBA88AEB9CF8E246680">
+				<Item class="StyleRule" referent="RBX5F39B26AD39049DA979DCD8125BE0630">
 					<Properties>
 						<int name="Priority">0</int>
-						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABGaWxsRGlyZWN0aW9uFQ0AAABGaWxsRGlyZWN0aW9uAAAAABMAAABIb3Jpem9u
-dGFsQWxpZ25tZW50FRMAAABIb3Jpem9udGFsQWxpZ25tZW50AAAAAAkAAABTb3J0T3JkZXIV
-CQAAAFNvcnRPcmRlcgIAAAARAAAAVmVydGljYWxBbGlnbm1lbnQVEQAAAFZlcnRpY2FsQWxp
-Z25tZW50AgAAAA==]]></BinaryString>
+						<BinaryString name="PropertiesSerialize">AQAAAAkAAABTb3J0T3JkZXIVCQAAAFNvcnRPcmRlcgIAAAA=</BinaryString>
 						<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
 						<string name="Selector">::UIListLayout</string>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -180,7 +176,7 @@ Z25tZW50AgAAAA==]]></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBX7783B8428D594BD2A872BC8D0FB61C7B">
+			<Item class="StyleRule" referent="RBXFBC400857E8846939BFDCBBB8E885127">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[CQAAAAsAAABBbmNob3JQb2ludBAAAAA/AACAPw0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRv
@@ -199,7 +195,7 @@ ZXh0U2l6ZQ==]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX75085DD341F641188D627CB1BE5253B2">
+				<Item class="StyleRule" referent="RBX3436633F5A4D45F98BDD793579CB8038">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABQYWRkaW5nQm90dG9tAg8AAAAkVG9vbFRpcFBhZGRpbmcLAAAAUGFkZGluZ0xl
@@ -215,7 +211,7 @@ ZGluZwoAAABQYWRkaW5nVG9wAg8AAAAkVG9vbFRpcFBhZGRpbmc=]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBX9A96CDB2E2F5490CBD4B61EDD1D3F071">
+				<Item class="StyleRule" referent="RBX5EC52BE0D41B44CBACE241D2E1B23DDF">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAwAAABDb3JuZXJSYWRpdXMCFAAAACRUb29sVGlwQ29ybmVyUmFkaXVz</BinaryString>
@@ -230,10 +226,10 @@ ZGluZwoAAABQYWRkaW5nVG9wAg8AAAAkVG9vbFRpcFBhZGRpbmc=]]></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="StyleDerive" referent="RBX76E84DA8951C4CCAB75F10D4B34BE77C">
+			<Item class="StyleDerive" referent="RBX9767B0C607C14BA7AD9720ABE78FC156">
 				<Properties>
 					<int name="Priority">0</int>
-					<Ref name="StyleSheet">RBX2F3F7E8ACD274A72B6BA41CBD70E035C</Ref>
+					<Ref name="StyleSheet">RBX7D2E45B3A6D54919B3B847ABF4EBDA0F</Ref>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
 					<bool name="DefinesCapabilities">false</bool>
@@ -242,7 +238,7 @@ ZGluZwoAAABQYWRkaW5nVG9wAg8AAAAkVG9vbFRpcFBhZGRpbmc=]]></BinaryString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="StyleRule" referent="RBX89826F02BF864D228E3900E168E32D06">
+			<Item class="StyleRule" referent="RBXCE0C1813B7934367A072CD57AC30019E">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRvbWF0aWNTaXplAgAAABAAAABCYWNrZ3Jv
@@ -258,7 +254,7 @@ AIA/AAAAAAAAAAAAAAAA]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX943B87CCFEBA47E88777132BF9BA0137">
+				<Item class="StyleRule" referent="RBXBC9A305666184E25BF9BC3AF1679999A">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[CgAAABMAAABBdXRvbWF0aWNDYW52YXNTaXplFQ0AAABBdXRvbWF0aWNTaXplAgAAABYAAABC
@@ -277,7 +273,7 @@ aXplCgAAgD8SAAAAAAAAAP8AAAA=]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBX063CB11F122641BBA09D70D3C138CF3F">
+					<Item class="StyleRule" referent="RBX1B512ABF7A5F42979292320B4FF2103C">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABGaWxsRGlyZWN0aW9uFQ0AAABGaWxsRGlyZWN0aW9uAAAAAAcAAABQYWRkaW5n
@@ -293,7 +289,7 @@ CQAAAAAFAAAACQAAAFNvcnRPcmRlchUJAAAAU29ydE9yZGVyAgAAAAUAAABXcmFwcwMB]]></BinaryS
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="StyleRule" referent="RBX3E16EDE212834834A89CE4EF0D2153B8">
+				<Item class="StyleRule" referent="RBX1571B60357C24B99A3E715D32BF55719">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABQYWRkaW5nQm90dG9tAg8AAAAkU3VyZmFjZVBhZGRpbmcLAAAAUGFkZGluZ0xl
@@ -309,7 +305,7 @@ ZGluZwoAAABQYWRkaW5nVG9wAg8AAAAkU3VyZmFjZVBhZGRpbmc=]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBXC04731DAF2E2402285283E170DF4C165">
+				<Item class="StyleRule" referent="RBX6A91263702BD42D8892ECCD97DA95A71">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAwAAABDb3JuZXJSYWRpdXMCFAAAACRTdXJmYWNlQ29ybmVyUmFkaXVz</BinaryString>
@@ -323,7 +319,7 @@ ZGluZwoAAABQYWRkaW5nVG9wAg8AAAAkU3VyZmFjZVBhZGRpbmc=]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBXD7717DB6B44840ADBCEE2924AF76FFF8">
+				<Item class="StyleRule" referent="RBX8EF1C2A8CDE44149B15B271B04143E6E">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAcAAABQYWRkaW5nCQAAAAAFAAAA</BinaryString>
@@ -338,7 +334,7 @@ ZGluZwoAAABQYWRkaW5nVG9wAg8AAAAkU3VyZmFjZVBhZGRpbmc=]]></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBXE58989A51C2D447ABDF19A7866A122DE">
+			<Item class="StyleRule" referent="RBX8E242472D34A4F35AE237462005540FF">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[AwAAAA0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRvbWF0aWNTaXplAQAAABYAAABCYWNrZ3Jv
@@ -352,7 +348,7 @@ dW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/BAAAAFNpemUKAAAAAAAAAAAAAAAAKAAAAA==]]></BinaryS
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBXC2762F536AE0453281A20BFA95F00BEF">
+				<Item class="StyleRule" referent="RBXA1A71DBC1512494CBFC8D5C370A860C9">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BwAAAAsAAABBbmNob3JQb2ludBAAAAAAAAAAPw0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRv
@@ -370,7 +366,7 @@ VGV4dFNpemU=]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBXF00E3AE7DF804D1CB25806488E3BEA11">
+				<Item class="StyleRule" referent="RBX5470B88AE860421C8B3AAB5D5E8E19C0">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BQAAAAsAAABBbmNob3JQb2ludBAAAAAAAAAAPxYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5
@@ -385,7 +381,7 @@ AABTY2FsZVR5cGUDAAAABAAAAFNpemUKAAAAACUAAAAAAAAAJQAAAA==]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBXFA836A48DC5645C1B787FA13D2372495">
+					<Item class="StyleRule" referent="RBXAC42E31822C14F3886427C57A8428953">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize">AQAAAAsAAABBc3BlY3RSYXRpbwYAAAAAAAD4Pw==</BinaryString>
@@ -401,7 +397,7 @@ AABTY2FsZVR5cGUDAAAABAAAAFNpemUKAAAAACUAAAAAAAAAJQAAAA==]]></BinaryString>
 					</Item>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBX36C0DFFC0906406B9C5CD5B68CA2336F">
+			<Item class="StyleRule" referent="RBX1784C83E98E940569E027D0D41878EBE">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[CgAAAA8AAABBdXRvQnV0dG9uQ29sb3IDABAAAABCYWNrZ3JvdW5kQ29sb3IzAhQAAAAkU2xv
@@ -420,7 +416,7 @@ cmFuc3BhcmVuY3kMAAAAVGV4dFRydW5jYXRlFQwAAABUZXh0VHJ1bmNhdGUCAAAA]]></BinaryStrin
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX2544785A3DC848FF9028FAD50C2E33B8">
+				<Item class="StyleRule" referent="RBXDB16F89C56354A2A81F79D4CFAB52A32">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AAAAAA==</BinaryString>
@@ -433,7 +429,7 @@ cmFuc3BhcmVuY3kMAAAAVGV4dFRydW5jYXRlFQwAAABUZXh0VHJ1bmNhdGUCAAAA]]></BinaryStrin
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBX0C2E760765F542A9BD4E7C421384243F">
+					<Item class="StyleRule" referent="RBX95FED1A86FBF4E179199325DCED6AC92">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA8AAABBcHBseVN0cm9rZU1vZGUVDwAAAEFwcGx5U3Ryb2tlTW9kZQEAAAAFAAAAQ29s
@@ -451,7 +447,7 @@ b2luTW9kZQAAAAAJAAAAVGhpY2tuZXNzAhkAAAAkU2xvdEVxdWlwU3Ryb2tlVGhpY2tuZXNz
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="StyleRule" referent="RBXAE23580BBF064DE9BCAE8481938F54C2">
+				<Item class="StyleRule" referent="RBXE797850E04B142AF8F2D5E795E4D9F8A">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAwAAABDb3JuZXJSYWRpdXMCEQAAACRTbG90Q29ybmVyUmFkaXVz</BinaryString>
@@ -465,7 +461,7 @@ b2luTW9kZQAAAAAJAAAAVGhpY2tuZXNzAhkAAAAkU2xvdEVxdWlwU3Ryb2tlVGhpY2tuZXNz
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBX9221341F5F2A48BAB73A91BE0994CFF8">
+				<Item class="StyleRule" referent="RBX038E9FECD75E414DAF2BD3FD37EAC023">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AAAAAA==</BinaryString>
@@ -478,7 +474,7 @@ b2luTW9kZQAAAAAJAAAAVGhpY2tuZXNzAhkAAAAkU2xvdEVxdWlwU3Ryb2tlVGhpY2tuZXNz
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBX432266DE7BAB4039AAB52C7AAA15B9D4">
+					<Item class="StyleRule" referent="RBX480AE34256104FE1927A6C7A5FC9471C">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize">AQAAAAcAAABWaXNpYmxlAwE=</BinaryString>
@@ -493,7 +489,7 @@ b2luTW9kZQAAAAAJAAAAVGhpY2tuZXNzAhkAAAAkU2xvdEVxdWlwU3Ryb2tlVGhpY2tuZXNz
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="StyleRule" referent="RBX3737EAFB8FD54042A4F42526D22F3F5B">
+				<Item class="StyleRule" referent="RBXF6CFFA146AB34CD5B4D5B1DB2F61B692">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[AwAAABYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/BQAAAEltYWdlAgAAAAAE
@@ -507,7 +503,7 @@ AAAAU2l6ZQoAAIA/AAAAAAAAgD8AAAAA]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBXECE2798953D54777884522D37C092248">
+					<Item class="StyleRule" referent="RBXC067CE8132F04785A8370B72B0C9DB0F">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize">AQAAAAwAAABDb3JuZXJSYWRpdXMCFQAAACRTbG90SWNvbkNvcm5lclJhZGl1cw==</BinaryString>
@@ -522,7 +518,7 @@ AAAAU2l6ZQoAAIA/AAAAAAAAgD8AAAAA]]></BinaryString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="StyleRule" referent="RBX5754F5E112A848C9A7FACFE596EBBA93">
+				<Item class="StyleRule" referent="RBX72E7619EAA914681864C48DB473DF305">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABQYWRkaW5nQm90dG9tAgwAAAAkU2xvdFBhZGRpbmcLAAAAUGFkZGluZ0xlZnQC
@@ -538,7 +534,7 @@ YWRkaW5nVG9wAgwAAAAkU2xvdFBhZGRpbmc=]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBXDBD4392B797B4C54BD269CC7B1BB6C22">
+				<Item class="StyleRule" referent="RBXB5BE246068094B9EA1E899F1629D1A1A">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AAAAAA==</BinaryString>
@@ -551,7 +547,7 @@ YWRkaW5nVG9wAgwAAAAkU2xvdFBhZGRpbmc=]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBXAC41EE434F124665956FD045253D9B8A">
+					<Item class="StyleRule" referent="RBX051C493B710543CD9421BEFC7456F58F">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize">AQAAAAcAAABWaXNpYmxlAwE=</BinaryString>
@@ -566,7 +562,7 @@ YWRkaW5nVG9wAgwAAAAkU2xvdFBhZGRpbmc=]]></BinaryString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="StyleRule" referent="RBX8D1110C901204F128911531ECC7336BB">
+				<Item class="StyleRule" referent="RBXF5AD39DC57FA453E9DF9C4C5735924E2">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAQAAABTaXplCgAAAAAAAAAAAAAAAAAAAAA=</BinaryString>
@@ -579,7 +575,7 @@ YWRkaW5nVG9wAgwAAAAkU2xvdFBhZGRpbmc=]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBX747ADE3C5F1E4446A9C2D3554BD8D6BB">
+					<Item class="StyleRule" referent="RBX2788B70F23514AFF82012E6FC1A62695">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize">AQAAAAcAAABWaXNpYmxlAwA=</BinaryString>
@@ -593,7 +589,7 @@ YWRkaW5nVG9wAgwAAAAkU2xvdFBhZGRpbmc=]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="StyleRule" referent="RBX0068A79D50DC4357A7F99D13E7FF10D4">
+					<Item class="StyleRule" referent="RBXDC613B8531334D55A54A3CC3E5E861FB">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize"><![CDATA[CQAAABYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/CAAAAEZvbnRGYWNlAhMA
@@ -614,7 +610,7 @@ AAAAVGV4dFlBbGlnbm1lbnQVDgAAAFRleHRZQWxpZ25tZW50AAAAAA==]]></BinaryString>
 						</Properties>
 					</Item>
 				</Item>
-				<Item class="StyleRule" referent="RBX89B868A0711F41D889BF27AC709E9015">
+				<Item class="StyleRule" referent="RBX7E81F8A48F0A4C2093DB6036D34EB787">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[AgAAAAsAAABNYXhUZXh0U2l6ZQINAAAAJFNsb3RUZXh0U2l6ZQsAAABNaW5UZXh0U2l6ZQYA
@@ -629,7 +625,7 @@ AAAAAAAoQA==]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBX87426FCEDC184830A1818706D1AA00A3">
+				<Item class="StyleRule" referent="RBX4CC3880898B34300830BBAA260CEAA8D">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[AgAAABAAAABCYWNrZ3JvdW5kQ29sb3IzAhoAAAAkU2xvdFVubG9ja0JhY2tncm91bmRDb2xv
@@ -643,7 +639,7 @@ chYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5BgAAAAAAAAAA]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBX695EA91EF0F84285BB3E0695BAD0D960">
+					<Item class="StyleRule" referent="RBX533B5892EBE047C6AAFD486D9FD39891">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize">AAAAAA==</BinaryString>
@@ -656,7 +652,7 @@ chYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5BgAAAAAAAAAA]]></BinaryString>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
-						<Item class="StyleRule" referent="RBX48B8A501710F46FDBDFCFE548BEC2927">
+						<Item class="StyleRule" referent="RBXED2919868CF74742811C3056D6203D7A">
 							<Properties>
 								<int name="Priority">0</int>
 								<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA8AAABBcHBseVN0cm9rZU1vZGUVDwAAAEFwcGx5U3Ryb2tlTW9kZQEAAAAUAAAAQm9y
@@ -675,7 +671,7 @@ cgIVAAAAJFNsb3RQcmVzc1N0cm9rZUNvbG9yCQAAAFRoaWNrbmVzcwYAAAAAAAAAQA==]]></BinaryS
 					</Item>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBXDF19CF1AC0D949968A948EF529E389B8">
+			<Item class="StyleRule" referent="RBX06CB04A2FFE840458CCD2BF7C3969563">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[AwAAABYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/CQAAAFNjYWxlVHlwZRUJ
@@ -689,7 +685,7 @@ AAAAU2NhbGVUeXBlAwAAAAQAAABTaXplCgAAAAA8AAAAAAAAADwAAAA=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBXB287EC10D0A249E3B11323CFFAF45D36">
+				<Item class="StyleRule" referent="RBX9C5A4DE22EFE407E8AE767B12CFD1D92">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAsAAABBc3BlY3RSYXRpbwYAAAAAAAAAQA==</BinaryString>
@@ -704,7 +700,7 @@ AAAAU2NhbGVUeXBlAwAAAAQAAABTaXplCgAAAAA8AAAAAAAAADwAAAA=]]></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBXDBBB9ECC5AAC47A3BBFBC313DBE46EBD">
+			<Item class="StyleRule" referent="RBX9DECE4DEEA984D38B342EF0B05891B9A">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[AwAAAA0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRvbWF0aWNTaXplAwAAABYAAABCYWNrZ3Jv
@@ -718,7 +714,7 @@ dW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/CwAAAExheW91dE9yZGVyBgAAAAAAAPA/]]></BinaryStrin
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX6538343D17864ED7932B695C53E47D2F">
+				<Item class="StyleRule" referent="RBX2C6AE294040D4166A293EFBB1E031014">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABGaWxsRGlyZWN0aW9uFQ0AAABGaWxsRGlyZWN0aW9uAAAAAAcAAABQYWRkaW5n
@@ -734,7 +730,7 @@ aWdubWVudBURAAAAVmVydGljYWxBbGlnbm1lbnQAAAAA]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBX282A0C63DEE744EB9C3F6BD6BD5ECA3D">
+				<Item class="StyleRule" referent="RBX6F6E5E5529A8474287AFD1F98CAA5D89">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AgAAAAsAAABQYWRkaW5nTGVmdAkAAAAABQAAAAwAAABQYWRkaW5nUmlnaHQJAAAAAAUAAAA=</BinaryString>
@@ -749,7 +745,7 @@ aWdubWVudBURAAAAVmVydGljYWxBbGlnbm1lbnQAAAAA]]></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBX7242B11082BE43E88DDDF6150A3BAD0F">
+			<Item class="StyleRule" referent="RBXBB8FFD00B814492DA7C74512280402AF">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[AwAAAA0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRvbWF0aWNTaXplAgAAABYAAABCYWNrZ3Jv
@@ -763,7 +759,7 @@ dW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/BAAAAFNpemUKAACAPwAAAAAAAAAAAAAAAA==]]></BinaryS
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX0C9FE58130ED408F969C255C48841AE3">
+				<Item class="StyleRule" referent="RBX14BF26C840F74ADEB532776ECF5AB493">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABGaWxsRGlyZWN0aW9uFQ0AAABGaWxsRGlyZWN0aW9uAAAAABMAAABIb3Jpem9u
@@ -780,7 +776,7 @@ RmxleBUPAAAAVUlGbGV4QWxpZ25tZW50BAAAAAUAAABXcmFwcwMB]]></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBX221A2B7BFEC2475F90D13475EA1E413C">
+			<Item class="StyleRule" referent="RBX1FF2E8C530B74F86A9FD52802D642AC5">
 				<Properties>
 					<int name="Priority">0</int>
 					<BinaryString name="PropertiesSerialize"><![CDATA[DAAAABAAAABCYWNrZ3JvdW5kQ29sb3IzAhkAAAAkQ29udGFpbmVyQmFja2dyb3VuZENvbG9y
@@ -801,7 +797,7 @@ dBUOAAAAVGV4dFhBbGlnbm1lbnQAAAAA]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX759634006D554B5D9F56C0E875E4FFA0">
+				<Item class="StyleRule" referent="RBX463D7561B9944772966770E9F7489440">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAA0AAABQYWRkaW5nQm90dG9tAg4AAAAkU2VhcmNoUGFkZGluZwsAAABQYWRkaW5nTGVm
@@ -817,7 +813,7 @@ ZwoAAABQYWRkaW5nVG9wAg4AAAAkU2VhcmNoUGFkZGluZw==]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBXD996F5B6A0C74CE7A330C7D3E4F9016D">
+				<Item class="StyleRule" referent="RBX7335EE04A48A4529B68FE88D80D71792">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAwAAABDb3JuZXJSYWRpdXMCFgAAACRDb250YWluZXJDb3JuZXJSYWRpdXM=</BinaryString>
@@ -831,7 +827,7 @@ ZwoAAABQYWRkaW5nVG9wAg4AAAAkU2VhcmNoUGFkZGluZw==]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBX07B43DB1ED2546CE83D8A204360264A1">
+				<Item class="StyleRule" referent="RBX357A2E492BF046CEB6AE34ECC33B9EDC">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[AwAAAA8AAABBcHBseVN0cm9rZU1vZGUVDwAAAEFwcGx5U3Ryb2tlTW9kZQEAAAAFAAAAQ29s
@@ -847,7 +843,7 @@ YWluZXJTdHJva2VUcmFuc3BhcmVuY3k=]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StyleRule" referent="RBX9DAD0CD68C394E36A19FEDD2ADC7BE55">
+				<Item class="StyleRule" referent="RBXF3E488782F53478E8CA229DE801D91F1">
 					<Properties>
 						<int name="Priority">0</int>
 						<BinaryString name="PropertiesSerialize"><![CDATA[BwAAAAsAAABBbmNob3JQb2ludBAAAIA/AAAAPxYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5
@@ -863,7 +859,7 @@ BAAAAFNpemUKAACAPwAAAAAAAIA/AAAAAAcAAABWaXNpYmxlAwA=]]></BinaryString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="StyleRule" referent="RBX3B169CB962DA469D8B7DDD6473F7BE8C">
+					<Item class="StyleRule" referent="RBX379732C5ED44484B9206538C94F25F1C">
 						<Properties>
 							<int name="Priority">0</int>
 							<BinaryString name="PropertiesSerialize">AAAAAA==</BinaryString>
@@ -879,10 +875,11 @@ BAAAAFNpemUKAACAPwAAAAAAAIA/AAAAAAcAAABWaXNpYmxlAwA=]]></BinaryString>
 					</Item>
 				</Item>
 			</Item>
-			<Item class="StyleRule" referent="RBX3B1FECD960754BE4A89EAF06A2DB068A">
+			<Item class="StyleRule" referent="RBX95357C55633A41D4924E4944304E31CF">
 				<Properties>
 					<int name="Priority">7</int>
-					<BinaryString name="PropertiesSerialize">AAAAAA==</BinaryString>
+					<BinaryString name="PropertiesSerialize"><![CDATA[AgAAAA0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRvbWF0aWNTaXplAwAAABYAAABCYWNrZ3Jv
+dW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/]]></BinaryString>
 					<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
 					<string name="Selector">.InventoryHints</string>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -892,10 +889,42 @@ BAAAAFNpemUKAACAPwAAAAAAAIA/AAAAAAcAAABWaXNpYmxlAwA=]]></BinaryString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="StyleRule" referent="RBX8DFC4E1C68054CBFB4B116DDC3257DF5">
+				<Item class="StyleRule" referent="RBX352EE947846C42F792ABA4169C386A6C">
 					<Properties>
 						<int name="Priority">1</int>
 						<BinaryString name="PropertiesSerialize">AQAAAAkAAABTb3J0T3JkZXIVCQAAAFNvcnRPcmRlcgIAAAA=</BinaryString>
+						<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
+						<string name="Selector">::UIListLayout</string>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+						<bool name="DefinesCapabilities">false</bool>
+						<string name="Name">::UIListLayout</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="StyleRule" referent="RBX16916CC647F74920B09589AE453DA26E">
+				<Properties>
+					<int name="Priority">8</int>
+					<BinaryString name="PropertiesSerialize"><![CDATA[BAAAAAsAAABBbmNob3JQb2ludBAAAAA/AACAPw0AAABBdXRvbWF0aWNTaXplFQ0AAABBdXRv
+bWF0aWNTaXplAwAAABYAAABCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5BgAAAAAAAPA/CAAAAFBv
+c2l0aW9uCgAAAD8AAAAAAACAPwAAAAA=]]></BinaryString>
+					<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
+					<string name="Selector">.HotbarHints</string>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+					<bool name="DefinesCapabilities">false</bool>
+					<string name="Name">.HotbarHints</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="StyleRule" referent="RBX9E595398914846538D38344569B97300">
+					<Properties>
+						<int name="Priority">1</int>
+						<BinaryString name="PropertiesSerialize"><![CDATA[AwAAAA0AAABGaWxsRGlyZWN0aW9uFQ0AAABGaWxsRGlyZWN0aW9uAAAAAAkAAABTb3J0T3Jk
+ZXIVCQAAAFNvcnRPcmRlcgIAAAARAAAAVmVydGljYWxBbGlnbm1lbnQVEQAAAFZlcnRpY2Fs
+QWxpZ25tZW50AgAAAA==]]></BinaryString>
 						<BinaryString name="PropertyTransitionsSerialize"></BinaryString>
 						<string name="Selector">::UIListLayout</string>
 						<BinaryString name="AttributesSerialize"></BinaryString>
