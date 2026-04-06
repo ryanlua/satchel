@@ -6,7 +6,6 @@ local Searchbar = require(script.Parent.Searchbar)
 local Slot = require(script.Parent.Slot)
 
 export type Props = {
-	forceHintVisible: boolean?,
 	size: UDim2?, -- TODO: change size to use slots amount
 	tools: { Tool? }?,
 	visible: boolean?,

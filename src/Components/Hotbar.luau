@@ -5,7 +5,6 @@ local React = require(script.Parent.Parent.Parent.react)
 local Slot = require(script.Parent.Slot)
 
 export type Props = {
-	forceGamepadHintVisible: boolean?,
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
 	tools: { Tool? }?,

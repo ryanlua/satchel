@@ -5,7 +5,6 @@ local React = require(script.Parent.Parent.Parent.react)
 local Inventory = require(script.Parent.Parent.Components.Inventory)
 
 local controls = {
-	hintVisible = true,
 	toolName = "Sword",
 	toolImage = "rbxasset://Textures/Sword128.png",
 	tooltipText = "A classic sword",
@@ -29,7 +28,6 @@ return {
 		tools[props.controls.toolSlot] = tool
 
 		return React.createElement(Inventory, {
-			forceHintVisible = props.controls.hintVisible,
 			size = UDim2.fromOffset(655, 300),
 			tools = tools,
 		})
