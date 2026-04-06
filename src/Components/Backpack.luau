@@ -36,7 +36,7 @@ local function Backpack(props: Props)
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
 			slots = props.slots,
 			tools = hotbarTools,
-			opened = props.opened,
+			opened = opened,
 		}),
 		Inventory = React.createElement(Inventory, {
 			slots = props.slots,
