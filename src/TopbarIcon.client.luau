@@ -1,5 +1,6 @@
 --!strict
 
+local Satchel = require(script.Parent)
 local Icon = require(script.Parent.Parent.topbarplus)
 
 local icon = Icon.new()
@@ -23,8 +24,8 @@ icon:bindToggleKey(Enum.KeyCode.Backquote)
 icon:autoDeselect(false)
 icon:setCaption("Inventory")
 
-icon.toggled:Connect(function(_isSelected, fromSource)
+icon.toggled:Connect(function(isSelected, fromSource)
 	if fromSource == "User" then
-		print("Inventory toggled")
+		Satchel.setEnabled(isSelected)
 	end
 end)
