@@ -46,7 +46,7 @@ local function InventoryHint(props: Props)
 		Image = React.createElement("ImageLabel", {
 			Image = UserInputService:GetImageForKeyCode(props.keyCode),
 		}),
-		Name = React.createElement("TextLabel", {
+		KeyCode = React.createElement("TextLabel", {
 			Text = props.text,
 		}),
 	})
