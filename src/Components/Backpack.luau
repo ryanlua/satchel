@@ -46,6 +46,7 @@ local function Backpack(props: Props)
 		}),
 		Inventory = React.createElement(Inventory, {
 			slots = props.slots,
+			rows = props.rows,
 			tools = inventoryTools,
 			opened = opened,
 		}),

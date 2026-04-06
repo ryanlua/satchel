@@ -11,6 +11,7 @@ local controls = {
 	toolTooltip = "A classic sword",
 	toolSlot = 1,
 	opened = true,
+	rows = 4,
 }
 
 type Props = {
@@ -30,6 +31,7 @@ return {
 			slots = props.controls.slots,
 			tools = { [props.controls.toolSlot] = Tool },
 			opened = props.controls.opened,
+			rows = props.controls.rows,
 		})
 	end,
 }

@@ -6,12 +6,17 @@ local Searchbar = require(script.Parent.Searchbar)
 local Slot = require(script.Parent.Slot)
 
 export type Props = {
-	size: UDim2?, -- TODO: change size to use slots amount
+	width: number?,
+	rows: number?,
 	tools: { Tool? }?,
 	opened: boolean?,
 }
 
 local function Inventory(props: Props)
+	local width = props.width or 0
+	local rows = props.rows or 4
+	local height = rows * 65 - 5
+
 	local slotChildren = {}
 
 	if props.tools then
@@ -27,12 +32,14 @@ local function Inventory(props: Props)
 	end
 
 	return React.createElement("Frame", {
-		Size = props.size,
+		Size = UDim2.fromOffset(width, 0),
 		Visible = props.opened,
 		[React.Tag] = "Inventory",
 	}, {
 		SearchBox = React.createElement(Searchbar),
-		SlotFrame = React.createElement("ScrollingFrame", nil, slotChildren),
+		SlotFrame = React.createElement("ScrollingFrame", {
+			Size = UDim2.fromOffset(0, height),
+		}, slotChildren),
 	})
 end
 

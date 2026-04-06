@@ -9,6 +9,7 @@ local controls = {
 	toolImage = "rbxasset://Textures/Sword128.png",
 	tooltipText = "A classic sword",
 	toolSlot = 1,
+	rows = 4,
 }
 
 type Props = {
@@ -28,7 +29,8 @@ return {
 		tools[props.controls.toolSlot] = tool
 
 		return React.createElement(Inventory, {
-			size = UDim2.fromOffset(655, 300),
+			rows = props.controls.rows,
+			width = 655,
 			tools = tools,
 		})
 	end,
