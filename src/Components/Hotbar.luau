@@ -2,12 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local HotbarHint = require(script.Parent.HotbarHint)
 local Slot = require(script.Parent.Slot)
-
-local HotbarBindings = script.Parent.Parent.Bindings.HotbarContext
-local SlotLeftGamepadKeyCode = HotbarBindings.SlotLeftAction.GamepadBinding.KeyCode
-local SlotRightGamepadKeyCode = HotbarBindings.SlotRightAction.GamepadBinding.KeyCode
 
 export type Props = {
 	forceGamepadHintVisible: boolean?,
@@ -36,20 +31,6 @@ local function Hotbar(props: Props)
 				unlocked = slotUnlocked,
 			})
 		end
-	end
-
-	if next(children) then
-		-- Create default hints for equipping between hotbar slots
-		children.SlotLeftHint = React.createElement(HotbarHint, {
-			keyCode = SlotLeftGamepadKeyCode,
-			forceVisible = props.forceGamepadHintVisible,
-			order = -1,
-		})
-		children.SlotRightHint = React.createElement(HotbarHint, {
-			keyCode = SlotRightGamepadKeyCode,
-			forceVisible = props.forceGamepadHintVisible,
-			order = 100,
-		})
 	end
 
 	return React.createElement("Frame", {
