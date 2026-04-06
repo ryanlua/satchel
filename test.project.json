@@ -1,0 +1,15 @@
+{
+  "name": "Test Satchel",
+  "emitLegacyScripts": false,
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "$path": "tests",
+      "Satchel": {
+        "$path": "models/Satchel"
+      }
+    }
+  }
+}
