@@ -23,9 +23,29 @@ handle.Parent = playerGui
 local root = ReactRoblox.createRoot(handle)
 
 local function Satchel()
+	-- Open and close backpack based on bindable events
+	local opened, setOpened = React.useState(false)
+
+	React.useEffect(function()
+		local bindableEvents = script.Parent.BindableEvents
+
+		local inventoryOpened = bindableEvents.InventoryOpened.Event:Connect(function()
+			setOpened(true)
+		end)
+		local inventoryClosed = bindableEvents.InventoryClosed.Event:Connect(function()
+			setOpened(false)
+		end)
+
+		return function()
+			inventoryOpened:Disconnect()
+			inventoryClosed:Disconnect()
+		end
+	end, {})
+
 	return React.createElement(Backpack, {
 		size = UDim2.fromOffset(655, 0),
 		slots = 10,
+		opened = opened,
 	})
 end
 

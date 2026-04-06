@@ -1,7 +1,7 @@
 --!strict
 
-local Satchel = require(script.Parent)
 local Icon = require(script.Parent.Parent.topbarplus)
+local Satchel = require(script.Parent)
 
 local icon = Icon.new()
 icon:modifyTheme({ "IconLabelContainer", "TargetWidth", 0 }) -- Force minimum width
