@@ -36,11 +36,14 @@ local function HotbarHint(props: Props)
 
 	local visible = props.forceVisible or isGamepadPreferred
 
-	return React.createElement("ImageLabel", {
-		Image = UserInputService:GetImageForKeyCode(props.keyCode),
+	return React.createElement("Frame", {
 		LayoutOrder = props.order,
 		Visible = visible,
 		[React.Tag] = "HotbarHint",
+	}, {
+		KeyCode = React.createElement("ImageLabel", {
+			Image = UserInputService:GetImageForKeyCode(props.keyCode),
+		}),
 	})
 end
 
