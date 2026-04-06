@@ -1,5 +1,6 @@
 --!strict
 
+local GuiService = game:GetService("GuiService")
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 
@@ -42,9 +43,30 @@ local function Satchel()
 		end
 	end, {})
 
+	-- Change slots based on viewport display size
+	local slots, setSlots = React.useState(10)
+
+	React.useEffect(function()
+		local function viewportDisplaySizeChanged()
+			local viewportSize = GuiService.ViewportDisplaySize
+			if viewportSize == Enum.DisplaySize.Small then
+				setSlots(5)
+			else
+				setSlots(10)
+			end
+		end
+
+		viewportDisplaySizeChanged()
+		local signal = GuiService:GetPropertyChangedSignal("ViewportDisplaySize"):Connect(viewportDisplaySizeChanged)
+
+		return function()
+			signal:Disconnect()
+		end
+	end, {})
+
 	return React.createElement(Backpack, {
 		size = UDim2.fromOffset(655, 0),
-		slots = 10,
+		slots = slots,
 		opened = opened,
 	})
 end

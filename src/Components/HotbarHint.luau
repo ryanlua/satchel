@@ -27,8 +27,7 @@ local function HotbarHint(props: Props)
 		end
 
 		-- preferredInputChanged()
-		local signal: RBXScriptConnection = UserInputService:GetPropertyChangedSignal("PreferredInput")
-			:Connect(preferredInputChanged)
+		local signal = UserInputService:GetPropertyChangedSignal("PreferredInput"):Connect(preferredInputChanged)
 
 		return function()
 			signal:Disconnect()
