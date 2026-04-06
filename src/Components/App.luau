@@ -25,6 +25,8 @@ export type Props = {
 }
 
 local function App(props: Props)
+	local backpackSize, setBackpackSize = React.useState(Vector2.zero)
+
 	return React.createElement("Frame", {
 		[React.Tag] = "HotbarHints",
 	}, {
@@ -44,6 +46,7 @@ local function App(props: Props)
 			Hints = React.createElement("Frame", {
 				Visible = props.opened,
 				LayoutOrder = -1,
+				Size = UDim2.fromOffset(backpackSize.X, 0),
 				[React.Tag] = "Hints",
 			}, {
 				RemoveFromHotbarHint = React.createElement(InventoryHint, {
@@ -68,6 +71,7 @@ local function App(props: Props)
 				rows = props.rows,
 				tools = props.tools,
 				opened = props.opened,
+				onAbsoluteSizeChanged = setBackpackSize,
 			}),
 		}),
 	})

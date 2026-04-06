@@ -11,6 +11,7 @@ export type Props = {
 	rows: number?, -- TODO: Add rows for inventory height
 	tools: { Tool? }?,
 	opened: boolean?,
+	onAbsoluteSizeChanged: ((Vector2) -> ())?,
 }
 
 local function Backpack(props: Props)
@@ -31,6 +32,11 @@ local function Backpack(props: Props)
 
 	return React.createElement("Frame", {
 		[React.Tag] = "Backpack",
+		[React.Change.AbsoluteSize] = function(rbx)
+			if props.onAbsoluteSizeChanged then
+				props.onAbsoluteSizeChanged(rbx.AbsoluteSize)
+			end
+		end,
 	}, {
 		Hotbar = React.createElement(Hotbar, {
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
