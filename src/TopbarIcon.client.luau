@@ -26,6 +26,10 @@ icon:setCaption("Inventory")
 
 icon.toggled:Connect(function(isSelected, fromSource)
 	if fromSource == "User" then
-		Satchel.setEnabled(isSelected)
+		if isSelected then
+			Satchel.openInventory()
+		else
+			Satchel.closeInventory()
+		end
 	end
 end)
