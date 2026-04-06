@@ -29,16 +29,16 @@ local function Satchel()
 	React.useEffect(function()
 		local bindableEvents = script.Parent.BindableEvents
 
-		local inventoryOpened = bindableEvents.InventoryOpened.Event:Connect(function()
+		local inventoryOpenedSignal = bindableEvents.InventoryOpened.Event:Connect(function()
 			setOpened(true)
 		end)
-		local inventoryClosed = bindableEvents.InventoryClosed.Event:Connect(function()
+		local inventoryClosedSignal = bindableEvents.InventoryClosed.Event:Connect(function()
 			setOpened(false)
 		end)
 
 		return function()
-			inventoryOpened:Disconnect()
-			inventoryClosed:Disconnect()
+			inventoryOpenedSignal:Disconnect()
+			inventoryClosedSignal:Disconnect()
 		end
 	end, {})
 
