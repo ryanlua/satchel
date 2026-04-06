@@ -11,7 +11,7 @@ local controls = {
 	toolImage = "rbxasset://Textures/Sword128.png",
 	toolTooltip = "A classic sword",
 	toolSlot = 1,
-	opened = false,
+	opened = true,
 }
 
 type Props = {

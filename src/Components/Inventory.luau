@@ -8,7 +8,7 @@ local Slot = require(script.Parent.Slot)
 export type Props = {
 	size: UDim2?, -- TODO: change size to use slots amount
 	tools: { Tool? }?,
-	visible: boolean?,
+	opened: boolean?,
 }
 
 local function Inventory(props: Props)
@@ -27,7 +27,8 @@ local function Inventory(props: Props)
 	end
 
 	return React.createElement("Frame", {
-		Visible = props.visible,
+		Size = props.size,
+		Visible = props.opened,
 		[React.Tag] = "Inventory",
 	}, {
 		SearchBox = React.createElement(Searchbar),

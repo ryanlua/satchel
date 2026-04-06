@@ -41,7 +41,7 @@ local function Backpack(props: Props)
 		Inventory = React.createElement(Inventory, {
 			slots = props.slots,
 			tools = inventoryTools,
-			visible = opened,
+			opened = opened,
 		}),
 	})
 end
