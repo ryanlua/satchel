@@ -65,7 +65,6 @@ local function Satchel()
 	end, {})
 
 	return React.createElement(Backpack, {
-		size = UDim2.fromOffset(655, 0),
 		slots = slots,
 		opened = opened,
 	})
