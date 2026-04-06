@@ -7,7 +7,7 @@ local StarterGui = game:GetService("StarterGui")
 local React = require(script.Parent.Parent.react)
 local ReactRoblox = require(script.Parent.Parent["react-roblox"])
 
-local Backpack = require(script.Parent.Components.Backpack)
+local App = require(script.Parent.Components.App)
 
 local DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
 
@@ -64,7 +64,7 @@ local function Satchel()
 		end
 	end, {})
 
-	return React.createElement(Backpack, {
+	return React.createElement(App, {
 		slots = slots,
 		opened = opened,
 	})
@@ -74,5 +74,5 @@ root:render(React.createElement(React.Fragment, nil, {
 	StyleLink = React.createElement("StyleLink", {
 		StyleSheet = DESIGN_SHEET,
 	}),
-	Satchel = React.createElement(Satchel),
+	App = React.createElement(App),
 }))
