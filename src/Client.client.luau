@@ -1,6 +1,7 @@
 --!strict
 
 local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
 
 local React = require(script.Parent.Parent.react)
 local ReactRoblox = require(script.Parent.Parent["react-roblox"])
@@ -11,6 +12,8 @@ local DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
+
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 
 local handle = Instance.new("ScreenGui")
 handle.Name = "SatchelGui"
