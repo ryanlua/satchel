@@ -27,6 +27,7 @@ local function Inventory(props: Props)
 	end
 
 	return React.createElement("Frame", {
+		Visible = props.visible,
 		[React.Tag] = "Inventory",
 	}, {
 		SearchBox = React.createElement(Searchbar),
