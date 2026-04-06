@@ -33,3 +33,11 @@ icon.toggled:Connect(function(isSelected, fromSource)
 		end
 	end
 end)
+
+Satchel.inventoryOpened:Connect(function()
+	icon:select()
+end)
+
+Satchel.inventoryClosed:Connect(function()
+	icon:deselect()
+end)
