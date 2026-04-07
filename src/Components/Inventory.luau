@@ -38,7 +38,7 @@ local function Inventory(props: Props)
 	}, {
 		SearchBox = React.createElement(Searchbar),
 		SlotFrame = React.createElement("ScrollingFrame", {
-			Size = UDim2.fromOffset(0, height),
+			Size = UDim2.new(1, 0, 0, height),
 		}, slotChildren),
 	})
 end
