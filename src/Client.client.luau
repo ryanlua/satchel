@@ -45,14 +45,17 @@ local function Satchel()
 
 	-- Change slots based on viewport display size
 	local slots, setSlots = React.useState(10)
+	local rows, setRows = React.useState(4)
 
 	React.useEffect(function()
 		local function viewportDisplaySizeChanged()
 			local viewportSize = GuiService.ViewportDisplaySize
 			if viewportSize == Enum.DisplaySize.Small then
 				setSlots(5)
+				setRows(3)
 			else
 				setSlots(10)
+				setRows(4)
 			end
 		end
 
@@ -66,6 +69,7 @@ local function Satchel()
 
 	return React.createElement(App, {
 		slots = slots,
+		rows = rows,
 		opened = opened,
 	})
 end
