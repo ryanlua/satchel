@@ -37,7 +37,7 @@ local function Backpack(props: Props)
 			if props.onAbsoluteSizeChanged then
 				props.onAbsoluteSizeChanged(rbx.AbsoluteSize)
 			end
-		end,
+		end :: any,
 	}, {
 		Hotbar = React.createElement(Hotbar, {
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,

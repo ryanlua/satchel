@@ -80,7 +80,7 @@ local function Slot(props: Props)
 			if props.tool then
 				setEquipped(not equipped)
 			end
-		end,
+		end :: any,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
 			Text = slotNumber,

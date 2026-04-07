@@ -15,7 +15,7 @@ local function Searchbar(props: Props)
 		[React.Tag] = "Searchbar",
 		[React.Change.Text] = function(rbx)
 			setText(rbx.Text)
-		end,
+		end :: any,
 	}, {
 		Clear = React.createElement("ImageButton", {
 			Visible = text ~= "",
