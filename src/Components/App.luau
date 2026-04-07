@@ -41,12 +41,12 @@ local function App(props: Props)
 			order = 1,
 		}),
 		InventoryHints = React.createElement("Frame", {
+			Size = UDim2.fromOffset(backpackSize.X, 0),
 			[React.Tag] = "InventoryHints",
 		}, {
 			Hints = React.createElement("Frame", {
 				Visible = props.opened,
 				LayoutOrder = -1,
-				Size = UDim2.fromOffset(backpackSize.X, 0),
 				[React.Tag] = "Hints",
 			}, {
 				RemoveFromHotbarHint = React.createElement(InventoryHint, {
