@@ -20,7 +20,7 @@ type Props = {
 }
 
 return {
-	summary = "Backpack that holds the hotbar and inventory",
+	summary = "Hotbar and inventory, including hints for gamepad controls.",
 	controls = controls,
 	story = function(props: Props)
 		local Tool = Instance.new("Tool")
