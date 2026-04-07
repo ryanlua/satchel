@@ -77,7 +77,9 @@ local function Slot(props: Props)
 		LayoutOrder = props.order,
 		[React.Tag] = tags,
 		[React.Event.Activated] = function()
-			setEquipped(not equipped)
+			if props.tool then
+				setEquipped(not equipped)
+			end
 		end,
 	}, {
 		NumberHint = React.createElement("TextLabel", {
