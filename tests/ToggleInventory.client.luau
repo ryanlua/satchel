@@ -24,11 +24,21 @@ icon:setTextFont(
 	"Deselected"
 )
 icon:setCaption("Toggle Inventory")
-icon:bindEvent("deselected", function()
-	if Satchel.isInventoryOpen() then
-		Satchel.closeInventory()
-	else
-		Satchel.openInventory()
+
+icon.toggled:Connect(function(isSelected, fromSource)
+	if fromSource == "User" then
+		if isSelected then
+			Satchel.openInventory()
+		else
+			Satchel.closeInventory()
+		end
 	end
 end)
-icon:oneClick()
+
+Satchel.inventoryOpened:Connect(function()
+	icon:select()
+end)
+
+Satchel.inventoryClosed:Connect(function()
+	icon:deselect()
+end)
