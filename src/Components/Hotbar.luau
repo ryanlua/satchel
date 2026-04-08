@@ -23,6 +23,7 @@ local function Hotbar(props: Props)
 		-- Only show slots if the hotbar is opened or if there is a tool in the slot
 		if props.opened or tool then
 			children[slotNumber] = React.createElement(Slot, {
+				key = tostring(slotNumber),
 				order = slotNumber,
 				tool = tool,
 				hint = true,
