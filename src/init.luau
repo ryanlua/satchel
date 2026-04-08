@@ -6,6 +6,8 @@ return {
 	-- Functions
 	getEnabled = require(script.Api.getEnabled),
 	setEnabled = require(script.Api.setEnabled),
+	getTheme = require(script.Api.getTheme),
+	setTheme = require(script.Api.setTheme),
 	getTopbarIcon = require(script.Api.getTopbarIcon),
 	openInventory = require(script.Api.openInventory),
 	closeInventory = require(script.Api.closeInventory),
