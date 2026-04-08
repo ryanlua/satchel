@@ -3,6 +3,7 @@
 local GuiService = game:GetService("GuiService")
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
+local UserInputService = game:GetService("UserInputService")
 
 local React = require(script.Parent.Parent.react)
 local ReactRoblox = require(script.Parent.Parent["react-roblox"])
@@ -47,6 +48,16 @@ local function Satchel()
 			menuOpenedSignal:Disconnect()
 		end
 	end, {})
+
+	-- Close backpack when clicking outside of it
+	UserInputService.InputBegan:Connect(function(input: InputObject, gameProcessedEvent: boolean)
+		local inputType = input.UserInputType
+		if not gameProcessedEvent then
+			if inputType == Enum.UserInputType.MouseButton1 or inputType == Enum.UserInputType.Touch then
+				closeInventory()
+			end
+		end
+	end)
 
 	-- Change slots based on viewport display size
 	local slots, setSlots = React.useState(10)
