@@ -14,7 +14,7 @@ export type Props = {
 local function Hotbar(props: Props)
 	local slotCount = props.slots or 10
 
-	local children = {}
+	local children: any = {}
 
 	-- Create hotbar slots
 	for order = 1, slotCount do
@@ -23,8 +23,7 @@ local function Hotbar(props: Props)
 
 		-- Only show slots if the hotbar is opened or if there is a tool in the slot
 		if props.opened or item then
-			children[order] = React.createElement(Slot, {
-				key = tostring(order),
+			children[tostring(order)] = React.createElement(Slot, {
 				order = order,
 				item = item,
 				hint = true,

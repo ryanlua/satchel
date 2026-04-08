@@ -17,12 +17,13 @@ local function Inventory(props: Props)
 	local rows = props.rows or 4
 	local height = rows * 65 - 5
 
-	local slotChildren = {}
+	local children: any = {}
 
+	-- Create inventory slots
 	if props.items then
 		for order, item in props.items do
 			if item then
-				slotChildren[order] = React.createElement(Slot, {
+				children[tostring(order)] = React.createElement(Slot, {
 					unlocked = true,
 					order = order,
 					item = item,
@@ -39,7 +40,7 @@ local function Inventory(props: Props)
 		SearchBox = React.createElement(Searchbar),
 		SlotFrame = React.createElement("ScrollingFrame", {
 			Size = UDim2.new(1, 0, 0, height),
-		}, slotChildren),
+		}, children),
 	})
 end
 
