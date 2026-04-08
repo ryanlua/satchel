@@ -7,7 +7,7 @@ local React = require(script.Parent.Parent.Parent.react)
 local Tooltip = require(script.Parent.Tooltip)
 
 export type Props = {
-	tool: Tool?,
+	item: (Tool | HopperBin)?,
 	equipped: boolean?,
 	unlocked: boolean?,
 	forceHintVisible: boolean?,
@@ -16,10 +16,10 @@ export type Props = {
 }
 
 local function Slot(props: Props)
-	local tool = props.tool
-	local toolName = tool and tool.Name
-	local toolImage = tool and tool.TextureId
-	local tooltipText = tool and tool.ToolTip
+	local item = props.item
+	local itemName = item and item.Name
+	local itemImage = item and item.TextureId
+	local tooltipText = item and (item:IsA("Tool") and item.ToolTip or "")
 
 	local equipped, setEquipped = React.useState(props.equipped or false)
 
@@ -67,8 +67,8 @@ local function Slot(props: Props)
 	end
 
 	-- Hide name if there is an image
-	local slotText = toolName
-	if toolImage ~= "" then
+	local slotText = itemName
+	if itemImage ~= "" then
 		slotText = ""
 	end
 
@@ -77,7 +77,7 @@ local function Slot(props: Props)
 		LayoutOrder = props.order,
 		[React.Tag] = tags,
 		[React.Event.Activated] = function()
-			if props.tool then
+			if props.item then
 				setEquipped(not equipped)
 			end
 		end :: any,
@@ -88,7 +88,7 @@ local function Slot(props: Props)
 			[React.Tag] = "SlotNumber",
 		}),
 		TextureIcon = React.createElement("ImageLabel", {
-			Image = toolImage or "",
+			Image = itemImage or "",
 		}),
 		ToolTip = React.createElement(Tooltip, {
 			text = tooltipText,

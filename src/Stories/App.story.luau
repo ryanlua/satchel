@@ -23,15 +23,15 @@ return {
 	summary = "Hotbar and inventory, including hints for gamepad controls.",
 	controls = controls,
 	story = function(props: Props)
-		local Tool = Instance.new("Tool")
-		Tool.Name = props.controls.toolName
-		Tool.TextureId = props.controls.toolImage
-		Tool.ToolTip = props.controls.toolTooltip
+		local tool = Instance.new("Tool")
+		tool.Name = props.controls.toolName
+		tool.TextureId = props.controls.toolImage
+		tool.ToolTip = props.controls.toolTooltip
 
 		return React.createElement(App, {
 			forceGamepadHintVisible = props.controls.hintVisible,
 			slots = props.controls.slots,
-			tools = { [props.controls.toolSlot] = Tool },
+			items = { [props.controls.toolSlot] = tool },
 			opened = props.controls.opened,
 			rows = props.controls.rows,
 		})

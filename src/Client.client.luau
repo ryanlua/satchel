@@ -3,9 +3,11 @@
 local GuiService = game:GetService("GuiService")
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
+local UserInputService = game:GetService("UserInputService")
 
 local React = require(script.Parent.Parent.react)
 local ReactRoblox = require(script.Parent.Parent["react-roblox"])
+local closeInventory = require(script.Parent.Api.closeInventory)
 
 local App = require(script.Parent.Components.App)
 
@@ -36,34 +38,56 @@ local function Satchel()
 		local inventoryClosedSignal = bindableEvents.InventoryClosed.Event:Connect(function()
 			setOpened(false)
 		end)
+		local menuOpenedSignal = GuiService.MenuOpened:Connect(function()
+			closeInventory()
+		end)
 
 		return function()
 			inventoryOpenedSignal:Disconnect()
 			inventoryClosedSignal:Disconnect()
+			menuOpenedSignal:Disconnect()
 		end
 	end, {})
+
+	-- Close backpack when clicking outside of it
+	UserInputService.InputBegan:Connect(function(input: InputObject, gameProcessedEvent: boolean)
+		local inputType = input.UserInputType
+		if not gameProcessedEvent then
+			if inputType == Enum.UserInputType.MouseButton1 or inputType == Enum.UserInputType.Touch then
+				closeInventory()
+			end
+		end
+	end)
 
 	-- Change slots based on viewport display size
 	local slots, setSlots = React.useState(10)
 	local rows, setRows = React.useState(4)
 
 	React.useEffect(function()
-		local function viewportDisplaySizeChanged()
+		local function updateBackpackSize()
+			local screenOrientation = playerGui.CurrentScreenOrientation
 			local viewportSize = GuiService.ViewportDisplaySize
-			if viewportSize == Enum.DisplaySize.Small then
-				setSlots(5)
+
+			if screenOrientation == Enum.ScreenOrientation.Portrait then
+				setSlots(3)
 				setRows(3)
+			elseif viewportSize == Enum.DisplaySize.Small then
+				setSlots(5)
+				setRows(2)
 			else
 				setSlots(10)
 				setRows(4)
 			end
 		end
 
-		viewportDisplaySizeChanged()
-		local signal = GuiService:GetPropertyChangedSignal("ViewportDisplaySize"):Connect(viewportDisplaySizeChanged)
+		updateBackpackSize()
+		local viewportSignal = GuiService:GetPropertyChangedSignal("ViewportDisplaySize"):Connect(updateBackpackSize)
+		local orientationSignal =
+			playerGui:GetPropertyChangedSignal("CurrentScreenOrientation"):Connect(updateBackpackSize)
 
 		return function()
-			signal:Disconnect()
+			viewportSignal:Disconnect()
+			orientationSignal:Disconnect()
 		end
 	end, {})
 

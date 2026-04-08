@@ -19,8 +19,8 @@ export type Props = {
 	forceGamepadHintVisible: boolean?,
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
-	rows: number?, -- TODO: Add rows for inventory height
-	tools: { Tool? }?,
+	rows: number?,
+	items: { Tool | HopperBin }?,
 	opened: boolean?,
 }
 
@@ -69,7 +69,7 @@ local function App(props: Props)
 				forceKeyboardHintVisible = props.forceKeyboardHintVisible,
 				slots = props.slots,
 				rows = props.rows,
-				tools = props.tools,
+				items = props.items,
 				opened = props.opened,
 				onAbsoluteSizeChanged = setBackpackSize,
 			}),

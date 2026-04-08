@@ -8,7 +8,7 @@ local Slot = require(script.Parent.Slot)
 export type Props = {
 	width: number?,
 	rows: number?,
-	tools: { Tool? }?,
+	items: { Tool | HopperBin }?,
 	opened: boolean?,
 }
 
@@ -17,15 +17,16 @@ local function Inventory(props: Props)
 	local rows = props.rows or 4
 	local height = rows * 65 - 5
 
-	local slotChildren = {}
+	local children: any = {}
 
-	if props.tools then
-		for order, tool in props.tools do
-			if tool then
-				slotChildren[order] = React.createElement(Slot, {
+	-- Create inventory slots
+	if props.items then
+		for order, item in props.items do
+			if item then
+				children[tostring(order)] = React.createElement(Slot, {
 					unlocked = true,
 					order = order,
-					tool = tool,
+					item = item,
 				})
 			end
 		end
@@ -39,7 +40,7 @@ local function Inventory(props: Props)
 		SearchBox = React.createElement(Searchbar),
 		SlotFrame = React.createElement("ScrollingFrame", {
 			Size = UDim2.new(1, 0, 0, height),
-		}, slotChildren),
+		}, children),
 	})
 end
 
