@@ -48,22 +48,30 @@ local function Satchel()
 	local rows, setRows = React.useState(4)
 
 	React.useEffect(function()
-		local function viewportDisplaySizeChanged()
+		local function updateBackpackSize()
+			local screenOrientation = playerGui.CurrentScreenOrientation
 			local viewportSize = GuiService.ViewportDisplaySize
-			if viewportSize == Enum.DisplaySize.Small then
-				setSlots(5)
+
+			if screenOrientation == Enum.ScreenOrientation.Portrait then
+				setSlots(3)
 				setRows(3)
+			elseif viewportSize == Enum.DisplaySize.Small then
+				setSlots(5)
+				setRows(2)
 			else
 				setSlots(10)
 				setRows(4)
 			end
 		end
 
-		viewportDisplaySizeChanged()
-		local signal = GuiService:GetPropertyChangedSignal("ViewportDisplaySize"):Connect(viewportDisplaySizeChanged)
+		updateBackpackSize()
+		local viewportSignal = GuiService:GetPropertyChangedSignal("ViewportDisplaySize"):Connect(updateBackpackSize)
+		local orientationSignal =
+			playerGui:GetPropertyChangedSignal("CurrentScreenOrientation"):Connect(updateBackpackSize)
 
 		return function()
-			signal:Disconnect()
+			viewportSignal:Disconnect()
+			orientationSignal:Disconnect()
 		end
 	end, {})
 
