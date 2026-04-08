@@ -8,7 +8,6 @@ local controls = {
 	toolName = "Sword",
 	toolImage = "rbxasset://Textures/Sword128.png",
 	tooltipText = "A classic sword",
-	toolSlot = 1,
 	rows = 4,
 }
 
@@ -28,7 +27,7 @@ return {
 		return React.createElement(Inventory, {
 			rows = props.controls.rows,
 			width = 655,
-			items = { [props.controls.toolSlot] = tool },
+			items = { [1] = tool },
 		})
 	end,
 }
