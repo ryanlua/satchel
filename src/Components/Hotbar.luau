@@ -7,7 +7,7 @@ local Slot = require(script.Parent.Slot)
 export type Props = {
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
-	tools: { Tool? }?,
+	items: { Tool | HopperBin }?,
 	opened: boolean?,
 }
 
@@ -17,15 +17,15 @@ local function Hotbar(props: Props)
 	local children = {}
 
 	for slotNumber = 1, slotCount do
-		local tool = props.tools and props.tools[slotNumber]
-		local slotUnlocked = props.opened and tool ~= nil
+		local item = props.items and props.items[slotNumber]
+		local slotUnlocked = props.opened and item ~= nil
 
 		-- Only show slots if the hotbar is opened or if there is a tool in the slot
-		if props.opened or tool then
+		if props.opened or item then
 			children[slotNumber] = React.createElement(Slot, {
 				key = tostring(slotNumber),
 				order = slotNumber,
-				tool = tool,
+				item = item,
 				hint = true,
 				forceHintVisible = props.forceKeyboardHintVisible,
 				unlocked = slotUnlocked,

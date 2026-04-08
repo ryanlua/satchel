@@ -22,13 +22,13 @@ return {
 	summary = "Slot representing a single item in the hotbar or inventory, showing the tool and hints for equipping",
 	controls = controls,
 	story = function(props: Props)
-		local Tool = Instance.new("Tool")
-		Tool.Name = props.controls.toolName
-		Tool.TextureId = props.controls.toolImage
-		Tool.ToolTip = props.controls.toolTooltip
+		local tool = Instance.new("Tool")
+		tool.Name = props.controls.toolName
+		tool.TextureId = props.controls.toolImage
+		tool.ToolTip = props.controls.toolTooltip
 
 		return React.createElement(Slot, {
-			tool = Tool,
+			item = tool,
 			equipped = props.controls.equipped,
 			unlocked = props.controls.unlocked,
 			hint = props.controls.hint,

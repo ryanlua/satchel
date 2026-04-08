@@ -25,13 +25,10 @@ return {
 		tool.TextureId = props.controls.toolImage
 		tool.ToolTip = props.controls.tooltipText
 
-		local tools = {}
-		tools[props.controls.toolSlot] = tool
-
 		return React.createElement(Inventory, {
 			rows = props.controls.rows,
 			width = 655,
-			tools = tools,
+			items = { [props.controls.toolSlot] = tool },
 		})
 	end,
 }

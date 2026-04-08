@@ -9,7 +9,7 @@ export type Props = {
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
 	rows: number?, -- TODO: Add rows for inventory height
-	tools: { Tool? }?,
+	items: { Tool | HopperBin }?,
 	opened: boolean?,
 	onAbsoluteSizeChanged: ((Vector2) -> ())?,
 }
@@ -18,15 +18,15 @@ local function Backpack(props: Props)
 	local opened = props.opened or false
 	local slots = props.slots or 10
 
-	-- Tools at indices 1..slots are hotbar; tools above slots are inventory.
-	local hotbarTools: { [number]: Tool? } = {}
-	local inventoryTools: { [number]: Tool? } = {}
-	if props.tools then
-		for index, tool in props.tools do
-			if tool and index > 0 and index <= slots then
-				hotbarTools[index] = tool
-			elseif tool and index > slots then
-				inventoryTools[index - slots] = tool
+	-- Items at indices 1..slots are hotbar; items above slots are inventory.
+	local hotbarItems: { [number]: Tool | HopperBin } = {}
+	local inventoryItems: { [number]: Tool | HopperBin } = {}
+	if props.items then
+		for index, item in props.items do
+			if item and index > 0 and index <= slots then
+				hotbarItems[index] = item
+			elseif item and index > slots then
+				inventoryItems[index - slots] = item
 			end
 		end
 	end
@@ -42,13 +42,13 @@ local function Backpack(props: Props)
 		Hotbar = React.createElement(Hotbar, {
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
 			slots = slots,
-			tools = hotbarTools,
+			items = hotbarItems,
 			opened = opened,
 		}),
 		Inventory = React.createElement(Inventory, {
 			slots = slots,
 			rows = props.rows,
-			tools = inventoryTools,
+			items = inventoryItems,
 			opened = opened,
 		}),
 	})
