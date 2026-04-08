@@ -7,7 +7,7 @@ local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 local screenGui = playerGui:WaitForChild("SatchelGui")
 
-local function getEnabled()
+local function getEnabled(): boolean
 	assert(RunService:IsClient(), "getEnabled can only be called on the client")
 
 	return screenGui.Enabled
