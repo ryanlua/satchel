@@ -5,7 +5,10 @@ local Satchel = require(script.Parent)
 
 local icon = Icon.new()
 icon:setName("SatchelInventory")
-icon:modifyTheme({ "IconLabelContainer", "TargetWidth", 0 }) -- Force minimum width
+icon:modifyTheme({
+	{ "IconLabelContainer", "TargetWidth", 0 }, -- Force minimum width
+	{ "IconLabel", "AutoLocalize", false }, -- Don't translate font icon
+})
 icon:setLabel("backpack")
 icon:setOrder(-1)
 icon:setTextSize(24)
