@@ -9,14 +9,14 @@ local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 local screenGui = playerGui:WaitForChild("SatchelGui")
 
-local function setEnabled(isEnabled: boolean): ()
+local function setEnabled(enabled: boolean): ()
 	assert(RunService:IsClient(), "setEnabled can only be called on the client")
 
-	screenGui.Enabled = isEnabled
+	screenGui.Enabled = enabled
 
 	local icon = getTopbarIcon()
 	if icon then
-		icon:setEnabled(isEnabled)
+		icon:setEnabled(enabled)
 	end
 end
 
