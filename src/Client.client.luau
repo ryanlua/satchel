@@ -6,6 +6,7 @@ local StarterGui = game:GetService("StarterGui")
 
 local React = require(script.Parent.Parent.react)
 local ReactRoblox = require(script.Parent.Parent["react-roblox"])
+local closeInventory = require(script.Parent.Api.closeInventory)
 
 local App = require(script.Parent.Components.App)
 
@@ -36,10 +37,14 @@ local function Satchel()
 		local inventoryClosedSignal = bindableEvents.InventoryClosed.Event:Connect(function()
 			setOpened(false)
 		end)
+		local menuOpenedSignal = GuiService.MenuOpened:Connect(function()
+			closeInventory()
+		end)
 
 		return function()
 			inventoryOpenedSignal:Disconnect()
 			inventoryClosedSignal:Disconnect()
+			menuOpenedSignal:Disconnect()
 		end
 	end, {})
 
