@@ -2,6 +2,7 @@
 
 local RunService = game:GetService("RunService")
 
+local bindableEvents = script.Parent.Parent.BindableEvents
 local styleSheets = script.Parent.Parent.Design
 local currentTheme = styleSheets.SatchelStyleSheet:FindFirstChildWhichIsA("StyleDerive")
 
@@ -11,6 +12,8 @@ local function setTheme(theme: string | StyleSheet)
 
 	local newTheme = if typeof(theme) == "string" then styleSheets:WaitForChild(theme) else theme
 	currentTheme.StyleSheet = newTheme
+
+	bindableEvents.ThemeChanged:Fire(newTheme)
 end
 
 return setTheme
