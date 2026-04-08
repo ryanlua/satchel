@@ -16,15 +16,16 @@ local function Hotbar(props: Props)
 
 	local children = {}
 
-	for slotNumber = 1, slotCount do
-		local item = props.items and props.items[slotNumber]
+	-- Create hotbar slots
+	for order = 1, slotCount do
+		local item = props.items and props.items[order]
 		local slotUnlocked = props.opened and item ~= nil
 
 		-- Only show slots if the hotbar is opened or if there is a tool in the slot
 		if props.opened or item then
-			children[slotNumber] = React.createElement(Slot, {
-				key = tostring(slotNumber),
-				order = slotNumber,
+			children[order] = React.createElement(Slot, {
+				key = tostring(order),
+				order = order,
 				item = item,
 				hint = true,
 				forceHintVisible = props.forceKeyboardHintVisible,
