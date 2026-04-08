@@ -19,7 +19,7 @@ export type Props = {
 	forceGamepadHintVisible: boolean?,
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
-	rows: number?, -- TODO: Add rows for inventory height
+	rows: number?,
 	items: { Tool | HopperBin }?,
 	opened: boolean?,
 }
