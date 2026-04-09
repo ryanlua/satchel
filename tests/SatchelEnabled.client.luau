@@ -8,7 +8,7 @@ icon:modifyTheme({
 	{ "IconLabelContainer", "TargetWidth", 0 }, -- Force minimum width
 	{ "IconLabel", "AutoLocalize", false }, -- Don't translate font icon
 })
-icon:setLabel("globe-simplified")
+icon:setLabel("two-switches-horizontal")
 icon:align("Right")
 icon:setTextSize(24)
 icon:setTextFont(
