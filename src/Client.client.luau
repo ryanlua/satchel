@@ -50,14 +50,20 @@ local function Satchel()
 	end, {})
 
 	-- Close backpack when clicking outside of it
-	UserInputService.InputBegan:Connect(function(input: InputObject, gameProcessedEvent: boolean)
-		local inputType = input.UserInputType
-		if not gameProcessedEvent then
-			if inputType == Enum.UserInputType.MouseButton1 or inputType == Enum.UserInputType.Touch then
-				closeInventory()
+	React.useEffect(function()
+		local inputSignal = UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+			local inputType = input.UserInputType
+			if not gameProcessedEvent then
+				if inputType == Enum.UserInputType.MouseButton1 or inputType == Enum.UserInputType.Touch then
+					closeInventory()
+				end
 			end
+		end)
+
+		return function()
+			inputSignal:Disconnect()
 		end
-	end)
+	end, {})
 
 	-- Change slots based on viewport display size
 	local slots, setSlots = React.useState(10)
