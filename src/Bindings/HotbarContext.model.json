@@ -1,0 +1,47 @@
+{
+  "ClassName": "InputContext",
+  "Properties": {
+    "Priority": 2000
+  },
+  "Children": [
+    {
+      "Name": "SlotLeftAction",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "GamepadBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "ButtonL1"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "SlotRightAction",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "GamepadBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "ButtonR1"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ToggleInventoryAction",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Backquote"
+          }
+        }
+      ]
+    }
+  ]
+}
