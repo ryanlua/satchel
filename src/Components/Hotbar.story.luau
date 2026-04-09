@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local Hotbar = require(script.Parent.Parent.Components.Hotbar)
+local Hotbar = require(script.Parent.Hotbar)
 
 local controls = {
 	slots = 10,

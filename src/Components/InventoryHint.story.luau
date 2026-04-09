@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local InventoryHint = require(script.Parent.Parent.Components.InventoryHint)
+local InventoryHint = require(script.Parent.InventoryHint)
 
 local controls = {
 	text = "Remove from Hotbar",

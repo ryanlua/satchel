@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local Inventory = require(script.Parent.Parent.Components.Inventory)
+local Inventory = require(script.Parent.Inventory)
 
 local controls = {
 	toolName = "Sword",

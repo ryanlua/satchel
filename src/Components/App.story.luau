@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local App = require(script.Parent.Parent.Components.App)
+local App = require(script.Parent.App)
 
 local controls = {
 	hintVisible = true,

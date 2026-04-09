@@ -2,7 +2,7 @@
 
 local React = require(script.Parent.Parent.Parent.react)
 
-local Backpack = require(script.Parent.Parent.Components.Backpack)
+local Backpack = require(script.Parent.Backpack)
 
 local controls = {
 	slots = 10,
