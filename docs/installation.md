@@ -1,5 +1,9 @@
 Installing Satchel is easy and painless. Satchel is a drag-and-drop module that works out of the box and with no configuration needed.
 
+Satchel is available on the [Creator Store], [Wally], and [GitHub Releases].
+
+[Creator Store][Creator Store]{ .md-button .md-button--primary } [GitHub Releases][GitHub Releases]{ .md-button .md-button--primary } [Wally][Wally]{ .md-button .md-button--primary }
+
 Satchel uses [RunContext] to run anywhere, so you do not need to move it from [Workspace], though it is recommeneded to parent to [`ReplicatedStorage`][ReplicatedStorage] for best practices and organizational reasons.
 
 !!! danger
