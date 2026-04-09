@@ -23,7 +23,7 @@ icon:setTextFont(
 	Enum.FontStyle.Normal,
 	"Selected"
 )
-icon:setCaption("Toggle Satchel Enabled")
+icon:setCaption("Satchel Enabled")
 
 icon.toggled:Connect(function()
 	Satchel.setEnabled(not Satchel.getEnabled())
