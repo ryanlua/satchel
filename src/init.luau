@@ -20,4 +20,5 @@ return {
 	backpackItemUnequipped = bindableEvents.BackpackItemUnequipped.Event,
 	inventoryOpened = bindableEvents.InventoryOpened.Event,
 	inventoryClosed = bindableEvents.InventoryClosed.Event,
+	themeChanged = bindableEvents.ThemeChanged.Event,
 }
