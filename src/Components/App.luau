@@ -26,6 +26,19 @@ export type Props = {
 
 local function App(props: Props)
 	local backpackSize, setBackpackSize = React.useState(Vector2.zero)
+	local slotCount = props.slots or 10
+
+	local hotbarVisible = props.opened or false
+
+	-- Don't show hotbar hints if hotbar has no slots
+	if not hotbarVisible and props.items then
+		for order = 1, slotCount do
+			if props.items[order] ~= nil then
+				hotbarVisible = true
+				break
+			end
+		end
+	end
 
 	return React.createElement("Frame", {
 		[React.Tag] = "HotbarHints",
@@ -34,11 +47,13 @@ local function App(props: Props)
 			keyCode = SlotLeftGamepadKeyCode,
 			forceVisible = props.forceGamepadHintVisible,
 			order = -1,
+			visible = hotbarVisible,
 		}),
 		SlotRightHint = React.createElement(HotbarHint, {
 			keyCode = SlotRightGamepadKeyCode,
 			forceVisible = props.forceGamepadHintVisible,
 			order = 1,
+			visible = hotbarVisible,
 		}),
 		InventoryHints = React.createElement("Frame", {
 			Size = UDim2.fromOffset(backpackSize.X, 0),
