@@ -2,8 +2,12 @@
 
 local GuiService = game:GetService("GuiService")
 local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
 local StarterGui = game:GetService("StarterGui")
 local UserInputService = game:GetService("UserInputService")
+
+-- selene: allow(global_usage)
+_G.__DEV__ = RunService:IsStudio()
 
 local React = require(script.Parent.Parent.react)
 local ReactRoblox = require(script.Parent.Parent["react-roblox"])
