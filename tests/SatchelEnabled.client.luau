@@ -8,6 +8,7 @@ icon:modifyTheme({
 	{ "IconLabelContainer", "TargetWidth", 0 }, -- Force minimum width
 	{ "IconLabel", "AutoLocalize", false }, -- Don't translate font icon
 })
+icon:select()
 icon:setLabel("two-switches-horizontal")
 icon:align("Right")
 icon:setTextSize(24)
@@ -15,16 +16,18 @@ icon:setTextFont(
 	"rbxasset://LuaPackages/Packages/_Index/BuilderIcons/BuilderIcons/BuilderIcons.json",
 	Enum.FontWeight.Bold,
 	Enum.FontStyle.Normal,
-	"Deselected"
+	"Selected"
 )
 icon:setTextFont(
 	"rbxasset://LuaPackages/Packages/_Index/BuilderIcons/BuilderIcons/BuilderIcons.json",
 	Enum.FontWeight.Regular,
 	Enum.FontStyle.Normal,
-	"Selected"
+	"Deselected"
 )
+icon:autoDeselect(false)
 icon:setCaption("Satchel Enabled")
-
-icon.toggled:Connect(function()
-	Satchel.setEnabled(not Satchel.getEnabled())
+icon.toggled:Connect(function(isSelected, fromSource)
+	if fromSource == "User" then
+		Satchel.setEnabled(isSelected)
+	end
 end)
