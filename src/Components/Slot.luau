@@ -1,7 +1,5 @@
 --!strict
 
-local UserInputService = game:GetService("UserInputService")
-
 local React = require(script.Parent.Parent.Parent.react)
 
 local Tooltip = require(script.Parent.Tooltip)
@@ -32,30 +30,7 @@ local function Slot(props: Props)
 		slotNumber = "0"
 	end
 
-	-- Only show slot number if keyboard and mouse is preferred or forced visible
-	local isKeyboardPreferred, setIsKeyboardPreferred =
-		React.useState(UserInputService.PreferredInput == Enum.PreferredInput.KeyboardAndMouse)
-
-	React.useEffect(function()
-		local function preferredInputChanged()
-			local preferredInput = UserInputService.PreferredInput
-
-			if preferredInput == Enum.PreferredInput.KeyboardAndMouse then
-				setIsKeyboardPreferred(true)
-			else
-				setIsKeyboardPreferred(false)
-			end
-		end
-
-		-- preferredInputChanged()
-		local signal = UserInputService:GetPropertyChangedSignal("PreferredInput"):Connect(preferredInputChanged)
-
-		return function()
-			signal:Disconnect()
-		end
-	end, {})
-
-	local hintVisible = props.hint == true and (props.forceHintVisible or isKeyboardPreferred)
+	local hintVisible = props.hint and props.forceHintVisible
 
 	-- Generate tags based on state
 	local tags = "Slot"

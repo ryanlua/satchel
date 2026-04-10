@@ -12,10 +12,12 @@ export type Props = {
 }
 
 local function HotbarHint(props: Props)
+	local visible = props.visible and props.forceVisible
+
 	return React.createElement("Frame", {
 		LayoutOrder = props.order,
-		Visible = props.forceVisible,
-		[React.Tag] = if props.visible then "HotbarHint" else nil,
+		Visible = visible,
+		[React.Tag] = "HotbarHint",
 	}, {
 		KeyCode = React.createElement("ImageLabel", {
 			Image = UserInputService:GetImageForKeyCode(props.keyCode),
