@@ -30,7 +30,7 @@ local function Slot(props: Props)
 		slotNumber = "0"
 	end
 
-	local hintVisible = props.hint and props.forceHintVisible
+	local hintVisible = props.hint == true and props.forceHintVisible
 
 	-- Generate tags based on state
 	local tags = "Slot"
