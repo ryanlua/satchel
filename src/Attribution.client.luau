@@ -24,7 +24,7 @@ local RunService = game:GetService("RunService")
 local VERSION = "2.0.0"
 
 -- Print attribution. Do not modify without reading above
-if not RunService:IsStudio() then
+if not RunService:IsStudio() and RunService:IsClient() then
 	print(`💼 Running Satchel v{VERSION} by @WinnersTakesAll`)
 end
 
