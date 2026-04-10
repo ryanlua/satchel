@@ -89,7 +89,7 @@ dependencies = [["collections", "jsdotlua/collections@1.2.7"]]
 
 [[package]]
 name = "ryanlua/satchel"
-version = "1.4.1"
+version = "2.0.0"
 dependencies = [["react", "jsdotlua/react@17.2.1"], ["react-roblox", "jsdotlua/react-roblox@17.2.1"], ["topbarplus", "ryanlua/topbarplus@1.0.1"]]
 
 [[package]]
