@@ -1,7 +1,7 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
-local ReactRoblox = require(script.Parent.Parent.Parent["react-roblox"])
+local React = require("../../react")
+local ReactRoblox = require("../../react-roblox")
 
 local DESIGN_SHEET = script.Parent.Parent.Design.SatchelStyleSheet
 

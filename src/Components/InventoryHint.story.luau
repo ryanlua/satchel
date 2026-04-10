@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local InventoryHint = require(script.Parent.InventoryHint)
+local InventoryHint = require("./InventoryHint")
 
 local controls = {
 	text = "Remove from Hotbar",

@@ -1,10 +1,10 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Backpack = require(script.Parent.Backpack)
-local HotbarHint = require(script.Parent.HotbarHint)
-local InventoryHint = require(script.Parent.InventoryHint)
+local Backpack = require("./Backpack")
+local HotbarHint = require("./HotbarHint")
+local InventoryHint = require("./InventoryHint")
 
 local InventoryBindings = script.Parent.Parent.Bindings.InventoryContext
 local RemoveFromHotbarGamepadKeyCode = InventoryBindings.RemoveFromHotbarAction.GamepadBinding.KeyCode

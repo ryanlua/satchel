@@ -1,7 +1,7 @@
 --!strict
 
-local Icon = require(script.Parent.Parent.topbarplus)
-local Satchel = require(script.Parent)
+local Icon = require("../topbarplus")
+local Satchel = require("./")
 
 local icon = Icon.new()
 icon:setName("SatchelInventory")

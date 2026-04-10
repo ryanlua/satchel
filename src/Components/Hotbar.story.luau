@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Hotbar = require(script.Parent.Hotbar)
+local Hotbar = require("./Hotbar")
 
 local controls = {
 	slots = 10,

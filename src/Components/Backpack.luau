@@ -1,9 +1,9 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Hotbar = require(script.Parent.Hotbar)
-local Inventory = require(script.Parent.Inventory)
+local Hotbar = require("./Hotbar")
+local Inventory = require("./Inventory")
 
 export type Props = {
 	forceKeyboardHintVisible: boolean?,

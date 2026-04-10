@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Searchbar = require(script.Parent.Searchbar)
+local Searchbar = require("./Searchbar")
 
 return {
 	summary = "Search for items in the inventory",

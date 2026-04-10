@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Slot = require(script.Parent.Slot)
+local Slot = require("./Slot")
 
 export type Props = {
 	forceKeyboardHintVisible: boolean?,

@@ -2,8 +2,8 @@
 
 local StarterGui = game:GetService("StarterGui")
 
-local Icon = require(script.Parent.Satchel.Packages.topbarplus)
-local Satchel = require(script.Parent.Satchel)
+local Icon = require("./Satchel/Packages/topbarplus")
+local Satchel = require("./Satchel")
 
 local icon = Icon.new()
 icon:modifyTheme({

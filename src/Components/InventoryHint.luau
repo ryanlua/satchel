@@ -2,7 +2,7 @@
 
 local UserInputService = game:GetService("UserInputService")
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
 export type Props = {
 	keyCode: Enum.KeyCode,

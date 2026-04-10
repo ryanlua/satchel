@@ -1,6 +1,6 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
 export type Props = {
 	text: string?,

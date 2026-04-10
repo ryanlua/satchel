@@ -9,11 +9,11 @@ local UserInputService = game:GetService("UserInputService")
 -- selene: allow(global_usage)
 _G.__DEV__ = RunService:IsStudio()
 
-local React = require(script.Parent.Parent.react)
-local ReactRoblox = require(script.Parent.Parent["react-roblox"])
-local closeInventory = require(script.Parent.Api.closeInventory)
+local React = require("../react")
+local ReactRoblox = require("../react-roblox")
+local closeInventory = require("./Api/closeInventory")
 
-local App = require(script.Parent.Components.App)
+local App = require("./Components/App")
 
 local DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
 

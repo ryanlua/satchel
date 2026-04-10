@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local App = require(script.Parent.App)
+local App = require("./App")
 
 local controls = {
 	hintVisible = true,

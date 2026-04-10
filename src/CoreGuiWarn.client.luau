@@ -1,7 +1,8 @@
 --!strict
 
 local StarterGui = game:GetService("StarterGui")
-local Satchel = require(script.Parent)
+
+local Satchel = require("./")
 
 task.spawn(function()
 	while task.wait(1) do

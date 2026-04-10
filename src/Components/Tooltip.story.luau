@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Tooltip = require(script.Parent.Tooltip)
+local Tooltip = require("./Tooltip")
 
 local controls = {
 	text = "I'm a tooltip!",

@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Backpack = require(script.Parent.Backpack)
+local Backpack = require("./Backpack")
 
 local controls = {
 	slots = 10,

@@ -1,9 +1,9 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local Searchbar = require(script.Parent.Searchbar)
-local Slot = require(script.Parent.Slot)
+local Searchbar = require("./Searchbar")
+local Slot = require("./Slot")
 
 export type Props = {
 	width: number?,

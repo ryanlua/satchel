@@ -1,8 +1,8 @@
 --!strict
 
-local React = require(script.Parent.Parent.Parent.react)
+local React = require("../../react")
 
-local HotbarHint = require(script.Parent.HotbarHint)
+local HotbarHint = require("./HotbarHint")
 
 return {
 	name = "Hotbar Hint",
