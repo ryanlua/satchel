@@ -1,5 +1,7 @@
 --!strict
 
+local StarterGui = game:GetService("StarterGui")
+
 local Icon = require(script.Parent.Satchel.Packages.topbarplus)
 local Satchel = require(script.Parent.Satchel)
 
@@ -25,9 +27,10 @@ icon:setTextFont(
 	"Deselected"
 )
 icon:autoDeselect(false)
-icon:setCaption("Satchel Enabled")
+icon:setCaption("Toggle Satchel")
 icon.toggled:Connect(function(isSelected, fromSource)
 	if fromSource == "User" then
 		Satchel.setEnabled(isSelected)
+		StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, not isSelected)
 	end
 end)
