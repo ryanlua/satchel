@@ -23,18 +23,43 @@ icon:setTextFont(
 	Enum.FontStyle.Normal,
 	"Deselected"
 )
+icon:autoDeselect(false)
 icon:setCaption("Switch Theme")
-icon:setDropdown({
-	Icon.new()
-		:setLabel("Default")
-		:bindEvent("deselected", function()
-			Satchel.setTheme("DefaultTheme")
-		end)
-		:oneClick(),
-	Icon.new()
-		:setLabel("Legacy")
-		:bindEvent("deselected", function()
-			Satchel.setTheme("LegacyTheme")
-		end)
-		:oneClick(),
-})
+
+local defaultTheme: Icon.Icon
+local legacyTheme: Icon.Icon
+
+defaultTheme = Icon.new()
+defaultTheme:select()
+defaultTheme:setLabel("Default")
+defaultTheme:bindEvent("selected", function()
+	Satchel.setTheme("DefaultTheme")
+end)
+defaultTheme:bindEvent("deselected", function()
+	if not legacyTheme.isSelected then
+		defaultTheme:select()
+		Satchel.setTheme("DefaultTheme")
+	end
+end)
+
+legacyTheme = Icon.new()
+legacyTheme:setLabel("Legacy")
+legacyTheme:bindEvent("selected", function()
+	Satchel.setTheme("LegacyTheme")
+end)
+legacyTheme:bindEvent("deselected", function()
+	if not defaultTheme.isSelected then
+		defaultTheme:select()
+		Satchel.setTheme("DefaultTheme")
+	end
+end)
+
+icon:setDropdown({ defaultTheme, legacyTheme })
+
+Satchel.themeChanged:Connect(function(theme)
+	if theme.Name == "DefaultTheme" then
+		defaultTheme:select()
+	elseif theme.Name == "LegacyTheme" then
+		legacyTheme:select()
+	end
+end)
