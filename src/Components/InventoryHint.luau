@@ -12,10 +12,14 @@ export type Props = {
 }
 
 local function InventoryHint(props: Props)
+	local tags = "InventoryHint"
+	if props.forceVisible then
+		tags = tags .. " Visible"
+	end
+
 	return React.createElement("Frame", {
 		LayoutOrder = props.order,
-		Visible = props.forceVisible,
-		[React.Tag] = "InventoryHint",
+		[React.Tag] = tags,
 	}, {
 		KeyCode = React.createElement("ImageLabel", {
 			Image = UserInputService:GetImageForKeyCode(props.keyCode),
