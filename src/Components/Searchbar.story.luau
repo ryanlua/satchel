@@ -1,8 +1,8 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Searchbar = require("./Searchbar")
+const Searchbar = require("./Searchbar")
 
 return {
 	summary = "Search for items in the inventory",

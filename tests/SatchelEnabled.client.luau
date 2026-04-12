@@ -1,11 +1,11 @@
 --!strict
 
-local StarterGui = game:GetService("StarterGui")
+const StarterGui = game:GetService("StarterGui")
 
-local Icon = require("./Satchel/Packages/topbarplus")
-local Satchel = require("./Satchel")
+const Icon = require("./Satchel/Packages/topbarplus")
+const Satchel = require("./Satchel")
 
-local icon = Icon.new()
+const icon = Icon.new()
 icon:modifyTheme({
 	{ "IconLabelContainer", "TargetWidth", 0 }, -- Force minimum width
 	{ "IconLabel", "AutoLocalize", false }, -- Don't translate font icon

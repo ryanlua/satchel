@@ -1,8 +1,8 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local HotbarHint = require("./HotbarHint")
+const HotbarHint = require("./HotbarHint")
 
 return {
 	name = "Hotbar Hint",

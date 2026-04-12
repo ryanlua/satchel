@@ -1,10 +1,10 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Tooltip = require("./Tooltip")
+const Tooltip = require("./Tooltip")
 
-local controls = {
+const controls = {
 	text = "I'm a tooltip!",
 }
 

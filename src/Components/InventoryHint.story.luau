@@ -1,10 +1,10 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local InventoryHint = require("./InventoryHint")
+const InventoryHint = require("./InventoryHint")
 
-local controls = {
+const controls = {
 	text = "Remove from Hotbar",
 }
 

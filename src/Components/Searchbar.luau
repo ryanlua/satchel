@@ -1,13 +1,13 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
 export type Props = {
 	size: UDim2?,
 }
 
-local function Searchbar(props: Props)
-	local text, setText = React.useState("")
+const function Searchbar(props: Props)
+	const text, setText = React.useState("")
 
 	return React.createElement("TextBox", {
 		Size = props.size,

@@ -1,9 +1,9 @@
 --!strict
 
-local React = require("../../react")
-local ReactRoblox = require("../../react-roblox")
+const React = require("../../react")
+const ReactRoblox = require("../../react-roblox")
 
-local DESIGN_SHEET = script.Parent.Parent.Design.SatchelStyleSheet
+const DESIGN_SHEET = script.Parent.Parent.Design.SatchelStyleSheet
 
 return {
 	name = "Satchel",

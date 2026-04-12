@@ -1,8 +1,8 @@
 --!strict
 
-local StarterGui = game:GetService("StarterGui")
+const StarterGui = game:GetService("StarterGui")
 
-local Satchel = require("./")
+const Satchel = require("./")
 
 task.spawn(function()
 	while task.wait(1) do

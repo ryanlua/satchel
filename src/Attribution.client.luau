@@ -18,10 +18,10 @@
 	Thank you for supporting Satchel.
 ]]
 
-local MarketplaceService = game:GetService("MarketplaceService")
-local RunService = game:GetService("RunService")
+const MarketplaceService = game:GetService("MarketplaceService")
+const RunService = game:GetService("RunService")
 
-local VERSION = "2.0.0"
+const VERSION = "2.0.0"
 
 -- Print attribution. Do not modify without reading above
 if not RunService:IsStudio() and RunService:IsClient() then
@@ -31,7 +31,7 @@ end
 -- Check for updates. You may modify the below
 local latestVersion: string?
 
-local success, result = pcall(function()
+const success, result = pcall(function()
 	return MarketplaceService:GetProductInfoAsync(13947506401)
 end)
 

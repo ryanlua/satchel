@@ -1,8 +1,8 @@
 --!strict
 
-local UserInputService = game:GetService("UserInputService")
+const UserInputService = game:GetService("UserInputService")
 
-local React = require("../../react")
+const React = require("../../react")
 
 export type Props = {
 	keyCode: Enum.KeyCode,
@@ -11,7 +11,7 @@ export type Props = {
 	order: number?,
 }
 
-local function InventoryHint(props: Props)
+const function InventoryHint(props: Props)
 	local tags = "InventoryHint"
 	if props.forceVisible then
 		tags = tags .. " Visible"

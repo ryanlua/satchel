@@ -1,10 +1,10 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local App = require("./App")
+const App = require("./App")
 
-local controls = {
+const controls = {
 	hintVisible = true,
 	slots = 10,
 	toolName = "Sword",
@@ -23,7 +23,7 @@ return {
 	summary = "Hotbar and inventory, including hints for gamepad controls.",
 	controls = controls,
 	story = function(props: Props)
-		local tool = Instance.new("Tool")
+		const tool = Instance.new("Tool")
 		tool.Name = props.controls.toolName
 		tool.TextureId = props.controls.toolImage
 		tool.ToolTip = props.controls.toolTooltip

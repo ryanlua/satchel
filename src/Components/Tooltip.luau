@@ -1,12 +1,12 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
 export type Props = {
 	text: string?,
 }
 
-local function Tooltip(props: Props)
+const function Tooltip(props: Props)
 	-- Hide tooltip if there is no text
 	if not props.text or props.text == "" then
 		return

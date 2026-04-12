@@ -1,9 +1,9 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Searchbar = require("./Searchbar")
-local Slot = require("./Slot")
+const Searchbar = require("./Searchbar")
+const Slot = require("./Slot")
 
 export type Props = {
 	width: number?,
@@ -12,12 +12,12 @@ export type Props = {
 	opened: boolean?,
 }
 
-local function Inventory(props: Props)
-	local width = props.width or 0
-	local rows = props.rows or 4
-	local height = rows * 65 - 5
+const function Inventory(props: Props)
+	const width = props.width or 0
+	const rows = props.rows or 4
+	const height = rows * 65 - 5
 
-	local children: any = {}
+	const children: any = {}
 
 	-- Create inventory slots
 	if props.items then

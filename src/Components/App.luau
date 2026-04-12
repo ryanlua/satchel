@@ -1,19 +1,19 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Backpack = require("./Backpack")
-local HotbarHint = require("./HotbarHint")
-local InventoryHint = require("./InventoryHint")
+const Backpack = require("./Backpack")
+const HotbarHint = require("./HotbarHint")
+const InventoryHint = require("./InventoryHint")
 
-local InventoryBindings = script.Parent.Parent.Bindings.InventoryContext
-local RemoveFromHotbarGamepadKeyCode = InventoryBindings.RemoveFromHotbarAction.GamepadBinding.KeyCode
-local SelectSwapGamepadKeyCode = InventoryBindings.SelectSwapAction.GamepadBinding.KeyCode
-local CloseInventoryGamepadKeyCode = InventoryBindings.CloseInventoryAction.GamepadBinding.KeyCode
+const InventoryBindings = script.Parent.Parent.Bindings.InventoryContext
+const RemoveFromHotbarGamepadKeyCode = InventoryBindings.RemoveFromHotbarAction.GamepadBinding.KeyCode
+const SelectSwapGamepadKeyCode = InventoryBindings.SelectSwapAction.GamepadBinding.KeyCode
+const CloseInventoryGamepadKeyCode = InventoryBindings.CloseInventoryAction.GamepadBinding.KeyCode
 
-local HotbarBindings = script.Parent.Parent.Bindings.HotbarContext
-local SlotLeftGamepadKeyCode = HotbarBindings.SlotLeftAction.GamepadBinding.KeyCode
-local SlotRightGamepadKeyCode = HotbarBindings.SlotRightAction.GamepadBinding.KeyCode
+const HotbarBindings = script.Parent.Parent.Bindings.HotbarContext
+const SlotLeftGamepadKeyCode = HotbarBindings.SlotLeftAction.GamepadBinding.KeyCode
+const SlotRightGamepadKeyCode = HotbarBindings.SlotRightAction.GamepadBinding.KeyCode
 
 export type Props = {
 	forceGamepadHintVisible: boolean?,
@@ -24,9 +24,9 @@ export type Props = {
 	opened: boolean?,
 }
 
-local function App(props: Props)
-	local backpackSize, setBackpackSize = React.useState(Vector2.zero)
-	local slotCount = props.slots or 10
+const function App(props: Props)
+	const backpackSize, setBackpackSize = React.useState(Vector2.zero)
+	const slotCount = props.slots or 10
 
 	local hotbarVisible = props.opened or false
 

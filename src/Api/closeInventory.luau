@@ -1,10 +1,10 @@
 --!strict
 
-local RunService = game:GetService("RunService")
+const RunService = game:GetService("RunService")
 
-local bindableEvents = script.Parent.Parent.BindableEvents
+const bindableEvents = script.Parent.Parent.BindableEvents
 
-local function closeInventory(): ()
+const function closeInventory(): ()
 	assert(RunService:IsClient(), "closeInventory can only be called on the client")
 
 	bindableEvents.InventoryClosed:Fire()

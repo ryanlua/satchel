@@ -1,10 +1,10 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Slot = require("./Slot")
+const Slot = require("./Slot")
 
-local controls = {
+const controls = {
 	toolName = "Sword",
 	toolImage = "rbxasset://Textures/Sword128.png",
 	toolTooltip = "A classic sword",
@@ -22,7 +22,7 @@ return {
 	summary = "Slot representing a single item in the hotbar or inventory, showing the tool and hints for equipping",
 	controls = controls,
 	story = function(props: Props)
-		local tool = Instance.new("Tool")
+		const tool = Instance.new("Tool")
 		tool.Name = props.controls.toolName
 		tool.TextureId = props.controls.toolImage
 		tool.ToolTip = props.controls.toolTooltip

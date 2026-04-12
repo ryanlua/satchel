@@ -1,8 +1,8 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Tooltip = require("./Tooltip")
+const Tooltip = require("./Tooltip")
 
 export type Props = {
 	item: (Tool | HopperBin)?,
@@ -13,16 +13,16 @@ export type Props = {
 	order: number?,
 }
 
-local function Slot(props: Props)
-	local item = props.item
-	local itemName = item and item.Name
-	local itemImage = item and item.TextureId
-	local tooltipText = item and (item:IsA("Tool") and item.ToolTip or "")
+const function Slot(props: Props)
+	const item = props.item
+	const itemName = item and item.Name
+	const itemImage = item and item.TextureId
+	const tooltipText = item and (item:IsA("Tool") and item.ToolTip or "")
 
 	local equipped, setEquipped = React.useState(props.equipped or false)
 
 	-- Only show numbers 1-10 for hints and show 0 for the 10th slot
-	local order = props.order or 1
+	const order = props.order or 1
 	local slotNumber = ""
 	if order >= 1 and order < 10 then
 		slotNumber = tostring(order)
@@ -30,7 +30,7 @@ local function Slot(props: Props)
 		slotNumber = "0"
 	end
 
-	local hintVisible = props.hint == true and props.forceHintVisible
+	const hintVisible = props.hint == true and props.forceHintVisible
 
 	-- Generate tags based on state
 	local tags = "Slot"

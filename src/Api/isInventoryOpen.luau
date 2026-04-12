@@ -1,8 +1,8 @@
 --!strict
 
-local RunService = game:GetService("RunService")
+const RunService = game:GetService("RunService")
 
-local bindableEvents = script.Parent.Parent.BindableEvents
+const bindableEvents = script.Parent.Parent.BindableEvents
 
 local inventoryOpen = false
 
@@ -14,7 +14,7 @@ bindableEvents.InventoryClosed.Event:Connect(function()
 	inventoryOpen = false
 end)
 
-local function isInventoryOpen(): boolean
+const function isInventoryOpen(): boolean
 	assert(RunService:IsClient(), "isInventoryOpen can only be called on the client")
 
 	return inventoryOpen

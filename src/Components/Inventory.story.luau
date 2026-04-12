@@ -1,10 +1,10 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Inventory = require("./Inventory")
+const Inventory = require("./Inventory")
 
-local controls = {
+const controls = {
 	toolName = "Sword",
 	toolImage = "rbxasset://Textures/Sword128.png",
 	tooltipText = "A classic sword",
@@ -19,7 +19,7 @@ return {
 	summary = "Toggleable inventory for displaying items not in the hotbar",
 	controls = controls,
 	story = function(props: Props)
-		local tool = Instance.new("Tool")
+		const tool = Instance.new("Tool")
 		tool.Name = props.controls.toolName
 		tool.TextureId = props.controls.toolImage
 		tool.ToolTip = props.controls.tooltipText

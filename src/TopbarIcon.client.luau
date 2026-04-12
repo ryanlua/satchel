@@ -1,9 +1,9 @@
 --!strict
 
-local Icon = require("../topbarplus")
-local Satchel = require("./")
+const Icon = require("../topbarplus")
+const Satchel = require("./")
 
-local icon = Icon.new()
+const icon = Icon.new()
 icon:setName("SatchelInventory")
 icon:modifyTheme({
 	{ "IconLabelContainer", "TargetWidth", 0 }, -- Force minimum width

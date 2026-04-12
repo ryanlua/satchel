@@ -1,10 +1,10 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Backpack = require("./Backpack")
+const Backpack = require("./Backpack")
 
-local controls = {
+const controls = {
 	slots = 10,
 	toolName = "Sword",
 	toolImage = "rbxasset://Textures/Sword128.png",
@@ -22,7 +22,7 @@ return {
 	summary = "Backpack that holds the hotbar and inventory",
 	controls = controls,
 	story = function(props: Props)
-		local tool = Instance.new("Tool")
+		const tool = Instance.new("Tool")
 		tool.Name = props.controls.toolName
 		tool.TextureId = props.controls.toolImage
 		tool.ToolTip = props.controls.toolTooltip

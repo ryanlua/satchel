@@ -1,48 +1,48 @@
 --!strict
 
-local GuiService = game:GetService("GuiService")
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local StarterGui = game:GetService("StarterGui")
-local UserInputService = game:GetService("UserInputService")
+const GuiService = game:GetService("GuiService")
+const Players = game:GetService("Players")
+const RunService = game:GetService("RunService")
+const StarterGui = game:GetService("StarterGui")
+const UserInputService = game:GetService("UserInputService")
 
 -- selene: allow(global_usage)
 _G.__DEV__ = RunService:IsStudio()
 
-local React = require("../react")
-local ReactRoblox = require("../react-roblox")
-local closeInventory = require("./Api/closeInventory")
+const React = require("../react")
+const ReactRoblox = require("../react-roblox")
+const closeInventory = require("./Api/closeInventory")
 
-local App = require("./Components/App")
+const App = require("./Components/App")
 
-local DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
+const DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
 
-local player = Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui")
+const player = Players.LocalPlayer
+const playerGui = player:WaitForChild("PlayerGui")
 
 StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 
-local handle = Instance.new("ScreenGui")
+const handle = Instance.new("ScreenGui")
 handle.Name = "SatchelGui"
 handle.ResetOnSpawn = false
 handle.Parent = playerGui
 
-local root = ReactRoblox.createRoot(handle)
+const root = ReactRoblox.createRoot(handle)
 
-local function Satchel()
+const function Satchel()
 	-- Open and close backpack based on bindable events
-	local opened, setOpened = React.useState(false)
+	const opened, setOpened = React.useState(false)
 
 	React.useEffect(function()
-		local bindableEvents = script.Parent.BindableEvents
+		const bindableEvents = script.Parent.BindableEvents
 
-		local inventoryOpenedSignal = bindableEvents.InventoryOpened.Event:Connect(function()
+		const inventoryOpenedSignal = bindableEvents.InventoryOpened.Event:Connect(function()
 			setOpened(true)
 		end)
-		local inventoryClosedSignal = bindableEvents.InventoryClosed.Event:Connect(function()
+		const inventoryClosedSignal = bindableEvents.InventoryClosed.Event:Connect(function()
 			setOpened(false)
 		end)
-		local menuOpenedSignal = GuiService.MenuOpened:Connect(function()
+		const menuOpenedSignal = GuiService.MenuOpened:Connect(function()
 			closeInventory()
 		end)
 
@@ -55,8 +55,8 @@ local function Satchel()
 
 	-- Close backpack when clicking outside of it
 	React.useEffect(function()
-		local inputSignal = UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
-			local inputType = input.UserInputType
+		const inputSignal = UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+			const inputType = input.UserInputType
 			if not gameProcessedEvent then
 				if inputType == Enum.UserInputType.MouseButton1 or inputType == Enum.UserInputType.Touch then
 					closeInventory()
@@ -70,13 +70,13 @@ local function Satchel()
 	end, {})
 
 	-- Change slots based on viewport display size
-	local slots, setSlots = React.useState(10)
-	local rows, setRows = React.useState(4)
+	const slots, setSlots = React.useState(10)
+	const rows, setRows = React.useState(4)
 
 	React.useEffect(function()
-		local function updateBackpackSize()
-			local screenOrientation = playerGui.CurrentScreenOrientation
-			local viewportSize = GuiService.ViewportDisplaySize
+		const function updateBackpackSize()
+			const screenOrientation = playerGui.CurrentScreenOrientation
+			const viewportSize = GuiService.ViewportDisplaySize
 
 			if screenOrientation == Enum.ScreenOrientation.Portrait then
 				setSlots(3)
@@ -91,8 +91,8 @@ local function Satchel()
 		end
 
 		updateBackpackSize()
-		local viewportSignal = GuiService:GetPropertyChangedSignal("ViewportDisplaySize"):Connect(updateBackpackSize)
-		local orientationSignal =
+		const viewportSignal = GuiService:GetPropertyChangedSignal("ViewportDisplaySize"):Connect(updateBackpackSize)
+		const orientationSignal =
 			playerGui:GetPropertyChangedSignal("CurrentScreenOrientation"):Connect(updateBackpackSize)
 
 		return function()

@@ -1,8 +1,8 @@
 --!strict
 
-local React = require("../../react")
+const React = require("../../react")
 
-local Slot = require("./Slot")
+const Slot = require("./Slot")
 
 export type Props = {
 	forceKeyboardHintVisible: boolean?,
@@ -11,15 +11,15 @@ export type Props = {
 	opened: boolean?,
 }
 
-local function Hotbar(props: Props)
-	local slotCount = props.slots or 10
+const function Hotbar(props: Props)
+	const slotCount = props.slots or 10
 
-	local children: any = {}
+	const children: any = {}
 
 	-- Create hotbar slots
 	for order = 1, slotCount do
-		local item = props.items and props.items[order]
-		local slotUnlocked = props.opened and item ~= nil
+		const item = props.items and props.items[order]
+		const slotUnlocked = props.opened and item ~= nil
 
 		-- Only show slots if the hotbar is opened or if there is a tool in the slot
 		if props.opened or item then

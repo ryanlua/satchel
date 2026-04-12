@@ -1,6 +1,6 @@
 --!strict
 
-local bindableEvents = script.BindableEvents
+const bindableEvents = script.BindableEvents
 
 return {
 	-- Functions
