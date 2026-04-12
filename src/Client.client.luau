@@ -6,8 +6,14 @@ const RunService = game:GetService("RunService")
 const StarterGui = game:GetService("StarterGui")
 const UserInputService = game:GetService("UserInputService")
 
--- selene: allow(global_usage)
-_G.__DEV__ = RunService:IsStudio()
+const ReactGlobals = require("../react-globals")
+
+-- Enable Dev Mode and React DevTools in Studio
+if RunService:IsStudio() then
+	ReactGlobals.__DEV__ = true
+	ReactGlobals.__PROFILE__ = true
+	require("../react-devtools")
+end
 
 const React = require("../react")
 const ReactRoblox = require("../react-roblox")

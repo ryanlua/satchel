@@ -13,9 +13,34 @@ version = "17.3.8"
 dependencies = [["LuauPolyfill", "jsdotlua/luau-polyfill@1.2.7"], ["ReactGlobals", "haedrix/react-globals@17.3.8"], ["Shared", "haedrix/shared@17.3.8"]]
 
 [[package]]
+name = "haedrix/react-debug-tools"
+version = "17.3.8"
+dependencies = [["LuauPolyfill", "jsdotlua/luau-polyfill@1.2.7"], ["ReactGlobals", "haedrix/react-globals@17.3.8"], ["ReactReconciler", "haedrix/react-reconciler@17.3.8"], ["Shared", "haedrix/shared@17.3.8"]]
+
+[[package]]
+name = "haedrix/react-devtools"
+version = "17.3.8"
+dependencies = [["ReactDevtoolsCore", "haedrix/react-devtools-core@17.3.8"]]
+
+[[package]]
+name = "haedrix/react-devtools-core"
+version = "17.3.8"
+dependencies = [["LuauPolyfill", "jsdotlua/luau-polyfill@1.2.7"], ["ReactDevtoolsShared", "haedrix/react-devtools-shared@17.3.8"], ["ReactGlobals", "haedrix/react-globals@17.3.8"], ["ReactTelemetry", "haedrix/react-telemetry@17.3.8"], ["SafeFlags", "haedrix/safe-flags@0.1.1"]]
+
+[[package]]
+name = "haedrix/react-devtools-shared"
+version = "17.3.8"
+dependencies = [["LuauPolyfill", "jsdotlua/luau-polyfill@1.2.7"], ["React", "haedrix/react@17.3.8"], ["ReactDebugTools", "haedrix/react-debug-tools@17.3.8"], ["ReactGlobals", "haedrix/react-globals@17.3.8"], ["ReactIs", "haedrix/react-is@17.3.8"], ["ReactReconciler", "haedrix/react-reconciler@17.3.8"], ["ReactRoblox", "haedrix/react-roblox@17.3.8"], ["Shared", "haedrix/shared@17.3.8"]]
+
+[[package]]
 name = "haedrix/react-globals"
 version = "17.3.8"
 dependencies = [["SafeFlags", "haedrix/safe-flags@0.1.1"]]
+
+[[package]]
+name = "haedrix/react-is"
+version = "17.3.8"
+dependencies = [["ReactGlobals", "haedrix/react-globals@17.3.8"], ["SafeFlags", "haedrix/safe-flags@0.1.1"], ["Shared", "haedrix/shared@17.3.8"]]
 
 [[package]]
 name = "haedrix/react-reconciler"
@@ -26,6 +51,11 @@ dependencies = [["LuauPolyfill", "jsdotlua/luau-polyfill@1.2.7"], ["Promise", "e
 name = "haedrix/react-roblox"
 version = "17.3.8"
 dependencies = [["LuauPolyfill", "jsdotlua/luau-polyfill@1.2.7"], ["React", "haedrix/react@17.3.8"], ["ReactGlobals", "haedrix/react-globals@17.3.8"], ["ReactReconciler", "haedrix/react-reconciler@17.3.8"], ["Scheduler", "haedrix/scheduler@17.3.8"], ["Shared", "haedrix/shared@17.3.8"]]
+
+[[package]]
+name = "haedrix/react-telemetry"
+version = "17.3.8"
+dependencies = [["LuauPolyfill", "jsdotlua/luau-polyfill@1.2.7"], ["ReactGlobals", "haedrix/react-globals@17.3.8"], ["SafeFlags", "haedrix/safe-flags@0.1.1"]]
 
 [[package]]
 name = "haedrix/safe-flags"
@@ -100,7 +130,7 @@ dependencies = [["collections", "jsdotlua/collections@1.2.7"]]
 [[package]]
 name = "ryanlua/satchel"
 version = "2.0.0"
-dependencies = [["react", "haedrix/react@17.3.8"], ["react-roblox", "haedrix/react-roblox@17.3.8"], ["topbarplus", "ryanlua/topbarplus@1.0.1"]]
+dependencies = [["react", "haedrix/react@17.3.8"], ["react-devtools", "haedrix/react-devtools@17.3.8"], ["react-globals", "haedrix/react-globals@17.3.8"], ["react-roblox", "haedrix/react-roblox@17.3.8"], ["topbarplus", "ryanlua/topbarplus@1.0.1"]]
 
 [[package]]
 name = "ryanlua/topbarplus"
