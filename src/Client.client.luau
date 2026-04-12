@@ -6,10 +6,9 @@ const RunService = game:GetService("RunService")
 const StarterGui = game:GetService("StarterGui")
 const UserInputService = game:GetService("UserInputService")
 
-const ReactGlobals = require("../react-globals")
-
 -- Enable Dev Mode and React DevTools in Studio
 if RunService:IsStudio() then
+	const ReactGlobals = require("../react-globals")
 	ReactGlobals.__DEV__ = true
 	ReactGlobals.__PROFILE__ = true
 	require("../react-devtools")
