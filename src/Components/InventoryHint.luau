@@ -1,4 +1,3 @@
---!strict
 
 const UserInputService = game:GetService("UserInputService")
 

@@ -1,4 +1,3 @@
---!strict
 
 const React = require("../../react")
 const ReactRoblox = require("../../react-roblox")

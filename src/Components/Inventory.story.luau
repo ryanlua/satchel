@@ -1,4 +1,3 @@
---!strict
 
 const React = require("../../react")
 
