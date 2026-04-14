@@ -32,7 +32,6 @@ handle.Parent = playerGui
 
 const root = ReactRoblox.createRoot(handle)
 
-@nocheck
 const function Satchel()
 	-- Open and close backpack based on bindable events
 	const opened, setOpened = React.useState(false)
