@@ -5,9 +5,9 @@ const RunService = game:GetService("RunService")
 
 const getTopbarIcon = require("./getTopbarIcon")
 
-const player = Players.LocalPlayer
+const player = Players.LocalPlayer :: Player
 const playerGui = player:WaitForChild("PlayerGui")
-const screenGui = playerGui:WaitForChild("SatchelGui")
+const screenGui = playerGui:WaitForChild("SatchelGui") :: ScreenGui
 
 const function setEnabled(enabled: boolean): ()
 	assert(RunService:IsClient(), "setEnabled can only be called on the client")
