@@ -4,10 +4,10 @@ const RunService = game:GetService("RunService")
 
 const TopbarPlus = require("../../topbarplus")
 
-const function getTopbarIcon(): TopbarPlus.Icon?
+const function getTopbarIcon(): TopbarPlus.Icon
 	assert(RunService:IsClient(), "getTopbarIcon can only be called on the client")
 
-	return TopbarPlus.getIcon("SatchelInventory")
+	return TopbarPlus.getIcon("SatchelInventory") :: TopbarPlus.Icon
 end
 
 return getTopbarIcon

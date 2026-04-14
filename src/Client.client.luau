@@ -1,5 +1,3 @@
---!strict
-
 const GuiService = game:GetService("GuiService")
 const Players = game:GetService("Players")
 const RunService = game:GetService("RunService")
@@ -22,8 +20,8 @@ const App = require("./Components/App")
 
 const DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
 
-const player = Players.LocalPlayer
-const playerGui = player:WaitForChild("PlayerGui")
+const player = Players.LocalPlayer :: Player
+const playerGui = player:WaitForChild("PlayerGui") :: PlayerGui
 
 StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 
