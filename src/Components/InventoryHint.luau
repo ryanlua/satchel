@@ -1,4 +1,3 @@
-
 const UserInputService = game:GetService("UserInputService")
 
 const React = require("../../react")

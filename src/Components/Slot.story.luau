@@ -1,4 +1,3 @@
-
 const React = require("../../react")
 
 const Slot = require("./Slot")
