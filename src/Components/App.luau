@@ -58,6 +58,7 @@ const function App(props: Props)
 			[React.Tag] = "InventoryHints",
 		}, {
 			Hints = React.createElement("Frame", {
+				Size = UDim2.fromOffset(backpackSize.X, 0),
 				Visible = props.opened,
 				LayoutOrder = -1,
 				[React.Tag] = "Hints",
