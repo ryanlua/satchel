@@ -6,11 +6,15 @@
 getEnabled(): boolean
 ```
 
+Gets if the backpack is enabled.
+
 ### setEnabled
 
 ```
 setEnabled(enabled: boolean): ()
 ```
+
+Sets whether the backpack is enabled or not.
 
 ### getTheme
 
@@ -18,11 +22,15 @@ setEnabled(enabled: boolean): ()
 getTheme(): StyleSheet
 ```
 
+Gets the active StyleSheet for the backpack theme.
+
 ### setTheme
 
 ```
 setTheme(theme: "DefaultTheme" | "LegacyTheme" | StyleSheet): ()
 ```
+
+Configures the backpack theme with a StyleSheet.
 
 ### getTopbarIcon
 
@@ -30,11 +38,15 @@ setTheme(theme: "DefaultTheme" | "LegacyTheme" | StyleSheet): ()
 getTopbarIcon(): TopbarPlus.Icon
 ```
 
+Gets the TopbarPlus icon used to toggle the backpack.
+
 ### openInventory
 
 ```
 openInventory(): ()
 ```
+
+Opens the inventory.
 
 ### closeInventory
 
@@ -42,8 +54,12 @@ openInventory(): ()
 closeInventory(): ()
 ```
 
+Closes the inventory.
+
 ### isInventoryOpen
 
 ```
 isInventoryOpen(): boolean
 ```
+
+Returns `true` if the inventory is open.
