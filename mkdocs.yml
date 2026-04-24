@@ -69,9 +69,5 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Introduction: introduction.md
   - Installation: installation.md
-  - Usage: usage.md
-  - Platforms: platforms.md
-  - Alternatives: alternatives.md
   - API Reference: api-reference.md
