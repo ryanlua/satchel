@@ -32,7 +32,6 @@ theme:
     repo: fontawesome/brands/github
   favicon: assets/favicon.svg
   logo: assets/logo.svg
-  custom_dir: docs/overrides
 
 extra:
   version:
