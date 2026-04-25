@@ -1,7 +1,7 @@
 [package]
 name = "ryanlua/satchel"
 description = "A modern open-source alternative to Roblox's default backpack."
-version = "1.4.1"
+version = "2.0.0"
 license = "MPL-2.0"
 authors = ["Ryan Luu <ryan.luu@ryanluu.dev>"]
 realm = "shared"
@@ -12,4 +12,8 @@ exclude = ["**"]
 include = ["src", "src/**", "wally.toml", "wally.lock", "default.project.json", "LICENSE", "README.md"]
 
 [dependencies]
-topbarplus = "1foreverhd/topbarplus@3.4.0"
+react = "haedrix/react@17.3.8"
+react-devtools = "haedrix/react-devtools@17.3.8"
+react-globals = "haedrix/react-globals@17.3.8"
+react-roblox = "haedrix/react-roblox@17.3.8"
+topbarplus = "ryanlua/topbarplus@1.0.1"
