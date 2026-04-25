@@ -38,7 +38,9 @@ Configures the backpack theme with a StyleSheet.
 getTopbarIcon(): TopbarPlus.Icon
 ```
 
-Gets the TopbarPlus icon used to toggle the backpack.
+Gets the [TopbarPlus icon] used to toggle the backpack.
+
+  [TopbarPlus icon]: https://1foreverhd.github.io/TopbarPlus/api/
 
 ### openInventory
 
@@ -63,3 +65,33 @@ isInventoryOpen(): boolean
 ```
 
 Returns `true` if the inventory is open.
+
+## Events
+
+### backpackItemAdded
+
+Fires when an item is added to the backpack.
+
+### backpackItemRemoved
+
+Fires when an item is removed from the backpack.
+
+### backpackItemEquipped
+
+Fires when an item is equipped.
+
+### backpackItemUnequipped
+
+Fires when an item is unequipped.
+
+### inventoryOpened
+
+Fires when the player opens the inventory or when [openInventory](#openinventory) is called.
+
+### inventoryClosed
+
+Fires when the player closes the inventory or when [closeInventory](#closeinventory) is called.
+
+### themeChanged
+
+Fires when the backpack theme is changed.
