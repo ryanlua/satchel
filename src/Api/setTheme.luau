@@ -14,7 +14,7 @@ const function setTheme(theme: DefaultThemes | StyleSheet): ()
 	const newTheme: StyleSheet = if typeof(theme) == "string" then styleSheets:WaitForChild(theme) :: StyleSheet else theme
 	currentTheme.StyleSheet = newTheme
 
-	bindableEvents.ThemeChanged:Fire(newTheme)
+	bindableEvents.ThemeChanged:Fire(newTheme, currentTheme.StyleSheet)
 end
 
 return setTheme

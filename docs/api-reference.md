@@ -70,28 +70,56 @@ Returns `true` if the inventory is open.
 
 ### backpackItemAdded
 
+```
+backpackItemAdded(item: BackpackItem): BindableEvent
+```
+
 Fires when an item is added to the backpack.
 
 ### backpackItemRemoved
+
+```
+backpackItemRemoved(item: BackpackItem): BindableEvent
+```
 
 Fires when an item is removed from the backpack.
 
 ### backpackItemEquipped
 
+```
+backpackItemEquipped(item: BackpackItem): BindableEvent
+```
+
 Fires when an item is equipped.
 
 ### backpackItemUnequipped
+
+```
+backpackItemUnequipped(item: BackpackItem): BindableEvent
+```
 
 Fires when an item is unequipped.
 
 ### inventoryOpened
 
+```
+inventoryOpened(): BindableEvent
+```
+
 Fires when the player opens the inventory or when [openInventory](#openinventory) is called.
 
 ### inventoryClosed
 
+```
+inventoryClosed(): BindableEvent
+```
+
 Fires when the player closes the inventory or when [closeInventory](#closeinventory) is called.
 
 ### themeChanged
+
+```
+themeChanged(newTheme: StyleSheet, oldTheme: StyleSheet): BindableEvent
+```
 
 Fires when the backpack theme is changed.
