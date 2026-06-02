@@ -1,110 +1,108 @@
 --!strict
--- Purse-style tool tracking: slotByTool map, ChildAdded/Removed, direct React updates.
 
 const React = require("../../react")
 
 const bindableEvents = script.Parent.Parent.BindableEvents
+const backpackItemAdded = bindableEvents.BackpackItemAdded
+const backpackItemRemoved = bindableEvents.BackpackItemRemoved
+const backpackItemEquipped = bindableEvents.BackpackItemEquipped
+const backpackItemUnequipped = bindableEvents.BackpackItemUnequipped
+
+type SlotItem = { item: BackpackItem, equipped: boolean }
 
 export type BackpackState = {
-	items: { [number]: { item: BackpackItem, equipped: boolean } },
+	items: { [number]: SlotItem },
 	onSlotActivated: (item: BackpackItem) -> (),
 }
 
 const function useBackpack(player: Player, hotbarSlotCount: number): BackpackState
-	const items, setItems = React.useState(function()
-		return {} :: { [number]: { item: BackpackItem, equipped: boolean } }
-	end)
-	const equipRef = React.useRef(nil :: ((item: BackpackItem) -> ())?)
+	const items, setItems = React.useState({} :: { [number]: SlotItem })
+	const activateItemRef = React.useRef(nil :: ((item: BackpackItem) -> ())?)
 
 	React.useEffect(function()
-		local slots: { [number]: Tool } = {}
-		local slotByTool: { [Tool]: number } = {}
-		local equippedState: { [Tool]: boolean } = {}
-		local connections: { RBXScriptConnection } = {}
+		local toolBySlotIndex: { [number]: Tool } = {}
+		local slotIndexByTool: { [Tool]: number } = {}
+		local equippedStateByTool: { [Tool]: boolean } = {}
+		local inventoryConnections: { RBXScriptConnection } = {}
 		local character: Model? = nil
 		local backpack: Backpack? = nil
 
+		-- Check if tool is equipped.
 		local function isEquipped(tool: Tool): boolean
 			return character ~= nil and tool.Parent == character
 		end
 
-		local function sync()
-			local nextItems: { [number]: { item: BackpackItem, equipped: boolean } } = {}
-			for index, tool in slots do
-				nextItems[index] = { item = tool, equipped = isEquipped(tool) }
+		local function syncItemsToReact()
+			local slotItems: { [number]: SlotItem } = {}
+			for slotIndex, tool in toolBySlotIndex do
+				slotItems[slotIndex] = { item = tool, equipped = isEquipped(tool) }
 			end
-			setItems(nextItems)
+			setItems(slotItems)
 		end
 
-		local function lowestEmptyHotbar(): number?
-			for index = 1, hotbarSlotCount do
-				if not slots[index] then
-					return index
+		local function findNextSlotIndex(): number
+			for slotIndex = 1, hotbarSlotCount do
+				if not toolBySlotIndex[slotIndex] then
+					return slotIndex
 				end
 			end
-			return nil
-		end
-
-		local function nextInventorySlot(): number
-			local maxIndex = hotbarSlotCount
-			for index in slots do
-				maxIndex = math.max(maxIndex, index)
+			local highestSlotIndex = hotbarSlotCount
+			for slotIndex in toolBySlotIndex do
+				highestSlotIndex = math.max(highestSlotIndex, slotIndex)
 			end
-			return maxIndex + 1
+			return highestSlotIndex + 1
 		end
 
-		local function clearTool(tool: Tool)
-			local index = slotByTool[tool]
-			if index == nil then
+		local function fireEquippedChangedEvents(tool: Tool)
+			local isEquipped = isEquipped(tool)
+			local wasEquipped = equippedStateByTool[tool]
+			if wasEquipped == isEquipped then
 				return
 			end
-			slots[index] = nil
-			slotByTool[tool] = nil
-			equippedState[tool] = nil
-			bindableEvents.BackpackItemRemoved:Fire(tool)
-		end
-
-		local function updateEquip(tool: Tool)
-			local now = isEquipped(tool)
-			local was = equippedState[tool]
-			if was == nil then
-				equippedState[tool] = now
-				if now then
-					bindableEvents.BackpackItemEquipped:Fire(tool)
+			equippedStateByTool[tool] = isEquipped
+			if wasEquipped == nil then
+				if isEquipped then
+					backpackItemEquipped:Fire(tool)
 				end
-			elseif was ~= now then
-				equippedState[tool] = now
-				if now then
-					bindableEvents.BackpackItemEquipped:Fire(tool)
-				else
-					bindableEvents.BackpackItemUnequipped:Fire(tool)
-				end
+			elseif isEquipped then
+				backpackItemEquipped:Fire(tool)
+			else
+				backpackItemUnequipped:Fire(tool)
 			end
 		end
 
-		-- Same flow as Purse OnChildAdded: existing tool updates equip, new tool fills a slot.
-		local function handleTool(tool: Tool)
-			if slotByTool[tool] then
-				updateEquip(tool)
+		local function trackTool(tool: Tool)
+			if slotIndexByTool[tool] then
+				fireEquippedChangedEvents(tool)
 				return
 			end
-			local emptyHotbar = lowestEmptyHotbar()
-			local index = if emptyHotbar then emptyHotbar else nextInventorySlot()
-			slots[index] = tool
-			slotByTool[tool] = index
-			bindableEvents.BackpackItemAdded:Fire(tool)
-			updateEquip(tool)
+			local slotIndex = findNextSlotIndex()
+			toolBySlotIndex[slotIndex] = tool
+			slotIndexByTool[tool] = slotIndex
+			backpackItemAdded:Fire(tool)
+			fireEquippedChangedEvents(tool)
 		end
 
-		local function onChildAdded(child: Instance)
+		local function untrackTool(tool: Tool): boolean
+			local slotIndex = slotIndexByTool[tool]
+			if not slotIndex then
+				return false
+			end
+			toolBySlotIndex[slotIndex] = nil
+			slotIndexByTool[tool] = nil
+			equippedStateByTool[tool] = nil
+			backpackItemRemoved:Fire(tool)
+			return true
+		end
+
+		local function onInventoryChildAdded(child: Instance)
 			if child:IsA("Tool") then
-				handleTool(child)
-				sync()
+				trackTool(child)
+				syncItemsToReact()
 			end
 		end
 
-		-- Same as Purse OnChildRemoved: ignore reparents between backpack and character.
-		local function onChildRemoved(child: Instance)
+		local function onInventoryChildRemoved(child: Instance)
 			if not child:IsA("Tool") then
 				return
 			end
@@ -113,47 +111,42 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			if parent == character or parent == backpack then
 				return
 			end
-			if slotByTool[tool] then
-				clearTool(tool)
-				sync()
+			if untrackTool(tool) then
+				syncItemsToReact()
+			end
+		end
+
+		local function connectInventoryContainer(container: Instance)
+			table.insert(inventoryConnections, container.ChildAdded:Connect(onInventoryChildAdded))
+			table.insert(inventoryConnections, container.ChildRemoved:Connect(onInventoryChildRemoved))
+			for _, child in container:GetChildren() do
+				if child:IsA("Tool") then
+					trackTool(child)
+				end
 			end
 		end
 
 		local function disconnectInventory()
-			for _, connection in connections do
+			for _, connection in inventoryConnections do
 				connection:Disconnect()
 			end
-			table.clear(connections)
-			table.clear(slots)
-			table.clear(slotByTool)
-			table.clear(equippedState)
+			table.clear(inventoryConnections)
+			table.clear(toolBySlotIndex)
+			table.clear(slotIndexByTool)
+			table.clear(equippedStateByTool)
 		end
 
-		local function onCharacterAdded(char: Model)
+		local function onCharacterAdded(newCharacter: Model)
 			disconnectInventory()
-			character = char
-			local pack = player:WaitForChild("Backpack") :: Backpack
-			backpack = pack
-
-			table.insert(connections, char.ChildAdded:Connect(onChildAdded))
-			table.insert(connections, char.ChildRemoved:Connect(onChildRemoved))
-			table.insert(connections, pack.ChildAdded:Connect(onChildAdded))
-			table.insert(connections, pack.ChildRemoved:Connect(onChildRemoved))
-
-			for _, child in pack:GetChildren() do
-				if child:IsA("Tool") then
-					handleTool(child)
-				end
-			end
-			for _, child in char:GetChildren() do
-				if child:IsA("Tool") then
-					handleTool(child)
-				end
-			end
-			sync()
+			character = newCharacter
+			local playerBackpack = player:WaitForChild("Backpack") :: Backpack
+			backpack = playerBackpack
+			connectInventoryContainer(newCharacter)
+			connectInventoryContainer(playerBackpack)
+			syncItemsToReact()
 		end
 
-		equipRef.current = function(item: BackpackItem)
+		activateItemRef.current = function(item: BackpackItem)
 			if not item:IsA("Tool") then
 				return
 			end
@@ -168,29 +161,26 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			end
 		end
 
-		local characterConnection = player.CharacterAdded:Connect(onCharacterAdded)
+		local characterSpawnConnection = player.CharacterAdded:Connect(onCharacterAdded)
 		if player.Character then
 			onCharacterAdded(player.Character)
 		end
 
 		return function()
-			characterConnection:Disconnect()
+			characterSpawnConnection:Disconnect()
 			disconnectInventory()
-			equipRef.current = nil
+			activateItemRef.current = nil
 		end
 	end, { player :: any, hotbarSlotCount :: any })
 
 	const onSlotActivated = React.useCallback(function(item: BackpackItem)
-		local equip = equipRef.current
-		if equip then
-			equip(item)
+		local activateItem = activateItemRef.current
+		if activateItem then
+			activateItem(item)
 		end
 	end, {})
 
-	return {
-		items = items,
-		onSlotActivated = onSlotActivated,
-	}
+	return { items = items, onSlotActivated = onSlotActivated }
 end
 
 return useBackpack
