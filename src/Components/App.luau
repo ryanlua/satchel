@@ -14,7 +14,6 @@ const SlotLeftGamepadKeyCode = HotbarBindings.SlotLeftAction.GamepadBinding.KeyC
 const SlotRightGamepadKeyCode = HotbarBindings.SlotRightAction.GamepadBinding.KeyCode
 
 const e = React.createElement
-const useState = React.useState
 
 export type Props = {
 	forceGamepadHintVisible: boolean?,
@@ -27,17 +26,19 @@ export type Props = {
 }
 
 const function App(props: Props)
-	const backpackSize, setBackpackSize = useState(Vector2.zero)
 	const slotCount = props.slots or 10
 	const width = slotCount * 65 + 5
 
-	const function onBackpackAbsoluteSizeChanged(size: Vector2)
-		if not props.opened then
-			setBackpackSize(size)
+	local visibleHotbarSlots = 0
+	if props.items then
+		for order = 1, slotCount do
+			if props.items[order] then
+				visibleHotbarSlots += 1
+			end
 		end
 	end
 
-	const backpackWidth = if props.opened then width else backpackSize.X
+	const backpackWidth = if props.opened then width else visibleHotbarSlots * 65 + 5
 
 	local hotbarVisible = props.opened or false
 
@@ -100,7 +101,6 @@ const function App(props: Props)
 				opened = props.opened,
 				width = width,
 				onSlotActivated = props.onSlotActivated,
-				onAbsoluteSizeChanged = onBackpackAbsoluteSizeChanged,
 			}),
 		}),
 	})

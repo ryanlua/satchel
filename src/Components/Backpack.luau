@@ -13,7 +13,6 @@ export type Props = {
 	opened: boolean?,
 	width: number?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
-	onAbsoluteSizeChanged: ((Vector2) -> ())?,
 }
 
 const function Backpack(props: Props)
@@ -35,11 +34,6 @@ const function Backpack(props: Props)
 
 	return e("Frame", {
 		[React.Tag] = "Backpack",
-		[React.Change.AbsoluteSize] = function(rbx)
-			if props.onAbsoluteSizeChanged then
-				props.onAbsoluteSizeChanged(rbx.AbsoluteSize)
-			end
-		end :: any,
 	}, {
 		Hotbar = e(Hotbar, {
 			forceKeyboardHintVisible = props.forceKeyboardHintVisible,
