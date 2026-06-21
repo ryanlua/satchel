@@ -40,9 +40,11 @@ const function Inventory(props: Props)
 		Visible = props.opened,
 		[React.Tag] = "Inventory",
 	}, {
-		SearchBox = e(Searchbar),
+		SearchFrame = e("Frame", {}, {
+			SearchBox = e(Searchbar),
+		}),
 		SlotFrame = e("ScrollingFrame", {
-			Size = UDim2.new(1, 0, 0, height),
+			Size = UDim2.new(1, 13, 0, height),
 		}, children),
 	})
 end
