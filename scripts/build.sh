@@ -13,9 +13,9 @@ rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 
 # Build .rbxm file
-rojo build --output "$BUILD_DIR/$OUTPUT_NAME.rbxm" $ROJO_PROJECT
+rojo build $ROJO_PROJECT --output "$BUILD_DIR/$OUTPUT_NAME.rbxm"
 
 # Build .rbxmx file
-rojo build --output "$BUILD_DIR/$OUTPUT_NAME.rbxmx" $ROJO_PROJECT
+rojo build $ROJO_PROJECT --output "$BUILD_DIR/$OUTPUT_NAME.rbxmx"
 
 echo "Build completed successfully!"
