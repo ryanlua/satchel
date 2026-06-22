@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.2.1
       - name: Install Wally packages
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.2.1
       - name: Setup Wally
