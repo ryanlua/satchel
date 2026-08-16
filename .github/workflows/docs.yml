@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 env:
-  VERSION: 1.x
+  VERSION: 2.x
 
 jobs:
   deploy:

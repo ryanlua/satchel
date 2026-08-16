@@ -1,12 +1,13 @@
 {
-  "name": "Develop Satchel",
+  "name": "Satchel",
   "emitLegacyScripts": false,
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
-      "SatchelLoader": {
-        "$path": "models/SatchelLoader"
+      "$path": "tests",
+      "Satchel": {
+        "$path": "models/Satchel"
       }
     }
   }
