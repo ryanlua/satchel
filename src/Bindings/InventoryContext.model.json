@@ -1,0 +1,47 @@
+{
+  "ClassName": "InputContext",
+  "Properties": {
+    "Priority": 2000
+  },
+  "Children": [
+    {
+      "Name": "CloseInventoryAction",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "GamepadBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "ButtonB"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "RemoveFromHotbarAction",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "GamepadBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "ButtonX"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "SelectSwapAction",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "GamepadBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "ButtonA"
+          }
+        }
+      ]
+    }
+  ]
+}
