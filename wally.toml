@@ -12,8 +12,8 @@ exclude = ["**"]
 include = ["LICENSE.md", "README.md", "src", "src/*", "default.project.json", "wally.toml"]
 
 [dependencies]
-react = "haedrix/react@17.3.8"
-react-devtools = "haedrix/react-devtools@17.3.8"
-react-globals = "haedrix/react-globals@17.3.8"
-react-roblox = "haedrix/react-roblox@17.3.8"
-topbarplus = "ryanlua/topbarplus@1.0.1"
+react = "haedrix/react@17.3.10"
+react-devtools = "haedrix/react-devtools@17.3.10"
+react-globals = "haedrix/react-globals@17.3.10"
+react-roblox = "haedrix/react-roblox@17.3.10"
+topbarplus = "1foreverhd/topbarplus@3.5.0"
