@@ -1,13 +1,18 @@
 # Rojo
 sourcemap.json
+
+# Wally
+Packages/
+ServerPackages/
+DevPackages/
+
+# Documentation
+site/
+__pycache__/
+*.py[cod]
+
+# Builds
 *.rbxl
 *.rbxlx
 *.rbxm
 *.rbxmx
-
-# Wally
-Packages/
-DevPackages/
-
-# MkDocs documentation
-site/

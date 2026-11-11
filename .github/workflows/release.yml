@@ -8,57 +8,37 @@ on:
 permissions:
   contents: write
 
-env:
-  OUTPUT_NAME: Purse
-  ROJO_PROJECT: package.project.json
-
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-      - name: Install Rokit toolchain
-        uses: CompeyDev/setup-rokit@v0.2.1
-      - name: Install Wally packages
-        run: |
-          wally install
-          rojo sourcemap $ROJO_PROJECT --output sourcemap.json
-          wally-package-types --sourcemap sourcemap.json Packages/
-      - name: Build Rojo project
-        run: |
-          mkdir dist
-          rojo build $ROJO_PROJECT --output dist/$OUTPUT_NAME.rbxm
-          rojo build $ROJO_PROJECT --output dist/$OUTPUT_NAME.rbxmx
-      - name: Archive build files
-        uses: actions/upload-artifact@v7
-        with:
-          name: ${{ env.OUTPUT_NAME }}
-          path: dist/
-          if-no-files-found: error
+    uses: ./.github/workflows/ci.yml
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.2.1
-      - name: Setup Wally
-        env:
-          WALLY_AUTH_TOKEN: ${{ secrets.WALLY_AUTH_TOKEN }}
-        run: |
-          wally login --token "$WALLY_AUTH_TOKEN"
-          wally install
       - name: Download build files
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@v8.0.2
         with:
-          name: ${{ env.OUTPUT_NAME }}
-          path: dist/
+          name: Satchel
       - name: Create release
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v3.0.4
         with:
-          files: dist/*
+          files: |
+            *.rbxm
+            *.rbxmx
+          overwrite_files: false
           generate_release_notes: true
       - name: Publish to Wally
-        run: wally publish
+        run: |
+          wally login --token ${{ secrets.WALLY_AUTH_TOKEN }}
+          wally publish
+      - name: Publish to Roblox
+        uses: ryanlua/update-roblox-asset@v0.1.1
+        with:
+          api-key: ${{ secrets.OPEN_CLOUD_API_KEY }}
+          asset-id: 13947506401
+          file: Satchel.rbxm
+          display-name: Satchel ${{ github.ref_name }}

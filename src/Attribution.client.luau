@@ -18,8 +18,41 @@
 	Thank you for supporting Satchel.
 ]]
 
-local RunService = game:GetService("RunService")
+const MarketplaceService = game:GetService("MarketplaceService")
+const RunService = game:GetService("RunService")
 
-if not RunService:IsStudio() then
-	print("💼 Running Satchel v1.4.1 by @WinnersTakesAll")
+const VERSION = "2.0.0"
+const ASSET_ID = 13947506401
+
+-- Print attribution. Do not modify without reading above
+if not RunService:IsStudio() and RunService:IsClient() then
+	print(`💼 Running Satchel v{VERSION} by @WinnersTakesAll`)
+end
+
+-- Check for updates. You may modify the below
+local latestVersion: string?
+
+const success, result = pcall(function()
+	return MarketplaceService:GetProductInfoAsync(ASSET_ID)
+end)
+
+if success then
+	latestVersion = string.match(result.Name, "v(%d+%.%d+%.%d+)")
+end
+
+const function isNewerVersion(latest: string, current: string): boolean
+	const latestParts, currentParts = latest:split("."), current:split(".")
+	for index = 1, 3 do
+		const latestPart, currentPart = tonumber(latestParts[index]) or 0, tonumber(currentParts[index]) or 0
+		if latestPart ~= currentPart then
+			return latestPart > currentPart
+		end
+	end
+	return false
+end
+
+if latestVersion and isNewerVersion(latestVersion, VERSION) then
+	warn(
+		`A new version of Satchel (v{VERSION} -> v{latestVersion}) is available: https://create.roblox.com/store/asset/13947506401`
+	)
 end
