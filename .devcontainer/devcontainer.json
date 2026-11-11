@@ -16,9 +16,10 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"kampfkarren.selene-vscode",
-				"johnnymorganz.stylua",
+				"GiovaniBlack.rsml-formatter",
 				"johnnymorganz.luau-lsp",
+				"johnnymorganz.stylua",
+				"kampfkarren.selene-vscode",
 				"rbx-rsml.roblox-style-management-language",
 				"redhat.vscode-yaml"
 			]

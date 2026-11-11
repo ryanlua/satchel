@@ -1,9 +1,9 @@
 {
   "recommendations": [
-    "evaera.vscode-rojo",
-    "kampfkarren.selene-vscode",
-    "johnnymorganz.stylua",
+    "GiovaniBlack.rsml-formatter",
     "johnnymorganz.luau-lsp",
+    "johnnymorganz.stylua",
+    "kampfkarren.selene-vscode",
     "rbx-rsml.roblox-style-management-language",
     "redhat.vscode-yaml"
   ]
