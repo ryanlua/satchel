@@ -3,26 +3,24 @@ name: CI
 on:
   pull_request:
   push:
+    branches: ["**"]
+  workflow_call:
 
 permissions:
   contents: read
-
-env:
-  OUTPUT_NAME: Satchel
-  ROJO_PROJECT: package.project.json
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
       - name: Install Rokit toolchain
         uses: CompeyDev/setup-rokit@v0.2.1
       - name: Install Wally packages
         run: |
           wally install
-          rojo sourcemap $ROJO_PROJECT --output sourcemap.json
+          rojo sourcemap package.project.json --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
       - name: Run StyLua
         run: stylua --check src/ models/
@@ -30,12 +28,13 @@ jobs:
         run: selene src/ models/
       - name: Build Rojo project
         run: |
-          mkdir dist
-          rojo build $ROJO_PROJECT --output dist/$OUTPUT_NAME.rbxm
-          rojo build $ROJO_PROJECT --output dist/$OUTPUT_NAME.rbxmx
+          rojo build package.project.json --output Satchel.rbxm
+          rojo build package.project.json --output Satchel.rbxmx
       - name: Archive build files
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.2
         with:
-          name: ${{ env.OUTPUT_NAME }}
-          path: dist/
+          name: Satchel
+          path: |
+            *.rbxm
+            *.rbxmx
           if-no-files-found: error

@@ -6,8 +6,13 @@ Packages/
 ServerPackages/
 DevPackages/
 
-# MkDocs documentation
+# Documentation
 site/
+__pycache__/
+*.py[cod]
 
 # Builds
-dist/
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
