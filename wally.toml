@@ -9,7 +9,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 homepage = "https://satchel.luau.page"
 repository = "https://github.com/ryanlua/satchel"
 exclude = ["**"]
-include = ["LICENSE.md", "README.md", "src", "src/*", "default.project.json", "wally.toml"]
+include = ["LICENSE.md", "README.md", "default.project.json", "src", "src/*", "wally.toml"]
 
 [dependencies]
 react = "haedrix/react@17.3.10"
