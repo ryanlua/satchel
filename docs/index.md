@@ -44,7 +44,7 @@ This documentation will allow you to install Satchel and learn about how to scri
 
     [:material-arrow-right: Installation](installation.md)
 
-  [Creator Store]: https://create.roblox.com/store/asset/13947506401
+  [Creator Store]: https://create.roblox.com/store/asset/90352464498418
   [GitHub Releases]: https://github.com/ryanlua/satchel/releases
 
 - :material-devices:{ .lg .middle } __Full device support__
