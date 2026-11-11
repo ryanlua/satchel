@@ -16,7 +16,7 @@ Styles are written in [RSML](https://github.com/rbx-rsml) (see the [RSML docs](h
 - `ThemeTokens` and `BaseTokens` define tokens as `$Name = value;`. Tokens referencing other tokens (`$HintTextColor = $TextColor;`) stay as runtime [token references](https://create.roblox.com/docs/ui/styling/css-comparisons#variables) (prefer tokens over literal values)
 - Themes link to other sheets with `@derive "./BaseTokens";` at the top of the file
 - Nested rules merge their selectors with their parent rule ([nesting and merging](https://create.roblox.com/docs/ui/styling/css-comparisons#nesting-and-merging)), e.g. `.Equipped` inside `TextButton.Slot`, then `::UIStroke` inside `.Equipped`. Rule order is kept, so add rules where they belong in the tree
-- Rules default to priority 0; use `@priority 5;` inside a rule to override
+- Rules default to priority 0; use `@priority 5;` inside a rule to override. Priority only competes between sibling rules, so to resolve a conflict between nested rules set it on their top-most differing ancestors
 - Values: `:Fit` for enums whose type matches the property name (otherwise `Enum.AutomaticSize.Y`), `#191B1D` colours, `8px`/`50%` for UDims, `udim2 (60px, 60px)`, `vec2 (0, 0.5)`, `font ("BuilderSans", :Medium)`
 - Verify with `rojo build` after editing
 

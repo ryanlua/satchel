@@ -69,6 +69,12 @@ const function Slot(props: Props)
 		ToolTip = e(Tooltip, {
 			text = tooltipText,
 		}),
+		EquipStroke = e("UIStroke", {
+			[React.Tag] = "EquipStroke",
+		}),
+		PressStroke = e("UIStroke", {
+			[React.Tag] = "PressStroke",
+		}),
 	})
 end
 

@@ -45,12 +45,26 @@ TextButton.Slot {
 	TextStrokeTransparency = $SlotTextStrokeTransparency;
 	TextTruncate = :SplitWord;
 
-	.Equipped {
-		::UIStroke {
-			ApplyStrokeMode = :Border;
+	>UIStroke {
+		ApplyStrokeMode = :Border;
+		Enabled = false;
+
+		.EquipStroke {
 			Color = $SlotEquipStrokeColor;
 			LineJoinMode = :Round;
 			Thickness = $SlotEquipStrokeThickness;
+		}
+
+		.PressStroke {
+			BorderStrokePosition = :Inner;
+			Color = $SlotPressStrokeColor;
+			Thickness = 2;
+		}
+	}
+
+	.Equipped {
+		>UIStroke.EquipStroke {
+			Enabled = true;
 		}
 	}
 
@@ -65,11 +79,8 @@ TextButton.Slot {
 		BackgroundTransparency = 0;
 
 		:Press {
-			::UIStroke {
-				ApplyStrokeMode = :Border;
-				BorderStrokePosition = :Inner;
-				Color = $SlotPressStrokeColor;
-				Thickness = 2;
+			>UIStroke.PressStroke {
+				Enabled = true;
 			}
 		}
 	}

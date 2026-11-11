@@ -260,34 +260,38 @@
             },
             "children": [
                 {
-                    "name": ".Equipped",
+                    "name": "> UIStroke",
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
                         "PropertiesSerialize": {
-                            "Attributes": {}
+                            "Attributes": {
+                                "ApplyStrokeMode": {
+                                    "EnumItem": {
+                                        "type": "ApplyStrokeMode",
+                                        "value": 1
+                                    }
+                                },
+                                "Enabled": {
+                                    "Bool": false
+                                }
+                            }
                         },
                         "PropertyTransitionsSerialize": {
                             "Attributes": {}
                         },
                         "Selector": {
-                            "String": ".Equipped"
+                            "String": "> UIStroke"
                         }
                     },
                     "children": [
                         {
-                            "name": "::UIStroke",
+                            "name": ".EquipStroke",
                             "className": "StyleRule",
                             "attributes": {},
                             "properties": {
                                 "PropertiesSerialize": {
                                     "Attributes": {
-                                        "ApplyStrokeMode": {
-                                            "EnumItem": {
-                                                "type": "ApplyStrokeMode",
-                                                "value": 1
-                                            }
-                                        },
                                         "Color": {
                                             "String": "$SlotEquipStrokeColor"
                                         },
@@ -306,7 +310,76 @@
                                     "Attributes": {}
                                 },
                                 "Selector": {
-                                    "String": "::UIStroke"
+                                    "String": ".EquipStroke"
+                                }
+                            },
+                            "children": []
+                        },
+                        {
+                            "name": ".PressStroke",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "BorderStrokePosition": {
+                                            "EnumItem": {
+                                                "type": "BorderStrokePosition",
+                                                "value": 2
+                                            }
+                                        },
+                                        "Color": {
+                                            "String": "$SlotPressStrokeColor"
+                                        },
+                                        "Thickness": {
+                                            "Float64": 2.0
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": ".PressStroke"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": ".Equipped",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ".Equipped"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> UIStroke .EquipStroke",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Enabled": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> UIStroke .EquipStroke"
                                 }
                             },
                             "children": []
@@ -392,29 +465,14 @@
                             },
                             "children": [
                                 {
-                                    "name": "::UIStroke",
+                                    "name": "> UIStroke .PressStroke",
                                     "className": "StyleRule",
                                     "attributes": {},
                                     "properties": {
                                         "PropertiesSerialize": {
                                             "Attributes": {
-                                                "ApplyStrokeMode": {
-                                                    "EnumItem": {
-                                                        "type": "ApplyStrokeMode",
-                                                        "value": 1
-                                                    }
-                                                },
-                                                "BorderStrokePosition": {
-                                                    "EnumItem": {
-                                                        "type": "BorderStrokePosition",
-                                                        "value": 2
-                                                    }
-                                                },
-                                                "Color": {
-                                                    "String": "$SlotPressStrokeColor"
-                                                },
-                                                "Thickness": {
-                                                    "Float64": 2.0
+                                                "Enabled": {
+                                                    "Bool": true
                                                 }
                                             }
                                         },
@@ -422,7 +480,7 @@
                                             "Attributes": {}
                                         },
                                         "Selector": {
-                                            "String": "::UIStroke"
+                                            "String": "> UIStroke .PressStroke"
                                         }
                                     },
                                     "children": []
