@@ -1,0 +1,127 @@
+{
+    "className": "StyleSheet",
+    "id": "Design\\LegacyTheme.rsml",
+    "attributes": {
+        "ContainerBackgroundColor": {
+            "Color3": [
+                0.36862746,
+                0.36862746,
+                0.36862746
+            ]
+        },
+        "ContainerStrokeTransparency": {
+            "Float64": 1.0
+        },
+        "CornerRadius": {
+            "UDim": [
+                0.0,
+                0
+            ]
+        },
+        "FontFace": {
+            "Font": {
+                "family": "rbxasset://fonts/families/SourceSansPro.json",
+                "weight": "Regular",
+                "style": "Normal",
+                "cachedFaceId": null
+            }
+        },
+        "HintFontFace": {
+            "Font": {
+                "family": "rbxasset://fonts/families/SourceSansPro.json",
+                "weight": "Bold",
+                "style": "Normal",
+                "cachedFaceId": null
+            }
+        },
+        "HintTextSize": {
+            "Float64": 24.0
+        },
+        "SearchPadding": {
+            "UDim": [
+                0.0,
+                0
+            ]
+        },
+        "SearchPlaceholderColor": {
+            "Color3": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "SearchTextSize": {
+            "Float64": 24.0
+        },
+        "SlotBackgroundColor": {
+            "Color3": [
+                0.12156863,
+                0.12156863,
+                0.12156863
+            ]
+        },
+        "SlotEquipStrokeColor": {
+            "Color3": [
+                0.3529412,
+                0.5568628,
+                0.9137255
+            ]
+        },
+        "SlotEquipStrokeThickness": {
+            "Float64": 5.0
+        },
+        "SlotPadding": {
+            "UDim": [
+                0.0,
+                6
+            ]
+        },
+        "SlotUnlockBackgroundColor": {
+            "Color3": [
+                0.19215687,
+                0.19215687,
+                0.19215687
+            ]
+        },
+        "SmallCornerRadius": {
+            "UDim": [
+                0.0,
+                0
+            ]
+        },
+        "SmallTextSize": {
+            "Float64": 14.0
+        },
+        "StyleCategory": {
+            "String": "Themes"
+        },
+        "TextSize": {
+            "Float64": 14.0
+        },
+        "TextStrokeTransparency": {
+            "Float64": 1.0
+        },
+        "ToolTipBackgroundColor": {
+            "Color3": [
+                0.4,
+                0.4,
+                0.4
+            ]
+        },
+        "ToolTipPadding": {
+            "UDim": [
+                0.0,
+                2
+            ]
+        }
+    },
+    "children": [
+        {
+            "className": "StyleDerive",
+            "name": "BaseTokens",
+            "attributes": {
+                "Rojo_Target_StyleSheet": "Design\\BaseTokens.rsml"
+            }
+        }
+    ]
+}

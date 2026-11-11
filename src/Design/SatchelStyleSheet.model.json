@@ -1,0 +1,1915 @@
+{
+    "className": "StyleSheet",
+    "id": "Design\\SatchelStyleSheet.rsml",
+    "attributes": {},
+    "children": [
+        {
+            "name": ".InventoryHint",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 1
+                            }
+                        },
+                        "BackgroundTransparency": {
+                            "Float64": 1.0
+                        },
+                        "Size": {
+                            "UDim2": [
+                                [
+                                    0.0,
+                                    0
+                                ],
+                                [
+                                    0.0,
+                                    40
+                                ]
+                            ]
+                        },
+                        "Visible": {
+                            "Bool": false
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".InventoryHint"
+                }
+            },
+            "children": [
+                {
+                    "name": "> ImageLabel",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "AnchorPoint": {
+                                    "Vector2": [
+                                        0.0,
+                                        0.5
+                                    ]
+                                },
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "Position": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            0
+                                        ],
+                                        [
+                                            0.5,
+                                            0
+                                        ]
+                                    ]
+                                },
+                                "ScaleType": {
+                                    "EnumItem": {
+                                        "type": "ScaleType",
+                                        "value": 3
+                                    }
+                                },
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            37
+                                        ],
+                                        [
+                                            0.0,
+                                            37
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> ImageLabel"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "::UIAspectRatioConstraint",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "AspectRatio": {
+                                            "Float64": 1.5
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UIAspectRatioConstraint"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "> TextLabel",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "AnchorPoint": {
+                                    "Vector2": [
+                                        0.0,
+                                        0.5
+                                    ]
+                                },
+                                "AutomaticSize": {
+                                    "EnumItem": {
+                                        "type": "AutomaticSize",
+                                        "value": 1
+                                    }
+                                },
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "FontFace": {
+                                    "String": "$HintFontFace"
+                                },
+                                "Position": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            42
+                                        ],
+                                        [
+                                            0.5,
+                                            0
+                                        ]
+                                    ]
+                                },
+                                "TextColor3": {
+                                    "String": "$HintTextColor"
+                                },
+                                "TextSize": {
+                                    "String": "$HintTextSize"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> TextLabel"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "@PreferredInputGamepad, .Visible",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Visible": {
+                                    "Bool": true
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "@PreferredInputGamepad, .Visible"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "TextButton .Slot",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AutoButtonColor": {
+                            "Bool": false
+                        },
+                        "BackgroundColor3": {
+                            "String": "$SlotBackgroundColor"
+                        },
+                        "BackgroundTransparency": {
+                            "String": "$SlotBackgroundTransparency"
+                        },
+                        "FontFace": {
+                            "String": "$SlotFontFace"
+                        },
+                        "Size": {
+                            "UDim2": [
+                                [
+                                    0.0,
+                                    60
+                                ],
+                                [
+                                    0.0,
+                                    60
+                                ]
+                            ]
+                        },
+                        "TextColor3": {
+                            "String": "$SlotTextColor"
+                        },
+                        "TextScaled": {
+                            "Bool": true
+                        },
+                        "TextStrokeColor3": {
+                            "String": "$SlotTextStrokeColor"
+                        },
+                        "TextStrokeTransparency": {
+                            "String": "$SlotTextStrokeTransparency"
+                        },
+                        "TextTruncate": {
+                            "EnumItem": {
+                                "type": "TextTruncate",
+                                "value": 2
+                            }
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": "TextButton .Slot"
+                }
+            },
+            "children": [
+                {
+                    "name": ".Equipped",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ".Equipped"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "::UIStroke",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "ApplyStrokeMode": {
+                                            "EnumItem": {
+                                                "type": "ApplyStrokeMode",
+                                                "value": 1
+                                            }
+                                        },
+                                        "Color": {
+                                            "String": "$SlotEquipStrokeColor"
+                                        },
+                                        "LineJoinMode": {
+                                            "EnumItem": {
+                                                "type": "LineJoinMode",
+                                                "value": 0
+                                            }
+                                        },
+                                        "Thickness": {
+                                            "String": "$SlotEquipStrokeThickness"
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UIStroke"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": ":Hover",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ":Hover"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> .Tooltip",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Visible": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> .Tooltip"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": ".Unlocked",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "BackgroundColor3": {
+                                    "String": "$SlotUnlockBackgroundColor"
+                                },
+                                "BackgroundTransparency": {
+                                    "Float64": 0.0
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ".Unlocked"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": ":Press",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {}
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": ":Press"
+                                }
+                            },
+                            "children": [
+                                {
+                                    "name": "::UIStroke",
+                                    "className": "StyleRule",
+                                    "attributes": {},
+                                    "properties": {
+                                        "PropertiesSerialize": {
+                                            "Attributes": {
+                                                "ApplyStrokeMode": {
+                                                    "EnumItem": {
+                                                        "type": "ApplyStrokeMode",
+                                                        "value": 1
+                                                    }
+                                                },
+                                                "BorderStrokePosition": {
+                                                    "EnumItem": {
+                                                        "type": "BorderStrokePosition",
+                                                        "value": 2
+                                                    }
+                                                },
+                                                "Color": {
+                                                    "String": "$SlotPressStrokeColor"
+                                                },
+                                                "Thickness": {
+                                                    "Float64": 2.0
+                                                }
+                                            }
+                                        },
+                                        "PropertyTransitionsSerialize": {
+                                            "Attributes": {}
+                                        },
+                                        "Selector": {
+                                            "String": "::UIStroke"
+                                        }
+                                    },
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "::UICorner",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "CornerRadius": {
+                                    "String": "$SlotCornerRadius"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UICorner"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": ":Press",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ":Press"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> .Tooltip",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Visible": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> .Tooltip"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "::UITextSizeConstraint",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "MaxTextSize": {
+                                    "String": "$SlotTextSize"
+                                },
+                                "MinTextSize": {
+                                    "Float64": 12.0
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UITextSizeConstraint"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "> TextLabel",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            0
+                                        ],
+                                        [
+                                            0.0,
+                                            0
+                                        ]
+                                    ]
+                                },
+                                "Visible": {
+                                    "Bool": false
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> TextLabel"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": ".SlotNumber",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "BackgroundTransparency": {
+                                            "Float64": 1.0
+                                        },
+                                        "FontFace": {
+                                            "String": "$SlotNumberFontFace"
+                                        },
+                                        "Size": {
+                                            "UDim2": [
+                                                [
+                                                    1.0,
+                                                    0
+                                                ],
+                                                [
+                                                    1.0,
+                                                    0
+                                                ]
+                                            ]
+                                        },
+                                        "TextColor3": {
+                                            "String": "$SlotNumberTextColor"
+                                        },
+                                        "TextSize": {
+                                            "String": "$SlotNumberTextSize"
+                                        },
+                                        "TextStrokeColor3": {
+                                            "String": "$SlotNumberStrokeColor"
+                                        },
+                                        "TextStrokeTransparency": {
+                                            "String": "$SlotNumberStrokeTransparency"
+                                        },
+                                        "TextXAlignment": {
+                                            "EnumItem": {
+                                                "type": "TextXAlignment",
+                                                "value": 0
+                                            }
+                                        },
+                                        "TextYAlignment": {
+                                            "EnumItem": {
+                                                "type": "TextYAlignment",
+                                                "value": 0
+                                            }
+                                        },
+                                        "Visible": {
+                                            "Bool": false
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": ".SlotNumber"
+                                }
+                            },
+                            "children": [
+                                {
+                                    "name": "@PreferredInputKeyboardAndMouse",
+                                    "className": "StyleRule",
+                                    "attributes": {},
+                                    "properties": {
+                                        "PropertiesSerialize": {
+                                            "Attributes": {
+                                                "Visible": {
+                                                    "Bool": true
+                                                }
+                                            }
+                                        },
+                                        "PropertyTransitionsSerialize": {
+                                            "Attributes": {}
+                                        },
+                                        "Selector": {
+                                            "String": "@PreferredInputKeyboardAndMouse"
+                                        }
+                                    },
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "name": ".Tooltip",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Visible": {
+                                            "Bool": false
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": ".Tooltip"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "> ImageLabel",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "Image": {
+                                    "String": ""
+                                },
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            1.0,
+                                            0
+                                        ],
+                                        [
+                                            1.0,
+                                            0
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> ImageLabel"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "::UICorner",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "CornerRadius": {
+                                            "String": "$SlotIconCornerRadius"
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UICorner"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "::UIPadding",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "PaddingBottom": {
+                                    "String": "$SlotPadding"
+                                },
+                                "PaddingLeft": {
+                                    "String": "$SlotPadding"
+                                },
+                                "PaddingRight": {
+                                    "String": "$SlotPadding"
+                                },
+                                "PaddingTop": {
+                                    "String": "$SlotPadding"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIPadding"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": ".Backpack",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "Active": {
+                            "Bool": true
+                        },
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 3
+                            }
+                        },
+                        "BackgroundTransparency": {
+                            "Float64": 1.0
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".Backpack"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UIListLayout",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "SortOrder": {
+                                    "EnumItem": {
+                                        "type": "SortOrder",
+                                        "value": 2
+                                    }
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIListLayout"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": ".Hotbar",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 3
+                            }
+                        },
+                        "BackgroundTransparency": {
+                            "Float64": 1.0
+                        },
+                        "LayoutOrder": {
+                            "Float64": 1.0
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".Hotbar"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UIListLayout",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "FillDirection": {
+                                    "EnumItem": {
+                                        "type": "FillDirection",
+                                        "value": 0
+                                    }
+                                },
+                                "Padding": {
+                                    "UDim": [
+                                        0.0,
+                                        5
+                                    ]
+                                },
+                                "SortOrder": {
+                                    "EnumItem": {
+                                        "type": "SortOrder",
+                                        "value": 2
+                                    }
+                                },
+                                "VerticalAlignment": {
+                                    "EnumItem": {
+                                        "type": "VerticalAlignment",
+                                        "value": 0
+                                    }
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIListLayout"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "::UIPadding",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "PaddingLeft": {
+                                    "UDim": [
+                                        0.0,
+                                        5
+                                    ]
+                                },
+                                "PaddingRight": {
+                                    "UDim": [
+                                        0.0,
+                                        5
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIPadding"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": ".HotbarHints",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AnchorPoint": {
+                            "Vector2": [
+                                0.5,
+                                1.0
+                            ]
+                        },
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 3
+                            }
+                        },
+                        "BackgroundTransparency": {
+                            "Float64": 1.0
+                        },
+                        "Position": {
+                            "UDim2": [
+                                [
+                                    0.5,
+                                    0
+                                ],
+                                [
+                                    1.0,
+                                    0
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".HotbarHints"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UIListLayout",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "FillDirection": {
+                                    "EnumItem": {
+                                        "type": "FillDirection",
+                                        "value": 0
+                                    }
+                                },
+                                "SortOrder": {
+                                    "EnumItem": {
+                                        "type": "SortOrder",
+                                        "value": 2
+                                    }
+                                },
+                                "VerticalAlignment": {
+                                    "EnumItem": {
+                                        "type": "VerticalAlignment",
+                                        "value": 2
+                                    }
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIListLayout"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": ".InventoryHints",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 2
+                            }
+                        },
+                        "BackgroundTransparency": {
+                            "Float64": 1.0
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".InventoryHints"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UIListLayout",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "SortOrder": {
+                                    "EnumItem": {
+                                        "type": "SortOrder",
+                                        "value": 2
+                                    }
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIListLayout"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": ".Hints",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 2
+                            }
+                        },
+                        "BackgroundTransparency": {
+                            "Float64": 1.0
+                        },
+                        "Size": {
+                            "UDim2": [
+                                [
+                                    1.0,
+                                    0
+                                ],
+                                [
+                                    0.0,
+                                    0
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".Hints"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UIListLayout",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "FillDirection": {
+                                    "EnumItem": {
+                                        "type": "FillDirection",
+                                        "value": 0
+                                    }
+                                },
+                                "HorizontalAlignment": {
+                                    "EnumItem": {
+                                        "type": "HorizontalAlignment",
+                                        "value": 0
+                                    }
+                                },
+                                "HorizontalFlex": {
+                                    "EnumItem": {
+                                        "type": "UIFlexAlignment",
+                                        "value": 4
+                                    }
+                                },
+                                "Padding": {
+                                    "UDim": [
+                                        0.0,
+                                        5
+                                    ]
+                                },
+                                "Wraps": {
+                                    "Bool": true
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIListLayout"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "TextLabel .Tooltip",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AnchorPoint": {
+                            "Vector2": [
+                                0.5,
+                                1.0
+                            ]
+                        },
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 3
+                            }
+                        },
+                        "BackgroundColor3": {
+                            "String": "$ToolTipBackgroundColor"
+                        },
+                        "BackgroundTransparency": {
+                            "String": "$ToolTipBackgroundTranparency"
+                        },
+                        "FontFace": {
+                            "String": "$ToolTipFontFace"
+                        },
+                        "Position": {
+                            "UDim2": [
+                                [
+                                    0.5,
+                                    0
+                                ],
+                                [
+                                    -0.0,
+                                    -10
+                                ]
+                            ]
+                        },
+                        "Size": {
+                            "UDim2": [
+                                [
+                                    0.0,
+                                    0
+                                ],
+                                [
+                                    0.0,
+                                    0
+                                ]
+                            ]
+                        },
+                        "TextColor3": {
+                            "String": "$ToolTipTextColor"
+                        },
+                        "TextSize": {
+                            "String": "$ToolTipTextSize"
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": "TextLabel .Tooltip"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UIPadding",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "PaddingBottom": {
+                                    "String": "$ToolTipPadding"
+                                },
+                                "PaddingLeft": {
+                                    "String": "$ToolTipPadding"
+                                },
+                                "PaddingRight": {
+                                    "String": "$ToolTipPadding"
+                                },
+                                "PaddingTop": {
+                                    "String": "$ToolTipPadding"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIPadding"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "::UICorner",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "CornerRadius": {
+                                    "String": "$ToolTipCornerRadius"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UICorner"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "TextBox .Searchbar",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "BackgroundColor3": {
+                            "String": "$ContainerBackgroundColor"
+                        },
+                        "BackgroundTransparency": {
+                            "String": "$ContainerBackgroundTransparency"
+                        },
+                        "ClearTextOnFocus": {
+                            "Bool": false
+                        },
+                        "ClipsDescendants": {
+                            "Bool": true
+                        },
+                        "FontFace": {
+                            "String": "$SearchFontFace"
+                        },
+                        "PlaceholderColor3": {
+                            "String": "$SearchPlaceholderColor"
+                        },
+                        "PlaceholderText": {
+                            "String": "Search"
+                        },
+                        "Size": {
+                            "UDim2": [
+                                [
+                                    1.0,
+                                    0
+                                ],
+                                [
+                                    0.0,
+                                    30
+                                ]
+                            ]
+                        },
+                        "Text": {
+                            "String": ""
+                        },
+                        "TextColor3": {
+                            "String": "$SearchTextColor"
+                        },
+                        "TextSize": {
+                            "String": "$SearchTextSize"
+                        },
+                        "TextStrokeTransparency": {
+                            "String": "$SearchTextStrokeTransparency"
+                        },
+                        "TextXAlignment": {
+                            "EnumItem": {
+                                "type": "TextXAlignment",
+                                "value": 0
+                            }
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": "TextBox .Searchbar"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UIStroke",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "ApplyStrokeMode": {
+                                    "EnumItem": {
+                                        "type": "ApplyStrokeMode",
+                                        "value": 1
+                                    }
+                                },
+                                "Color": {
+                                    "String": "$ContainerStrokeColor"
+                                },
+                                "Transparency": {
+                                    "String": "$ContainerStrokeTransparency"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIStroke"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "::UICorner",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "CornerRadius": {
+                                    "String": "$ContainerCornerRadius"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UICorner"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "> ImageButton",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "AnchorPoint": {
+                                    "Vector2": [
+                                        1.0,
+                                        0.5
+                                    ]
+                                },
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "Image": {
+                                    "String": "rbxasset://textures/ui/InspectMenu/x.png"
+                                },
+                                "Position": {
+                                    "UDim2": [
+                                        [
+                                            1.0,
+                                            0
+                                        ],
+                                        [
+                                            0.5,
+                                            0
+                                        ]
+                                    ]
+                                },
+                                "Selectable": {
+                                    "Bool": false
+                                },
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            1.0,
+                                            0
+                                        ],
+                                        [
+                                            1.0,
+                                            0
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> ImageButton"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "::UIAspectRatioConstraint",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {}
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UIAspectRatioConstraint"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "::UIPadding",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "PaddingBottom": {
+                                    "String": "$SearchPadding"
+                                },
+                                "PaddingLeft": {
+                                    "String": "$SearchPadding"
+                                },
+                                "PaddingRight": {
+                                    "String": "$SearchPadding"
+                                },
+                                "PaddingTop": {
+                                    "String": "$SearchPadding"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIPadding"
+                        }
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": ".HotbarHint",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "BackgroundTransparency": {
+                            "Float64": 1.0
+                        },
+                        "Size": {
+                            "UDim2": [
+                                [
+                                    0.0,
+                                    60
+                                ],
+                                [
+                                    0.0,
+                                    60
+                                ]
+                            ]
+                        },
+                        "Visible": {
+                            "Bool": false
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".HotbarHint"
+                }
+            },
+            "children": [
+                {
+                    "name": "@PreferredInputGamepad, .Visible",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Visible": {
+                                    "Bool": true
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "@PreferredInputGamepad, .Visible"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "> ImageLabel",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "AnchorPoint": {
+                                    "Vector2": [
+                                        0.5,
+                                        0.5
+                                    ]
+                                },
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "Position": {
+                                    "UDim2": [
+                                        [
+                                            0.5,
+                                            0
+                                        ],
+                                        [
+                                            0.5,
+                                            -5
+                                        ]
+                                    ]
+                                },
+                                "ScaleType": {
+                                    "EnumItem": {
+                                        "type": "ScaleType",
+                                        "value": 3
+                                    }
+                                },
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            1.0,
+                                            0
+                                        ],
+                                        [
+                                            1.0,
+                                            0
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> ImageLabel"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "::UIAspectRatioConstraint",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "AspectRatio": {
+                                            "Float64": 2.0
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UIAspectRatioConstraint"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".Inventory",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "PropertiesSerialize": {
+                    "Attributes": {
+                        "AutomaticSize": {
+                            "EnumItem": {
+                                "type": "AutomaticSize",
+                                "value": 2
+                            }
+                        },
+                        "BackgroundColor3": {
+                            "String": "$SurfaceBackgroundColor"
+                        },
+                        "BackgroundTransparency": {
+                            "String": "$SurfaceBackgroundTransparency"
+                        },
+                        "Size": {
+                            "UDim2": [
+                                [
+                                    1.0,
+                                    0
+                                ],
+                                [
+                                    0.0,
+                                    0
+                                ]
+                            ]
+                        }
+                    }
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".Inventory"
+                }
+            },
+            "children": [
+                {
+                    "name": "::UICorner",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "CornerRadius": {
+                                    "String": "$SurfaceCornerRadius"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UICorner"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "::UIListLayout",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Padding": {
+                                    "UDim": [
+                                        0.0,
+                                        1
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIListLayout"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": "> ScrollingFrame",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "AutomaticCanvasSize": {
+                                    "EnumItem": {
+                                        "type": "AutomaticSize",
+                                        "value": 2
+                                    }
+                                },
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "BorderSizePixel": {
+                                    "Float64": 0.0
+                                },
+                                "CanvasSize": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            0
+                                        ],
+                                        [
+                                            0.0,
+                                            0
+                                        ]
+                                    ]
+                                },
+                                "ElasticBehavior": {
+                                    "EnumItem": {
+                                        "type": "ElasticBehavior",
+                                        "value": 1
+                                    }
+                                },
+                                "ScrollBarImageColor3": {
+                                    "Color3": [
+                                        0.8156863,
+                                        0.84705883,
+                                        0.98039216
+                                    ]
+                                },
+                                "ScrollBarThickness": {
+                                    "Float64": 8.0
+                                },
+                                "ScrollingDirection": {
+                                    "EnumItem": {
+                                        "type": "ScrollingDirection",
+                                        "value": 2
+                                    }
+                                },
+                                "Selectable": {
+                                    "Bool": false
+                                },
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            1.0,
+                                            13
+                                        ],
+                                        [
+                                            0.0,
+                                            0
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> ScrollingFrame"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "::UIListLayout",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "FillDirection": {
+                                            "EnumItem": {
+                                                "type": "FillDirection",
+                                                "value": 0
+                                            }
+                                        },
+                                        "Padding": {
+                                            "UDim": [
+                                                0.0,
+                                                5
+                                            ]
+                                        },
+                                        "SortOrder": {
+                                            "EnumItem": {
+                                                "type": "SortOrder",
+                                                "value": 2
+                                            }
+                                        },
+                                        "Wraps": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UIListLayout"
+                                }
+                            },
+                            "children": []
+                        },
+                        {
+                            "name": "::UIPadding",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "PaddingBottom": {
+                                            "String": "$SurfacePadding"
+                                        },
+                                        "PaddingLeft": {
+                                            "String": "$SurfacePadding"
+                                        },
+                                        "PaddingRight": {
+                                            "String": "$SurfacePadding"
+                                        },
+                                        "PaddingTop": {
+                                            "String": "$SurfacePadding"
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UIPadding"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "> Frame",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            1.0,
+                                            0
+                                        ],
+                                        [
+                                            0.0,
+                                            35
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "> Frame"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "::UIPadding",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "PaddingLeft": {
+                                            "String": "$SurfacePadding"
+                                        },
+                                        "PaddingRight": {
+                                            "String": "$SurfacePadding"
+                                        },
+                                        "PaddingTop": {
+                                            "String": "$SurfacePadding"
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "::UIPadding"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "className": "StyleDerive",
+            "name": "DefaultTheme",
+            "attributes": {
+                "Rojo_Target_StyleSheet": "Design\\DefaultTheme.rsml"
+            }
+        }
+    ]
+}

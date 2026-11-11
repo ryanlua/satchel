@@ -1,1 +1,2 @@
 wally.lock linguist-language=TOML
+src/Design/*.model.json linguist-generated=true

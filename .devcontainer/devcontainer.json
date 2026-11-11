@@ -19,6 +19,7 @@
 				"kampfkarren.selene-vscode",
 				"johnnymorganz.stylua",
 				"johnnymorganz.luau-lsp",
+				"rbx-rsml.roblox-style-management-language",
 				"redhat.vscode-yaml"
 			]
 		}

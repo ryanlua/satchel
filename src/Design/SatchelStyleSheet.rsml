@@ -1,0 +1,341 @@
+@derive "./DefaultTheme";
+
+.InventoryHint {
+	AutomaticSize = :X;
+	BackgroundTransparency = 1;
+	Size = udim2 (0px, 40px);
+	Visible = false;
+
+	>ImageLabel {
+		AnchorPoint = vec2 (0, 0.5);
+		BackgroundTransparency = 1;
+		Position = udim2 (0px, 50%);
+		ScaleType = :Fit;
+		Size = udim2 (37px, 37px);
+
+		::UIAspectRatioConstraint {
+			AspectRatio = 1.5;
+		}
+	}
+
+	>TextLabel {
+		AnchorPoint = vec2 (0, 0.5);
+		AutomaticSize = :X;
+		BackgroundTransparency = 1;
+		FontFace = $HintFontFace;
+		Position = udim2 (42px, 50%);
+		TextColor3 = $HintTextColor;
+		TextSize = $HintTextSize;
+	}
+
+	@PreferredInputGamepad,.Visible {
+		Visible = true;
+	}
+}
+
+TextButton.Slot {
+	AutoButtonColor = false;
+	BackgroundColor3 = $SlotBackgroundColor;
+	BackgroundTransparency = $SlotBackgroundTransparency;
+	FontFace = $SlotFontFace;
+	Size = udim2 (60px, 60px);
+	TextColor3 = $SlotTextColor;
+	TextScaled = true;
+	TextStrokeColor3 = $SlotTextStrokeColor;
+	TextStrokeTransparency = $SlotTextStrokeTransparency;
+	TextTruncate = :SplitWord;
+
+	.Equipped {
+		::UIStroke {
+			ApplyStrokeMode = :Border;
+			Color = $SlotEquipStrokeColor;
+			LineJoinMode = :Round;
+			Thickness = $SlotEquipStrokeThickness;
+		}
+	}
+
+	:Hover {
+		>.Tooltip {
+			Visible = true;
+		}
+	}
+
+	.Unlocked {
+		BackgroundColor3 = $SlotUnlockBackgroundColor;
+		BackgroundTransparency = 0;
+
+		:Press {
+			::UIStroke {
+				ApplyStrokeMode = :Border;
+				BorderStrokePosition = :Inner;
+				Color = $SlotPressStrokeColor;
+				Thickness = 2;
+			}
+		}
+	}
+
+	::UICorner {
+		CornerRadius = $SlotCornerRadius;
+	}
+
+	:Press {
+		>.Tooltip {
+			Visible = true;
+		}
+	}
+
+	::UITextSizeConstraint {
+		MaxTextSize = $SlotTextSize;
+		MinTextSize = 12;
+	}
+
+	>TextLabel {
+		Size = udim2 (0px, 0px);
+		Visible = false;
+
+		.SlotNumber {
+			BackgroundTransparency = 1;
+			FontFace = $SlotNumberFontFace;
+			Size = udim2 (100%, 100%);
+			TextColor3 = $SlotNumberTextColor;
+			TextSize = $SlotNumberTextSize;
+			TextStrokeColor3 = $SlotNumberStrokeColor;
+			TextStrokeTransparency = $SlotNumberStrokeTransparency;
+			TextXAlignment = :Left;
+			TextYAlignment = :Top;
+			Visible = false;
+
+			@PreferredInputKeyboardAndMouse {
+				Visible = true;
+			}
+		}
+
+		.Tooltip {
+			Visible = false;
+		}
+	}
+
+	>ImageLabel {
+		BackgroundTransparency = 1;
+		Image = "";
+		Size = udim2 (100%, 100%);
+
+		::UICorner {
+			CornerRadius = $SlotIconCornerRadius;
+		}
+	}
+
+	::UIPadding {
+		PaddingBottom = $SlotPadding;
+		PaddingLeft = $SlotPadding;
+		PaddingRight = $SlotPadding;
+		PaddingTop = $SlotPadding;
+	}
+}
+
+.Backpack {
+	Active = true;
+	AutomaticSize = :XY;
+	BackgroundTransparency = 1;
+
+	::UIListLayout {
+		SortOrder = :LayoutOrder;
+	}
+}
+
+.Hotbar {
+	AutomaticSize = :XY;
+	BackgroundTransparency = 1;
+	LayoutOrder = 1;
+
+	::UIListLayout {
+		FillDirection = :Horizontal;
+		Padding = 5px;
+		SortOrder = :LayoutOrder;
+		VerticalAlignment = :Center;
+	}
+
+	::UIPadding {
+		PaddingLeft = 5px;
+		PaddingRight = 5px;
+	}
+}
+
+.HotbarHints {
+	AnchorPoint = vec2 (0.5, 1);
+	AutomaticSize = :XY;
+	BackgroundTransparency = 1;
+	Position = udim2 (50%, 100%);
+
+	::UIListLayout {
+		FillDirection = :Horizontal;
+		SortOrder = :LayoutOrder;
+		VerticalAlignment = :Bottom;
+	}
+}
+
+.InventoryHints {
+	AutomaticSize = :Y;
+	BackgroundTransparency = 1;
+
+	::UIListLayout {
+		SortOrder = :LayoutOrder;
+	}
+}
+
+.Hints {
+	AutomaticSize = :Y;
+	BackgroundTransparency = 1;
+	Size = udim2 (100%, 0px);
+
+	::UIListLayout {
+		FillDirection = :Horizontal;
+		HorizontalAlignment = :Center;
+		HorizontalFlex = Enum.UIFlexAlignment.SpaceEvenly;
+		Padding = 5px;
+		Wraps = true;
+	}
+}
+
+TextLabel.Tooltip {
+	AnchorPoint = vec2 (0.5, 1);
+	AutomaticSize = :XY;
+	BackgroundColor3 = $ToolTipBackgroundColor;
+	BackgroundTransparency = $ToolTipBackgroundTranparency;
+	FontFace = $ToolTipFontFace;
+	Position = udim2 (50%, -10px);
+	Size = udim2 (0px, 0px);
+	TextColor3 = $ToolTipTextColor;
+	TextSize = $ToolTipTextSize;
+
+	::UIPadding {
+		PaddingBottom = $ToolTipPadding;
+		PaddingLeft = $ToolTipPadding;
+		PaddingRight = $ToolTipPadding;
+		PaddingTop = $ToolTipPadding;
+	}
+
+	::UICorner {
+		CornerRadius = $ToolTipCornerRadius;
+	}
+}
+
+TextBox.Searchbar {
+	BackgroundColor3 = $ContainerBackgroundColor;
+	BackgroundTransparency = $ContainerBackgroundTransparency;
+	ClearTextOnFocus = false;
+	ClipsDescendants = true;
+	FontFace = $SearchFontFace;
+	PlaceholderColor3 = $SearchPlaceholderColor;
+	PlaceholderText = "Search";
+	Size = udim2 (100%, 30px);
+	Text = "";
+	TextColor3 = $SearchTextColor;
+	TextSize = $SearchTextSize;
+	TextStrokeTransparency = $SearchTextStrokeTransparency;
+	TextXAlignment = :Left;
+
+	::UIStroke {
+		ApplyStrokeMode = :Border;
+		Color = $ContainerStrokeColor;
+		Transparency = $ContainerStrokeTransparency;
+	}
+
+	::UICorner {
+		CornerRadius = $ContainerCornerRadius;
+	}
+
+	>ImageButton {
+		AnchorPoint = vec2 (1, 0.5);
+		BackgroundTransparency = 1;
+		Image = "rbxasset://textures/ui/InspectMenu/x.png";
+		Position = udim2 (100%, 50%);
+		Selectable = false;
+		Size = udim2 (100%, 100%);
+
+		::UIAspectRatioConstraint {
+		}
+	}
+
+	::UIPadding {
+		PaddingBottom = $SearchPadding;
+		PaddingLeft = $SearchPadding;
+		PaddingRight = $SearchPadding;
+		PaddingTop = $SearchPadding;
+	}
+}
+
+.HotbarHint {
+	BackgroundTransparency = 1;
+	Size = udim2 (60px, 60px);
+	Visible = false;
+
+	@PreferredInputGamepad,.Visible {
+		Visible = true;
+	}
+
+	>ImageLabel {
+		AnchorPoint = vec2 (0.5, 0.5);
+		BackgroundTransparency = 1;
+		Position = udim2 (50%, 50% - 5px);
+		ScaleType = :Fit;
+		Size = udim2 (100%, 100%);
+
+		::UIAspectRatioConstraint {
+			AspectRatio = 2;
+		}
+	}
+}
+
+.Inventory {
+	AutomaticSize = :Y;
+	BackgroundColor3 = $SurfaceBackgroundColor;
+	BackgroundTransparency = $SurfaceBackgroundTransparency;
+	Size = udim2 (100%, 0px);
+
+	::UICorner {
+		CornerRadius = $SurfaceCornerRadius;
+	}
+
+	::UIListLayout {
+		Padding = 1px;
+	}
+
+	>ScrollingFrame {
+		AutomaticCanvasSize = Enum.AutomaticSize.Y;
+		BackgroundTransparency = 1;
+		BorderSizePixel = 0;
+		CanvasSize = udim2 (0px, 0px);
+		ElasticBehavior = :Always;
+		ScrollBarImageColor3 = #D0D8FA;
+		ScrollBarThickness = 8;
+		ScrollingDirection = :Y;
+		Selectable = false;
+		Size = udim2 (100% + 13px, 0px);
+
+		::UIListLayout {
+			FillDirection = :Horizontal;
+			Padding = 5px;
+			SortOrder = :LayoutOrder;
+			Wraps = true;
+		}
+
+		::UIPadding {
+			PaddingBottom = $SurfacePadding;
+			PaddingLeft = $SurfacePadding;
+			PaddingRight = $SurfacePadding;
+			PaddingTop = $SurfacePadding;
+		}
+	}
+
+	>Frame {
+		BackgroundTransparency = 1;
+		Size = udim2 (100%, 35px);
+
+		::UIPadding {
+			PaddingLeft = $SurfacePadding;
+			PaddingRight = $SurfacePadding;
+			PaddingTop = $SurfacePadding;
+		}
+	}
+}

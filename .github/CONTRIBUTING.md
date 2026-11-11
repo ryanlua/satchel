@@ -22,6 +22,8 @@ If you plan to contribute, ensure that all code written in Lua follows the [Robl
 
 Also, make sure that your code is properly styled and linted using [Selene](https://github.com/Kampfkarren/selene) and [StyLua](https://github.com/JohnnyMorganz/StyLua).
 
+Styles are written in [RSML](https://github.com/rbx-rsml) in `src/Design`. After editing a `.rsml` file, run `rsml build src` (or `rsml watch src` while using `rojo serve`) and commit the regenerated `.model.json` files.
+
 ## Pull Requests
 
 We actively welcome your pull requests. When you submit a pull request, we will review your code and respond as soon as possible. We may suggest changes, improvements, or alternatives.

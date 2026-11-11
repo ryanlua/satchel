@@ -1,0 +1,18 @@
+{
+    "className": "StyleSheet",
+    "id": "Design\\DefaultTheme.rsml",
+    "attributes": {
+        "StyleCategory": {
+            "String": "Themes"
+        }
+    },
+    "children": [
+        {
+            "className": "StyleDerive",
+            "name": "BaseTokens",
+            "attributes": {
+                "Rojo_Target_StyleSheet": "Design\\BaseTokens.rsml"
+            }
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "className": "StyleSheet",
+    "id": "Design\\ThemeTokens.rsml",
+    "attributes": {
+        "BackgroundColor": {
+            "Color3": [
+                0.09803922,
+                0.105882354,
+                0.11372549
+            ]
+        },
+        "CornerRadius": {
+            "UDim": [
+                0.0,
+                8
+            ]
+        },
+        "FontFace": {
+            "Font": {
+                "family": "rbxasset://fonts/families/BuilderSans.json",
+                "weight": "Medium",
+                "style": "Normal",
+                "cachedFaceId": null
+            }
+        },
+        "SmallCornerRadius": {
+            "UDim": [
+                0.0,
+                4
+            ]
+        },
+        "SmallTextSize": {
+            "Float64": 15.0
+        },
+        "StyleCategory": {
+            "String": "Tokens"
+        },
+        "TextColor": {
+            "Color3": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "TextSize": {
+            "Float64": 18.0
+        },
+        "TextStrokeColor": {
+            "Color3": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "TextStrokeTransparency": {
+            "Float64": 0.5
+        }
+    },
+    "children": []
+}

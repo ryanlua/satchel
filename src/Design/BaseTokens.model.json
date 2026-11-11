@@ -1,0 +1,189 @@
+{
+    "className": "StyleSheet",
+    "id": "Design\\BaseTokens.rsml",
+    "attributes": {
+        "ContainerBackgroundColor": {
+            "String": "$BackgroundColor"
+        },
+        "ContainerBackgroundTransparency": {
+            "Float64": 0.2
+        },
+        "ContainerCornerRadius": {
+            "String": "$SmallCornerRadius"
+        },
+        "ContainerStrokeColor": {
+            "Color3": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "ContainerStrokeTransparency": {
+            "Float64": 0.8
+        },
+        "HintFontFace": {
+            "String": "$FontFace"
+        },
+        "HintTextColor": {
+            "String": "$TextColor"
+        },
+        "HintTextSize": {
+            "String": "$TextSize"
+        },
+        "SearchFontFace": {
+            "String": "$FontFace"
+        },
+        "SearchPadding": {
+            "UDim": [
+                0.0,
+                8
+            ]
+        },
+        "SearchPlaceholderColor": {
+            "Color3": [
+                0.69803923,
+                0.69803923,
+                0.69803923
+            ]
+        },
+        "SearchTextColor": {
+            "String": "$TextColor"
+        },
+        "SearchTextSize": {
+            "String": "$TextSize"
+        },
+        "SearchTextStrokeTransparency": {
+            "String": "$TextStrokeTransparency"
+        },
+        "SlotBackgroundColor": {
+            "Color3": [
+                0.09803922,
+                0.105882354,
+                0.11372549
+            ]
+        },
+        "SlotBackgroundTransparency": {
+            "Float64": 0.3
+        },
+        "SlotCornerRadius": {
+            "String": "$SmallCornerRadius"
+        },
+        "SlotEquipStrokeColor": {
+            "Color3": [
+                0.2,
+                0.37254903,
+                1.0
+            ]
+        },
+        "SlotEquipStrokeThickness": {
+            "Float64": 4.0
+        },
+        "SlotFontFace": {
+            "String": "$FontFace"
+        },
+        "SlotIconCornerRadius": {
+            "UDim": [
+                0.0,
+                0
+            ]
+        },
+        "SlotNumberFontFace": {
+            "String": "$FontFace"
+        },
+        "SlotNumberStrokeColor": {
+            "String": "$TextStrokeColor"
+        },
+        "SlotNumberStrokeTransparency": {
+            "String": "$TextStrokeTransparency"
+        },
+        "SlotNumberTextColor": {
+            "String": "$TextColor"
+        },
+        "SlotNumberTextSize": {
+            "String": "$SmallTextSize"
+        },
+        "SlotPadding": {
+            "UDim": [
+                0.0,
+                5
+            ]
+        },
+        "SlotPressStrokeColor": {
+            "Color3": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "SlotTextColor": {
+            "String": "$TextColor"
+        },
+        "SlotTextSize": {
+            "String": "$TextSize"
+        },
+        "SlotTextStrokeColor": {
+            "String": "$TextStrokeColor"
+        },
+        "SlotTextStrokeTransparency": {
+            "String": "$TextStrokeTransparency"
+        },
+        "SlotUnlockBackgroundColor": {
+            "String": "$SlotBackgroundColor"
+        },
+        "StyleCategory": {
+            "String": "Tokens"
+        },
+        "SurfaceBackgroundColor": {
+            "String": "$BackgroundColor"
+        },
+        "SurfaceBackgroundTransparency": {
+            "Float64": 0.3
+        },
+        "SurfaceCornerRadius": {
+            "String": "$CornerRadius"
+        },
+        "SurfacePadding": {
+            "UDim": [
+                0.0,
+                5
+            ]
+        },
+        "ToolTipBackgroundColor": {
+            "Color3": [
+                0.14901961,
+                0.15686275,
+                0.1882353
+            ]
+        },
+        "ToolTipBackgroundTranparency": {
+            "Float64": 0.0
+        },
+        "ToolTipCornerRadius": {
+            "String": "$SmallCornerRadius"
+        },
+        "ToolTipFontFace": {
+            "String": "$FontFace"
+        },
+        "ToolTipPadding": {
+            "UDim": [
+                0.0,
+                4
+            ]
+        },
+        "ToolTipTextColor": {
+            "String": "$TextColor"
+        },
+        "ToolTipTextSize": {
+            "String": "$SmallTextSize"
+        }
+    },
+    "children": [
+        {
+            "className": "StyleDerive",
+            "name": "ThemeTokens",
+            "attributes": {
+                "Rojo_Target_StyleSheet": "Design\\ThemeTokens.rsml"
+            }
+        }
+    ]
+}

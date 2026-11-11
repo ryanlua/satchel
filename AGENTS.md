@@ -8,21 +8,16 @@
 - Use [require-by-string](https://create.roblox.com/docs/en-us/reference/engine/globals/LuaGlobals#require) when using `require()`
 - Avoid deprecated API such as `GuiObject.Draggable`, `:connect()` instead of `:Connect()`, `wait()`/`delay()` instead of `task.wait()`/`task.delay()` and `tick()`
 
-## Editing Styles in `src/Design.rbxmx`
+## Editing Styles in `src/Design`
 
-The stylesheet is a serialized [`StyleSheet`](https://create.roblox.com/docs/reference/engine/classes/StyleSheet) of nested [`StyleRule`](https://create.roblox.com/docs/reference/engine/classes/StyleRule) items (see [UI styling](https://create.roblox.com/docs/ui/styling)). Rules can be edited by hand:
+Styles are written in [RSML](https://github.com/rbx-rsml) (see the [RSML docs](https://github.com/rbx-rsml/rsml-docs/tree/main/src/docs)). Each `.rsml` file in `src/Design` is one [`StyleSheet`](https://create.roblox.com/docs/reference/engine/classes/StyleSheet) of nested [`StyleRule`](https://create.roblox.com/docs/reference/engine/classes/StyleRule) items (see [UI styling](https://create.roblox.com/docs/ui/styling)):
 
-- Each `StyleRule` has a [`Selector`](https://create.roblox.com/docs/reference/engine/classes/StyleRule#Selector) and `Name` (keep them the same), a [`Priority`](https://create.roblox.com/docs/reference/engine/classes/StyleRule#Priority) (higher wins over conflicting rules), and a unique `referent` (any unused `RBX` + 32 hex characters)
-- Nested `StyleRule` items merge their selectors with their parent rule ([nesting and merging](https://create.roblox.com/docs/ui/styling/css-comparisons#nesting-and-merging)), e.g. `.Equipped` under `TextButton.Slot`, then `::UIStroke` under `.Equipped`. Escape `>` as `&gt;`
-- `PropertiesSerialize` is the serialized form of the rule's properties and uses the same binary encoding as `AttributesSerialize`. This is not documented by Roblox; rbx-dom treats it as the `Attributes` type ([rbx-dom patching docs](https://dom.rojo.space/patching-database.html), [rbx-dom#597](https://github.com/rojo-rbx/rbx-dom/issues/597)), and the layout is specified by the [rbx-dom attribute binary format](https://github.com/rojo-rbx/rbx-dom/blob/master/docs/attributes.md): base64 of little-endian binary with a `u32` property count, then per property a `u32`-length-prefixed name, a 1-byte type ID and the value. Common type IDs:
-  - `0x02` string: `u32` length + bytes. Strings starting with `$` such as `$SlotPressStrokeColor` are [token references](https://create.roblox.com/docs/ui/styling/css-comparisons#variables) to attributes on the stylesheet (prefer tokens over literal values)
-  - `0x03` bool: 1 byte
-  - `0x06` number: 8-byte double
-  - `0x0A` UDim2: two `f32` scale + `i32` offset pairs
-  - `0x0F` Color3: three `f32`s
-  - `0x15` enum: `u32`-length-prefixed enum name (e.g. `ApplyStrokeMode`) + `u32` value
-- An empty rule is `AAAAAA==`. Leave `PropertyTransitionsSerialize` as `AgAAAAAA` (copied from existing rules without transitions; its format is undocumented)
-- Prefer reusing an existing rule's blob when the properties match. Otherwise encode new blobs with a script and check the encoder by re-encoding an existing blob byte for byte
+- Edit the `.rsml` files, then run `rsml build src` (or `rsml watch src` alongside `rojo serve`) and commit the regenerated `.model.json` files. Never edit the `.model.json` files by hand. They are committed so Wally consumers and `rojo serve` work without RSML, and CI fails if they are out of date
+- `ThemeTokens` and `BaseTokens` define tokens as `$Name = value;`. Tokens referencing other tokens (`$HintTextColor = $TextColor;`) stay as runtime [token references](https://create.roblox.com/docs/ui/styling/css-comparisons#variables) (prefer tokens over literal values)
+- Themes link to other sheets with `@derive "./BaseTokens";` at the top of the file
+- Nested rules merge their selectors with their parent rule ([nesting and merging](https://create.roblox.com/docs/ui/styling/css-comparisons#nesting-and-merging)), e.g. `.Equipped` inside `TextButton.Slot`, then `::UIStroke` inside `.Equipped`. Rule order is kept, so add rules where they belong in the tree
+- Rules default to priority 0; use `@priority 5;` inside a rule to override
+- Values: `:Fit` for enums whose type matches the property name (otherwise `Enum.AutomaticSize.Y`), `#191B1D` colours, `8px`/`50%` for UDims, `udim2 (60px, 60px)`, `vec2 (0, 0.5)`, `font ("BuilderSans", :Medium)`
 - Verify with `rojo build` after editing
 
 ## Resources

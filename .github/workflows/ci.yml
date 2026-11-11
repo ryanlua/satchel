@@ -22,6 +22,14 @@ jobs:
           wally install
           rojo sourcemap package.project.json --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
+      - name: Check RSML output is up to date
+        run: |
+          rsml build src
+          if [ -n "$(git status --porcelain -- src)" ]; then
+            git status --short -- src
+            echo "::error::Generated stylesheets are out of date. Run 'rsml build src' and commit the .model.json files."
+            exit 1
+          fi
       - name: Run StyLua
         run: stylua --check src/ models/
       - name: Run selene

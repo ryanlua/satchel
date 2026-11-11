@@ -1,0 +1,10 @@
+$BackgroundColor = #191B1D;
+$CornerRadius = 8px;
+$FontFace = font ("BuilderSans", :Medium);
+$SmallCornerRadius = 4px;
+$SmallTextSize = 15;
+$StyleCategory = "Tokens";
+$TextColor = #FFFFFF;
+$TextSize = 18;
+$TextStrokeColor = #000000;
+$TextStrokeTransparency = 0.5;

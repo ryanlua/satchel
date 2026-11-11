@@ -1,0 +1,23 @@
+@derive "./BaseTokens";
+
+$ContainerBackgroundColor = #5E5E5E;
+$ContainerStrokeTransparency = 1;
+$CornerRadius = 0px;
+$FontFace = font ("SourceSansPro", :Regular);
+$HintFontFace = font ("SourceSansPro", :Bold);
+$HintTextSize = 24;
+$SearchPadding = 0px;
+$SearchPlaceholderColor = #FFFFFF;
+$SearchTextSize = 24;
+$SlotBackgroundColor = #1F1F1F;
+$SlotEquipStrokeColor = #5A8EE9;
+$SlotEquipStrokeThickness = 5;
+$SlotPadding = 6px;
+$SlotUnlockBackgroundColor = #313131;
+$SmallCornerRadius = 0px;
+$SmallTextSize = 14;
+$StyleCategory = "Themes";
+$TextSize = 14;
+$TextStrokeTransparency = 1;
+$ToolTipBackgroundColor = #666666;
+$ToolTipPadding = 2px;
