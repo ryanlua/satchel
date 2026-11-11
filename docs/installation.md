@@ -78,7 +78,7 @@ You are expected to already have Wally setup in your Rojo project and basic know
 
     ``` toml title="wally.toml" linenums="0"
     [dependencies]
-    satchel = "ryanlua/satchel@1.0.0"
+    satchel = "ryanlua/satchel@1.4.1"
     ```
 
 1. Install Satchel from Wally by running `wally install`.
