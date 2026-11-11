@@ -49,15 +49,6 @@ Special thanks for our sponsors for supporting Satchel and it's future developme
   </a>
 </p>
 
-<p align="center">
-  <br>
-  <a href="https://github.com/5KFubi" target="_blank">
-    <img src="https://github.com/5KFubi.png" width="64">
-    <br>
-    5KFubi
-  </a>
-</p>
-
 <br>
 
 [Become a sponsor](https://github.com/sponsors/ryanlua)

@@ -92,10 +92,6 @@ Special thanks for our sponsors for supporting Satchel and it's future developme
 <br>
 Do Big Studios
 
-[![5KFubi](https://github.com/5KFubi.png){ style="height: 60px" }](https://github.com/5KFubi){ target=_blank }
-<br>
-5KFubi
-
 </div>
 
 [:material-heart: Sponsor Satchel][sponsor]{ .md-button .md-button--primary }
