@@ -234,9 +234,6 @@
                         "TextColor3": {
                             "String": "$SlotTextColor"
                         },
-                        "TextScaled": {
-                            "Bool": true
-                        },
                         "TextSize": {
                             "String": "$SlotTextSize"
                         },

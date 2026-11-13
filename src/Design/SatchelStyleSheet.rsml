@@ -40,7 +40,6 @@ TextButton.Slot {
 	FontFace = $SlotFontFace;
 	Size = udim2 (60px, 60px);
 	TextColor3 = $SlotTextColor;
-	TextScaled = true;
 	TextSize = $SlotTextSize;
 	TextStrokeColor3 = $SlotTextStrokeColor;
 	TextStrokeTransparency = $SlotTextStrokeTransparency;
