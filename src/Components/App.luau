@@ -170,14 +170,15 @@ const function App(props: Props)
 			targetIndex = findDropTarget(index, inputPosition)
 		else
 			-- UIDragDetector swallows Activated, so a press released in place is a click
-			if props.onSlotActivated then
-				props.onSlotActivated(item)
-			end
 			const now = os.clock()
 			if index > slotCount and now - (lastClickTimes.current[item] or 0) < DOUBLE_CLICK_TIME then
 				targetIndex = firstEmptyHotbarIndex()
 			end
-			lastClickTimes.current[item] = now
+			-- A double-click moves the tool to the hotbar equipped instead of toggling it again
+			if props.onSlotActivated and not (targetIndex and items[index].equipped) then
+				props.onSlotActivated(item)
+			end
+			lastClickTimes.current[item] = if targetIndex then 0 else now
 		end
 
 		if targetIndex and targetIndex ~= index and props.onMove then
