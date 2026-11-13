@@ -29,6 +29,7 @@
 	}
 
 	@PreferredInputGamepad,.Visible {
+		@priority 1;
 		Visible = true;
 	}
 }
@@ -63,18 +64,23 @@ TextButton.Slot {
 	}
 
 	.Equipped {
+		@priority 1;
+
 		>UIStroke.EquipStroke {
 			Enabled = true;
 		}
 	}
 
 	:Hover {
+		@priority 1;
+
 		>.Tooltip {
 			Visible = true;
 		}
 	}
 
 	.Unlocked {
+		@priority 1;
 		BackgroundColor3 = $SlotUnlockBackgroundColor;
 		BackgroundTransparency = 0;
 
@@ -86,12 +92,19 @@ TextButton.Slot {
 	}
 
 	.Dragging {
+		@priority 1;
+
 		>UIStroke.PressStroke {
 			Enabled = true;
+		}
+
+		>.Tooltip {
+			Visible = true;
 		}
 	}
 
 	.Placeholder {
+		@priority 2;
 		BackgroundTransparency = 1;
 		TextTransparency = 1;
 		TextStrokeTransparency = 1;
@@ -114,6 +127,8 @@ TextButton.Slot {
 	}
 
 	:Press {
+		@priority 1;
+
 		>.Tooltip {
 			Visible = true;
 		}
@@ -136,6 +151,7 @@ TextButton.Slot {
 			Visible = false;
 
 			@PreferredInputKeyboardAndMouse {
+				@priority 1;
 				Visible = true;
 			}
 		}
@@ -301,6 +317,7 @@ TextBox.Searchbar {
 	Visible = false;
 
 	@PreferredInputGamepad,.Visible {
+		@priority 1;
 		Visible = true;
 	}
 

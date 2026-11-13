@@ -182,6 +182,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "Visible": {
@@ -352,6 +355,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {}
                         },
@@ -391,6 +397,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {}
                         },
@@ -430,6 +439,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "BackgroundColor3": {
@@ -494,6 +506,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {}
                         },
@@ -525,6 +540,27 @@
                                 }
                             },
                             "children": []
+                        },
+                        {
+                            "name": "> .Tooltip",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Visible": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> .Tooltip"
+                                }
+                            },
+                            "children": []
                         }
                     ]
                 },
@@ -533,6 +569,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 2
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "BackgroundTransparency": {
@@ -645,6 +684,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {}
                         },
@@ -778,6 +820,9 @@
                                     "className": "StyleRule",
                                     "attributes": {},
                                     "properties": {
+                                        "Priority": {
+                                            "Int32": 1
+                                        },
                                         "PropertiesSerialize": {
                                             "Attributes": {
                                                 "Visible": {
@@ -1673,6 +1718,9 @@
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "Visible": {

@@ -198,6 +198,7 @@ const function App(props: Props)
 			item = drag.item,
 			unlocked = true,
 			dragging = true,
+			equipped = items[index] and items[index].equipped,
 			order = if isHotbarSlot then index else index - slotCount,
 			hint = isHotbarSlot,
 			forceHintVisible = props.forceKeyboardHintVisible,

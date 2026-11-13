@@ -15,8 +15,9 @@ Styles are written in [RSML](https://github.com/rbx-rsml) (see the [RSML docs](h
 - Edit the `.rsml` files, then run `rsml build src` (or `rsml watch src` alongside `rojo serve`) and commit the regenerated `.model.json` files. Never edit the `.model.json` files by hand. They are committed so Wally consumers and `rojo serve` work without RSML, and CI fails if they are out of date
 - `ThemeTokens` and `BaseTokens` define tokens as `$Name = value;`. Tokens referencing other tokens (`$HintTextColor = $TextColor;`) stay as runtime [token references](https://create.roblox.com/docs/ui/styling/css-comparisons#variables) (prefer tokens over literal values)
 - Themes link to other sheets with `@derive "./BaseTokens";` at the top of the file
-- Nested rules merge their selectors with their parent rule ([nesting and merging](https://create.roblox.com/docs/ui/styling/css-comparisons#nesting-and-merging)), e.g. `.Equipped` inside `TextButton.Slot`, then `::UIStroke` inside `.Equipped`. Rule order is kept, so add rules where they belong in the tree
+- Nested rules merge their selectors with their parent rule ([nesting and merging](https://create.roblox.com/docs/ui/styling/css-comparisons#nesting-and-merging)), e.g. `.Equipped` inside `TextButton.Slot`, then `::UIStroke` inside `.Equipped`. Add rules where they belong in the tree
 - Rules default to priority 0; use `@priority 5;` inside a rule to override. Priority only competes between sibling rules, so to resolve a conflict between nested rules set it on their top-most differing ancestors
+- Never rely on source order: rules with equal priority that set the same property resolve unpredictably at runtime. Give every overriding rule (states like `:Hover`/`:Press`, tags like `.Equipped`, style queries like `@PreferredInputGamepad`) a higher priority than the rule it overrides
 - Values: `:Fit` for enums whose type matches the property name (otherwise `Enum.AutomaticSize.Y`), `#191B1D` colours, `8px`/`50%` for UDims, `udim2 (60px, 60px)`, `vec2 (0, 0.5)`, `font ("BuilderSans", :Medium)`
 - Verify with `rojo build` after editing
 
