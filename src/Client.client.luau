@@ -33,6 +33,7 @@ StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 const handle = Instance.new("ScreenGui")
 handle.Name = "SatchelGui"
 handle.ResetOnSpawn = false
+handle.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 handle.Parent = playerGui
 
 const root = ReactRoblox.createRoot(handle)
@@ -117,6 +118,7 @@ const function Satchel()
 		opened = opened,
 		items = backpack.items,
 		onSlotActivated = backpack.onSlotActivated,
+		onMove = backpack.move,
 	})
 end
 

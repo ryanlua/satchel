@@ -85,6 +85,30 @@ TextButton.Slot {
 		}
 	}
 
+	.Dragging {
+		>UIStroke.PressStroke {
+			Enabled = true;
+		}
+	}
+
+	.Placeholder {
+		BackgroundTransparency = 1;
+		TextTransparency = 1;
+		TextStrokeTransparency = 1;
+
+		>ImageLabel {
+			ImageTransparency = 1;
+		}
+
+		>TextLabel {
+			Visible = false;
+		}
+
+		>UIStroke {
+			Enabled = false;
+		}
+	}
+
 	::UICorner {
 		CornerRadius = $SlotCornerRadius;
 	}

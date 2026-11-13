@@ -10,7 +10,9 @@ export type Props = {
 	rows: number?,
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
+	draggingItem: BackpackItem?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
+	onSlotDrag: Slot.OnDrag?,
 }
 
 const function Inventory(props: Props)
@@ -29,7 +31,9 @@ const function Inventory(props: Props)
 					order = order,
 					item = slot.item,
 					equipped = slot.equipped,
+					placeholder = slot.item == props.draggingItem,
 					onActivated = props.onSlotActivated,
+					onDrag = props.onSlotDrag,
 				})
 			end
 		end

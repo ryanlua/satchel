@@ -490,6 +490,136 @@
                     ]
                 },
                 {
+                    "name": ".Dragging",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ".Dragging"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> UIStroke .PressStroke",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Enabled": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> UIStroke .PressStroke"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": ".Placeholder",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "BackgroundTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "TextStrokeTransparency": {
+                                    "Float64": 1.0
+                                },
+                                "TextTransparency": {
+                                    "Float64": 1.0
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ".Placeholder"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> ImageLabel",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "ImageTransparency": {
+                                            "Float64": 1.0
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> ImageLabel"
+                                }
+                            },
+                            "children": []
+                        },
+                        {
+                            "name": "> TextLabel",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Visible": {
+                                            "Bool": false
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> TextLabel"
+                                }
+                            },
+                            "children": []
+                        },
+                        {
+                            "name": "> UIStroke",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Enabled": {
+                                            "Bool": false
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> UIStroke"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
                     "name": "::UICorner",
                     "className": "StyleRule",
                     "attributes": {},

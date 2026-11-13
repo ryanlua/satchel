@@ -2,6 +2,7 @@ const React = require("../../react")
 
 const Hotbar = require("./Hotbar")
 const Inventory = require("./Inventory")
+const Slot = require("./Slot")
 
 const e = React.createElement
 
@@ -12,7 +13,9 @@ export type Props = {
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
 	width: number?,
+	draggingItem: BackpackItem?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
+	onSlotDrag: Slot.OnDrag?,
 }
 
 const function Backpack(props: Props)
@@ -40,14 +43,18 @@ const function Backpack(props: Props)
 			slots = slots,
 			items = hotbarItems,
 			opened = opened,
+			draggingItem = props.draggingItem,
 			onSlotActivated = props.onSlotActivated,
+			onSlotDrag = props.onSlotDrag,
 		}),
 		Inventory = e(Inventory, {
 			width = props.width,
 			rows = props.rows,
 			items = inventoryItems,
 			opened = opened,
+			draggingItem = props.draggingItem,
 			onSlotActivated = props.onSlotActivated,
+			onSlotDrag = props.onSlotDrag,
 		}),
 	})
 end

@@ -9,7 +9,9 @@ export type Props = {
 	slots: number?,
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
+	draggingItem: BackpackItem?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
+	onSlotDrag: Slot.OnDrag?,
 }
 
 const function Hotbar(props: Props)
@@ -32,7 +34,9 @@ const function Hotbar(props: Props)
 				forceHintVisible = props.forceKeyboardHintVisible,
 				unlocked = slotUnlocked,
 				equipped = slot and slot.equipped,
+				placeholder = item ~= nil and item == props.draggingItem,
 				onActivated = props.onSlotActivated,
+				onDrag = if slotUnlocked then props.onSlotDrag else nil,
 			})
 		end
 	end

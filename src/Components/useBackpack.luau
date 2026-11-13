@@ -10,14 +10,16 @@ const backpackItemUnequipped = bindableEvents.BackpackItemUnequipped
 
 type SlotItem = { item: BackpackItem, equipped: boolean }
 
-export type BackpackState = {
-	items: { [number]: SlotItem },
+type Actions = {
 	onSlotActivated: (item: BackpackItem) -> (),
+	move: (item: BackpackItem, targetIndex: number) -> (),
 }
+
+export type BackpackState = Actions & { items: { [number]: SlotItem } }
 
 const function useBackpack(player: Player, hotbarSlotCount: number): BackpackState
 	const items, setItems = React.useState({} :: { [number]: SlotItem })
-	const activateItemRef = React.useRef(nil :: ((item: BackpackItem) -> ())?)
+	const actionsRef = React.useRef(nil :: Actions?)
 
 	React.useEffect(function()
 		local toolBySlotIndex: { [number]: Tool } = {}
@@ -146,20 +148,46 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			syncItemsToReact()
 		end
 
-		activateItemRef.current = function(item: BackpackItem)
-			if not item:IsA("Tool") then
+		local function getHumanoid(): Humanoid?
+			return character and character:FindFirstChildOfClass("Humanoid")
+		end
+
+		local function setSlot(slotIndex: number, tool: Tool?)
+			toolBySlotIndex[slotIndex] = tool
+			if not tool then
 				return
 			end
-			local humanoid = character and character:FindFirstChildOfClass("Humanoid")
-			if not humanoid then
-				return
-			end
-			if isEquipped(item) then
+			slotIndexByTool[tool] = slotIndex
+			-- Tools moved into the inventory must not stay equipped
+			local humanoid = getHumanoid()
+			if humanoid and slotIndex > hotbarSlotCount and isEquipped(tool) then
 				humanoid:UnequipTools()
-			else
-				humanoid:EquipTool(item)
 			end
 		end
+
+		actionsRef.current = {
+			onSlotActivated = function(item: BackpackItem)
+				local humanoid = getHumanoid()
+				if not humanoid or not item:IsA("Tool") then
+					return
+				elseif isEquipped(item) then
+					humanoid:UnequipTools()
+				else
+					humanoid:EquipTool(item)
+				end
+			end,
+			-- Moves the item to targetIndex, swapping with any item already there
+			move = function(item: BackpackItem, targetIndex: number)
+				local slotIndex = item:IsA("Tool") and slotIndexByTool[item]
+				if not slotIndex or slotIndex == targetIndex then
+					return
+				end
+				local otherTool = toolBySlotIndex[targetIndex]
+				setSlot(targetIndex, item :: Tool)
+				setSlot(slotIndex, otherTool)
+				syncItemsToReact()
+			end,
+		}
 
 		local characterSpawnConnection = player.CharacterAdded:Connect(onCharacterAdded)
 		if player.Character then
@@ -169,18 +197,24 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 		return function()
 			characterSpawnConnection:Disconnect()
 			disconnectInventory()
-			activateItemRef.current = nil
+			actionsRef.current = nil
 		end
 	end, { player :: any, hotbarSlotCount :: any })
 
+	-- Stable wrappers so consumers don't re-render when the effect re-runs
 	const onSlotActivated = React.useCallback(function(item: BackpackItem)
-		local activateItem = activateItemRef.current
-		if activateItem then
-			activateItem(item)
+		if actionsRef.current then
+			actionsRef.current.onSlotActivated(item)
 		end
 	end, {})
 
-	return { items = items, onSlotActivated = onSlotActivated }
+	const move = React.useCallback(function(item: BackpackItem, targetIndex: number)
+		if actionsRef.current then
+			actionsRef.current.move(item, targetIndex)
+		end
+	end, {})
+
+	return { items = items, onSlotActivated = onSlotActivated, move = move }
 end
 
 return useBackpack
