@@ -41,6 +41,7 @@ TextButton.Slot {
 	Size = udim2 (60px, 60px);
 	TextColor3 = $SlotTextColor;
 	TextScaled = true;
+	TextSize = $SlotTextSize;
 	TextStrokeColor3 = $SlotTextStrokeColor;
 	TextStrokeTransparency = $SlotTextStrokeTransparency;
 	TextTruncate = :SplitWord;
@@ -117,11 +118,6 @@ TextButton.Slot {
 		>.Tooltip {
 			Visible = true;
 		}
-	}
-
-	::UITextSizeConstraint {
-		MaxTextSize = $SlotTextSize;
-		MinTextSize = 12;
 	}
 
 	>TextLabel {

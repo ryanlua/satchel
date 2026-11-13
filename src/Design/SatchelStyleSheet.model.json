@@ -237,6 +237,9 @@
                         "TextScaled": {
                             "Bool": true
                         },
+                        "TextSize": {
+                            "String": "$SlotTextSize"
+                        },
                         "TextStrokeColor3": {
                             "String": "$SlotTextStrokeColor"
                         },
@@ -678,30 +681,6 @@
                             "children": []
                         }
                     ]
-                },
-                {
-                    "name": "::UITextSizeConstraint",
-                    "className": "StyleRule",
-                    "attributes": {},
-                    "properties": {
-                        "PropertiesSerialize": {
-                            "Attributes": {
-                                "MaxTextSize": {
-                                    "String": "$SlotTextSize"
-                                },
-                                "MinTextSize": {
-                                    "Float64": 12.0
-                                }
-                            }
-                        },
-                        "PropertyTransitionsSerialize": {
-                            "Attributes": {}
-                        },
-                        "Selector": {
-                            "String": "::UITextSizeConstraint"
-                        }
-                    },
-                    "children": []
                 },
                 {
                     "name": "> TextLabel",
