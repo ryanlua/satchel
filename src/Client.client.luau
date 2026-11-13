@@ -81,11 +81,14 @@ const function Satchel()
 	-- Change slots based on viewport display size
 	const slots, setSlots = useState(10)
 	const rows, setRows = useState(4)
+	const tenFootInterface, setTenFootInterface = useState(false)
 
 	useEffect(function()
 		const function updateBackpackSize()
 			const screenOrientation = playerGui.CurrentScreenOrientation
 			const viewportSize = GuiService.ViewportDisplaySize
+
+			setTenFootInterface(GuiService:IsTenFootInterface() or viewportSize == Enum.DisplaySize.Large)
 
 			if screenOrientation == Enum.ScreenOrientation.Portrait then
 				setSlots(3)
@@ -115,6 +118,7 @@ const function Satchel()
 	return e(App, {
 		slots = slots,
 		rows = rows,
+		tenFootInterface = tenFootInterface,
 		opened = opened,
 		items = backpack.items,
 		onSlotActivated = backpack.onSlotActivated,

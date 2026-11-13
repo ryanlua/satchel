@@ -1819,6 +1819,248 @@
             ]
         },
         {
+            "name": ".TenFootInterface",
+            "className": "StyleRule",
+            "attributes": {},
+            "properties": {
+                "Priority": {
+                    "Int32": 1
+                },
+                "PropertiesSerialize": {
+                    "Attributes": {}
+                },
+                "PropertyTransitionsSerialize": {
+                    "Attributes": {}
+                },
+                "Selector": {
+                    "String": ".TenFootInterface"
+                }
+            },
+            "children": [
+                {
+                    "name": ">> TextButton .Slot",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            100
+                                        ],
+                                        [
+                                            0.0,
+                                            100
+                                        ]
+                                    ]
+                                },
+                                "TextSize": {
+                                    "String": "$TenFootInterfaceTextSize"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ">> TextButton .Slot"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> TextLabel .SlotNumber",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "TextSize": {
+                                            "String": "$TenFootInterfaceSmallTextSize"
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> TextLabel .SlotNumber"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": ">> TextLabel .Tooltip",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "TextSize": {
+                                    "String": "$TenFootInterfaceSmallTextSize"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ">> TextLabel .Tooltip"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": ">> TextBox .Searchbar",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "TextSize": {
+                                    "String": "$TenFootInterfaceTextSize"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ">> TextBox .Searchbar"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": ">> .HotbarHint",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            100
+                                        ],
+                                        [
+                                            0.0,
+                                            100
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ">> .HotbarHint"
+                        }
+                    },
+                    "children": []
+                },
+                {
+                    "name": ">> .InventoryHint",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Size": {
+                                    "UDim2": [
+                                        [
+                                            0.0,
+                                            0
+                                        ],
+                                        [
+                                            0.0,
+                                            60
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ">> .InventoryHint"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> ImageLabel",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Size": {
+                                            "UDim2": [
+                                                [
+                                                    0.0,
+                                                    56
+                                                ],
+                                                [
+                                                    0.0,
+                                                    56
+                                                ]
+                                            ]
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> ImageLabel"
+                                }
+                            },
+                            "children": []
+                        },
+                        {
+                            "name": "> TextLabel",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Position": {
+                                            "UDim2": [
+                                                [
+                                                    0.0,
+                                                    62
+                                                ],
+                                                [
+                                                    0.5,
+                                                    0
+                                                ]
+                                            ]
+                                        },
+                                        "TextSize": {
+                                            "String": "$HintTenFootInterfaceTextSize"
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> TextLabel"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": ".Inventory",
             "className": "StyleRule",
             "attributes": {},

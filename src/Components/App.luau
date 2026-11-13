@@ -26,6 +26,7 @@ export type Props = {
 	forceKeyboardHintVisible: boolean?,
 	slots: number?,
 	rows: number?,
+	tenFootInterface: boolean?,
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
@@ -61,7 +62,10 @@ end
 
 const function App(props: Props)
 	const slotCount = props.slots or 10
-	const width = slotCount * 65 + 5
+	-- Slot size plus padding, must match the slot sizes in SatchelStyleSheet
+	const slotPitch = if props.tenFootInterface then 105 else 65
+	const width = slotCount * slotPitch + 5
+	const tenFootInterfaceTag = if props.tenFootInterface then " TenFootInterface" else ""
 	const items: Items = props.items or {}
 
 	const drag, setDrag = React.useState(nil :: DragState?)
@@ -214,7 +218,7 @@ const function App(props: Props)
 		end
 	end
 
-	const backpackWidth = if opened then width else visibleHotbarSlots * 65 + 5
+	const backpackWidth = if opened then width else visibleHotbarSlots * slotPitch + 5
 
 	-- Don't show hotbar hints if hotbar has no slots
 	const hotbarVisible = opened or visibleHotbarSlots > 0
@@ -222,7 +226,7 @@ const function App(props: Props)
 	return e(React.Fragment, nil, {
 		HotbarHints = e("Frame", {
 			ref = hintsRef,
-			[React.Tag] = "HotbarHints",
+			[React.Tag] = "HotbarHints" .. tenFootInterfaceTag,
 		}, {
 			SlotLeftHint = e(HotbarHint, {
 				keyCode = SlotLeftGamepadKeyCode,
@@ -269,6 +273,7 @@ const function App(props: Props)
 					items = props.items,
 					opened = opened,
 					width = width,
+					slotPitch = slotPitch,
 					draggingItem = if drag and drag.moved then drag.item else nil,
 					onSlotActivated = props.onSlotActivated,
 					onSlotDrag = if gamepadPreferred then nil else onSlotDrag,
@@ -281,6 +286,7 @@ const function App(props: Props)
 			Interactable = false,
 			ZIndex = 10,
 			ref = dragLayerRef,
+			[React.Tag] = if props.tenFootInterface then "TenFootInterface" else nil,
 		}, {
 			DraggedSlot = draggedSlot,
 		}),

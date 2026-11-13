@@ -7,6 +7,7 @@ const e = React.createElement
 
 export type Props = {
 	width: number?,
+	slotPitch: number?,
 	rows: number?,
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
@@ -18,7 +19,7 @@ export type Props = {
 const function Inventory(props: Props)
 	const width = props.width or 0
 	const rows = props.rows or 4
-	const height = rows * 65 - 5
+	const height = rows * (props.slotPitch or 65) - 5
 
 	const children: any = {}
 

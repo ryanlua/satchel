@@ -34,6 +34,9 @@
                 "cachedFaceId": null
             }
         },
+        "HintTenFootInterfaceTextSize": {
+            "Float64": 36.0
+        },
         "HintTextSize": {
             "Float64": 24.0
         },
@@ -94,6 +97,12 @@
         },
         "StyleCategory": {
             "String": "Themes"
+        },
+        "TenFootInterfaceSmallTextSize": {
+            "Float64": 24.0
+        },
+        "TenFootInterfaceTextSize": {
+            "Float64": 24.0
         },
         "TextSize": {
             "Float64": 14.0

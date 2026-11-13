@@ -15,6 +15,7 @@ const controls = {
 	opened = true,
 	rows = 4,
 	extraTools = 4,
+	tenFootInterface = false,
 }
 
 type Props = {
@@ -66,6 +67,7 @@ const function DraggableApp(props: Props)
 		items = items,
 		opened = props.controls.opened,
 		rows = props.controls.rows,
+		tenFootInterface = props.controls.tenFootInterface,
 		onMove = function(item: BackpackItem, targetIndex: number)
 			const index = findIndex(items, item)
 			if index then

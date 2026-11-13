@@ -24,6 +24,9 @@
         "HintFontFace": {
             "String": "$FontFace"
         },
+        "HintTenFootInterfaceTextSize": {
+            "String": "$TenFootInterfaceTextSize"
+        },
         "HintTextColor": {
             "String": "$TextColor"
         },

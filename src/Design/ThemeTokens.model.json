@@ -35,6 +35,12 @@
         "StyleCategory": {
             "String": "Tokens"
         },
+        "TenFootInterfaceSmallTextSize": {
+            "Float64": 24.0
+        },
+        "TenFootInterfaceTextSize": {
+            "Float64": 30.0
+        },
         "TextColor": {
             "Color3": [
                 1.0,

@@ -13,6 +13,7 @@ export type Props = {
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
 	width: number?,
+	slotPitch: number?,
 	draggingItem: BackpackItem?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
 	onSlotDrag: Slot.OnDrag?,
@@ -49,6 +50,7 @@ const function Backpack(props: Props)
 		}),
 		Inventory = e(Inventory, {
 			width = props.width,
+			slotPitch = props.slotPitch,
 			rows = props.rows,
 			items = inventoryItems,
 			opened = opened,

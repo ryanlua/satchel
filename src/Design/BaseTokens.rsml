@@ -6,6 +6,7 @@ $ContainerCornerRadius = $SmallCornerRadius;
 $ContainerStrokeColor = #FFFFFF;
 $ContainerStrokeTransparency = 0.8;
 $HintFontFace = $FontFace;
+$HintTenFootInterfaceTextSize = $TenFootInterfaceTextSize;
 $HintTextColor = $TextColor;
 $HintTextSize = $TextSize;
 $SearchFontFace = $FontFace;
