@@ -4,9 +4,9 @@
     {
       "label": "Build model",
       "type": "shell",
-      "command": "rsml build src && rojo build package.project.json --output Satchel.rbxm && rojo build package.project.json --output Satchel.rbxmx",
+      "command": "rsml build src && rojo build model.project.json --output Satchel.rbxm && rojo build model.project.json --output Satchel.rbxmx",
       "windows": {
-        "command": "rsml build src; rojo build package.project.json --output Satchel.rbxm; rojo build package.project.json --output Satchel.rbxmx"
+        "command": "rsml build src; rojo build model.project.json --output Satchel.rbxm; rojo build model.project.json --output Satchel.rbxmx"
       },
       "problemMatcher": [],
       "group": {

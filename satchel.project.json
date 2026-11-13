@@ -1,0 +1,16 @@
+{
+  "name": "Satchel",
+  "emitLegacyScripts": false,
+  "tree": {
+    "$className": "ModuleScript",
+    "$properties": {
+      "Source": "return require(script.Packages[\"satchel\"])\n"
+    },
+    "Packages": {
+      "$path": "Packages",
+      "satchel": {
+        "$path": "default.project.json"
+      }
+    }
+  }
+}

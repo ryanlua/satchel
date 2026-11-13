@@ -20,7 +20,7 @@ jobs:
       - name: Install Wally packages
         run: |
           wally install
-          rojo sourcemap package.project.json --output sourcemap.json
+          rojo sourcemap satchel.project.json --output sourcemap.json
           wally-package-types --sourcemap sourcemap.json Packages/
       - name: Check RSML output is up to date
         run: |
@@ -36,8 +36,8 @@ jobs:
         run: selene src/ models/
       - name: Build Rojo project
         run: |
-          rojo build package.project.json --output Satchel.rbxm
-          rojo build package.project.json --output Satchel.rbxmx
+          rojo build model.project.json --output Satchel.rbxm
+          rojo build model.project.json --output Satchel.rbxmx
       - name: Archive build files
         uses: actions/upload-artifact@v7.0.2
         with:

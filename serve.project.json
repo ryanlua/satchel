@@ -7,7 +7,7 @@
       "$className": "ReplicatedStorage",
       "$path": "tests",
       "Satchel": {
-        "$path": "models/Satchel"
+        "$path": "satchel.project.json"
       }
     }
   }
