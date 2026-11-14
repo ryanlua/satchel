@@ -83,6 +83,12 @@ return {
 	summary = "Hotbar and inventory, including hints for gamepad controls. Slots can be dragged between the hotbar and inventory.",
 	controls = controls,
 	story = function(props: Props)
-		return e(DraggableApp, props)
+		-- App positions itself within its parent, so keep it out of the storybook's UIListLayout
+		return e("Frame", {
+			BackgroundTransparency = 1,
+			Size = UDim2.fromScale(1, 1),
+		}, {
+			App = e(DraggableApp, props),
+		})
 	end,
 }
