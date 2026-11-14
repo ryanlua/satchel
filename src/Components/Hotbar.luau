@@ -12,6 +12,7 @@ export type Props = {
 	draggingItem: BackpackItem?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
 	onSlotDrag: Slot.OnDrag?,
+	onSlotHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
 
 const function Hotbar(props: Props)
@@ -37,6 +38,7 @@ const function Hotbar(props: Props)
 				placeholder = item ~= nil and item == props.draggingItem,
 				onActivated = props.onSlotActivated,
 				onDrag = if slotUnlocked then props.onSlotDrag else nil,
+				onHoverChanged = props.onSlotHoverChanged,
 			})
 		end
 	end

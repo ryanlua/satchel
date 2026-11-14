@@ -71,14 +71,6 @@ TextButton.Slot {
 		}
 	}
 
-	:Hover {
-		@priority 1;
-
-		>.Tooltip {
-			Visible = true;
-		}
-	}
-
 	.Unlocked {
 		@priority 1;
 		BackgroundColor3 = $SlotUnlockBackgroundColor;
@@ -124,14 +116,6 @@ TextButton.Slot {
 
 	::UICorner {
 		CornerRadius = $SlotCornerRadius;
-	}
-
-	:Press {
-		@priority 1;
-
-		>.Tooltip {
-			Visible = true;
-		}
 	}
 
 	>TextLabel {

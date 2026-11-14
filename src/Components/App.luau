@@ -6,6 +6,7 @@ const Backpack = require("./Backpack")
 const HotbarHint = require("./HotbarHint")
 const InventoryHint = require("./InventoryHint")
 const Slot = require("./Slot")
+const Tooltip = require("./Tooltip")
 
 const DOUBLE_CLICK_TIME = 0.5
 const DRAG_THRESHOLD = 4
@@ -51,6 +52,69 @@ const function isInBounds(guiObject: GuiObject?, point: Vector2): boolean
 		and offset.Y <= guiObject.AbsoluteSize.Y
 end
 
+-- Whether the point is over the GUI object without being hidden or clipped by an ancestor
+const function isVisibleAt(guiObject: GuiObject, point: Vector2): boolean
+	local current: Instance? = guiObject
+	while current and current:IsA("GuiObject") do
+		if not current.Visible then
+			return false
+		elseif (current == guiObject or current.ClipsDescendants) and not isInBounds(current, point) then
+			return false
+		end
+		current = current.Parent
+	end
+	return current ~= nil
+end
+
+const function getCenter(guiObject: GuiObject): Vector2
+	return guiObject.AbsolutePosition + guiObject.AbsoluteSize / 2
+end
+
+type SlotTooltipProps = {
+	slot: GuiObject,
+	layer: GuiObject,
+	text: string,
+}
+
+-- Rendered outside of the slot so the inventory's ScrollingFrame doesn't clip it
+const function SlotTooltip(props: SlotTooltipProps)
+	const slot = props.slot
+	const layer = props.layer
+	const _, forceUpdate = React.useReducer(function(count: number)
+		return count + 1
+	end, 0)
+
+	-- Follow the slot as it moves, such as when the inventory scrolls
+	React.useEffect(function()
+		const connections = {
+			slot:GetPropertyChangedSignal("AbsolutePosition"):Connect(forceUpdate),
+			slot:GetPropertyChangedSignal("AbsoluteSize"):Connect(forceUpdate),
+			layer:GetPropertyChangedSignal("AbsolutePosition"):Connect(forceUpdate),
+		}
+
+		return function()
+			for _, connection in connections do
+				connection:Disconnect()
+			end
+		end
+	end, { slot, layer } :: { any })
+
+	if not isVisibleAt(slot, getCenter(slot)) then
+		return nil
+	end
+
+	const position = slot.AbsolutePosition - layer.AbsolutePosition
+	return e("Frame", {
+		BackgroundTransparency = 1,
+		Position = UDim2.fromOffset(position.X, position.Y),
+		Size = UDim2.fromOffset(slot.AbsoluteSize.X, slot.AbsoluteSize.Y),
+	}, {
+		ToolTip = e(Tooltip, {
+			text = props.text,
+		}),
+	})
+end
+
 const function findItemIndex(items: Items, item: BackpackItem): number?
 	for index, slot in items do
 		if slot.item == item then
@@ -73,6 +137,7 @@ const function App(props: Props)
 	const lastClickTimes = React.useRef({} :: { [BackpackItem]: number })
 	const hintsRef = React.useRef(nil :: Frame?)
 	const dragLayerRef = React.useRef(nil :: Frame?)
+	const hoveredSlot, setHoveredSlot = React.useState(nil :: GuiObject?)
 
 	-- Gamepad uses select/swap instead of dragging, like the CoreGui backpack
 	const gamepadPreferred, setGamepadPreferred = React.useState(isGamepadPreferred)
@@ -86,6 +151,49 @@ const function App(props: Props)
 			preferredInputSignal:Disconnect()
 		end
 	end, {})
+
+	const function onSlotHoverChanged(slot: GuiObject, hovered: boolean)
+		setHoveredSlot(function(current: GuiObject?)
+			return if hovered then slot elseif current == slot then nil else current
+		end)
+	end
+
+	-- Touches don't hover, so show the tooltip of the slot under the touch as it moves
+	React.useEffect(function()
+		const function onTouch(input: InputObject)
+			const root = hintsRef.current
+			if not root then
+				return
+			end
+			const point = Vector2.new(input.Position.X, input.Position.Y)
+			for _, descendant in root:GetDescendants() do
+				if descendant:IsA("GuiButton") and descendant:HasTag("Slot") and isVisibleAt(descendant, point) then
+					setHoveredSlot(descendant)
+					return
+				end
+			end
+			setHoveredSlot(nil)
+		end
+
+		const touchStartedSignal = UserInputService.TouchStarted:Connect(onTouch)
+		const touchMovedSignal = UserInputService.TouchMoved:Connect(onTouch)
+		const touchEndedSignal = UserInputService.TouchEnded:Connect(function()
+			setHoveredSlot(nil)
+		end)
+
+		return function()
+			touchStartedSignal:Disconnect()
+			touchMovedSignal:Disconnect()
+			touchEndedSignal:Disconnect()
+		end
+	end, {})
+
+	-- Hidden or removed slots don't always leave the hover state
+	React.useEffect(function()
+		if hoveredSlot and not isVisibleAt(hoveredSlot, getCenter(hoveredSlot)) then
+			setHoveredSlot(nil)
+		end
+	end)
 
 	const function setDragState(state: DragState?)
 		dragRef.current = state
@@ -211,6 +319,22 @@ const function App(props: Props)
 		})
 	end
 
+	local slotTooltip = nil
+	if hoveredSlot and dragLayer and not (drag and drag.moved) then
+		const parent = hoveredSlot.Parent
+		const index = if parent and parent.Name == "Hotbar"
+			then hoveredSlot.LayoutOrder
+			else hoveredSlot.LayoutOrder + slotCount
+		const item = items[index] and items[index].item
+		if item and item:IsA("Tool") and item.ToolTip ~= "" then
+			slotTooltip = e(SlotTooltip, {
+				slot = hoveredSlot,
+				layer = dragLayer,
+				text = item.ToolTip,
+			})
+		end
+	end
+
 	local visibleHotbarSlots = 0
 	for order = 1, slotCount do
 		if items[order] then
@@ -277,6 +401,7 @@ const function App(props: Props)
 					draggingItem = if drag and drag.moved then drag.item else nil,
 					onSlotActivated = props.onSlotActivated,
 					onSlotDrag = if gamepadPreferred then nil else onSlotDrag,
+					onSlotHoverChanged = onSlotHoverChanged,
 				}),
 			}),
 		}),
@@ -288,6 +413,7 @@ const function App(props: Props)
 			ref = dragLayerRef,
 			[React.Tag] = if props.tenFootInterface then "TenFootInterface" else nil,
 		}, {
+			SlotTooltip = slotTooltip,
 			DraggedSlot = draggedSlot,
 		}),
 	})

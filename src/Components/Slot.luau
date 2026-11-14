@@ -23,6 +23,7 @@ export type Props = {
 	position: UDim2?,
 	onActivated: ((item: BackpackItem) -> ())?,
 	onDrag: OnDrag?,
+	onHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
 
 const function Slot(props: Props)
@@ -62,6 +63,12 @@ const function Slot(props: Props)
 			-- Clicks on draggable slots are reported through onDrag instead
 			if props.item and props.onActivated and not draggable then
 				props.onActivated(props.item)
+			end
+		end :: any,
+		[React.Change.GuiState] = function(rbx: GuiObject)
+			if props.onHoverChanged then
+				const state = rbx.GuiState
+				props.onHoverChanged(rbx, state == Enum.GuiState.Hover or state == Enum.GuiState.Press)
 			end
 		end :: any,
 	}, {

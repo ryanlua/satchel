@@ -14,6 +14,7 @@ export type Props = {
 	draggingItem: BackpackItem?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
 	onSlotDrag: Slot.OnDrag?,
+	onSlotHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
 
 const function Inventory(props: Props)
@@ -35,6 +36,7 @@ const function Inventory(props: Props)
 					placeholder = slot.item == props.draggingItem,
 					onActivated = props.onSlotActivated,
 					onDrag = props.onSlotDrag,
+					onHoverChanged = props.onSlotHoverChanged,
 				})
 			end
 		end
