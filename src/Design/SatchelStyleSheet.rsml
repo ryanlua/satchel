@@ -350,8 +350,8 @@ TextBox.Searchbar {
 		TextSize = $TenFootInterfaceSmallTextSize;
 	}
 
-	>> TextBox.Searchbar {
-		TextSize = $TenFootInterfaceTextSize;
+	>> .Inventory >Frame {
+		Visible = false;
 	}
 
 	>> .HotbarHint {

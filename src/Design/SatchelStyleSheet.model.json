@@ -1914,14 +1914,14 @@
                     "children": []
                 },
                 {
-                    "name": ">> TextBox .Searchbar",
+                    "name": ">> .Inventory > Frame",
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
                         "PropertiesSerialize": {
                             "Attributes": {
-                                "TextSize": {
-                                    "String": "$TenFootInterfaceTextSize"
+                                "Visible": {
+                                    "Bool": false
                                 }
                             }
                         },
@@ -1929,7 +1929,7 @@
                             "Attributes": {}
                         },
                         "Selector": {
-                            "String": ">> TextBox .Searchbar"
+                            "String": ">> .Inventory > Frame"
                         }
                     },
                     "children": []
