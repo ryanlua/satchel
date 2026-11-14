@@ -1449,6 +1449,36 @@
                         }
                     },
                     "children": []
+                },
+                {
+                    "name": "::UIShadow",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "BlurRadius": {
+                                    "String": "$ToolTipShadowBlurRadius"
+                                },
+                                "Offset": {
+                                    "String": "$ToolTipShadowOffset"
+                                },
+                                "Spread": {
+                                    "String": "$ToolTipShadowSpread"
+                                },
+                                "Transparency": {
+                                    "String": "$ToolTipShadowTransparency"
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "::UIShadow"
+                        }
+                    },
+                    "children": []
                 }
             ]
         },

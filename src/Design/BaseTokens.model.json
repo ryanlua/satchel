@@ -173,6 +173,39 @@
                 4
             ]
         },
+        "ToolTipShadowBlurRadius": {
+            "UDim": [
+                0.0,
+                4
+            ]
+        },
+        "ToolTipShadowOffset": {
+            "UDim2": [
+                [
+                    0.0,
+                    0
+                ],
+                [
+                    0.0,
+                    2
+                ]
+            ]
+        },
+        "ToolTipShadowSpread": {
+            "UDim2": [
+                [
+                    0.0,
+                    0
+                ],
+                [
+                    0.0,
+                    1
+                ]
+            ]
+        },
+        "ToolTipShadowTransparency": {
+            "Float64": 0.5
+        },
         "ToolTipTextColor": {
             "String": "$TextColor"
         },

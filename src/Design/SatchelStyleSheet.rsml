@@ -264,6 +264,13 @@ TextLabel.Tooltip {
 	::UICorner {
 		CornerRadius = $ToolTipCornerRadius;
 	}
+
+	::UIShadow {
+		BlurRadius = $ToolTipShadowBlurRadius;
+		Offset = $ToolTipShadowOffset;
+		Spread = $ToolTipShadowSpread;
+		Transparency = $ToolTipShadowTransparency;
+	}
 }
 
 TextBox.Searchbar {
