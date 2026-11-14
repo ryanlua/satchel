@@ -341,44 +341,6 @@ TextBox.Searchbar {
 	}
 }
 
-.TenFootInterface {
-	@priority 1;
-
-	>> TextButton.Slot {
-		Size = udim2 (100px, 100px);
-		TextSize = $TenFootInterfaceTextSize;
-
-		>TextLabel.SlotNumber {
-			TextSize = $TenFootInterfaceSmallTextSize;
-		}
-	}
-
-	>> TextLabel.Tooltip {
-		TextSize = $TenFootInterfaceSmallTextSize;
-	}
-
-	>> .Inventory >Frame {
-		Visible = false;
-	}
-
-	>> .HotbarHint {
-		Size = udim2 (100px, 100px);
-	}
-
-	>> .InventoryHint {
-		Size = udim2 (0px, 60px);
-
-		>ImageLabel {
-			Size = udim2 (56px, 56px);
-		}
-
-		>TextLabel {
-			Position = udim2 (62px, 50%);
-			TextSize = $HintTenFootInterfaceTextSize;
-		}
-	}
-}
-
 .Inventory {
 	AutomaticSize = :Y;
 	BackgroundColor3 = $SurfaceBackgroundColor;
@@ -428,6 +390,44 @@ TextBox.Searchbar {
 			PaddingLeft = $SurfacePadding;
 			PaddingRight = $SurfacePadding;
 			PaddingTop = $SurfacePadding;
+		}
+	}
+}
+
+.TenFootInterface {
+	@priority 1;
+
+	>> TextButton.Slot {
+		Size = udim2 (100px, 100px);
+		TextSize = $TenFootInterfaceTextSize;
+
+		>TextLabel.SlotNumber {
+			TextSize = $TenFootInterfaceSmallTextSize;
+		}
+	}
+
+	>> TextLabel.Tooltip {
+		TextSize = $TenFootInterfaceSmallTextSize;
+	}
+
+	>> .Inventory >Frame {
+		Visible = false;
+	}
+
+	>> .HotbarHint {
+		Size = udim2 (100px, 100px);
+	}
+
+	>> .InventoryHint {
+		Size = udim2 (0px, 60px);
+
+		>ImageLabel {
+			Size = udim2 (56px, 56px);
+		}
+
+		>TextLabel {
+			Position = udim2 (62px, 50%);
+			TextSize = $HintTenFootInterfaceTextSize;
 		}
 	}
 }
