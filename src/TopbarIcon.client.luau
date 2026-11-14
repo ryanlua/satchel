@@ -5,12 +5,13 @@ const Satchel = require("./")
 
 const icon = Icon.new()
 icon:setName("SatchelInventory")
-icon:modifyTheme({ "IconLabel", "AutoLocalize", false }) -- Don't translate font icon
-const iconLabelContainer = icon:getInstance("IconLabelContainer") :: Instance
-iconLabelContainer:SetAttribute("TargetWidth", 0) -- Force minimum width
+icon:modifyTheme({
+	{ "IconLabel", "AutoLocalize", false }, -- Don't translate font icon
+	{ "PaddingLeft", "Size", UDim2.new(0, 4, 1, 0) }, -- Remove icon left padding
+	{ "PaddingRight", "Size", UDim2.new(0, 4, 1, 0) }, -- Remove icon right padding
+})
 icon:setLabel("backpack")
 icon:setOrder(-1)
-icon:setTextSize(24)
 icon:setTextFont(
 	"rbxasset://LuaPackages/Packages/_Index/BuilderIcons/BuilderIcons/BuilderIcons.json",
 	Enum.FontWeight.Bold,
