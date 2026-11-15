@@ -20,7 +20,6 @@ export type Props = {
 	onSlotActivated: ((item: BackpackItem) -> ())?,
 	onSelectSwap: ((slotIndex: number) -> ())?,
 	onSlotDrag: Slot.OnDrag?,
-	onSlotHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
 
 const function Backpack(props: Props)
@@ -53,7 +52,6 @@ const function Backpack(props: Props)
 			onSlotActivated = props.onSlotActivated,
 			onSelectSwap = props.onSelectSwap,
 			onSlotDrag = props.onSlotDrag,
-			onSlotHoverChanged = props.onSlotHoverChanged,
 		}),
 		Inventory = e(Inventory, {
 			width = props.width,
@@ -68,7 +66,6 @@ const function Backpack(props: Props)
 			onSlotActivated = props.onSlotActivated,
 			onSelectSwap = props.onSelectSwap,
 			onSlotDrag = props.onSlotDrag,
-			onSlotHoverChanged = props.onSlotHoverChanged,
 		}),
 	})
 end

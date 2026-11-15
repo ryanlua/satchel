@@ -384,6 +384,48 @@
                     ]
                 },
                 {
+                    "name": ":Hover",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ":Hover"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> .Tooltip",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Visible": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> .Tooltip"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
                     "name": ".SwapSource",
                     "className": "StyleRule",
                     "attributes": {},
@@ -669,6 +711,48 @@
                         }
                     },
                     "children": []
+                },
+                {
+                    "name": ":Press",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ":Press"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> .Tooltip",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Visible": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> .Tooltip"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
                 },
                 {
                     "name": "> TextLabel",

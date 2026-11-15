@@ -28,7 +28,6 @@ export type Props = {
 	-- Fired for gamepad select/swap even when the slot is empty
 	onSelectSwap: ((slotIndex: number) -> ())?,
 	onDrag: OnDrag?,
-	onHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
 
 const function Slot(props: Props)
@@ -74,12 +73,6 @@ const function Slot(props: Props)
 				props.onActivated(props.item)
 			end
 		end :: any,
-		[React.Change.GuiState] = function(rbx: GuiObject)
-			if props.onHoverChanged then
-				const state = rbx.GuiState
-				props.onHoverChanged(rbx, state == Enum.GuiState.Hover or state == Enum.GuiState.Press)
-			end
-		end :: any,
 	}, {
 		NumberHint = e("TextLabel", {
 			Text = slotNumber,
@@ -90,9 +83,12 @@ const function Slot(props: Props)
 		TextureIcon = e("ImageLabel", {
 			Image = itemImage or "",
 		}),
-		ToolTip = e(Tooltip, {
-			text = tooltipText,
-		}),
+		-- Hotbar only, like the CoreGui backpack: inventory slots clip tooltips
+		ToolTip = if props.hint
+			then e(Tooltip, {
+				text = tooltipText,
+			})
+			else nil,
 		EquipStroke = e("UIStroke", {
 			[React.Tag] = "EquipStroke",
 		}),

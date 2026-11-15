@@ -19,7 +19,6 @@ export type Props = {
 	onSlotActivated: ((item: BackpackItem) -> ())?,
 	onSelectSwap: ((slotIndex: number) -> ())?,
 	onSlotDrag: Slot.OnDrag?,
-	onSlotHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
 
 const function Inventory(props: Props)
@@ -48,7 +47,6 @@ const function Inventory(props: Props)
 					onActivated = props.onSlotActivated,
 					onSelectSwap = props.onSelectSwap,
 					onDrag = props.onSlotDrag,
-					onHoverChanged = props.onSlotHoverChanged,
 				})
 			end
 		end

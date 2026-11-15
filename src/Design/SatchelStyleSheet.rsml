@@ -77,6 +77,14 @@ TextButton.Slot {
 		}
 	}
 
+	:Hover {
+		@priority 1;
+
+		>.Tooltip {
+			Visible = true;
+		}
+	}
+
 	.SwapSource {
 		@priority 2;
 
@@ -130,8 +138,16 @@ TextButton.Slot {
 
 	CornerRadius! ($SlotCornerRadius);
 
-	-- SlotNumber and the drag tooltip are both labels. Hide them here;
-	-- keyboard input reveals the number, and .Dragging reveals the tooltip.
+	:Press {
+		@priority 1;
+
+		>.Tooltip {
+			Visible = true;
+		}
+	}
+
+	-- SlotNumber and ToolTip are both labels. Hide them here;
+	-- keyboard input reveals the number, and :Hover/:Press/.Dragging reveal the tooltip.
 	>TextLabel {
 		Size = udim2 (0px, 0px);
 		Visible = false;
