@@ -14,14 +14,29 @@
         "HintTextSize": {
             "String": "$TextSize"
         },
-        "ScrollbarColor": {
+        "InventoryBackgroundColor": {
+            "String": "$BackgroundColor"
+        },
+        "InventoryBackgroundTransparency": {
+            "Float64": 0.3
+        },
+        "InventoryCornerRadius": {
+            "String": "$CornerRadius"
+        },
+        "InventoryPadding": {
+            "UDim": [
+                0.0,
+                5
+            ]
+        },
+        "InventoryScrollbarColor": {
             "Color3": [
                 0.8156863,
                 0.84705883,
                 0.98039216
             ]
         },
-        "ScrollbarGutter": {
+        "InventoryScrollbarGutter": {
             "UDim": [
                 0.0,
                 13
@@ -193,21 +208,6 @@
         },
         "StyleCategory": {
             "String": "Tokens"
-        },
-        "SurfaceBackgroundColor": {
-            "String": "$BackgroundColor"
-        },
-        "SurfaceBackgroundTransparency": {
-            "Float64": 0.3
-        },
-        "SurfaceCornerRadius": {
-            "String": "$CornerRadius"
-        },
-        "SurfacePadding": {
-            "UDim": [
-                0.0,
-                5
-            ]
         },
         "TenFootSlotSize": {
             "UDim2": [

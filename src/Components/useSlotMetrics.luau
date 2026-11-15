@@ -99,7 +99,7 @@ const function getSlotMetrics(tenFootInterface: boolean?): SlotMetrics
 	const slotWidth = offsetOnAxis(slot, "X") or if tenFoot then DEFAULT_TEN_FOOT_SLOT_WIDTH else DEFAULT_SLOT_WIDTH
 	const slotHeight = offsetOnAxis(slot, "Y") or if tenFoot then DEFAULT_TEN_FOOT_SLOT_HEIGHT else DEFAULT_SLOT_HEIGHT
 	const gap = offsetOnAxis(resolveToken(theme, "SlotGap"), "X") or DEFAULT_GAP
-	const scrollbarGutter = offsetOnAxis(resolveToken(theme, "ScrollbarGutter"), "X") or DEFAULT_SCROLLBAR_GUTTER
+	const scrollbarGutter = offsetOnAxis(resolveToken(theme, "InventoryScrollbarGutter"), "X") or DEFAULT_SCROLLBAR_GUTTER
 
 	-- Hotbar uses $SlotGap between slots and as its left and right padding.
 	const pitchX = slotWidth + gap

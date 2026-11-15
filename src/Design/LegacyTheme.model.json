@@ -40,6 +40,9 @@
         "HintTextSize": {
             "Float64": 24.0
         },
+        "InventoryBackgroundTransparency": {
+            "String": "$BackgroundTransparency"
+        },
         "SearchBackgroundColor": {
             "Color3": [
                 0.36862746,
@@ -113,9 +116,6 @@
         },
         "StyleCategory": {
             "String": "Themes"
-        },
-        "SurfaceBackgroundTransparency": {
-            "String": "$BackgroundTransparency"
         },
         "TenFootInterfaceSmallTextSize": {
             "Float64": 24.0

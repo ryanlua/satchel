@@ -323,10 +323,10 @@ TextBox.Searchbar {
 -- Width is set in Inventory from useSlotMetrics. Height follows the search row and the scrolling frame.
 .Inventory {
 	AutomaticSize = :Y;
-	BackgroundColor3 = $SurfaceBackgroundColor;
-	BackgroundTransparency = $SurfaceBackgroundTransparency;
+	BackgroundColor3 = $InventoryBackgroundColor;
+	BackgroundTransparency = $InventoryBackgroundTransparency;
 
-	CornerRadius! ($SurfaceCornerRadius);
+	CornerRadius! ($InventoryCornerRadius);
 
 	::UIListLayout {
 		Padding = 1px;
@@ -338,7 +338,7 @@ TextBox.Searchbar {
 		BorderSizePixel = 0;
 		CanvasSize = udim2 (0px, 0px);
 		ElasticBehavior = :Always;
-		ScrollBarImageColor3 = $ScrollbarColor;
+		ScrollBarImageColor3 = $InventoryScrollbarColor;
 		ScrollBarThickness = 8;
 		ScrollingDirection = :Y;
 		Selectable = false;
@@ -350,14 +350,14 @@ TextBox.Searchbar {
 			Wraps = true;
 		}
 
-		Padding! ($SurfacePadding);
+		Padding! ($InventoryPadding);
 	}
 
 	>#SearchFrame {
 		BackgroundTransparency = 1;
 		Size = $SearchFrameSize;
 
-		Padding! ($SurfacePadding, $SurfacePadding, 0px);
+		Padding! ($InventoryPadding, $InventoryPadding, 0px);
 	}
 }
 

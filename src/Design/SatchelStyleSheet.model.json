@@ -1845,10 +1845,10 @@
                             }
                         },
                         "BackgroundColor3": {
-                            "String": "$SurfaceBackgroundColor"
+                            "String": "$InventoryBackgroundColor"
                         },
                         "BackgroundTransparency": {
-                            "String": "$SurfaceBackgroundTransparency"
+                            "String": "$InventoryBackgroundTransparency"
                         }
                     }
                 },
@@ -1868,7 +1868,7 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "CornerRadius": {
-                                    "String": "$SurfaceCornerRadius"
+                                    "String": "$InventoryCornerRadius"
                                 }
                             }
                         },
@@ -1943,7 +1943,7 @@
                                     }
                                 },
                                 "ScrollBarImageColor3": {
-                                    "String": "$ScrollbarColor"
+                                    "String": "$InventoryScrollbarColor"
                                 },
                                 "ScrollBarThickness": {
                                     "Float64": 8.0
@@ -2011,16 +2011,16 @@
                                 "PropertiesSerialize": {
                                     "Attributes": {
                                         "PaddingBottom": {
-                                            "String": "$SurfacePadding"
+                                            "String": "$InventoryPadding"
                                         },
                                         "PaddingLeft": {
-                                            "String": "$SurfacePadding"
+                                            "String": "$InventoryPadding"
                                         },
                                         "PaddingRight": {
-                                            "String": "$SurfacePadding"
+                                            "String": "$InventoryPadding"
                                         },
                                         "PaddingTop": {
-                                            "String": "$SurfacePadding"
+                                            "String": "$InventoryPadding"
                                         }
                                     }
                                 },
@@ -2072,13 +2072,13 @@
                                             ]
                                         },
                                         "PaddingLeft": {
-                                            "String": "$SurfacePadding"
+                                            "String": "$InventoryPadding"
                                         },
                                         "PaddingRight": {
-                                            "String": "$SurfacePadding"
+                                            "String": "$InventoryPadding"
                                         },
                                         "PaddingTop": {
-                                            "String": "$SurfacePadding"
+                                            "String": "$InventoryPadding"
                                         }
                                     }
                                 },

@@ -6,8 +6,6 @@ $StyleCategory = "Tokens";
 -- Layout
 -- useSlotMetrics reads these to size the hotbar and inventory.
 -- Hotbar padding uses the same gap, so row width is count * (slot + gap) + gap.
-$ScrollbarColor = #D0D8FA;
-$ScrollbarGutter = 13px;
 $SlotGap = 5px;
 $SlotSize = udim2 (60px, 60px);
 $TenFootSlotSize = udim2 (100px, 100px);
@@ -55,11 +53,13 @@ $SlotTextStrokeColor = $TextStrokeColor;
 $SlotTextStrokeTransparency = $TextStrokeTransparency;
 $SlotUnlockBackgroundColor = $SlotBackgroundColor;
 
--- Surface
-$SurfaceBackgroundColor = $BackgroundColor;
-$SurfaceBackgroundTransparency = 0.3;
-$SurfaceCornerRadius = $CornerRadius;
-$SurfacePadding = 5px;
+-- Inventory
+$InventoryBackgroundColor = $BackgroundColor;
+$InventoryBackgroundTransparency = 0.3;
+$InventoryCornerRadius = $CornerRadius;
+$InventoryPadding = 5px;
+$InventoryScrollbarColor = #D0D8FA;
+$InventoryScrollbarGutter = 13px;
 
 -- Tooltip
 $TooltipBackgroundColor = #262830;

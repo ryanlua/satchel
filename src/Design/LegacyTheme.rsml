@@ -34,8 +34,8 @@ $SlotEquipStrokeThickness = 5;
 $SlotPadding = 6px;
 $SlotUnlockBackgroundColor = #313131;
 
--- Surface
-$SurfaceBackgroundTransparency = $BackgroundTransparency;
+-- Inventory
+$InventoryBackgroundTransparency = $BackgroundTransparency;
 
 -- Tooltip
 $TooltipBackgroundColor = #666666;
