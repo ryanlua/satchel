@@ -1,5 +1,9 @@
 @derive "./ThemeTokens";
 
+-- General
+$StyleCategory = "Tokens";
+
+-- Layout
 -- useSlotMetrics reads these to size the hotbar and inventory.
 -- Hotbar padding uses the same gap, so row width is count * (slot + gap) + gap.
 $ScrollbarColor = #D0D8FA;
@@ -8,17 +12,20 @@ $SlotGap = 5px;
 $SlotSize = udim2 (60px, 60px);
 $TenFootSlotSize = udim2 (100px, 100px);
 
+-- Container
 $ContainerBackgroundColor = $BackgroundColor;
 $ContainerBackgroundTransparency = 0.2;
 $ContainerCornerRadius = $SmallCornerRadius;
 $ContainerStrokeColor = #FFFFFF;
 $ContainerStrokeTransparency = 0.8;
 
+-- Hints
 $HintFontFace = $FontFace;
 $HintTenFootInterfaceTextSize = $TenFootInterfaceTextSize;
 $HintTextColor = $TextColor;
 $HintTextSize = $TextSize;
 
+-- Search
 $SearchFontFace = $FontFace;
 $SearchFrameSize = udim2 (100%, 35px);
 $SearchPadding = 8px;
@@ -28,6 +35,7 @@ $SearchTextColor = $TextColor;
 $SearchTextSize = $TextSize;
 $SearchTextStrokeTransparency = $TextStrokeTransparency;
 
+-- Slots
 $SlotBackgroundColor = #191B1D;
 $SlotBackgroundTransparency = 0.3;
 $SlotCornerRadius = $SmallCornerRadius;
@@ -49,13 +57,13 @@ $SlotTextStrokeColor = $TextStrokeColor;
 $SlotTextStrokeTransparency = $TextStrokeTransparency;
 $SlotUnlockBackgroundColor = $SlotBackgroundColor;
 
-$StyleCategory = "Tokens";
-
+-- Surface
 $SurfaceBackgroundColor = $BackgroundColor;
 $SurfaceBackgroundTransparency = 0.3;
 $SurfaceCornerRadius = $CornerRadius;
 $SurfacePadding = 5px;
 
+-- Tooltip
 $TooltipBackgroundColor = #262830;
 $TooltipBackgroundTransparency = 0;
 $TooltipCornerRadius = $SmallCornerRadius;

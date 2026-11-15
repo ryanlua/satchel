@@ -1,9 +1,12 @@
+-- General
 $BackgroundColor = #191B1D;
 $CornerRadius = 8px;
 $FontFace = font ("BuilderSans", :Medium);
 $SmallCornerRadius = 4px;
-$SmallTextSize = 15;
 $StyleCategory = "Tokens";
+
+-- Text
+$SmallTextSize = 15;
 $TenFootInterfaceSmallTextSize = 24;
 $TenFootInterfaceTextSize = 30;
 $TextColor = #FFFFFF;

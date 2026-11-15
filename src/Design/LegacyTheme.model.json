@@ -2,12 +2,25 @@
     "className": "StyleSheet",
     "id": "Design\\LegacyTheme.rsml",
     "attributes": {
+        "BackgroundColor": {
+            "Color3": [
+                0.12156863,
+                0.12156863,
+                0.12156863
+            ]
+        },
+        "BackgroundTransparency": {
+            "Float64": 0.5
+        },
         "ContainerBackgroundColor": {
             "Color3": [
                 0.36862746,
                 0.36862746,
                 0.36862746
             ]
+        },
+        "ContainerBackgroundTransparency": {
+            "Float64": 0.0
         },
         "ContainerStrokeTransparency": {
             "Float64": 1.0
@@ -63,6 +76,9 @@
                 0.12156863
             ]
         },
+        "SlotBackgroundTransparency": {
+            "String": "$BackgroundTransparency"
+        },
         "SlotEquipStrokeColor": {
             "Color3": [
                 0.3529412,
@@ -97,6 +113,9 @@
         },
         "StyleCategory": {
             "String": "Themes"
+        },
+        "SurfaceBackgroundTransparency": {
+            "String": "$BackgroundTransparency"
         },
         "TenFootInterfaceSmallTextSize": {
             "Float64": 24.0

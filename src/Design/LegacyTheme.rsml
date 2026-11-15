@@ -1,20 +1,10 @@
 @derive "./BaseTokens";
 
-$ContainerBackgroundColor = #5E5E5E;
-$ContainerStrokeTransparency = 1;
+-- General
+$BackgroundColor = #1F1F1F;
+$BackgroundTransparency = 0.5;
 $CornerRadius = 0px;
 $FontFace = font ("SourceSansPro", :Regular);
-$HintFontFace = font ("SourceSansPro", :Bold);
-$HintTenFootInterfaceTextSize = 36;
-$HintTextSize = 24;
-$SearchPadding = 0px;
-$SearchPlaceholderColor = #FFFFFF;
-$SearchTextSize = 24;
-$SlotBackgroundColor = #1F1F1F;
-$SlotEquipStrokeColor = #5A8EE9;
-$SlotEquipStrokeThickness = 5;
-$SlotPadding = 6px;
-$SlotUnlockBackgroundColor = #313131;
 $SmallCornerRadius = 0px;
 $SmallTextSize = 14;
 $StyleCategory = "Themes";
@@ -22,5 +12,33 @@ $TenFootInterfaceSmallTextSize = 24;
 $TenFootInterfaceTextSize = 24;
 $TextSize = 14;
 $TextStrokeTransparency = 1;
+
+-- Container
+$ContainerBackgroundColor = #5E5E5E;
+$ContainerBackgroundTransparency = 0;
+$ContainerStrokeTransparency = 1;
+
+-- Hints
+$HintFontFace = font ("SourceSansPro", :Bold);
+$HintTenFootInterfaceTextSize = 36;
+$HintTextSize = 24;
+
+-- Search
+$SearchPadding = 0px;
+$SearchPlaceholderColor = #FFFFFF;
+$SearchTextSize = 24;
+
+-- Slots
+$SlotBackgroundColor = #1F1F1F;
+$SlotBackgroundTransparency = $BackgroundTransparency;
+$SlotEquipStrokeColor = #5A8EE9;
+$SlotEquipStrokeThickness = 5;
+$SlotPadding = 6px;
+$SlotUnlockBackgroundColor = #313131;
+
+-- Surface
+$SurfaceBackgroundTransparency = $BackgroundTransparency;
+
+-- Tooltip
 $TooltipBackgroundColor = #666666;
 $TooltipPadding = 2px;
