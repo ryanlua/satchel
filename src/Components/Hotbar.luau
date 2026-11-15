@@ -10,7 +10,9 @@ export type Props = {
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
 	draggingItem: BackpackItem?,
+	swapSourceIndex: number?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
+	onSelectSwap: ((slotIndex: number) -> ())?,
 	onSlotDrag: Slot.OnDrag?,
 	onSlotHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
@@ -30,13 +32,16 @@ const function Hotbar(props: Props)
 		if props.opened or item then
 			children[tostring(order)] = e(Slot, {
 				order = order,
+				slotIndex = order,
 				item = item,
 				hint = true,
 				forceHintVisible = props.forceKeyboardHintVisible,
 				unlocked = slotUnlocked,
 				equipped = slot and slot.equipped,
+				swapSource = props.swapSourceIndex == order,
 				placeholder = item ~= nil and item == props.draggingItem,
 				onActivated = props.onSlotActivated,
+				onSelectSwap = props.onSelectSwap,
 				onDrag = if slotUnlocked then props.onSlotDrag else nil,
 				onHoverChanged = props.onSlotHoverChanged,
 			})

@@ -1,7 +1,9 @@
 {
   "ClassName": "InputContext",
   "Properties": {
-    "Priority": 2000
+    "Enabled": false,
+    "Priority": 2000,
+    "Sink": true
   },
   "Children": [
     {

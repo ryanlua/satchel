@@ -18,10 +18,15 @@ export type Props = {
 	forceHintVisible: boolean?,
 	hint: boolean?,
 	order: number?,
+	-- Absolute backpack index used for gamepad selection and input actions
+	slotIndex: number?,
+	swapSource: boolean?,
 	placeholder: boolean?,
 	dragging: boolean?,
 	position: UDim2?,
 	onActivated: ((item: BackpackItem) -> ())?,
+	-- Fired for gamepad select/swap even when the slot is empty
+	onSelectSwap: ((slotIndex: number) -> ())?,
 	onDrag: OnDrag?,
 	onHoverChanged: ((slot: GuiObject, hovered: boolean) -> ())?,
 }
@@ -34,6 +39,7 @@ const function Slot(props: Props)
 
 	-- Only show numbers 1-10 for hints and show 0 for the 10th slot
 	const order = props.order or 1
+	const slotIndex = props.slotIndex or order
 	const slotNumber = if order >= 1 and order <= 10 then tostring(order % 10) else ""
 
 	const hintVisible = props.hint == true and props.forceHintVisible
@@ -42,6 +48,7 @@ const function Slot(props: Props)
 		.. (if props.unlocked then " Unlocked" else "")
 		.. (if props.equipped then " Equipped" else "")
 		.. (if props.dragging then " Dragging" else "")
+		.. (if props.swapSource then " SwapSource" else "")
 		.. (if props.placeholder then " Placeholder" else "")
 
 	const function forwardDrag(phase: "Start" | "Continue" | "End")
@@ -60,6 +67,10 @@ const function Slot(props: Props)
 		Interactable = not props.dragging,
 		[React.Tag] = tags,
 		[React.Event.Activated] = function()
+			if props.onSelectSwap then
+				props.onSelectSwap(slotIndex)
+				return
+			end
 			-- Clicks on draggable slots are reported through onDrag instead
 			if props.item and props.onActivated and not draggable then
 				props.onActivated(props.item)

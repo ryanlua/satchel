@@ -393,6 +393,48 @@
                     ]
                 },
                 {
+                    "name": ".SwapSource",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "Priority": {
+                            "Int32": 2
+                        },
+                        "PropertiesSerialize": {
+                            "Attributes": {}
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": ".SwapSource"
+                        }
+                    },
+                    "children": [
+                        {
+                            "name": "> UIStroke .PressStroke",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "Enabled": {
+                                            "Bool": true
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> UIStroke .PressStroke"
+                                }
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
                     "name": ".Unlocked",
                     "className": "StyleRule",
                     "attributes": {},

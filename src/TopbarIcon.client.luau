@@ -25,7 +25,7 @@ icon:setTextFont(
 	Enum.FontStyle.Normal,
 	"Deselected"
 )
-icon:bindToggleKey(Enum.KeyCode.Backquote)
+-- Inventory toggle key is owned by HotbarContext.ToggleInventoryAction (Input Action System)
 icon:autoDeselect(false)
 icon:setCaption("Inventory")
 

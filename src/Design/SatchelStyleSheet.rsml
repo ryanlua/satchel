@@ -71,6 +71,14 @@ TextButton.Slot {
 		}
 	}
 
+	.SwapSource {
+		@priority 2;
+
+		>UIStroke.PressStroke {
+			Enabled = true;
+		}
+	}
+
 	.Unlocked {
 		@priority 1;
 		BackgroundColor3 = $SlotUnlockBackgroundColor;

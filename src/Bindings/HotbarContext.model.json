@@ -1,7 +1,8 @@
 {
   "ClassName": "InputContext",
   "Properties": {
-    "Priority": 2000
+    "Priority": 2000,
+    "Sink": true
   },
   "Children": [
     {
@@ -39,6 +40,136 @@
           "ClassName": "InputBinding",
           "Properties": {
             "KeyCode": "Backquote"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot1",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "One"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot2",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Two"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot3",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Three"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot4",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Four"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot5",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Five"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot6",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Six"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot7",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Seven"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot8",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Eight"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot9",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Nine"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "EquipSlot0",
+      "ClassName": "InputAction",
+      "Children": [
+        {
+          "Name": "KeyBinding",
+          "ClassName": "InputBinding",
+          "Properties": {
+            "KeyCode": "Zero"
           }
         }
       ]

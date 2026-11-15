@@ -18,12 +18,14 @@ const closeInventory = require("./Api/closeInventory")
 
 const App = require("./Components/App")
 const useBackpack = require("./Components/useBackpack")
+const useBackpackInput = require("./Components/useBackpackInput")
 
 const DESIGN_SHEET = script.Parent.Design.SatchelStyleSheet
 
 const e = React.createElement
 const useState = React.useState
 const useEffect = React.useEffect
+const useCallback = React.useCallback
 
 const player = Players.LocalPlayer :: Player
 const playerGui = player:WaitForChild("PlayerGui") :: PlayerGui
@@ -41,6 +43,10 @@ const root = ReactRoblox.createRoot(handle)
 const function Satchel()
 	-- Open and close backpack based on bindable events
 	const opened, setOpened = useState(false)
+	const selectionRoot, setSelectionRoot = useState(nil :: GuiObject?)
+	const onSelectionRootChanged = useCallback(function(rootGui: GuiObject?)
+		setSelectionRoot(rootGui)
+	end, {})
 
 	useEffect(function()
 		const bindableEvents = script.Parent.BindableEvents
@@ -114,6 +120,17 @@ const function Satchel()
 	end, {})
 
 	const backpack = useBackpack(player, slots)
+	const input = useBackpackInput({
+		opened = opened,
+		hotbarSlotCount = slots,
+		items = backpack.items,
+		selectionRoot = selectionRoot,
+		equipSlot = backpack.equipSlot,
+		cycleHotbar = backpack.cycleHotbar,
+		unequipAll = backpack.unequipAll,
+		removeFromHotbar = backpack.removeFromHotbar,
+		move = backpack.move,
+	})
 
 	return e(App, {
 		slots = slots,
@@ -121,7 +138,10 @@ const function Satchel()
 		tenFootInterface = tenFootInterface,
 		opened = opened,
 		items = backpack.items,
+		swapSourceIndex = input.swapSourceIndex,
+		onSelectionRootChanged = onSelectionRootChanged,
 		onSlotActivated = backpack.onSlotActivated,
+		onSelectSwap = input.onGamepadSlotActivated,
 		onMove = backpack.move,
 	})
 end

@@ -13,6 +13,10 @@ type SlotItem = { item: BackpackItem, equipped: boolean }
 type Actions = {
 	onSlotActivated: (item: BackpackItem) -> (),
 	move: (item: BackpackItem, targetIndex: number) -> (),
+	equipSlot: (index: number) -> (),
+	cycleHotbar: (direction: number) -> (),
+	unequipAll: () -> (),
+	removeFromHotbar: (index: number) -> (),
 }
 
 export type BackpackState = Actions & { items: { [number]: SlotItem } }
@@ -56,17 +60,17 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 		end
 
 		local function fireEquippedChangedEvents(tool: Tool)
-			local isEquipped = isEquipped(tool)
+			local equipped = isEquipped(tool)
 			local wasEquipped = equippedStateByTool[tool]
-			if wasEquipped == isEquipped then
+			if wasEquipped == equipped then
 				return
 			end
-			equippedStateByTool[tool] = isEquipped
+			equippedStateByTool[tool] = equipped
 			if wasEquipped == nil then
-				if isEquipped then
+				if equipped then
 					backpackItemEquipped:Fire(tool)
 				end
-			elseif isEquipped then
+			elseif equipped then
 				backpackItemEquipped:Fire(tool)
 			else
 				backpackItemUnequipped:Fire(tool)
@@ -165,15 +169,47 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			end
 		end
 
+		local lastEquippedSlotIndex: number? = nil
+
+		local function unequipAll()
+			local humanoid = getHumanoid()
+			if humanoid then
+				humanoid:UnequipTools()
+			end
+		end
+
+		local function equipTool(tool: Tool)
+			local humanoid = getHumanoid()
+			if not humanoid then
+				return
+			elseif isEquipped(tool) then
+				unequipAll()
+			else
+				humanoid:EquipTool(tool)
+				local slotIndex = slotIndexByTool[tool]
+				if slotIndex and slotIndex <= hotbarSlotCount then
+					lastEquippedSlotIndex = slotIndex
+				end
+			end
+		end
+
+		local function nextInventoryIndex(): number
+			local highestSlotIndex = hotbarSlotCount
+			for slotIndex in toolBySlotIndex do
+				highestSlotIndex = math.max(highestSlotIndex, slotIndex)
+			end
+			for slotIndex = hotbarSlotCount + 1, highestSlotIndex do
+				if not toolBySlotIndex[slotIndex] then
+					return slotIndex
+				end
+			end
+			return highestSlotIndex + 1
+		end
+
 		actionsRef.current = {
 			onSlotActivated = function(item: BackpackItem)
-				local humanoid = getHumanoid()
-				if not humanoid or not item:IsA("Tool") then
-					return
-				elseif isEquipped(item) then
-					humanoid:UnequipTools()
-				else
-					humanoid:EquipTool(item)
+				if item:IsA("Tool") then
+					equipTool(item)
 				end
 			end,
 			-- Moves the item to targetIndex, swapping with any item already there
@@ -185,6 +221,83 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 				local otherTool = toolBySlotIndex[targetIndex]
 				setSlot(targetIndex, item :: Tool)
 				setSlot(slotIndex, otherTool)
+				syncItemsToReact()
+			end,
+			equipSlot = function(index: number)
+				local tool = toolBySlotIndex[index]
+				if tool then
+					equipTool(tool)
+				end
+			end,
+			cycleHotbar = function(direction: number)
+				-- Prefer cycling from the currently equipped hotbar tool
+				for slotIndex = 1, hotbarSlotCount do
+					local tool = toolBySlotIndex[slotIndex]
+					if tool and isEquipped(tool) then
+						local newSlotIndex = slotIndex + direction
+						local hitEdge = false
+						if newSlotIndex > hotbarSlotCount then
+							newSlotIndex = 1
+							hitEdge = true
+						elseif newSlotIndex < 1 then
+							newSlotIndex = hotbarSlotCount
+							hitEdge = true
+						end
+
+						local startIndex = newSlotIndex
+						while not toolBySlotIndex[newSlotIndex] do
+							newSlotIndex += direction
+							if newSlotIndex == startIndex then
+								return
+							elseif newSlotIndex > hotbarSlotCount then
+								newSlotIndex = 1
+								hitEdge = true
+							elseif newSlotIndex < 1 then
+								newSlotIndex = hotbarSlotCount
+								hitEdge = true
+							end
+						end
+
+						if hitEdge then
+							unequipAll()
+						else
+							equipTool(toolBySlotIndex[newSlotIndex])
+						end
+						return
+					end
+				end
+
+				-- Nothing equipped: re-equip the last hotbar slot, else first tool in direction
+				if lastEquippedSlotIndex then
+					local lastTool = toolBySlotIndex[lastEquippedSlotIndex]
+					if lastTool then
+						equipTool(lastTool)
+						return
+					end
+				end
+
+				local startIndex = if direction < 0 then hotbarSlotCount else 1
+				local endIndex = if direction < 0 then 1 else hotbarSlotCount
+				for slotIndex = startIndex, endIndex, direction do
+					local tool = toolBySlotIndex[slotIndex]
+					if tool then
+						equipTool(tool)
+						return
+					end
+				end
+			end,
+			unequipAll = unequipAll,
+			removeFromHotbar = function(index: number)
+				if index < 1 or index > hotbarSlotCount then
+					return
+				end
+				local tool = toolBySlotIndex[index]
+				if not tool then
+					return
+				end
+				local targetIndex = nextInventoryIndex()
+				setSlot(targetIndex, tool)
+				setSlot(index, nil :: Tool?)
 				syncItemsToReact()
 			end,
 		}
@@ -214,7 +327,39 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 		end
 	end, {})
 
-	return { items = items, onSlotActivated = onSlotActivated, move = move }
+	const equipSlot = React.useCallback(function(index: number)
+		if actionsRef.current then
+			actionsRef.current.equipSlot(index)
+		end
+	end, {})
+
+	const cycleHotbar = React.useCallback(function(direction: number)
+		if actionsRef.current then
+			actionsRef.current.cycleHotbar(direction)
+		end
+	end, {})
+
+	const unequipAll = React.useCallback(function()
+		if actionsRef.current then
+			actionsRef.current.unequipAll()
+		end
+	end, {})
+
+	const removeFromHotbar = React.useCallback(function(index: number)
+		if actionsRef.current then
+			actionsRef.current.removeFromHotbar(index)
+		end
+	end, {})
+
+	return {
+		items = items,
+		onSlotActivated = onSlotActivated,
+		move = move,
+		equipSlot = equipSlot,
+		cycleHotbar = cycleHotbar,
+		unequipAll = unequipAll,
+		removeFromHotbar = removeFromHotbar,
+	}
 end
 
 return useBackpack

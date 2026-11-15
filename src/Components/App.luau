@@ -30,7 +30,10 @@ export type Props = {
 	tenFootInterface: boolean?,
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
 	opened: boolean?,
+	swapSourceIndex: number?,
+	onSelectionRootChanged: ((root: GuiObject?) -> ())?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
+	onSelectSwap: ((slotIndex: number) -> ())?,
 	onMove: ((item: BackpackItem, targetIndex: number) -> ())?,
 }
 
@@ -141,6 +144,7 @@ const function App(props: Props)
 
 	-- Gamepad uses select/swap instead of dragging, like the CoreGui backpack
 	const gamepadPreferred, setGamepadPreferred = React.useState(isGamepadPreferred)
+	const selectSwap = if gamepadPreferred and (props.opened or false) then props.onSelectSwap else nil
 
 	React.useEffect(function()
 		const preferredInputSignal = UserInputService:GetPropertyChangedSignal("PreferredInput"):Connect(function()
@@ -151,6 +155,18 @@ const function App(props: Props)
 			preferredInputSignal:Disconnect()
 		end
 	end, {})
+
+	-- Expose the hints root for GuiService gamepad selection parenting
+	React.useEffect(function()
+		if props.onSelectionRootChanged then
+			props.onSelectionRootChanged(hintsRef.current)
+		end
+		return function()
+			if props.onSelectionRootChanged then
+				props.onSelectionRootChanged(nil)
+			end
+		end
+	end, { props.onSelectionRootChanged :: any })
 
 	const function onSlotHoverChanged(slot: GuiObject, hovered: boolean)
 		setHoveredSlot(function(current: GuiObject?)
@@ -399,7 +415,9 @@ const function App(props: Props)
 					width = width,
 					slotPitch = slotPitch,
 					draggingItem = if drag and drag.moved then drag.item else nil,
+					swapSourceIndex = props.swapSourceIndex,
 					onSlotActivated = props.onSlotActivated,
+					onSelectSwap = selectSwap,
 					onSlotDrag = if gamepadPreferred then nil else onSlotDrag,
 					onSlotHoverChanged = onSlotHoverChanged,
 				}),
