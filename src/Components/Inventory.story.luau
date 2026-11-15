@@ -1,9 +1,7 @@
 const React = require("../../react")
 
 const Inventory = require("./Inventory")
-const getSlotMetrics = require("../Design/getSlotMetrics")
-
-const metrics = getSlotMetrics(false)
+const useSlotMetrics = require("./useSlotMetrics")
 
 const e = React.createElement
 
@@ -23,6 +21,7 @@ return {
 	summary = "Toggleable inventory for displaying items not in the hotbar",
 	controls = controls,
 	story = function(props: Props)
+		const metrics = useSlotMetrics(false)
 		const tool = Instance.new("Tool")
 		tool.Name = props.controls.toolName
 		tool.TextureId = props.controls.toolImage

@@ -2,7 +2,7 @@ const React = require("../../react")
 
 const Searchbar = require("./Searchbar")
 const Slot = require("./Slot")
-const getSlotMetrics = require("../Design/getSlotMetrics")
+const useSlotMetrics = require("./useSlotMetrics")
 
 const e = React.createElement
 
@@ -25,7 +25,7 @@ const function Inventory(props: Props)
 	const width = props.width or 0
 	const hotbarSlots = props.slots or 10
 	const rows = props.rows or 4
-	const metrics = getSlotMetrics(false)
+	const metrics = useSlotMetrics(false)
 	const height = props.height or metrics.rowsHeight(rows)
 	const scrollbarGutter = props.scrollbarGutter or metrics.scrollbarGutter
 

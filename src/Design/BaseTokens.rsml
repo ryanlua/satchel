@@ -1,6 +1,6 @@
 @derive "./ThemeTokens";
 
--- getSlotMetrics reads these to size the hotbar and inventory.
+-- useSlotMetrics reads these to size the hotbar and inventory.
 -- Hotbar padding uses the same gap, so row width is count * (slot + gap) + gap.
 $ScrollbarColor = #D0D8FA;
 $ScrollbarGutter = 13px;

@@ -231,7 +231,7 @@ TextButton.Slot {
 	}
 }
 
--- Width is set in App from getSlotMetrics so hints wrap to the hotbar width.
+-- Width is set in App from useSlotMetrics so hints wrap to the hotbar width.
 .Hints {
 	AutomaticSize = :Y;
 	BackgroundTransparency = 1;
@@ -323,7 +323,7 @@ TextBox.Searchbar {
 	}
 }
 
--- Width is set in Inventory from getSlotMetrics. Height follows the search row and the scrolling frame.
+-- Width is set in Inventory from useSlotMetrics. Height follows the search row and the scrolling frame.
 .Inventory {
 	AutomaticSize = :Y;
 	BackgroundColor3 = $SurfaceBackgroundColor;
