@@ -1490,6 +1490,9 @@
                                 "BlurRadius": {
                                     "String": "$TooltipShadowBlurRadius"
                                 },
+                                "Enabled": {
+                                    "String": "$TooltipShadowEnabled"
+                                },
                                 "Offset": {
                                     "String": "$TooltipShadowOffset"
                                 },

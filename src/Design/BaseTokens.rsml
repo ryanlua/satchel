@@ -73,6 +73,7 @@ $TooltipCornerRadius = $SmallCornerRadius;
 $TooltipFontFace = $FontFace;
 $TooltipPadding = 4px;
 $TooltipShadowBlurRadius = 4px;
+$TooltipShadowEnabled = true;
 $TooltipShadowOffset = udim2 (0px, 2px);
 $TooltipShadowSpread = udim2 (0px, 1px);
 $TooltipShadowTransparency = 0.5;

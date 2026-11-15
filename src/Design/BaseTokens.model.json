@@ -267,6 +267,9 @@
                 4
             ]
         },
+        "TooltipShadowEnabled": {
+            "Bool": true
+        },
         "TooltipShadowOffset": {
             "UDim2": [
                 [

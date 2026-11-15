@@ -260,6 +260,7 @@ TextLabel.Tooltip {
 
 	::UIShadow {
 		BlurRadius = $TooltipShadowBlurRadius;
+		Enabled = $TooltipShadowEnabled;
 		Offset = $TooltipShadowOffset;
 		Spread = $TooltipShadowSpread;
 		Transparency = $TooltipShadowTransparency;

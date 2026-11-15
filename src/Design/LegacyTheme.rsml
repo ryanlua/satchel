@@ -43,3 +43,4 @@ $InventoryBackgroundTransparency = $BackgroundTransparency;
 -- Tooltip
 $TooltipBackgroundColor = #666666;
 $TooltipPadding = 2px;
+$TooltipShadowEnabled = false;
