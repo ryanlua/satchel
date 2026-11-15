@@ -4,9 +4,12 @@ const Icon = require("./Satchel/Packages/topbarplus")
 const Satchel = require("./Satchel")
 
 const icon = Icon.new()
-icon:modifyTheme({ "IconLabel", "AutoLocalize", false }) -- Don't translate font icon
-const iconLabelContainer = icon:getInstance("IconLabelContainer") :: Instance
-iconLabelContainer:SetAttribute("TargetWidth", 0) -- Force minimum width
+icon:modifyTheme({
+	{ "IconLabel", "AutoLocalize", false },
+	{ "PaddingLeft", "Size", UDim2.new(0, 4, 1, 0) },
+	{ "PaddingRight", "Size", UDim2.new(0, 4, 1, 0) },
+	{ "IconLabel", "TextSize", 24 },
+})
 icon:setLabel("two-arrows-left-right")
 icon:align("Right")
 icon:setTextSize(24)
