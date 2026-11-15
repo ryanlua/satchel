@@ -2,25 +2,6 @@
     "className": "StyleSheet",
     "id": "Design\\BaseTokens.rsml",
     "attributes": {
-        "ContainerBackgroundColor": {
-            "String": "$BackgroundColor"
-        },
-        "ContainerBackgroundTransparency": {
-            "Float64": 0.2
-        },
-        "ContainerCornerRadius": {
-            "String": "$SmallCornerRadius"
-        },
-        "ContainerStrokeColor": {
-            "Color3": [
-                1.0,
-                1.0,
-                1.0
-            ]
-        },
-        "ContainerStrokeTransparency": {
-            "Float64": 0.8
-        },
         "HintFontFace": {
             "String": "$FontFace"
         },
@@ -45,6 +26,15 @@
                 0.0,
                 13
             ]
+        },
+        "SearchBackgroundColor": {
+            "String": "$BackgroundColor"
+        },
+        "SearchBackgroundTransparency": {
+            "Float64": 0.2
+        },
+        "SearchCornerRadius": {
+            "String": "$SmallCornerRadius"
         },
         "SearchFontFace": {
             "String": "$FontFace"
@@ -85,6 +75,16 @@
                     30
                 ]
             ]
+        },
+        "SearchStrokeColor": {
+            "Color3": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "SearchStrokeTransparency": {
+            "Float64": 0.8
         },
         "SearchTextColor": {
             "String": "$TextColor"

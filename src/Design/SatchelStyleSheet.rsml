@@ -265,8 +265,8 @@ TextLabel.Tooltip {
 }
 
 TextBox.Searchbar {
-	BackgroundColor3 = $ContainerBackgroundColor;
-	BackgroundTransparency = $ContainerBackgroundTransparency;
+	BackgroundColor3 = $SearchBackgroundColor;
+	BackgroundTransparency = $SearchBackgroundTransparency;
 	ClearTextOnFocus = false;
 	ClipsDescendants = true;
 	FontFace = $SearchFontFace;
@@ -280,11 +280,11 @@ TextBox.Searchbar {
 
 	::UIStroke {
 		ApplyStrokeMode = :Border;
-		Color = $ContainerStrokeColor;
-		Transparency = $ContainerStrokeTransparency;
+		Color = $SearchStrokeColor;
+		Transparency = $SearchStrokeTransparency;
 	}
 
-	CornerRadius! ($ContainerCornerRadius);
+	CornerRadius! ($SearchCornerRadius);
 
 	>ImageButton {
 		AnchorPoint = vec2 (1, 0.5);

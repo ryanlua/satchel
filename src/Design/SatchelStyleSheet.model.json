@@ -1490,10 +1490,10 @@
                 "PropertiesSerialize": {
                     "Attributes": {
                         "BackgroundColor3": {
-                            "String": "$ContainerBackgroundColor"
+                            "String": "$SearchBackgroundColor"
                         },
                         "BackgroundTransparency": {
-                            "String": "$ContainerBackgroundTransparency"
+                            "String": "$SearchBackgroundTransparency"
                         },
                         "ClearTextOnFocus": {
                             "Bool": false
@@ -1552,10 +1552,10 @@
                                     }
                                 },
                                 "Color": {
-                                    "String": "$ContainerStrokeColor"
+                                    "String": "$SearchStrokeColor"
                                 },
                                 "Transparency": {
-                                    "String": "$ContainerStrokeTransparency"
+                                    "String": "$SearchStrokeTransparency"
                                 }
                             }
                         },
@@ -1576,7 +1576,7 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "CornerRadius": {
-                                    "String": "$ContainerCornerRadius"
+                                    "String": "$SearchCornerRadius"
                                 }
                             }
                         },

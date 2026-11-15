@@ -12,13 +12,6 @@ $SlotGap = 5px;
 $SlotSize = udim2 (60px, 60px);
 $TenFootSlotSize = udim2 (100px, 100px);
 
--- Container
-$ContainerBackgroundColor = $BackgroundColor;
-$ContainerBackgroundTransparency = 0.2;
-$ContainerCornerRadius = $SmallCornerRadius;
-$ContainerStrokeColor = #FFFFFF;
-$ContainerStrokeTransparency = 0.8;
-
 -- Hints
 $HintFontFace = $FontFace;
 $HintTenFootInterfaceTextSize = $TenFootInterfaceTextSize;
@@ -26,11 +19,16 @@ $HintTextColor = $TextColor;
 $HintTextSize = $TextSize;
 
 -- Search
+$SearchBackgroundColor = $BackgroundColor;
+$SearchBackgroundTransparency = 0.2;
+$SearchCornerRadius = $SmallCornerRadius;
 $SearchFontFace = $FontFace;
 $SearchFrameSize = udim2 (100%, 35px);
 $SearchPadding = 8px;
 $SearchPlaceholderColor = #B2B2B2;
 $SearchSize = udim2 (100%, 30px);
+$SearchStrokeColor = #FFFFFF;
+$SearchStrokeTransparency = 0.8;
 $SearchTextColor = $TextColor;
 $SearchTextSize = $TextSize;
 $SearchTextStrokeTransparency = $TextStrokeTransparency;
