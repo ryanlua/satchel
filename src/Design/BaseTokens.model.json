@@ -18,7 +18,7 @@
             "String": "$BackgroundColor"
         },
         "InventoryBackgroundTransparency": {
-            "Float64": 0.3
+            "String": "$BackgroundTransparency"
         },
         "InventoryCornerRadius": {
             "String": "$CornerRadius"
@@ -129,14 +129,10 @@
             "String": "$TextStrokeTransparency"
         },
         "SlotBackgroundColor": {
-            "Color3": [
-                0.09803922,
-                0.105882354,
-                0.11372549
-            ]
+            "String": "$BackgroundColor"
         },
         "SlotBackgroundTransparency": {
-            "Float64": 0.3
+            "String": "$BackgroundTransparency"
         },
         "SlotCornerRadius": {
             "String": "$SmallCornerRadius"

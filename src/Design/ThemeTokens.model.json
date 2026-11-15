@@ -9,6 +9,9 @@
                 0.11372549
             ]
         },
+        "BackgroundTransparency": {
+            "Float64": 0.3
+        },
         "CornerRadius": {
             "UDim": [
                 0.0,

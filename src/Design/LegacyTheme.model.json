@@ -40,9 +40,6 @@
         "HintTextSize": {
             "Float64": 24.0
         },
-        "InventoryBackgroundTransparency": {
-            "String": "$BackgroundTransparency"
-        },
         "SearchAnchorPoint": {
             "Vector2": [
                 1.0,
@@ -101,16 +98,6 @@
         },
         "SearchTextSize": {
             "Float64": 24.0
-        },
-        "SlotBackgroundColor": {
-            "Color3": [
-                0.12156863,
-                0.12156863,
-                0.12156863
-            ]
-        },
-        "SlotBackgroundTransparency": {
-            "String": "$BackgroundTransparency"
         },
         "SlotEquipStrokeColor": {
             "Color3": [

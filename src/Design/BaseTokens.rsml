@@ -1,7 +1,20 @@
 @derive "./ThemeTokens";
 
--- General
 $StyleCategory = "Tokens";
+
+-- Hints
+$HintFontFace = $FontFace;
+$HintTenFootInterfaceTextSize = $TenFootInterfaceTextSize;
+$HintTextColor = $TextColor;
+$HintTextSize = $TextSize;
+
+-- Inventory
+$InventoryBackgroundColor = $BackgroundColor;
+$InventoryBackgroundTransparency = $BackgroundTransparency;
+$InventoryCornerRadius = $CornerRadius;
+$InventoryPadding = 5px;
+$InventoryScrollbarColor = #D0D8FA;
+$InventoryScrollbarGutter = 13px;
 
 -- Layout
 -- useSlotMetrics reads these to size the hotbar and inventory.
@@ -9,12 +22,6 @@ $StyleCategory = "Tokens";
 $SlotGap = 5px;
 $SlotSize = udim2 (60px, 60px);
 $TenFootSlotSize = udim2 (100px, 100px);
-
--- Hints
-$HintFontFace = $FontFace;
-$HintTenFootInterfaceTextSize = $TenFootInterfaceTextSize;
-$HintTextColor = $TextColor;
-$HintTextSize = $TextSize;
 
 -- Search
 $SearchAnchorPoint = vec2 (0, 0);
@@ -34,8 +41,8 @@ $SearchTextSize = $TextSize;
 $SearchTextStrokeTransparency = $TextStrokeTransparency;
 
 -- Slots
-$SlotBackgroundColor = #191B1D;
-$SlotBackgroundTransparency = 0.3;
+$SlotBackgroundColor = $BackgroundColor;
+$SlotBackgroundTransparency = $BackgroundTransparency;
 $SlotCornerRadius = $SmallCornerRadius;
 $SlotEquipStrokeColor = #335FFF;
 $SlotEquipStrokePosition = Enum.BorderStrokePosition.Center;
@@ -60,14 +67,6 @@ $SlotTextSize = $TextSize;
 $SlotTextStrokeColor = $TextStrokeColor;
 $SlotTextStrokeTransparency = $TextStrokeTransparency;
 $SlotUnlockBackgroundColor = $SlotBackgroundColor;
-
--- Inventory
-$InventoryBackgroundColor = $BackgroundColor;
-$InventoryBackgroundTransparency = 0.3;
-$InventoryCornerRadius = $CornerRadius;
-$InventoryPadding = 5px;
-$InventoryScrollbarColor = #D0D8FA;
-$InventoryScrollbarGutter = 13px;
 
 -- Tooltip
 $TooltipBackgroundColor = #262830;

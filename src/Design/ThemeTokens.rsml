@@ -1,9 +1,11 @@
+$StyleCategory = "Tokens";
+
 -- General
 $BackgroundColor = #191B1D;
+$BackgroundTransparency = 0.3;
 $CornerRadius = 8px;
 $FontFace = font ("BuilderSans", :Medium);
 $SmallCornerRadius = 4px;
-$StyleCategory = "Tokens";
 
 -- Text
 $SmallTextSize = 15;

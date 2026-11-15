@@ -31,8 +31,6 @@ $SearchStrokeTransparency = 1;
 $SearchTextSize = 24;
 
 -- Slots
-$SlotBackgroundColor = #1F1F1F;
-$SlotBackgroundTransparency = $BackgroundTransparency;
 $SlotEquipStrokeColor = #5A8EE9;
 $SlotEquipStrokePosition = Enum.BorderStrokePosition.Inner;
 $SlotEquipStrokeThickness = 5;
@@ -40,9 +38,6 @@ $SlotNumberPaddingLeft = -4px;
 $SlotNumberPaddingTop = -8px;
 $SlotPadding = 6px;
 $SlotUnlockBackgroundColor = #313131;
-
--- Inventory
-$InventoryBackgroundTransparency = $BackgroundTransparency;
 
 -- Tooltip
 $TooltipBackgroundColor = #666666;
