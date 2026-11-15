@@ -1,20 +1,32 @@
 @derive "./ThemeTokens";
 
+-- getSlotMetrics reads these to size the hotbar and inventory.
+-- Hotbar padding uses the same gap, so row width is count * (slot + gap) + gap.
+$ScrollbarColor = #D0D8FA;
+$ScrollbarGutter = 13px;
+$SlotGap = 5px;
+$SlotSize = udim2 (60px, 60px);
+$TenFootSlotSize = udim2 (100px, 100px);
+
 $ContainerBackgroundColor = $BackgroundColor;
 $ContainerBackgroundTransparency = 0.2;
 $ContainerCornerRadius = $SmallCornerRadius;
 $ContainerStrokeColor = #FFFFFF;
 $ContainerStrokeTransparency = 0.8;
+
 $HintFontFace = $FontFace;
 $HintTenFootInterfaceTextSize = $TenFootInterfaceTextSize;
 $HintTextColor = $TextColor;
 $HintTextSize = $TextSize;
+
 $SearchFontFace = $FontFace;
 $SearchPadding = 8px;
 $SearchPlaceholderColor = #B2B2B2;
+$SearchSize = udim2 (100%, 30px);
 $SearchTextColor = $TextColor;
 $SearchTextSize = $TextSize;
 $SearchTextStrokeTransparency = $TextStrokeTransparency;
+
 $SlotBackgroundColor = #191B1D;
 $SlotBackgroundTransparency = 0.3;
 $SlotCornerRadius = $SmallCornerRadius;
@@ -29,24 +41,28 @@ $SlotNumberTextColor = $TextColor;
 $SlotNumberTextSize = $SmallTextSize;
 $SlotPadding = 5px;
 $SlotPressStrokeColor = #FFFFFF;
+$SlotPressStrokeThickness = 2;
 $SlotTextColor = $TextColor;
 $SlotTextSize = $TextSize;
 $SlotTextStrokeColor = $TextStrokeColor;
 $SlotTextStrokeTransparency = $TextStrokeTransparency;
 $SlotUnlockBackgroundColor = $SlotBackgroundColor;
+
 $StyleCategory = "Tokens";
+
 $SurfaceBackgroundColor = $BackgroundColor;
 $SurfaceBackgroundTransparency = 0.3;
 $SurfaceCornerRadius = $CornerRadius;
 $SurfacePadding = 5px;
-$ToolTipBackgroundColor = #262830;
-$ToolTipBackgroundTranparency = 0;
-$ToolTipCornerRadius = $SmallCornerRadius;
-$ToolTipFontFace = $FontFace;
-$ToolTipPadding = 4px;
-$ToolTipShadowBlurRadius = 4px;
-$ToolTipShadowOffset = udim2 (0px, 2px);
-$ToolTipShadowSpread = udim2 (0px, 1px);
-$ToolTipShadowTransparency = 0.5;
-$ToolTipTextColor = $TextColor;
-$ToolTipTextSize = $SmallTextSize;
+
+$TooltipBackgroundColor = #262830;
+$TooltipBackgroundTransparency = 0;
+$TooltipCornerRadius = $SmallCornerRadius;
+$TooltipFontFace = $FontFace;
+$TooltipPadding = 4px;
+$TooltipShadowBlurRadius = 4px;
+$TooltipShadowOffset = udim2 (0px, 2px);
+$TooltipShadowSpread = udim2 (0px, 1px);
+$TooltipShadowTransparency = 0.5;
+$TooltipTextColor = $TextColor;
+$TooltipTextSize = $SmallTextSize;

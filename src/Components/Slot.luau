@@ -42,8 +42,6 @@ const function Slot(props: Props)
 	const slotIndex = props.slotIndex or order
 	const slotNumber = if order >= 1 and order <= 10 then tostring(order % 10) else ""
 
-	const hintVisible = props.hint == true and props.forceHintVisible
-
 	const tags = "Slot"
 		.. (if props.unlocked then " Unlocked" else "")
 		.. (if props.equipped then " Equipped" else "")
@@ -85,8 +83,9 @@ const function Slot(props: Props)
 	}, {
 		NumberHint = e("TextLabel", {
 			Text = slotNumber,
-			Visible = hintVisible,
-			[React.Tag] = "SlotNumber",
+			-- Inventory slots are not numbered. Hotbar numbers follow the stylesheet unless forced on.
+			Visible = if props.hint then nil else false,
+			[React.Tag] = "SlotNumber" .. (if props.forceHintVisible then " Visible" else ""),
 		}),
 		TextureIcon = e("ImageLabel", {
 			Image = itemImage or "",

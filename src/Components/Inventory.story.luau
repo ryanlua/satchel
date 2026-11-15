@@ -1,6 +1,9 @@
 const React = require("../../react")
 
 const Inventory = require("./Inventory")
+const getSlotMetrics = require("../Design/getSlotMetrics")
+
+const metrics = getSlotMetrics(false)
 
 const e = React.createElement
 
@@ -27,7 +30,7 @@ return {
 
 		return e(Inventory, {
 			rows = props.controls.rows,
-			width = 655,
+			width = metrics.rowWidth(10),
 			items = {
 				[1] = {
 					item = tool,

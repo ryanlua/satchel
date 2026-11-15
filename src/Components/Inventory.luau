@@ -2,12 +2,14 @@ const React = require("../../react")
 
 const Searchbar = require("./Searchbar")
 const Slot = require("./Slot")
+const getSlotMetrics = require("../Design/getSlotMetrics")
 
 const e = React.createElement
 
 export type Props = {
 	width: number?,
-	slotPitch: number?,
+	height: number?,
+	scrollbarGutter: number?,
 	slots: number?,
 	rows: number?,
 	items: { [number]: { item: BackpackItem, equipped: boolean } }?,
@@ -24,7 +26,9 @@ const function Inventory(props: Props)
 	const width = props.width or 0
 	const hotbarSlots = props.slots or 10
 	const rows = props.rows or 4
-	const height = rows * (props.slotPitch or 65) - 5
+	const metrics = getSlotMetrics(false)
+	const height = props.height or metrics.rowsHeight(rows)
+	const scrollbarGutter = props.scrollbarGutter or metrics.scrollbarGutter
 
 	const children: any = {}
 
@@ -59,7 +63,7 @@ const function Inventory(props: Props)
 			SearchBox = e(Searchbar),
 		}),
 		SlotFrame = e("ScrollingFrame", {
-			Size = UDim2.new(1, 13, 0, height),
+			Size = UDim2.new(1, scrollbarGutter, 0, height),
 		}, children),
 	})
 end

@@ -45,6 +45,30 @@
             },
             "children": [
                 {
+                    "name": "@PreferredInputGamepad, .Visible",
+                    "className": "StyleRule",
+                    "attributes": {},
+                    "properties": {
+                        "Priority": {
+                            "Int32": 1
+                        },
+                        "PropertiesSerialize": {
+                            "Attributes": {
+                                "Visible": {
+                                    "Bool": true
+                                }
+                            }
+                        },
+                        "PropertyTransitionsSerialize": {
+                            "Attributes": {}
+                        },
+                        "Selector": {
+                            "String": "@PreferredInputGamepad, .Visible"
+                        }
+                    },
+                    "children": []
+                },
+                {
                     "name": "> ImageLabel",
                     "className": "StyleRule",
                     "attributes": {},
@@ -176,30 +200,6 @@
                         }
                     },
                     "children": []
-                },
-                {
-                    "name": "@PreferredInputGamepad, .Visible",
-                    "className": "StyleRule",
-                    "attributes": {},
-                    "properties": {
-                        "Priority": {
-                            "Int32": 1
-                        },
-                        "PropertiesSerialize": {
-                            "Attributes": {
-                                "Visible": {
-                                    "Bool": true
-                                }
-                            }
-                        },
-                        "PropertyTransitionsSerialize": {
-                            "Attributes": {}
-                        },
-                        "Selector": {
-                            "String": "@PreferredInputGamepad, .Visible"
-                        }
-                    },
-                    "children": []
                 }
             ]
         },
@@ -223,16 +223,7 @@
                             "String": "$SlotFontFace"
                         },
                         "Size": {
-                            "UDim2": [
-                                [
-                                    0.0,
-                                    60
-                                ],
-                                [
-                                    0.0,
-                                    60
-                                ]
-                            ]
+                            "String": "$SlotSize"
                         },
                         "TextColor3": {
                             "String": "$SlotTextColor"
@@ -335,7 +326,7 @@
                                             "String": "$SlotPressStrokeColor"
                                         },
                                         "Thickness": {
-                                            "Float64": 2.0
+                                            "String": "$SlotPressStrokeThickness"
                                         }
                                     }
                                 },
@@ -774,7 +765,7 @@
                             },
                             "children": [
                                 {
-                                    "name": "@PreferredInputKeyboardAndMouse",
+                                    "name": "@PreferredInputKeyboardAndMouse, .Visible",
                                     "className": "StyleRule",
                                     "attributes": {},
                                     "properties": {
@@ -792,33 +783,12 @@
                                             "Attributes": {}
                                         },
                                         "Selector": {
-                                            "String": "@PreferredInputKeyboardAndMouse"
+                                            "String": "@PreferredInputKeyboardAndMouse, .Visible"
                                         }
                                     },
                                     "children": []
                                 }
                             ]
-                        },
-                        {
-                            "name": ".Tooltip",
-                            "className": "StyleRule",
-                            "attributes": {},
-                            "properties": {
-                                "PropertiesSerialize": {
-                                    "Attributes": {
-                                        "Visible": {
-                                            "Bool": false
-                                        }
-                                    }
-                                },
-                                "PropertyTransitionsSerialize": {
-                                    "Attributes": {}
-                                },
-                                "Selector": {
-                                    "String": ".Tooltip"
-                                }
-                            },
-                            "children": []
                         }
                     ]
                 },
@@ -831,9 +801,6 @@
                             "Attributes": {
                                 "BackgroundTransparency": {
                                     "Float64": 1.0
-                                },
-                                "Image": {
-                                    "String": ""
                                 },
                                 "Size": {
                                     "UDim2": [
@@ -1010,10 +977,7 @@
                                     }
                                 },
                                 "Padding": {
-                                    "UDim": [
-                                        0.0,
-                                        5
-                                    ]
+                                    "String": "$SlotGap"
                                 },
                                 "SortOrder": {
                                     "EnumItem": {
@@ -1046,16 +1010,10 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "PaddingLeft": {
-                                    "UDim": [
-                                        0.0,
-                                        5
-                                    ]
+                                    "String": "$SlotGap"
                                 },
                                 "PaddingRight": {
-                                    "UDim": [
-                                        0.0,
-                                        5
-                                    ]
+                                    "String": "$SlotGap"
                                 }
                             }
                         },
@@ -1219,18 +1177,6 @@
                         },
                         "BackgroundTransparency": {
                             "Float64": 1.0
-                        },
-                        "Size": {
-                            "UDim2": [
-                                [
-                                    1.0,
-                                    0
-                                ],
-                                [
-                                    0.0,
-                                    0
-                                ]
-                            ]
                         }
                     }
                 },
@@ -1309,13 +1255,13 @@
                             }
                         },
                         "BackgroundColor3": {
-                            "String": "$ToolTipBackgroundColor"
+                            "String": "$TooltipBackgroundColor"
                         },
                         "BackgroundTransparency": {
-                            "String": "$ToolTipBackgroundTranparency"
+                            "String": "$TooltipBackgroundTransparency"
                         },
                         "FontFace": {
-                            "String": "$ToolTipFontFace"
+                            "String": "$TooltipFontFace"
                         },
                         "Position": {
                             "UDim2": [
@@ -1342,10 +1288,10 @@
                             ]
                         },
                         "TextColor3": {
-                            "String": "$ToolTipTextColor"
+                            "String": "$TooltipTextColor"
                         },
                         "TextSize": {
-                            "String": "$ToolTipTextSize"
+                            "String": "$TooltipTextSize"
                         }
                     }
                 },
@@ -1365,16 +1311,16 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "PaddingBottom": {
-                                    "String": "$ToolTipPadding"
+                                    "String": "$TooltipPadding"
                                 },
                                 "PaddingLeft": {
-                                    "String": "$ToolTipPadding"
+                                    "String": "$TooltipPadding"
                                 },
                                 "PaddingRight": {
-                                    "String": "$ToolTipPadding"
+                                    "String": "$TooltipPadding"
                                 },
                                 "PaddingTop": {
-                                    "String": "$ToolTipPadding"
+                                    "String": "$TooltipPadding"
                                 }
                             }
                         },
@@ -1395,7 +1341,7 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "CornerRadius": {
-                                    "String": "$ToolTipCornerRadius"
+                                    "String": "$TooltipCornerRadius"
                                 }
                             }
                         },
@@ -1416,16 +1362,16 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "BlurRadius": {
-                                    "String": "$ToolTipShadowBlurRadius"
+                                    "String": "$TooltipShadowBlurRadius"
                                 },
                                 "Offset": {
-                                    "String": "$ToolTipShadowOffset"
+                                    "String": "$TooltipShadowOffset"
                                 },
                                 "Spread": {
-                                    "String": "$ToolTipShadowSpread"
+                                    "String": "$TooltipShadowSpread"
                                 },
                                 "Transparency": {
-                                    "String": "$ToolTipShadowTransparency"
+                                    "String": "$TooltipShadowTransparency"
                                 }
                             }
                         },
@@ -1469,19 +1415,7 @@
                             "String": "Search"
                         },
                         "Size": {
-                            "UDim2": [
-                                [
-                                    1.0,
-                                    0
-                                ],
-                                [
-                                    0.0,
-                                    30
-                                ]
-                            ]
-                        },
-                        "Text": {
-                            "String": ""
+                            "String": "$SearchSize"
                         },
                         "TextColor3": {
                             "String": "$SearchTextColor"
@@ -1621,7 +1555,17 @@
                             "attributes": {},
                             "properties": {
                                 "PropertiesSerialize": {
-                                    "Attributes": {}
+                                    "Attributes": {
+                                        "AspectRatio": {
+                                            "Float64": 1.0
+                                        },
+                                        "AspectType": {
+                                            "EnumItem": {
+                                                "type": "AspectType",
+                                                "value": 0
+                                            }
+                                        }
+                                    }
                                 },
                                 "PropertyTransitionsSerialize": {
                                     "Attributes": {}
@@ -1677,16 +1621,7 @@
                             "Float64": 1.0
                         },
                         "Size": {
-                            "UDim2": [
-                                [
-                                    0.0,
-                                    60
-                                ],
-                                [
-                                    0.0,
-                                    60
-                                ]
-                            ]
+                            "String": "$SlotSize"
                         },
                         "Visible": {
                             "Bool": false
@@ -1824,18 +1759,6 @@
                         },
                         "BackgroundTransparency": {
                             "String": "$SurfaceBackgroundTransparency"
-                        },
-                        "Size": {
-                            "UDim2": [
-                                [
-                                    1.0,
-                                    0
-                                ],
-                                [
-                                    0.0,
-                                    0
-                                ]
-                            ]
                         }
                     }
                 },
@@ -1930,11 +1853,7 @@
                                     }
                                 },
                                 "ScrollBarImageColor3": {
-                                    "Color3": [
-                                        0.8156863,
-                                        0.84705883,
-                                        0.98039216
-                                    ]
+                                    "String": "$ScrollbarColor"
                                 },
                                 "ScrollBarThickness": {
                                     "Float64": 8.0
@@ -1947,18 +1866,6 @@
                                 },
                                 "Selectable": {
                                     "Bool": false
-                                },
-                                "Size": {
-                                    "UDim2": [
-                                        [
-                                            1.0,
-                                            13
-                                        ],
-                                        [
-                                            0.0,
-                                            0
-                                        ]
-                                    ]
                                 }
                             }
                         },
@@ -1984,10 +1891,7 @@
                                             }
                                         },
                                         "Padding": {
-                                            "UDim": [
-                                                0.0,
-                                                5
-                                            ]
+                                            "String": "$SlotGap"
                                         },
                                         "SortOrder": {
                                             "EnumItem": {
@@ -2042,12 +1946,18 @@
                     ]
                 },
                 {
-                    "name": "> Frame",
+                    "name": "> #SearchFrame",
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
                         "PropertiesSerialize": {
                             "Attributes": {
+                                "AutomaticSize": {
+                                    "EnumItem": {
+                                        "type": "AutomaticSize",
+                                        "value": 2
+                                    }
+                                },
                                 "BackgroundTransparency": {
                                     "Float64": 1.0
                                 },
@@ -2059,7 +1969,7 @@
                                         ],
                                         [
                                             0.0,
-                                            35
+                                            0
                                         ]
                                     ]
                                 }
@@ -2069,7 +1979,7 @@
                             "Attributes": {}
                         },
                         "Selector": {
-                            "String": "> Frame"
+                            "String": "> #SearchFrame"
                         }
                     },
                     "children": [
@@ -2131,16 +2041,7 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "Size": {
-                                    "UDim2": [
-                                        [
-                                            0.0,
-                                            100
-                                        ],
-                                        [
-                                            0.0,
-                                            100
-                                        ]
-                                    ]
+                                    "String": "$TenFootSlotSize"
                                 },
                                 "TextSize": {
                                     "String": "$TenFootInterfaceTextSize"
@@ -2200,7 +2101,7 @@
                     "children": []
                 },
                 {
-                    "name": ">> .Inventory > Frame",
+                    "name": ">> #SearchFrame",
                     "className": "StyleRule",
                     "attributes": {},
                     "properties": {
@@ -2215,7 +2116,7 @@
                             "Attributes": {}
                         },
                         "Selector": {
-                            "String": ">> .Inventory > Frame"
+                            "String": ">> #SearchFrame"
                         }
                     },
                     "children": []
@@ -2228,16 +2129,7 @@
                         "PropertiesSerialize": {
                             "Attributes": {
                                 "Size": {
-                                    "UDim2": [
-                                        [
-                                            0.0,
-                                            100
-                                        ],
-                                        [
-                                            0.0,
-                                            100
-                                        ]
-                                    ]
+                                    "String": "$TenFootSlotSize"
                                 }
                             }
                         },

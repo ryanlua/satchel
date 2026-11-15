@@ -19,7 +19,8 @@ const function HotbarHint(props: Props)
 
 	return e("Frame", {
 		LayoutOrder = props.order,
-		Visible = props.visible,
+		-- False hides the hint with the hotbar. Otherwise the stylesheet shows it for gamepad only.
+		Visible = if props.visible == false then false else nil,
 		[React.Tag] = tags,
 	}, {
 		KeyCode = e("ImageLabel", {

@@ -1,10 +1,20 @@
 @derive "./DefaultTheme";
 
+-- Gamepad hints stay hidden until that input is preferred, unless tagged Visible.
+@macro GamepadHintVisible {
+	Visible = false;
+
+	@PreferredInputGamepad,.Visible {
+		@priority 1;
+		Visible = true;
+	}
+}
+
 .InventoryHint {
 	AutomaticSize = :X;
 	BackgroundTransparency = 1;
+	GamepadHintVisible!();
 	Size = udim2 (0px, 40px);
-	Visible = false;
 
 	>ImageLabel {
 		AnchorPoint = vec2 (0, 0.5);
@@ -27,11 +37,6 @@
 		TextColor3 = $HintTextColor;
 		TextSize = $HintTextSize;
 	}
-
-	@PreferredInputGamepad,.Visible {
-		@priority 1;
-		Visible = true;
-	}
 }
 
 TextButton.Slot {
@@ -39,13 +44,14 @@ TextButton.Slot {
 	BackgroundColor3 = $SlotBackgroundColor;
 	BackgroundTransparency = $SlotBackgroundTransparency;
 	FontFace = $SlotFontFace;
-	Size = udim2 (60px, 60px);
+	Size = $SlotSize;
 	TextColor3 = $SlotTextColor;
 	TextSize = $SlotTextSize;
 	TextStrokeColor3 = $SlotTextStrokeColor;
 	TextStrokeTransparency = $SlotTextStrokeTransparency;
 	TextTruncate = :SplitWord;
 
+	-- Equip and press can show together, so they are separate strokes.
 	>UIStroke {
 		ApplyStrokeMode = :Border;
 		Enabled = false;
@@ -59,7 +65,7 @@ TextButton.Slot {
 		.PressStroke {
 			BorderStrokePosition = :Inner;
 			Color = $SlotPressStrokeColor;
-			Thickness = 2;
+			Thickness = $SlotPressStrokeThickness;
 		}
 	}
 
@@ -122,10 +128,10 @@ TextButton.Slot {
 		}
 	}
 
-	::UICorner {
-		CornerRadius = $SlotCornerRadius;
-	}
+	CornerRadius! ($SlotCornerRadius);
 
+	-- SlotNumber and the drag tooltip are both labels. Hide them here;
+	-- keyboard input reveals the number, and .Dragging reveals the tooltip.
 	>TextLabel {
 		Size = udim2 (0px, 0px);
 		Visible = false;
@@ -142,33 +148,21 @@ TextButton.Slot {
 			TextYAlignment = :Top;
 			Visible = false;
 
-			@PreferredInputKeyboardAndMouse {
+			@PreferredInputKeyboardAndMouse,.Visible {
 				@priority 1;
 				Visible = true;
 			}
-		}
-
-		.Tooltip {
-			Visible = false;
 		}
 	}
 
 	>ImageLabel {
 		BackgroundTransparency = 1;
-		Image = "";
 		Size = udim2 (100%, 100%);
 
-		::UICorner {
-			CornerRadius = $SlotIconCornerRadius;
-		}
+		CornerRadius! ($SlotIconCornerRadius);
 	}
 
-	::UIPadding {
-		PaddingBottom = $SlotPadding;
-		PaddingLeft = $SlotPadding;
-		PaddingRight = $SlotPadding;
-		PaddingTop = $SlotPadding;
-	}
+	Padding! ($SlotPadding);
 }
 
 .Backpack {
@@ -188,14 +182,14 @@ TextButton.Slot {
 
 	::UIListLayout {
 		FillDirection = :Horizontal;
-		Padding = 5px;
+		Padding = $SlotGap;
 		SortOrder = :LayoutOrder;
 		VerticalAlignment = :Center;
 	}
 
 	::UIPadding {
-		PaddingLeft = 5px;
-		PaddingRight = 5px;
+		PaddingLeft = $SlotGap;
+		PaddingRight = $SlotGap;
 	}
 }
 
@@ -221,10 +215,10 @@ TextButton.Slot {
 	}
 }
 
+-- Width is set in App from getSlotMetrics so hints wrap to the hotbar width.
 .Hints {
 	AutomaticSize = :Y;
 	BackgroundTransparency = 1;
-	Size = udim2 (100%, 0px);
 
 	::UIListLayout {
 		FillDirection = :Horizontal;
@@ -238,30 +232,22 @@ TextButton.Slot {
 TextLabel.Tooltip {
 	AnchorPoint = vec2 (0.5, 1);
 	AutomaticSize = :XY;
-	BackgroundColor3 = $ToolTipBackgroundColor;
-	BackgroundTransparency = $ToolTipBackgroundTranparency;
-	FontFace = $ToolTipFontFace;
+	BackgroundColor3 = $TooltipBackgroundColor;
+	BackgroundTransparency = $TooltipBackgroundTransparency;
+	FontFace = $TooltipFontFace;
 	Position = udim2 (50%, -10px);
 	Size = udim2 (0px, 0px);
-	TextColor3 = $ToolTipTextColor;
-	TextSize = $ToolTipTextSize;
+	TextColor3 = $TooltipTextColor;
+	TextSize = $TooltipTextSize;
 
-	::UIPadding {
-		PaddingBottom = $ToolTipPadding;
-		PaddingLeft = $ToolTipPadding;
-		PaddingRight = $ToolTipPadding;
-		PaddingTop = $ToolTipPadding;
-	}
-
-	::UICorner {
-		CornerRadius = $ToolTipCornerRadius;
-	}
+	Padding! ($TooltipPadding);
+	CornerRadius! ($TooltipCornerRadius);
 
 	::UIShadow {
-		BlurRadius = $ToolTipShadowBlurRadius;
-		Offset = $ToolTipShadowOffset;
-		Spread = $ToolTipShadowSpread;
-		Transparency = $ToolTipShadowTransparency;
+		BlurRadius = $TooltipShadowBlurRadius;
+		Offset = $TooltipShadowOffset;
+		Spread = $TooltipShadowSpread;
+		Transparency = $TooltipShadowTransparency;
 	}
 }
 
@@ -273,8 +259,7 @@ TextBox.Searchbar {
 	FontFace = $SearchFontFace;
 	PlaceholderColor3 = $SearchPlaceholderColor;
 	PlaceholderText = "Search";
-	Size = udim2 (100%, 30px);
-	Text = "";
+	Size = $SearchSize;
 	TextColor3 = $SearchTextColor;
 	TextSize = $SearchTextSize;
 	TextStrokeTransparency = $SearchTextStrokeTransparency;
@@ -286,9 +271,7 @@ TextBox.Searchbar {
 		Transparency = $ContainerStrokeTransparency;
 	}
 
-	::UICorner {
-		CornerRadius = $ContainerCornerRadius;
-	}
+	CornerRadius! ($ContainerCornerRadius);
 
 	>ImageButton {
 		AnchorPoint = vec2 (1, 0.5);
@@ -299,26 +282,18 @@ TextBox.Searchbar {
 		Size = udim2 (100%, 100%);
 
 		::UIAspectRatioConstraint {
+			AspectRatio = 1;
+			AspectType = :FitWithinMaxSize;
 		}
 	}
 
-	::UIPadding {
-		PaddingBottom = $SearchPadding;
-		PaddingLeft = $SearchPadding;
-		PaddingRight = $SearchPadding;
-		PaddingTop = $SearchPadding;
-	}
+	Padding! ($SearchPadding);
 }
 
 .HotbarHint {
 	BackgroundTransparency = 1;
-	Size = udim2 (60px, 60px);
-	Visible = false;
-
-	@PreferredInputGamepad,.Visible {
-		@priority 1;
-		Visible = true;
-	}
+	GamepadHintVisible!();
+	Size = $SlotSize;
 
 	>ImageLabel {
 		AnchorPoint = vec2 (0.5, 0.5);
@@ -333,15 +308,13 @@ TextBox.Searchbar {
 	}
 }
 
+-- Width is set in Inventory from getSlotMetrics. Height follows the search row and the scrolling frame.
 .Inventory {
 	AutomaticSize = :Y;
 	BackgroundColor3 = $SurfaceBackgroundColor;
 	BackgroundTransparency = $SurfaceBackgroundTransparency;
-	Size = udim2 (100%, 0px);
 
-	::UICorner {
-		CornerRadius = $SurfaceCornerRadius;
-	}
+	CornerRadius! ($SurfaceCornerRadius);
 
 	::UIListLayout {
 		Padding = 1px;
@@ -353,30 +326,25 @@ TextBox.Searchbar {
 		BorderSizePixel = 0;
 		CanvasSize = udim2 (0px, 0px);
 		ElasticBehavior = :Always;
-		ScrollBarImageColor3 = #D0D8FA;
+		ScrollBarImageColor3 = $ScrollbarColor;
 		ScrollBarThickness = 8;
 		ScrollingDirection = :Y;
 		Selectable = false;
-		Size = udim2 (100% + 13px, 0px);
 
 		::UIListLayout {
 			FillDirection = :Horizontal;
-			Padding = 5px;
+			Padding = $SlotGap;
 			SortOrder = :LayoutOrder;
 			Wraps = true;
 		}
 
-		::UIPadding {
-			PaddingBottom = $SurfacePadding;
-			PaddingLeft = $SurfacePadding;
-			PaddingRight = $SurfacePadding;
-			PaddingTop = $SurfacePadding;
-		}
+		Padding! ($SurfacePadding);
 	}
 
-	>Frame {
+	>#SearchFrame {
+		AutomaticSize = :Y;
 		BackgroundTransparency = 1;
-		Size = udim2 (100%, 35px);
+		Size = udim2 (100%, 0px);
 
 		::UIPadding {
 			PaddingLeft = $SurfacePadding;
@@ -390,7 +358,7 @@ TextBox.Searchbar {
 	@priority 1;
 
 	>> TextButton.Slot {
-		Size = udim2 (100px, 100px);
+		Size = $TenFootSlotSize;
 		TextSize = $TenFootInterfaceTextSize;
 
 		>TextLabel.SlotNumber {
@@ -402,12 +370,12 @@ TextBox.Searchbar {
 		TextSize = $TenFootInterfaceSmallTextSize;
 	}
 
-	>> .Inventory >Frame {
+	>> #SearchFrame {
 		Visible = false;
 	}
 
 	>> .HotbarHint {
-		Size = udim2 (100px, 100px);
+		Size = $TenFootSlotSize;
 	}
 
 	>> .InventoryHint {

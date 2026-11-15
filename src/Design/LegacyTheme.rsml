@@ -22,5 +22,5 @@ $TenFootInterfaceSmallTextSize = 24;
 $TenFootInterfaceTextSize = 24;
 $TextSize = 14;
 $TextStrokeTransparency = 1;
-$ToolTipBackgroundColor = #666666;
-$ToolTipPadding = 2px;
+$TooltipBackgroundColor = #666666;
+$TooltipPadding = 2px;

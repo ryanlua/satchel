@@ -7,6 +7,7 @@ const HotbarHint = require("./HotbarHint")
 const InventoryHint = require("./InventoryHint")
 const Slot = require("./Slot")
 const Tooltip = require("./Tooltip")
+const useSlotMetrics = require("./useSlotMetrics")
 
 const DOUBLE_CLICK_TIME = 0.5
 const DRAG_THRESHOLD = 4
@@ -129,9 +130,8 @@ end
 
 const function App(props: Props)
 	const slotCount = props.slots or 10
-	-- Slot size plus padding, must match the slot sizes in SatchelStyleSheet
-	const slotPitch = if props.tenFootInterface then 105 else 65
-	const width = slotCount * slotPitch + 5
+	const metrics = useSlotMetrics(props.tenFootInterface)
+	const width = metrics.rowWidth(slotCount)
 	const tenFootInterfaceTag = if props.tenFootInterface then " TenFootInterface" else ""
 	const items: Items = props.items or {}
 
@@ -358,7 +358,7 @@ const function App(props: Props)
 		end
 	end
 
-	const backpackWidth = if opened then width else visibleHotbarSlots * slotPitch + 5
+	const backpackWidth = if opened then width else metrics.rowWidth(visibleHotbarSlots)
 
 	-- Don't show hotbar hints if hotbar has no slots
 	const hotbarVisible = opened or visibleHotbarSlots > 0
@@ -413,7 +413,8 @@ const function App(props: Props)
 					items = props.items,
 					opened = opened,
 					width = width,
-					slotPitch = slotPitch,
+					height = metrics.rowsHeight(props.rows or 4),
+					scrollbarGutter = metrics.scrollbarGutter,
 					draggingItem = if drag and drag.moved then drag.item else nil,
 					swapSourceIndex = props.swapSourceIndex,
 					onSlotActivated = props.onSlotActivated,

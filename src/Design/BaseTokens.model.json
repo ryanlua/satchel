@@ -33,6 +33,19 @@
         "HintTextSize": {
             "String": "$TextSize"
         },
+        "ScrollbarColor": {
+            "Color3": [
+                0.8156863,
+                0.84705883,
+                0.98039216
+            ]
+        },
+        "ScrollbarGutter": {
+            "UDim": [
+                0.0,
+                13
+            ]
+        },
         "SearchFontFace": {
             "String": "$FontFace"
         },
@@ -47,6 +60,18 @@
                 0.69803923,
                 0.69803923,
                 0.69803923
+            ]
+        },
+        "SearchSize": {
+            "UDim2": [
+                [
+                    1.0,
+                    0
+                ],
+                [
+                    0.0,
+                    30
+                ]
             ]
         },
         "SearchTextColor": {
@@ -84,6 +109,12 @@
         "SlotFontFace": {
             "String": "$FontFace"
         },
+        "SlotGap": {
+            "UDim": [
+                0.0,
+                5
+            ]
+        },
         "SlotIconCornerRadius": {
             "UDim": [
                 0.0,
@@ -116,6 +147,21 @@
                 1.0,
                 1.0,
                 1.0
+            ]
+        },
+        "SlotPressStrokeThickness": {
+            "Float64": 2.0
+        },
+        "SlotSize": {
+            "UDim2": [
+                [
+                    0.0,
+                    60
+                ],
+                [
+                    0.0,
+                    60
+                ]
             ]
         },
         "SlotTextColor": {
@@ -151,35 +197,47 @@
                 5
             ]
         },
-        "ToolTipBackgroundColor": {
+        "TenFootSlotSize": {
+            "UDim2": [
+                [
+                    0.0,
+                    100
+                ],
+                [
+                    0.0,
+                    100
+                ]
+            ]
+        },
+        "TooltipBackgroundColor": {
             "Color3": [
                 0.14901961,
                 0.15686275,
                 0.1882353
             ]
         },
-        "ToolTipBackgroundTranparency": {
+        "TooltipBackgroundTransparency": {
             "Float64": 0.0
         },
-        "ToolTipCornerRadius": {
+        "TooltipCornerRadius": {
             "String": "$SmallCornerRadius"
         },
-        "ToolTipFontFace": {
+        "TooltipFontFace": {
             "String": "$FontFace"
         },
-        "ToolTipPadding": {
+        "TooltipPadding": {
             "UDim": [
                 0.0,
                 4
             ]
         },
-        "ToolTipShadowBlurRadius": {
+        "TooltipShadowBlurRadius": {
             "UDim": [
                 0.0,
                 4
             ]
         },
-        "ToolTipShadowOffset": {
+        "TooltipShadowOffset": {
             "UDim2": [
                 [
                     0.0,
@@ -191,7 +249,7 @@
                 ]
             ]
         },
-        "ToolTipShadowSpread": {
+        "TooltipShadowSpread": {
             "UDim2": [
                 [
                     0.0,
@@ -203,13 +261,13 @@
                 ]
             ]
         },
-        "ToolTipShadowTransparency": {
+        "TooltipShadowTransparency": {
             "Float64": 0.5
         },
-        "ToolTipTextColor": {
+        "TooltipTextColor": {
             "String": "$TextColor"
         },
-        "ToolTipTextSize": {
+        "TooltipTextSize": {
             "String": "$SmallTextSize"
         }
     },
