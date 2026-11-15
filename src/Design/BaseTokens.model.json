@@ -151,6 +151,24 @@
         "SlotNumberFontFace": {
             "String": "$FontFace"
         },
+        "SlotNumberPadding": {
+            "UDim": [
+                0.0,
+                0
+            ]
+        },
+        "SlotNumberPaddingBottom": {
+            "String": "$SlotNumberPadding"
+        },
+        "SlotNumberPaddingLeft": {
+            "String": "$SlotNumberPadding"
+        },
+        "SlotNumberPaddingRight": {
+            "String": "$SlotNumberPadding"
+        },
+        "SlotNumberPaddingTop": {
+            "String": "$SlotNumberPadding"
+        },
         "SlotNumberStrokeColor": {
             "String": "$TextStrokeColor"
         },

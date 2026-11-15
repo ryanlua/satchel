@@ -92,6 +92,18 @@
         "SlotEquipStrokeThickness": {
             "Float64": 5.0
         },
+        "SlotNumberPaddingLeft": {
+            "UDim": [
+                -0.0,
+                -4
+            ]
+        },
+        "SlotNumberPaddingTop": {
+            "UDim": [
+                -0.0,
+                -8
+            ]
+        },
         "SlotPadding": {
             "UDim": [
                 0.0,

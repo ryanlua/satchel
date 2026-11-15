@@ -32,6 +32,8 @@ $SlotBackgroundColor = #1F1F1F;
 $SlotBackgroundTransparency = $BackgroundTransparency;
 $SlotEquipStrokeColor = #5A8EE9;
 $SlotEquipStrokeThickness = 5;
+$SlotNumberPaddingLeft = -4px;
+$SlotNumberPaddingTop = -8px;
 $SlotPadding = 6px;
 $SlotUnlockBackgroundColor = #313131;
 

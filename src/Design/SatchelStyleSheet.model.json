@@ -849,6 +849,36 @@
                             },
                             "children": [
                                 {
+                                    "name": "::UIPadding",
+                                    "className": "StyleRule",
+                                    "attributes": {},
+                                    "properties": {
+                                        "PropertiesSerialize": {
+                                            "Attributes": {
+                                                "PaddingBottom": {
+                                                    "String": "$SlotNumberPaddingBottom"
+                                                },
+                                                "PaddingLeft": {
+                                                    "String": "$SlotNumberPaddingLeft"
+                                                },
+                                                "PaddingRight": {
+                                                    "String": "$SlotNumberPaddingRight"
+                                                },
+                                                "PaddingTop": {
+                                                    "String": "$SlotNumberPaddingTop"
+                                                }
+                                            }
+                                        },
+                                        "PropertyTransitionsSerialize": {
+                                            "Attributes": {}
+                                        },
+                                        "Selector": {
+                                            "String": "::UIPadding"
+                                        }
+                                    },
+                                    "children": []
+                                },
+                                {
                                     "name": "@PreferredInputKeyboardAndMouse, .Visible",
                                     "className": "StyleRule",
                                     "attributes": {},

@@ -164,6 +164,8 @@ TextButton.Slot {
 			TextYAlignment = :Top;
 			Visible = false;
 
+			Padding! ($SlotNumberPaddingTop, $SlotNumberPaddingRight, $SlotNumberPaddingBottom, $SlotNumberPaddingLeft);
+
 			@PreferredInputKeyboardAndMouse,.Visible {
 				@priority 1;
 				Visible = true;
