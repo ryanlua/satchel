@@ -49,6 +49,18 @@
         "SearchFontFace": {
             "String": "$FontFace"
         },
+        "SearchFrameSize": {
+            "UDim2": [
+                [
+                    1.0,
+                    0
+                ],
+                [
+                    0.0,
+                    35
+                ]
+            ]
+        },
         "SearchPadding": {
             "UDim": [
                 0.0,

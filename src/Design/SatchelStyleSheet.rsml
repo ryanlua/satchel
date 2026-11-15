@@ -283,7 +283,6 @@ TextBox.Searchbar {
 
 		::UIAspectRatioConstraint {
 			AspectRatio = 1;
-			AspectType = :FitWithinMaxSize;
 		}
 	}
 
@@ -342,9 +341,8 @@ TextBox.Searchbar {
 	}
 
 	>#SearchFrame {
-		AutomaticSize = :Y;
 		BackgroundTransparency = 1;
-		Size = udim2 (100%, 0px);
+		Size = $SearchFrameSize;
 
 		::UIPadding {
 			PaddingLeft = $SurfacePadding;

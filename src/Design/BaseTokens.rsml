@@ -20,6 +20,7 @@ $HintTextColor = $TextColor;
 $HintTextSize = $TextSize;
 
 $SearchFontFace = $FontFace;
+$SearchFrameSize = udim2 (100%, 35px);
 $SearchPadding = 8px;
 $SearchPlaceholderColor = #B2B2B2;
 $SearchSize = udim2 (100%, 30px);
