@@ -203,10 +203,7 @@ TextButton.Slot {
 		VerticalAlignment = :Center;
 	}
 
-	::UIPadding {
-		PaddingLeft = $SlotGap;
-		PaddingRight = $SlotGap;
-	}
+	Padding! (0px, $SlotGap);
 }
 
 .HotbarHints {
@@ -360,11 +357,7 @@ TextBox.Searchbar {
 		BackgroundTransparency = 1;
 		Size = $SearchFrameSize;
 
-		::UIPadding {
-			PaddingLeft = $SurfacePadding;
-			PaddingRight = $SurfacePadding;
-			PaddingTop = $SurfacePadding;
-		}
+		Padding! ($SurfacePadding, $SurfacePadding, 0px);
 	}
 }
 

@@ -1093,11 +1093,23 @@
                     "properties": {
                         "PropertiesSerialize": {
                             "Attributes": {
+                                "PaddingBottom": {
+                                    "UDim": [
+                                        0.0,
+                                        0
+                                    ]
+                                },
                                 "PaddingLeft": {
                                     "String": "$SlotGap"
                                 },
                                 "PaddingRight": {
                                     "String": "$SlotGap"
+                                },
+                                "PaddingTop": {
+                                    "UDim": [
+                                        0.0,
+                                        0
+                                    ]
                                 }
                             }
                         },
@@ -2053,6 +2065,12 @@
                             "properties": {
                                 "PropertiesSerialize": {
                                     "Attributes": {
+                                        "PaddingBottom": {
+                                            "UDim": [
+                                                0.0,
+                                                0
+                                            ]
+                                        },
                                         "PaddingLeft": {
                                             "String": "$SurfacePadding"
                                         },
