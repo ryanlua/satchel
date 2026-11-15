@@ -2138,7 +2138,7 @@
             ]
         },
         {
-            "name": ".TenFootInterface",
+            "name": ".TenFootInterface, @ViewportDisplaySizeLarge",
             "className": "StyleRule",
             "attributes": {},
             "properties": {
@@ -2152,7 +2152,7 @@
                     "Attributes": {}
                 },
                 "Selector": {
-                    "String": ".TenFootInterface"
+                    "String": ".TenFootInterface, @ViewportDisplaySizeLarge"
                 }
             },
             "children": [

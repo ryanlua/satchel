@@ -367,7 +367,7 @@ TextBox.Searchbar {
 	}
 }
 
-.TenFootInterface {
+.TenFootInterface, @ViewportDisplaySizeLarge {
 	@priority 1;
 
 	>> TextButton.Slot {
