@@ -43,6 +43,12 @@
         "InventoryBackgroundTransparency": {
             "String": "$BackgroundTransparency"
         },
+        "SearchAnchorPoint": {
+            "Vector2": [
+                1.0,
+                0.0
+            ]
+        },
         "SearchBackgroundColor": {
             "Color3": [
                 0.36862746,
@@ -64,6 +70,30 @@
                 1.0,
                 1.0,
                 1.0
+            ]
+        },
+        "SearchPosition": {
+            "UDim2": [
+                [
+                    1.0,
+                    0
+                ],
+                [
+                    0.0,
+                    0
+                ]
+            ]
+        },
+        "SearchSize": {
+            "UDim2": [
+                [
+                    0.0,
+                    190
+                ],
+                [
+                    0.0,
+                    30
+                ]
             ]
         },
         "SearchStrokeTransparency": {
@@ -88,6 +118,12 @@
                 0.5568628,
                 0.9137255
             ]
+        },
+        "SlotEquipStrokePosition": {
+            "EnumItem": {
+                "type": "BorderStrokePosition",
+                "value": 2
+            }
         },
         "SlotEquipStrokeThickness": {
             "Float64": 5.0

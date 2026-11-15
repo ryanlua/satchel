@@ -42,6 +42,12 @@
                 13
             ]
         },
+        "SearchAnchorPoint": {
+            "Vector2": [
+                0.0,
+                0.0
+            ]
+        },
         "SearchBackgroundColor": {
             "String": "$BackgroundColor"
         },
@@ -77,6 +83,18 @@
                 0.69803923,
                 0.69803923,
                 0.69803923
+            ]
+        },
+        "SearchPosition": {
+            "UDim2": [
+                [
+                    0.0,
+                    0
+                ],
+                [
+                    0.0,
+                    0
+                ]
             ]
         },
         "SearchSize": {
@@ -129,6 +147,12 @@
                 0.37254903,
                 1.0
             ]
+        },
+        "SlotEquipStrokePosition": {
+            "EnumItem": {
+                "type": "BorderStrokePosition",
+                "value": 1
+            }
         },
         "SlotEquipStrokeThickness": {
             "Float64": 4.0

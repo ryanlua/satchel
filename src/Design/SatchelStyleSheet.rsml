@@ -57,6 +57,7 @@ TextButton.Slot {
 		Enabled = false;
 
 		.EquipStroke {
+			BorderStrokePosition = $SlotEquipStrokePosition;
 			Color = $SlotEquipStrokeColor;
 			LineJoinMode = :Round;
 			Thickness = $SlotEquipStrokeThickness;
@@ -268,6 +269,7 @@ TextLabel.Tooltip {
 }
 
 TextBox.Searchbar {
+	AnchorPoint = $SearchAnchorPoint;
 	BackgroundColor3 = $SearchBackgroundColor;
 	BackgroundTransparency = $SearchBackgroundTransparency;
 	ClearTextOnFocus = false;
@@ -275,6 +277,7 @@ TextBox.Searchbar {
 	FontFace = $SearchFontFace;
 	PlaceholderColor3 = $SearchPlaceholderColor;
 	PlaceholderText = "Search";
+	Position = $SearchPosition;
 	Size = $SearchSize;
 	TextColor3 = $SearchTextColor;
 	TextSize = $SearchTextSize;

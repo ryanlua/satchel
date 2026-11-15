@@ -286,6 +286,9 @@
                             "properties": {
                                 "PropertiesSerialize": {
                                     "Attributes": {
+                                        "BorderStrokePosition": {
+                                            "String": "$SlotEquipStrokePosition"
+                                        },
                                         "Color": {
                                             "String": "$SlotEquipStrokeColor"
                                         },
@@ -1522,6 +1525,9 @@
             "properties": {
                 "PropertiesSerialize": {
                     "Attributes": {
+                        "AnchorPoint": {
+                            "String": "$SearchAnchorPoint"
+                        },
                         "BackgroundColor3": {
                             "String": "$SearchBackgroundColor"
                         },
@@ -1542,6 +1548,9 @@
                         },
                         "PlaceholderText": {
                             "String": "Search"
+                        },
+                        "Position": {
+                            "String": "$SearchPosition"
                         },
                         "Size": {
                             "String": "$SearchSize"

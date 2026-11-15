@@ -17,6 +17,7 @@ $HintTextColor = $TextColor;
 $HintTextSize = $TextSize;
 
 -- Search
+$SearchAnchorPoint = vec2 (0, 0);
 $SearchBackgroundColor = $BackgroundColor;
 $SearchBackgroundTransparency = 0.2;
 $SearchCornerRadius = $SmallCornerRadius;
@@ -24,6 +25,7 @@ $SearchFontFace = $FontFace;
 $SearchFrameSize = udim2 (100%, 35px);
 $SearchPadding = 8px;
 $SearchPlaceholderColor = #B2B2B2;
+$SearchPosition = udim2 (0px, 0px);
 $SearchSize = udim2 (100%, 30px);
 $SearchStrokeColor = #FFFFFF;
 $SearchStrokeTransparency = 0.8;
@@ -36,6 +38,7 @@ $SlotBackgroundColor = #191B1D;
 $SlotBackgroundTransparency = 0.3;
 $SlotCornerRadius = $SmallCornerRadius;
 $SlotEquipStrokeColor = #335FFF;
+$SlotEquipStrokePosition = Enum.BorderStrokePosition.Center;
 $SlotEquipStrokeThickness = 4;
 $SlotFontFace = $FontFace;
 $SlotIconCornerRadius = 0px;
