@@ -11,5 +11,12 @@
     "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
     "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
   ],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.rsml": "${capture}.model.json"
+  },
+  "search.exclude": {
+    "**/Design/*.model.json": true
+  },
   "luau-lsp.sourcemap.rojoProjectFile": "satchel.project.json"
 }
