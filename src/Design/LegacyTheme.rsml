@@ -1,5 +1,7 @@
 @derive "./BaseTokens";
 
+$StyleCategory = "Themes";
+
 -- General
 $BackgroundColor = #1F1F1F;
 $BackgroundTransparency = 0.5;
@@ -7,7 +9,6 @@ $CornerRadius = 0px;
 $FontFace = font ("SourceSansPro", :Regular);
 $SmallCornerRadius = 0px;
 $SmallTextSize = 14;
-$StyleCategory = "Themes";
 $TenFootInterfaceSmallTextSize = 24;
 $TenFootInterfaceTextSize = 24;
 $TextSize = 14;
