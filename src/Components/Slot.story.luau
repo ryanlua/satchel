@@ -12,7 +12,6 @@ const controls = {
 	unlocked = false,
 	hint = true,
 	order = 1,
-	placeholder = false,
 	dragging = false,
 }
 
@@ -35,7 +34,6 @@ return {
 			unlocked = props.controls.unlocked,
 			hint = props.controls.hint,
 			order = props.controls.order,
-			placeholder = props.controls.placeholder,
 			dragging = props.controls.dragging,
 		})
 	end,

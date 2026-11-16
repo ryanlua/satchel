@@ -8,7 +8,6 @@ const InventoryHint = require("./InventoryHint")
 const Slot = require("./Slot")
 const useSlotMetrics = require("./useSlotMetrics")
 
-const DOUBLE_CLICK_TIME = 0.5
 const DRAG_THRESHOLD = 4
 
 const InventoryBindings = script.Parent.Parent.Bindings.InventoryContext
@@ -34,25 +33,14 @@ export type Props = {
 	onSelectionRootChanged: ((root: GuiObject?) -> ())?,
 	onSlotActivated: ((item: BackpackItem) -> ())?,
 	onSelectSwap: ((slotIndex: number) -> ())?,
-	onMove: ((item: BackpackItem, targetIndex: number) -> ())?,
+	-- A nil targetIndex moves the item to the inventory
+	onMove: ((item: BackpackItem, targetIndex: number?) -> ())?,
 }
 
 type Items = { [number]: { item: BackpackItem, equipped: boolean } }
-type DragState = { item: BackpackItem, slotPosition: Vector2, start: Vector2, input: Vector2, moved: boolean }
 
 const function isGamepadPreferred(): boolean
 	return UserInputService.PreferredInput == Enum.PreferredInput.Gamepad
-end
-
-const function isInBounds(guiObject: GuiObject?, point: Vector2): boolean
-	if not guiObject or not guiObject.Visible then
-		return false
-	end
-	const offset = point - guiObject.AbsolutePosition
-	return offset.X > 0
-		and offset.Y > 0
-		and offset.X <= guiObject.AbsoluteSize.X
-		and offset.Y <= guiObject.AbsoluteSize.Y
 end
 
 const function findItemIndex(items: Items, item: BackpackItem): number?
@@ -64,6 +52,30 @@ const function findItemIndex(items: Items, item: BackpackItem): number?
 	return nil
 end
 
+-- Closest hotbar slot to a point over the hotbar, like the CoreGui backpack
+const function hotbarIndexAt(slot: GuiObject, point: Vector2): number?
+	const backpack = slot:FindFirstAncestor("Backpack")
+	const hotbar = backpack and backpack:FindFirstChild("Hotbar") :: GuiObject?
+	if not hotbar then
+		return nil
+	end
+	const offset = point - hotbar.AbsolutePosition
+	if offset.X < 0 or offset.Y < 0 or offset.X > hotbar.AbsoluteSize.X or offset.Y > hotbar.AbsoluteSize.Y then
+		return nil
+	end
+
+	local closestIndex, closestDistance = nil, math.huge
+	for _, hotbarSlot in hotbar:GetChildren() do
+		if hotbarSlot:IsA("GuiButton") then
+			const distance = (hotbarSlot.AbsolutePosition + hotbarSlot.AbsoluteSize / 2 - point).Magnitude
+			if distance < closestDistance then
+				closestIndex, closestDistance = hotbarSlot.LayoutOrder, distance
+			end
+		end
+	end
+	return closestIndex
+end
+
 const function App(props: Props)
 	const slotCount = props.slots or 10
 	const metrics = useSlotMetrics(props.tenFootInterface)
@@ -71,11 +83,12 @@ const function App(props: Props)
 	const tenFootInterfaceTag = if props.tenFootInterface then " TenFootInterface" else ""
 	const items: Items = props.items or {}
 
-	const drag, setDrag = React.useState(nil :: DragState?)
-	const dragRef = React.useRef(nil :: DragState?)
-	const lastClickTimes = React.useRef({} :: { [BackpackItem]: number })
 	const hintsRef = React.useRef(nil :: Frame?)
-	const dragLayerRef = React.useRef(nil :: Frame?)
+	const dragItem, setDragItem = React.useState(nil :: BackpackItem?)
+	const dragPosition, setDragPosition = React.useBinding(UDim2.new())
+	const dragStart = React.useRef(Vector2.zero)
+	-- Dragged slot position relative to the App parent, minus the drag start point
+	const dragOffset = React.useRef(Vector2.zero)
 
 	-- Gamepad uses select/swap instead of dragging, like the CoreGui backpack
 	const gamepadPreferred, setGamepadPreferred = React.useState(isGamepadPreferred)
@@ -103,129 +116,36 @@ const function App(props: Props)
 		end
 	end, { props.onSelectionRootChanged :: any })
 
-	const function setDragState(state: DragState?)
-		dragRef.current = state
-		setDrag(state)
-	end
-
-	-- Cancel the drag if the dragged item leaves the backpack
-	React.useEffect(function()
-		if dragRef.current and not findItemIndex(items, dragRef.current.item) then
-			setDragState(nil)
-		end
-	end, { props.items })
-
-	const function nextInventoryIndex(): number
-		local highestIndex = slotCount
-		for index in items do
-			highestIndex = math.max(highestIndex, index)
-		end
-		return highestIndex + 1
-	end
-
-	const function firstEmptyHotbarIndex(): number?
-		for index = 1, slotCount do
-			if not items[index] then
-				return index
-			end
-		end
-		return nil
-	end
-
-	const function findDropTarget(index: number, point: Vector2): number?
-		const backpack = hintsRef.current and hintsRef.current:FindFirstChild("Backpack", true)
-		const hotbar = backpack and backpack:FindFirstChild("Hotbar") :: GuiObject?
-		const inventory = backpack and backpack:FindFirstChild("Inventory") :: GuiObject?
-
-		-- Hotbar tools dropped on the inventory or outside the backpack move to the inventory
-		if isInBounds(inventory, point) or not isInBounds(hotbar, point) then
-			return if index <= slotCount then nextInventoryIndex() else nil
-		end
-
-		local closestIndex, closestDistance = nil, math.huge
-		for _, hotbarSlot in (hotbar :: GuiObject):GetChildren() do
-			if hotbarSlot:IsA("GuiButton") then
-				const distance = (hotbarSlot.AbsolutePosition + hotbarSlot.AbsoluteSize / 2 - point).Magnitude
-				if distance < closestDistance then
-					closestIndex, closestDistance = hotbarSlot.LayoutOrder, distance
-				end
-			end
-		end
-		return closestIndex
-	end
-
-	const function onSlotDrag(phase: string, item: BackpackItem, slot: GuiObject, inputPosition: Vector2)
-		const current = dragRef.current
+	const onSlotDrag: Slot.OnDrag = function(phase, item, detector, point)
+		const slot = detector.Parent :: GuiObject
 		if phase == "Start" then
-			setDragState({
-				item = item,
-				slotPosition = slot.AbsolutePosition,
-				start = inputPosition,
-				input = inputPosition,
-				moved = false,
-			})
-			return
-		elseif not current or current.item ~= item then
-			return
-		elseif phase == "Continue" then
-			const moved = current.moved or (inputPosition - current.start).Magnitude >= DRAG_THRESHOLD
-			setDragState({
-				item = item,
-				slotPosition = current.slotPosition,
-				start = current.start,
-				input = inputPosition,
-				moved = moved,
-			})
-			return
+			const root = (hintsRef.current :: Frame).Parent :: GuiBase2d
+			dragStart.current = point
+			dragOffset.current = slot.AbsolutePosition - root.AbsolutePosition - point
+			setDragItem(item)
 		end
 
-		setDragState(nil)
-		const index = findItemIndex(items, item)
-		if not index then
-			return
-		end
+		const position = dragOffset.current + point
+		setDragPosition(UDim2.fromOffset(position.X, position.Y))
 
-		local targetIndex = nil
-		if current.moved then
-			targetIndex = findDropTarget(index, inputPosition)
-		else
+		if phase == "End" then
+			setDragItem(nil)
 			-- UIDragDetector swallows Activated, so a press released in place is a click
-			const now = os.clock()
-			if index > slotCount and now - (lastClickTimes.current[item] or 0) < DOUBLE_CLICK_TIME then
-				targetIndex = firstEmptyHotbarIndex()
+			if (point - dragStart.current).Magnitude < DRAG_THRESHOLD then
+				if props.onSlotActivated then
+					props.onSlotActivated(item)
+				end
+			elseif props.onMove then
+				props.onMove(item, hotbarIndexAt(slot, point))
 			end
-			-- A double-click moves the tool to the hotbar equipped instead of toggling it again
-			if props.onSlotActivated and not (targetIndex and items[index].equipped) then
-				props.onSlotActivated(item)
-			end
-			lastClickTimes.current[item] = if targetIndex then 0 else now
-		end
-
-		if targetIndex and targetIndex ~= index and props.onMove then
-			props.onMove(item, targetIndex)
 		end
 	end
+
+	-- Hidden if the dragged item leaves the backpack mid-drag
+	const dragIndex = if dragItem then findItemIndex(items, dragItem) else nil
 
 	-- Keep the inventory open until the dragged slot is dropped, like the CoreGui backpack
-	const opened = props.opened or drag ~= nil
-
-	local draggedSlot = nil
-	const dragLayer = dragLayerRef.current
-	if drag and drag.moved and dragLayer then
-		const position = drag.slotPosition + drag.input - drag.start - dragLayer.AbsolutePosition
-		const index = findItemIndex(items, drag.item) or 0
-		const isHotbarSlot = index <= slotCount
-		draggedSlot = e(Slot, {
-			item = drag.item,
-			unlocked = true,
-			dragging = true,
-			equipped = items[index] and items[index].equipped,
-			order = if isHotbarSlot then index else index - slotCount,
-			hint = isHotbarSlot,
-			forceHintVisible = props.forceKeyboardHintVisible,
-			position = UDim2.fromOffset(position.X, position.Y),
-		})
-	end
+	const opened = props.opened or dragIndex ~= nil
 
 	local visibleHotbarSlots = 0
 	for order = 1, slotCount do
@@ -291,7 +211,6 @@ const function App(props: Props)
 					width = width,
 					height = metrics.rowsHeight(props.rows or 4),
 					scrollbarGutter = metrics.scrollbarGutter,
-					draggingItem = if drag and drag.moved then drag.item else nil,
 					swapSourceIndex = props.swapSourceIndex,
 					onSlotActivated = props.onSlotActivated,
 					onSelectSwap = selectSwap,
@@ -299,16 +218,26 @@ const function App(props: Props)
 				}),
 			}),
 		}),
-		DragLayer = e("Frame", {
-			Size = UDim2.fromScale(1, 1),
-			BackgroundTransparency = 1,
-			Interactable = false,
-			ZIndex = 10,
-			ref = dragLayerRef,
-			[React.Tag] = if props.tenFootInterface then "TenFootInterface" else nil,
-		}, {
-			DraggedSlot = draggedSlot,
-		}),
+		DragLayer = if dragIndex
+			then e("Frame", {
+				Size = UDim2.fromScale(1, 1),
+				BackgroundTransparency = 1,
+				Interactable = false,
+				ZIndex = 10,
+				[React.Tag] = if props.tenFootInterface then "TenFootInterface" else nil,
+			}, {
+				DraggedSlot = e(Slot, {
+					item = dragItem,
+					unlocked = true,
+					dragging = true,
+					equipped = items[dragIndex].equipped,
+					order = if dragIndex <= slotCount then dragIndex else dragIndex - slotCount,
+					hint = dragIndex <= slotCount,
+					forceHintVisible = props.forceKeyboardHintVisible,
+					position = dragPosition,
+				}),
+			})
+			else nil,
 	})
 end
 

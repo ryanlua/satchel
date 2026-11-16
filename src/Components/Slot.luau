@@ -7,7 +7,7 @@ const e = React.createElement
 export type OnDrag = (
 	phase: "Start" | "Continue" | "End",
 	item: BackpackItem,
-	slot: GuiObject,
+	detector: UIDragDetector,
 	inputPosition: Vector2
 ) -> ()
 
@@ -21,9 +21,8 @@ export type Props = {
 	-- Absolute backpack index used for gamepad selection and input actions
 	slotIndex: number?,
 	swapSource: boolean?,
-	placeholder: boolean?,
 	dragging: boolean?,
-	position: UDim2?,
+	position: (UDim2 | React.Binding<UDim2>)?,
 	onActivated: ((item: BackpackItem) -> ())?,
 	-- Fired for gamepad select/swap even when the slot is empty
 	onSelectSwap: ((slotIndex: number) -> ())?,
@@ -35,6 +34,7 @@ const function Slot(props: Props)
 	const itemImage = item and item.TextureId
 	const tooltipText = item and (item:IsA("Tool") and item.ToolTip or "")
 	const draggable = props.onDrag ~= nil and item ~= nil
+	const dragged, setDragged = React.useState(false)
 
 	-- Only show numbers 1-10 for hints and show 0 for the 10th slot
 	const order = props.order or 1
@@ -46,12 +46,15 @@ const function Slot(props: Props)
 		.. (if props.equipped then " Equipped" else "")
 		.. (if props.dragging then " Dragging" else "")
 		.. (if props.swapSource then " SwapSource" else "")
-		.. (if props.placeholder then " Placeholder" else "")
+		.. (if dragged then " Placeholder" else "")
 
 	const function forwardDrag(phase: "Start" | "Continue" | "End")
 		return function(detector: UIDragDetector, inputPosition: Vector2)
+			if phase ~= "Continue" then
+				setDragged(phase == "Start")
+			end
 			if props.item and props.onDrag then
-				props.onDrag(phase, props.item, detector.Parent :: GuiObject, inputPosition)
+				props.onDrag(phase, props.item, detector, inputPosition)
 			end
 		end :: any
 	end

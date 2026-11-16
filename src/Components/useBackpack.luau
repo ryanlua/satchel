@@ -8,11 +8,13 @@ const backpackItemRemoved = bindableEvents.BackpackItemRemoved
 const backpackItemEquipped = bindableEvents.BackpackItemEquipped
 const backpackItemUnequipped = bindableEvents.BackpackItemUnequipped
 
+const DOUBLE_CLICK_TIME = 0.5
+
 type SlotItem = { item: BackpackItem, equipped: boolean }
 
 type Actions = {
 	onSlotActivated: (item: BackpackItem) -> (),
-	move: (item: BackpackItem, targetIndex: number) -> (),
+	move: (item: BackpackItem, targetIndex: number?) -> (),
 	equipSlot: (index: number) -> (),
 	cycleHotbar: (direction: number) -> (),
 	unequipAll: () -> (),
@@ -209,22 +211,55 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			return highestSlotIndex + 1
 		end
 
+		-- Moves the tool to targetIndex, swapping with any tool already there.
+		-- A nil targetIndex moves a hotbar tool to the inventory.
+		local function move(tool: Tool, targetIndex: number?)
+			local slotIndex = slotIndexByTool[tool]
+			if not slotIndex or (not targetIndex and slotIndex > hotbarSlotCount) then
+				return
+			end
+			local target = targetIndex or nextInventoryIndex()
+			if target == slotIndex then
+				return
+			end
+			local otherTool = toolBySlotIndex[target]
+			setSlot(target, tool)
+			setSlot(slotIndex, otherTool)
+			syncItemsToReact()
+		end
+
+		local lastActivatedTool: Tool? = nil
+		local lastActivatedTime = 0
+
 		actionsRef.current = {
 			onSlotActivated = function(item: BackpackItem)
-				if item:IsA("Tool") then
+				if not item:IsA("Tool") then
+					return
+				end
+				local now = os.clock()
+				local doubleClicked = item == lastActivatedTool and now - lastActivatedTime < DOUBLE_CLICK_TIME
+				lastActivatedTool, lastActivatedTime = item, now
+
+				-- Double-clicking an inventory tool moves it to the first empty hotbar slot, like the CoreGui backpack
+				local hotbarIndex = findNextSlotIndex()
+				if
+					doubleClicked
+					and (slotIndexByTool[item] or 0) > hotbarSlotCount
+					and hotbarIndex <= hotbarSlotCount
+				then
+					lastActivatedTool = nil
+					move(item, hotbarIndex)
+					if not isEquipped(item) then
+						equipTool(item)
+					end
+				else
 					equipTool(item)
 				end
 			end,
-			-- Moves the item to targetIndex, swapping with any item already there
-			move = function(item: BackpackItem, targetIndex: number)
-				local slotIndex = item:IsA("Tool") and slotIndexByTool[item]
-				if not slotIndex or slotIndex == targetIndex then
-					return
+			move = function(item: BackpackItem, targetIndex: number?)
+				if item:IsA("Tool") then
+					move(item, targetIndex)
 				end
-				local otherTool = toolBySlotIndex[targetIndex]
-				setSlot(targetIndex, item :: Tool)
-				setSlot(slotIndex, otherTool)
-				syncItemsToReact()
 			end,
 			equipSlot = function(index: number)
 				local tool = toolBySlotIndex[index]
@@ -291,17 +326,10 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			end,
 			unequipAll = unequipAll,
 			removeFromHotbar = function(index: number)
-				if index < 1 or index > hotbarSlotCount then
-					return
-				end
 				local tool = toolBySlotIndex[index]
-				if not tool then
-					return
+				if tool then
+					move(tool, nil)
 				end
-				local targetIndex = nextInventoryIndex()
-				setSlot(targetIndex, tool)
-				setSlot(index, nil :: Tool?)
-				syncItemsToReact()
 			end,
 		}
 
@@ -324,7 +352,7 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 		end
 	end, {})
 
-	const move = React.useCallback(function(item: BackpackItem, targetIndex: number)
+	const move = React.useCallback(function(item: BackpackItem, targetIndex: number?)
 		if actionsRef.current then
 			actionsRef.current.move(item, targetIndex)
 		end

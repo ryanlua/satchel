@@ -68,13 +68,21 @@ const function DraggableApp(props: Props)
 		opened = props.controls.opened,
 		rows = props.controls.rows,
 		tenFootInterface = props.controls.tenFootInterface,
-		onMove = function(item: BackpackItem, targetIndex: number)
+		onMove = function(item: BackpackItem, targetIndex: number?)
 			const index = findIndex(items, item)
-			if index then
-				const nextItems = table.clone(items)
-				nextItems[index], nextItems[targetIndex] = nextItems[targetIndex], nextItems[index]
-				setItems(nextItems)
+			if not index or (not targetIndex and index > slots) then
+				return
 			end
+			local target = targetIndex
+			if not target then
+				target = slots + 1
+				while items[target] do
+					target += 1
+				end
+			end
+			const nextItems = table.clone(items)
+			nextItems[index], nextItems[target] = nextItems[target], nextItems[index]
+			setItems(nextItems)
 		end,
 	})
 end
