@@ -115,6 +115,12 @@
         "SlotEquipStrokeThickness": {
             "Float64": 5.0
         },
+        "SlotNumberEquippedStrokeTransparency": {
+            "Float64": 1.0
+        },
+        "SlotNumberEquippedTextTransparency": {
+            "Float64": 1.0
+        },
         "SlotNumberPaddingLeft": {
             "UDim": [
                 -0.0,

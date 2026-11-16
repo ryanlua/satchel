@@ -168,6 +168,12 @@
                 0
             ]
         },
+        "SlotNumberEquippedStrokeTransparency": {
+            "String": "$SlotNumberStrokeTransparency"
+        },
+        "SlotNumberEquippedTextTransparency": {
+            "Float64": 0.0
+        },
         "SlotNumberFontFace": {
             "String": "$FontFace"
         },

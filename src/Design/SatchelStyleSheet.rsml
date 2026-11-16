@@ -76,6 +76,12 @@ TextButton.Slot {
 		>UIStroke.EquipStroke {
 			Enabled = true;
 		}
+
+		>TextLabel.SlotNumber {
+			@priority 1;
+			TextTransparency = $SlotNumberEquippedTextTransparency;
+			TextStrokeTransparency = $SlotNumberEquippedStrokeTransparency;
+		}
 	}
 
 	:Hover {

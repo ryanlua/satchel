@@ -383,6 +383,33 @@
                                 }
                             },
                             "children": []
+                        },
+                        {
+                            "name": "> TextLabel .SlotNumber",
+                            "className": "StyleRule",
+                            "attributes": {},
+                            "properties": {
+                                "Priority": {
+                                    "Int32": 1
+                                },
+                                "PropertiesSerialize": {
+                                    "Attributes": {
+                                        "TextStrokeTransparency": {
+                                            "String": "$SlotNumberEquippedStrokeTransparency"
+                                        },
+                                        "TextTransparency": {
+                                            "String": "$SlotNumberEquippedTextTransparency"
+                                        }
+                                    }
+                                },
+                                "PropertyTransitionsSerialize": {
+                                    "Attributes": {}
+                                },
+                                "Selector": {
+                                    "String": "> TextLabel .SlotNumber"
+                                }
+                            },
+                            "children": []
                         }
                     ]
                 },
