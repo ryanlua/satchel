@@ -77,7 +77,7 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			end
 		end
 
-		local function trackTool(tool: Tool)
+		local function trackTool(tool: Tool, fireAdded: boolean?)
 			if slotIndexByTool[tool] then
 				fireEquippedChangedEvents(tool)
 				return
@@ -85,7 +85,9 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			local slotIndex = findNextSlotIndex()
 			toolBySlotIndex[slotIndex] = tool
 			slotIndexByTool[tool] = slotIndex
-			backpackItemAdded:Fire(tool)
+			if fireAdded ~= false then
+				backpackItemAdded:Fire(tool, slotIndex)
+			end
 			fireEquippedChangedEvents(tool)
 		end
 
@@ -97,7 +99,7 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 			toolBySlotIndex[slotIndex] = nil
 			slotIndexByTool[tool] = nil
 			equippedStateByTool[tool] = nil
-			backpackItemRemoved:Fire(tool)
+			backpackItemRemoved:Fire(tool, slotIndex)
 			return true
 		end
 
@@ -125,9 +127,10 @@ const function useBackpack(player: Player, hotbarSlotCount: number): BackpackSta
 		local function connectInventoryContainer(container: Instance)
 			table.insert(inventoryConnections, container.ChildAdded:Connect(onInventoryChildAdded))
 			table.insert(inventoryConnections, container.ChildRemoved:Connect(onInventoryChildRemoved))
+			-- Existing tools on character/backpack sync are not "added" events
 			for _, child in container:GetChildren() do
 				if child:IsA("Tool") then
-					trackTool(child)
+					trackTool(child, false)
 				end
 			end
 		end

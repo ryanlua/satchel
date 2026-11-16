@@ -39,8 +39,16 @@ icon.toggled:Connect(function(isSelected, fromSource)
 	end
 end)
 
+-- Notice only for tools that landed past the hotbar (not visible with inventory closed)
+Satchel.backpackItemAdded:Connect(function(_item, slotIndex)
+	if slotIndex > Satchel.getHotbarSlotCount() and not Satchel.isInventoryOpen() then
+		icon:notify()
+	end
+end)
+
 Satchel.inventoryOpened:Connect(function()
 	icon:select()
+	icon:clearNotices()
 end)
 
 Satchel.inventoryClosed:Connect(function()

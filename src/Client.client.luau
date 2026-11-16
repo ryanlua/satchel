@@ -36,6 +36,7 @@ const handle = Instance.new("ScreenGui")
 handle.Name = "SatchelGui"
 handle.ResetOnSpawn = false
 handle.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+handle:SetAttribute("HotbarSlotCount", 10)
 handle.Parent = playerGui
 
 const root = ReactRoblox.createRoot(handle)
@@ -88,6 +89,10 @@ const function Satchel()
 	const slots, setSlots = useState(10)
 	const rows, setRows = useState(4)
 	const tenFootInterface, setTenFootInterface = useState(false)
+
+	useEffect(function()
+		handle:SetAttribute("HotbarSlotCount", slots)
+	end, { slots })
 
 	useEffect(function()
 		const function updateBackpackSize()

@@ -10,6 +10,7 @@ return {
 	getTheme = require(api.getTheme),
 	setTheme = require(api.setTheme),
 	getTopbarIcon = require(api.getTopbarIcon),
+	getHotbarSlotCount = require(api.getHotbarSlotCount),
 	openInventory = require(api.openInventory),
 	closeInventory = require(api.closeInventory),
 	isInventoryOpen = require(api.isInventoryOpen),

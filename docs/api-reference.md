@@ -66,23 +66,31 @@ isInventoryOpen(): boolean
 
 Returns `true` if the inventory is open.
 
+### getHotbarSlotCount
+
+```
+getHotbarSlotCount(): number
+```
+
+Returns the number of hotbar slots. This can change with viewport size and screen orientation (typically 3, 5, or 10). Slot indices from `1` through this value are on the hotbar; higher indices are inventory overflow.
+
 ## Events
 
 ### backpackItemAdded
 
 ```
-backpackItemAdded(item: BackpackItem): BindableEvent
+backpackItemAdded(item: BackpackItem, slotIndex: number): BindableEvent
 ```
 
-Fires when an item is added to the backpack.
+Fires when an item is added to the backpack. `slotIndex` is the slot the item was placed in. Compare with [getHotbarSlotCount](#gethotbarslotcount) to tell hotbar from inventory.
 
 ### backpackItemRemoved
 
 ```
-backpackItemRemoved(item: BackpackItem): BindableEvent
+backpackItemRemoved(item: BackpackItem, slotIndex: number): BindableEvent
 ```
 
-Fires when an item is removed from the backpack.
+Fires when an item is removed from the backpack. `slotIndex` is the slot the item occupied at removal time.
 
 ### backpackItemEquipped
 
