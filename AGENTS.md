@@ -7,6 +7,7 @@
 - Use the [`const`](https://create.roblox.com/docs/luau/variables#const-variables) keyword instead of `local` for immutable bindings
 - Use [require-by-string](https://create.roblox.com/docs/en-us/reference/engine/globals/LuaGlobals#require) when using `require()`
 - Avoid deprecated API such as `GuiObject.Draggable`, `:connect()` instead of `:Connect()`, `wait()`/`delay()` instead of `task.wait()`/`task.delay()` and `tick()`
+- Follow https://github.com/Kampfkarren/kampfkarren-luau-guidelines and https://roblox.github.io/lua-style-guide/
 
 ## Editing Styles in `src/Design`
 
